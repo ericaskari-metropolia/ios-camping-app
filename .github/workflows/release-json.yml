@@ -16,3 +16,4 @@ jobs:
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@edunix.metropolia.fi "mkdir -p ~/public_html/2023-ios-camping-app/$BRANCH_NAME/assets"
           sshpass -p "${{ secrets.SSH_PASSWORD }}" rsync -e "ssh -o StrictHostKeyChecking=no" -a --progress --delete ./assets/ ${{ secrets.SSH_USERNAME }}@edunix.metropolia.fi:~/public_html/2023-ios-camping-app/$BRANCH_NAME/assets
+          echo '✅ Visit https://users.metropolia.fi/~${{ secrets.SSH_USERNAME }}/2023-ios-camping-app/$BRANCH_NAME/assets/ to view your files' >> $GITHUB_STEP_SUMMARY
