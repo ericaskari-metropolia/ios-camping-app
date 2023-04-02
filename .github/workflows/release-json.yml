@@ -1,0 +1,20 @@
+name: Deploy JSON to metropolia hosting
+
+on:
+  push:
+    branches: [ develop, main, Features/* ]
+jobs:
+  deployment:
+    runs-on: ubuntu-20.04
+    name: Deployment
+    env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+      SSH_USERNAME: mohamas
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Copy files over SSH
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no $SSH_USERNAME@edunix.metropolia.fi "mkdir -p ~/public_html/2023-ios-camping-app/$BRANCH_NAME/assets"
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" rsync -e "ssh -o StrictHostKeyChecking=no" -a --progress --delete ./assets/ $SSH_USERNAME@edunix.metropolia.fi:~/public_html/2023-ios-camping-app/$BRANCH_NAME/assets
+          echo "✅ Visit https://users.metropolia.fi/~$SSH_USERNAME/2023-ios-camping-app/$BRANCH_NAME/assets/ to view your files" >> $GITHUB_STEP_SUMMARY
