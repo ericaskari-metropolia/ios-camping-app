@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2787CFD629DAFDD1000B4865 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD529DAFDD1000B4865 /* Home.swift */; };
+		2787CFD729DAFDD1000B4865 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD529DAFDD1000B4865 /* Home.swift */; };
+		2787CFD829DAFDD1000B4865 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD529DAFDD1000B4865 /* Home.swift */; };
+		2787CFDA29DAFDE7000B4865 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD929DAFDE7000B4865 /* Favorite.swift */; };
+		2787CFDB29DAFDE7000B4865 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD929DAFDE7000B4865 /* Favorite.swift */; };
+		2787CFDC29DAFDE7000B4865 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD929DAFDE7000B4865 /* Favorite.swift */; };
+		2787CFDE29DAFDF6000B4865 /* Trips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFDD29DAFDF6000B4865 /* Trips.swift */; };
+		2787CFDF29DAFDF6000B4865 /* Trips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFDD29DAFDF6000B4865 /* Trips.swift */; };
+		2787CFE029DAFDF6000B4865 /* Trips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFDD29DAFDF6000B4865 /* Trips.swift */; };
+		2787CFE229DAFE16000B4865 /* AddPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlan.swift */; };
+		2787CFE329DAFE16000B4865 /* AddPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlan.swift */; };
+		2787CFE429DAFE16000B4865 /* AddPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlan.swift */; };
 		A156907529D2EE9D00EA3C56 /* campingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907429D2EE9D00EA3C56 /* campingApp.swift */; };
 		A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907629D2EE9D00EA3C56 /* ContentView.swift */; };
 		A156907929D2EE9E00EA3C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A156907829D2EE9E00EA3C56 /* Assets.xcassets */; };
@@ -16,6 +28,9 @@
 		A156908B29D2EE9E00EA3C56 /* campingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156908A29D2EE9E00EA3C56 /* campingTests.swift */; };
 		A156909529D2EE9F00EA3C56 /* campingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156909429D2EE9F00EA3C56 /* campingUITests.swift */; };
 		A156909729D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156909629D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift */; };
+		B309AFCE29DDC27500C44BC4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */; };
+		B309AFD129DDC29F00C44BC4 /* UserLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD029DDC29F00C44BC4 /* UserLocationModel.swift */; };
+		B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD329DDC30A00C44BC4 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2787CFD529DAFDD1000B4865 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		2787CFD929DAFDE7000B4865 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		2787CFDD29DAFDF6000B4865 /* Trips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trips.swift; sourceTree = "<group>"; };
+		2787CFE129DAFE16000B4865 /* AddPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlan.swift; sourceTree = "<group>"; };
 		A156907129D2EE9D00EA3C56 /* camping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = camping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A156907429D2EE9D00EA3C56 /* campingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campingApp.swift; sourceTree = "<group>"; };
 		A156907629D2EE9D00EA3C56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +67,10 @@
 		A156909029D2EE9F00EA3C56 /* campingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = campingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A156909429D2EE9F00EA3C56 /* campingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campingUITests.swift; sourceTree = "<group>"; };
 		A156909629D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B309AFD029DDC29F00C44BC4 /* UserLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationModel.swift; sourceTree = "<group>"; };
+		B309AFD329DDC30A00C44BC4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B397B80B29DC4C6700F37807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +98,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2787CFD429DAFD7C000B4865 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2787CFD529DAFDD1000B4865 /* Home.swift */,
+				2787CFD929DAFDE7000B4865 /* Favorite.swift */,
+				2787CFDD29DAFDF6000B4865 /* Trips.swift */,
+				2787CFE129DAFE16000B4865 /* AddPlan.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A156906829D2EE9D00EA3C56 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +132,11 @@
 		A156907329D2EE9D00EA3C56 /* camping */ = {
 			isa = PBXGroup;
 			children = (
+				B309AFD229DDC2E500C44BC4 /* Services */,
+				B309AFCF29DDC28200C44BC4 /* Model */,
+				B309AFCC29DDC24800C44BC4 /* ViewModel */,
+				B397B80B29DC4C6700F37807 /* Info.plist */,
+				2787CFD429DAFD7C000B4865 /* Views */,
 				A156907429D2EE9D00EA3C56 /* campingApp.swift */,
 				A156907629D2EE9D00EA3C56 /* ContentView.swift */,
 				A156907829D2EE9E00EA3C56 /* Assets.xcassets */,
@@ -131,6 +170,30 @@
 				A156909629D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift */,
 			);
 			path = campingUITests;
+			sourceTree = "<group>";
+		};
+		B309AFCC29DDC24800C44BC4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B309AFCF29DDC28200C44BC4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B309AFD029DDC29F00C44BC4 /* UserLocationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B309AFD229DDC2E500C44BC4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B309AFD329DDC30A00C44BC4 /* Service.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +327,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A156907E29D2EE9E00EA3C56 /* Persistence.swift in Sources */,
+				B309AFD129DDC29F00C44BC4 /* UserLocationModel.swift in Sources */,
+				B309AFCE29DDC27500C44BC4 /* HomeViewModel.swift in Sources */,
 				A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */,
+				2787CFD629DAFDD1000B4865 /* Home.swift in Sources */,
+				2787CFDA29DAFDE7000B4865 /* Favorite.swift in Sources */,
+				2787CFE229DAFE16000B4865 /* AddPlan.swift in Sources */,
 				A156907529D2EE9D00EA3C56 /* campingApp.swift in Sources */,
+				B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */,
 				A156908129D2EE9E00EA3C56 /* camping.xcdatamodeld in Sources */,
+				2787CFDE29DAFDF6000B4865 /* Trips.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +344,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2787CFDF29DAFDF6000B4865 /* Trips.swift in Sources */,
+				2787CFDB29DAFDE7000B4865 /* Favorite.swift in Sources */,
+				2787CFE329DAFE16000B4865 /* AddPlan.swift in Sources */,
+				2787CFD729DAFDD1000B4865 /* Home.swift in Sources */,
 				A156908B29D2EE9E00EA3C56 /* campingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +356,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2787CFE029DAFDF6000B4865 /* Trips.swift in Sources */,
 				A156909729D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift in Sources */,
+				2787CFE429DAFE16000B4865 /* AddPlan.swift in Sources */,
+				2787CFDC29DAFDE7000B4865 /* Favorite.swift in Sources */,
+				2787CFD829DAFDD1000B4865 /* Home.swift in Sources */,
 				A156909529D2EE9F00EA3C56 /* campingUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +505,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"camping/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = camping/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app need your location to run.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -455,6 +535,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"camping/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = camping/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app need your location to run.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
