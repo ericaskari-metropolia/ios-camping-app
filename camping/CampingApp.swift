@@ -8,13 +8,13 @@
 import SwiftUI
 
 @main
-struct campingApp: App {
-    let persistenceController = PersistenceController.shared
+struct CampingApp: App {
+//    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

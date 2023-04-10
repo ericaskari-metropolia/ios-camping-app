@@ -7,11 +7,11 @@
 
 import SwiftUI
 import MapKit
+import CoreData
 
 struct HomeView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
-    let url = "https://users.metropolia.fi/~thuh/camping.json"
-
+    
     var body: some View {
         VStack{
             Color.white
@@ -30,12 +30,15 @@ struct HomeView: View {
                 Text(locationViewModel.currentPlacemark?.locality ?? "")
             }
             
+//            ForEach(locationViewModel.campingSites, id: \.self) { campingSite in
+//                HStack{
+//                    Text("Camping site:")
+//                    Text(campingSite.name ?? "")
+//                }
+//            }
         }.onAppear {
-            Service().fetchCampingSites(url: url) { campingSites in
-                print(campingSites)
-            }
+            locationViewModel.fetchCampingSites()
         }
-        
     }
 }
 

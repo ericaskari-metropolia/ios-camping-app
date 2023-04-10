@@ -42,6 +42,7 @@ struct RequestLocationView: View {
             }
 
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -51,6 +52,7 @@ struct ErrorView: View {
         VStack{
             Text("Request location error")
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -60,6 +62,7 @@ struct RequestLocationSuccessView: View {
         VStack{
             Text("Request location success")
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

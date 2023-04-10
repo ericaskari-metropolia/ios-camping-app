@@ -28,6 +28,7 @@ struct OnBoardView: View {
     
     //Initial state of the page
     @State private var currentStep = 0
+    @State private var isFinishOnboarding = false
     
     init() {
         
@@ -37,93 +38,100 @@ struct OnBoardView: View {
     
     //UI logic for the onboard screen
     var body: some View {
-        ZStack{
-            Image(onBoardItems[currentStep].image)
-                .resizable()
-                .scaledToFill()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all)
-            VStack{
-                HStack{
-                    Spacer()
-                    if currentStep > 0 {
-                        Image(systemName: "chevron.left")
-                            .onTapGesture {
-                                currentStep -= 1
-                            }
-                    }
-                    Spacer()
-                    Image(systemName: "tent")
-                    Text("Camplify")
-                        .font(.title)
-                        .fontWeight(.bold)
-                Spacer()
-                    if currentStep < 2 {
-                        Image(systemName: "chevron.right")
-                            .onTapGesture {
-                                currentStep += 1
-                            }
-                    }
-                 Spacer()
-                } .padding()
-                
-                
-                    
-                    TabView(selection: $currentStep) {
-                        
-                        ForEach(0..<3) { item in
-                           
-                            VStack{
-                                Spacer()
-                                Text(onBoardItems[item].title)
-                                    .font(.title)
-                                    .bold()
-                                    .padding(.horizontal,40)
-                                    
-                                Text(onBoardItems[item].description)
-                                    .multilineTextAlignment(.center)
-                                  
-                                
-                            }
-                            .foregroundColor(.white)
-                            .tag(item)
-                        }
-                    }
-                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                    
+        NavigationView {
+            ZStack{
+                Image(onBoardItems[currentStep].image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .edgesIgnoringSafeArea(.all)
+                VStack{
                     HStack{
-                        ForEach(0..<3) { item in
-                            if item == currentStep {
-                                Rectangle()
-                                    .frame(width: 20,height: 10)
-                                    .cornerRadius(10)
-                                    .foregroundColor(.purple)
-                            } else {
-                                Circle()
-                                    .frame(width: 10, height:10)
-                                    .foregroundColor(.gray)
+                        Spacer()
+                        if currentStep > 0 {
+                            Image(systemName: "chevron.left")
+                                .onTapGesture {
+                                    currentStep -= 1
+                                }
+                        }
+                        Spacer()
+                        Image(systemName: "tent")
+                        Text("Camplify")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    Spacer()
+                        if currentStep < 2 {
+                            Image(systemName: "chevron.right")
+                                .onTapGesture {
+                                    currentStep += 1
+                                }
+                        }
+                     Spacer()
+                    } .padding()
+                    
+                    
+                        
+                        TabView(selection: $currentStep) {
+                            
+                            ForEach(0..<3) { item in
+                               
+                                VStack{
+                                    Spacer()
+                                    Text(onBoardItems[item].title)
+                                        .font(.title)
+                                        .bold()
+                                        .padding(.horizontal,40)
+                                        
+                                    Text(onBoardItems[item].description)
+                                        .multilineTextAlignment(.center)
+                                      
+                                    
+                                }
+                                .foregroundColor(.white)
+                                .tag(item)
                             }
                         }
-                    }
-                    
-                    Button(action:{
-                        if self.currentStep < onBoardItems.count - 1 {
-                            self.currentStep += 1
-                        } else {
-                            //Get started logic
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        
+                        HStack{
+                            ForEach(0..<3) { item in
+                                if item == currentStep {
+                                    Rectangle()
+                                        .frame(width: 20,height: 10)
+                                        .cornerRadius(10)
+                                        .foregroundColor(.purple)
+                                } else {
+                                    Circle()
+                                        .frame(width: 10, height:10)
+                                        .foregroundColor(.gray)
+                                }
+                            }
                         }
-                    }){
-                        Text( currentStep < onBoardItems.count - 1 ? "Next" : "Get Started")
-                            .font(.headline)
-                            .padding(16)
-                            .background(Color.purple)
-                            .cornerRadius(16)
-                            .padding(.horizontal, 16)
-                            .foregroundColor(.white)
+                        
+                        Button(action:{
+                            if self.currentStep < onBoardItems.count - 1 {
+                                self.currentStep += 1
+                            } else {
+                                //Get started logic
+                                self.isFinishOnboarding = true
+                            }
+                        }){
+                            Text( currentStep < onBoardItems.count - 1 ? "Next" : "Get Started")
+                                .font(.headline)
+                                .padding(16)
+                                .background(Color.purple)
+                                .cornerRadius(16)
+                                .padding(.horizontal, 16)
+                                .foregroundColor(.white)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                    NavigationLink(destination: PermissionView(), isActive: $isFinishOnboarding) {
+                            EmptyView()
+                        }
                     }
-                    .buttonStyle(PlainButtonStyle())
-                }
-            
+                
+            }
         }
     }
 }

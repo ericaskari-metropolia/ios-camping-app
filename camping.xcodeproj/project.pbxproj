@@ -20,7 +20,7 @@
 		2787CFE329DAFE16000B4865 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlanView.swift */; };
 		2787CFE429DAFE16000B4865 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlanView.swift */; };
 		66133D9B29DE1FC500FE61AE /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66133D9A29DE1FC500FE61AE /* OnBoardView.swift */; };
-		A156907529D2EE9D00EA3C56 /* campingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907429D2EE9D00EA3C56 /* campingApp.swift */; };
+		A156907529D2EE9D00EA3C56 /* CampingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907429D2EE9D00EA3C56 /* CampingApp.swift */; };
 		A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907629D2EE9D00EA3C56 /* ContentView.swift */; };
 		A156907929D2EE9E00EA3C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A156907829D2EE9E00EA3C56 /* Assets.xcassets */; };
 		A156907C29D2EE9E00EA3C56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A156907B29D2EE9E00EA3C56 /* Preview Assets.xcassets */; };
@@ -33,8 +33,10 @@
 		B305CD9529E441F0007781DB /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305CD9429E441F0007781DB /* PermissionView.swift */; };
 		B305CD9729E4420A007781DB /* NavigationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305CD9629E4420A007781DB /* NavigationTabView.swift */; };
 		B309AFCE29DDC27500C44BC4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */; };
-		B309AFD129DDC29F00C44BC4 /* CampingSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD029DDC29F00C44BC4 /* CampingSite.swift */; };
+		B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD029DDC29F00C44BC4 /* CampingSiteData.swift */; };
 		B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD329DDC30A00C44BC4 /* Service.swift */; };
+		B3D6C9D929E4448D00232B53 /* CampingSite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3D6C9D729E4448D00232B53 /* CampingSite.xcdatamodeld */; };
+		B3D6C9DB29E445E600232B53 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6C9DA29E445E600232B53 /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +63,7 @@
 		2787CFE129DAFE16000B4865 /* AddPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanView.swift; sourceTree = "<group>"; };
 		66133D9A29DE1FC500FE61AE /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		A156907129D2EE9D00EA3C56 /* camping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = camping.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A156907429D2EE9D00EA3C56 /* campingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campingApp.swift; sourceTree = "<group>"; };
+		A156907429D2EE9D00EA3C56 /* CampingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingApp.swift; sourceTree = "<group>"; };
 		A156907629D2EE9D00EA3C56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A156907829D2EE9E00EA3C56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A156907B29D2EE9E00EA3C56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -76,9 +78,11 @@
 		B305CD9429E441F0007781DB /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		B305CD9629E4420A007781DB /* NavigationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabView.swift; sourceTree = "<group>"; };
 		B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		B309AFD029DDC29F00C44BC4 /* CampingSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingSite.swift; sourceTree = "<group>"; };
+		B309AFD029DDC29F00C44BC4 /* CampingSiteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingSiteData.swift; sourceTree = "<group>"; };
 		B309AFD329DDC30A00C44BC4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B397B80B29DC4C6700F37807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B3D6C9D829E4448D00232B53 /* CampingSite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CampingSite.xcdatamodel; sourceTree = "<group>"; };
+		B3D6C9DA29E445E600232B53 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,12 +147,13 @@
 		A156907329D2EE9D00EA3C56 /* camping */ = {
 			isa = PBXGroup;
 			children = (
+				B3D6C9D629E4446C00232B53 /* CoreData */,
 				B309AFD229DDC2E500C44BC4 /* Services */,
 				B309AFCF29DDC28200C44BC4 /* Model */,
 				B309AFCC29DDC24800C44BC4 /* ViewModel */,
 				B397B80B29DC4C6700F37807 /* Info.plist */,
 				2787CFD429DAFD7C000B4865 /* Views */,
-				A156907429D2EE9D00EA3C56 /* campingApp.swift */,
+				A156907429D2EE9D00EA3C56 /* CampingApp.swift */,
 				A156907629D2EE9D00EA3C56 /* ContentView.swift */,
 				A156907829D2EE9E00EA3C56 /* Assets.xcassets */,
 				A156907D29D2EE9E00EA3C56 /* Persistence.swift */,
@@ -195,7 +200,7 @@
 		B309AFCF29DDC28200C44BC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B309AFD029DDC29F00C44BC4 /* CampingSite.swift */,
+				B309AFD029DDC29F00C44BC4 /* CampingSiteData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +211,15 @@
 				B309AFD329DDC30A00C44BC4 /* Service.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B3D6C9D629E4446C00232B53 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B3D6C9D729E4448D00232B53 /* CampingSite.xcdatamodeld */,
+				B3D6C9DA29E445E600232B53 /* PersistenceController.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,17 +353,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A156907E29D2EE9E00EA3C56 /* Persistence.swift in Sources */,
-				B309AFD129DDC29F00C44BC4 /* CampingSite.swift in Sources */,
+				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
 				B309AFCE29DDC27500C44BC4 /* HomeViewModel.swift in Sources */,
 				B305CD9529E441F0007781DB /* PermissionView.swift in Sources */,
+				B3D6C9D929E4448D00232B53 /* CampingSite.xcdatamodeld in Sources */,
 				B305CD9729E4420A007781DB /* NavigationTabView.swift in Sources */,
 				66133D9B29DE1FC500FE61AE /* OnBoardView.swift in Sources */,
 				A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */,
 				2787CFD629DAFDD1000B4865 /* HomeView.swift in Sources */,
 				2787CFDA29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
+				B3D6C9DB29E445E600232B53 /* PersistenceController.swift in Sources */,
 				2787CFE229DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				B305CD9329E44177007781DB /* LocationViewModel.swift in Sources */,
-				A156907529D2EE9D00EA3C56 /* campingApp.swift in Sources */,
+				A156907529D2EE9D00EA3C56 /* CampingApp.swift in Sources */,
 				B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */,
 				A156908129D2EE9E00EA3C56 /* camping.xcdatamodeld in Sources */,
 				2787CFDE29DAFDF6000B4865 /* TripsView.swift in Sources */,
@@ -692,6 +708,16 @@
 			);
 			currentVersion = A156908029D2EE9E00EA3C56 /* camping.xcdatamodel */;
 			path = camping.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		B3D6C9D729E4448D00232B53 /* CampingSite.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B3D6C9D829E4448D00232B53 /* CampingSite.xcdatamodel */,
+			);
+			currentVersion = B3D6C9D829E4448D00232B53 /* CampingSite.xcdatamodel */;
+			path = CampingSite.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

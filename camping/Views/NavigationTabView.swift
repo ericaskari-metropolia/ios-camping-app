@@ -38,6 +38,8 @@ struct NavigationTabView: View {
                 }
 
         }
+        .navigationBarBackButtonHidden(true)
+
         
     }
 }
@@ -45,6 +47,7 @@ struct NavigationTabView: View {
 
 struct NavigationTabView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationTabView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        NavigationTabView()
+//            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

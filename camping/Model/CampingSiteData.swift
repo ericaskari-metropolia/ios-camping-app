@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CampingSite: Decodable {
+struct CampingSiteData: Decodable {
     var name: String
     var location: [Double]
     var imageUrl: String
