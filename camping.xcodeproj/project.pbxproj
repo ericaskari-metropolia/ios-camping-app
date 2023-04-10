@@ -109,6 +109,7 @@
 		2787CFD429DAFD7C000B4865 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66133D9A29DE1FC500FE61AE /* OnBoardView.swift */,
 				2787CFD529DAFDD1000B4865 /* HomeView.swift */,
 				2787CFD929DAFDE7000B4865 /* FavoriteView.swift */,
 				2787CFDD29DAFDF6000B4865 /* TripsView.swift */,
@@ -153,7 +154,6 @@
 				A156907D29D2EE9E00EA3C56 /* Persistence.swift */,
 				A156907F29D2EE9E00EA3C56 /* camping.xcdatamodeld */,
 				A156907A29D2EE9E00EA3C56 /* Preview Content */,
-				66133D9A29DE1FC500FE61AE /* OnBoardView.swift */,
 			);
 			path = camping;
 			sourceTree = "<group>";
