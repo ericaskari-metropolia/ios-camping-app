@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-//The logic not yet added
+//The logic for home navigation not yet added
 
+//Model for the OnBoard items
 struct OnBoardItem {
     let image: String
     let title: String
@@ -16,6 +17,7 @@ struct OnBoardItem {
 }
 
 
+//An array containing the contents of onboarditems
 private let onBoardItems = [
     OnBoardItem(image:"promo6", title:"Come and explore", description: "Escape to the great outdoors with us"),
     OnBoardItem(image: "promo5", title: "Adventure of lifetime", description: "Experience nature like never before"),
@@ -23,12 +25,17 @@ private let onBoardItems = [
 ]
 
 struct OnBoardView: View {
+    
+    //Initial state of the page
     @State private var currentStep = 0
     
     init() {
+        
+//Sets the global appearance of UIScroll view not to bounce at the end
         UIScrollView.appearance().bounces = false
     }
     
+    //UI logic for the onboard screen
     var body: some View {
         ZStack{
             Image(onBoardItems[currentStep].image)
@@ -39,14 +46,24 @@ struct OnBoardView: View {
             VStack{
                 HStack{
                     Spacer()
+                    if currentStep > 0 {
+                        Image(systemName: "chevron.left")
+                            .onTapGesture {
+                                currentStep -= 1
+                            }
+                    }
                     Spacer()
                     Image(systemName: "tent")
                     Text("Camplify")
                         .font(.title)
                         .fontWeight(.bold)
                 Spacer()
-                    Image(systemName: "chevron.right")
-                     
+                    if currentStep < 2 {
+                        Image(systemName: "chevron.right")
+                            .onTapGesture {
+                                currentStep += 1
+                            }
+                    }
                  Spacer()
                 } .padding()
                 
