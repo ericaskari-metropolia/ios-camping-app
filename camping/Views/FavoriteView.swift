@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Favorite: View {
+struct FavoriteView: View {
     var body: some View {
         ZStack{
             Color.blue
@@ -16,8 +16,8 @@ struct Favorite: View {
     }
 }
 
-struct Favorite_Previews: PreviewProvider {
+struct FavoriteView_Previews: PreviewProvider {
     static var previews: some View {
-        Favorite()
+        FavoriteView()
     }
 }

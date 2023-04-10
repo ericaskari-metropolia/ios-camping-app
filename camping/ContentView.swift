@@ -6,44 +6,12 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
-    
-
     var body: some View {
-        TabView{
-            Home()
-                .tabItem(){
-                    Image(systemName: "globe")
-                    Text("Discovery")
-                }
-            AddPlan()
-                .tabItem(){
-                    Image(systemName: "plus")
-                    Text("Add plan")
-                }
-
-            Favorite()
-                .tabItem(){
-                    Image(systemName: "heart")
-                    Text("Saved locations")
-                }
-
-            Trips()
-                .tabItem(){
-                    Image(systemName: "road.lanes")
-                    Text("Trips")
-                }
-
-        }
-        
+        PermissionView()
     }
-
-    
 }
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
