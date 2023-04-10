@@ -16,9 +16,6 @@
 		2787CFDE29DAFDF6000B4865 /* Trips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFDD29DAFDF6000B4865 /* Trips.swift */; };
 		2787CFDF29DAFDF6000B4865 /* Trips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFDD29DAFDF6000B4865 /* Trips.swift */; };
 		2787CFE029DAFDF6000B4865 /* Trips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFDD29DAFDF6000B4865 /* Trips.swift */; };
-		2787CFE229DAFE16000B4865 /* AddPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlan.swift */; };
-		2787CFE329DAFE16000B4865 /* AddPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlan.swift */; };
-		2787CFE429DAFE16000B4865 /* AddPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlan.swift */; };
 		A156907529D2EE9D00EA3C56 /* campingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907429D2EE9D00EA3C56 /* campingApp.swift */; };
 		A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907629D2EE9D00EA3C56 /* ContentView.swift */; };
 		A156907929D2EE9E00EA3C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A156907829D2EE9E00EA3C56 /* Assets.xcassets */; };
@@ -28,6 +25,7 @@
 		A156908B29D2EE9E00EA3C56 /* campingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156908A29D2EE9E00EA3C56 /* campingTests.swift */; };
 		A156909529D2EE9F00EA3C56 /* campingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156909429D2EE9F00EA3C56 /* campingUITests.swift */; };
 		A156909729D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156909629D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift */; };
+		A1A67C3229DAEC37002A566B /* AddPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A67C3129DAEC37002A566B /* AddPlan.swift */; };
 		B309AFCE29DDC27500C44BC4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */; };
 		B309AFD129DDC29F00C44BC4 /* UserLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD029DDC29F00C44BC4 /* UserLocationModel.swift */; };
 		B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD329DDC30A00C44BC4 /* Service.swift */; };
@@ -54,7 +52,6 @@
 		2787CFD529DAFDD1000B4865 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2787CFD929DAFDE7000B4865 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		2787CFDD29DAFDF6000B4865 /* Trips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trips.swift; sourceTree = "<group>"; };
-		2787CFE129DAFE16000B4865 /* AddPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlan.swift; sourceTree = "<group>"; };
 		A156907129D2EE9D00EA3C56 /* camping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = camping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A156907429D2EE9D00EA3C56 /* campingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campingApp.swift; sourceTree = "<group>"; };
 		A156907629D2EE9D00EA3C56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +64,7 @@
 		A156909029D2EE9F00EA3C56 /* campingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = campingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A156909429D2EE9F00EA3C56 /* campingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campingUITests.swift; sourceTree = "<group>"; };
 		A156909629D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A1A67C3129DAEC37002A566B /* AddPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlan.swift; sourceTree = "<group>"; };
 		B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B309AFD029DDC29F00C44BC4 /* UserLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationModel.swift; sourceTree = "<group>"; };
 		B309AFD329DDC30A00C44BC4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -101,10 +99,10 @@
 		2787CFD429DAFD7C000B4865 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1A67C3129DAEC37002A566B /* AddPlan.swift */,
 				2787CFD529DAFDD1000B4865 /* Home.swift */,
 				2787CFD929DAFDE7000B4865 /* Favorite.swift */,
 				2787CFDD29DAFDF6000B4865 /* Trips.swift */,
-				2787CFE129DAFE16000B4865 /* AddPlan.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,12 +325,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A156907E29D2EE9E00EA3C56 /* Persistence.swift in Sources */,
+				A1A67C3229DAEC37002A566B /* AddPlan.swift in Sources */,
 				B309AFD129DDC29F00C44BC4 /* UserLocationModel.swift in Sources */,
 				B309AFCE29DDC27500C44BC4 /* HomeViewModel.swift in Sources */,
 				A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */,
 				2787CFD629DAFDD1000B4865 /* Home.swift in Sources */,
 				2787CFDA29DAFDE7000B4865 /* Favorite.swift in Sources */,
-				2787CFE229DAFE16000B4865 /* AddPlan.swift in Sources */,
 				A156907529D2EE9D00EA3C56 /* campingApp.swift in Sources */,
 				B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */,
 				A156908129D2EE9E00EA3C56 /* camping.xcdatamodeld in Sources */,
@@ -346,7 +344,6 @@
 			files = (
 				2787CFDF29DAFDF6000B4865 /* Trips.swift in Sources */,
 				2787CFDB29DAFDE7000B4865 /* Favorite.swift in Sources */,
-				2787CFE329DAFE16000B4865 /* AddPlan.swift in Sources */,
 				2787CFD729DAFDD1000B4865 /* Home.swift in Sources */,
 				A156908B29D2EE9E00EA3C56 /* campingTests.swift in Sources */,
 			);
@@ -358,7 +355,6 @@
 			files = (
 				2787CFE029DAFDF6000B4865 /* Trips.swift in Sources */,
 				A156909729D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift in Sources */,
-				2787CFE429DAFE16000B4865 /* AddPlan.swift in Sources */,
 				2787CFDC29DAFDE7000B4865 /* Favorite.swift in Sources */,
 				2787CFD829DAFDD1000B4865 /* Home.swift in Sources */,
 				A156909529D2EE9F00EA3C56 /* campingUITests.swift in Sources */,
