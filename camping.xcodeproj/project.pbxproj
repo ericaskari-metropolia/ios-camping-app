@@ -53,6 +53,8 @@
 		B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD329DDC30A00C44BC4 /* Service.swift */; };
 		B3D6C9D929E4448D00232B53 /* CampingSite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3D6C9D729E4448D00232B53 /* CampingSite.xcdatamodeld */; };
 		B3D6C9DB29E445E600232B53 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6C9DA29E445E600232B53 /* PersistenceController.swift */; };
+		B3DD53A229E4710500EC7620 /* AddPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD53A129E4710500EC7620 /* AddPlanViewModel.swift */; };
+		B3DD53A429E471C800EC7620 /* AddPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD53A329E471C800EC7620 /* AddPlanModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		B397B80B29DC4C6700F37807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3D6C9D829E4448D00232B53 /* CampingSite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CampingSite.xcdatamodel; sourceTree = "<group>"; };
 		B3D6C9DA29E445E600232B53 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		B3DD53A129E4710500EC7620 /* AddPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewModel.swift; sourceTree = "<group>"; };
+		B3DD53A329E471C800EC7620 /* AddPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,7 @@
 			children = (
 				B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */,
 				B305CD9229E44177007781DB /* LocationViewModel.swift */,
+				B3DD53A129E4710500EC7620 /* AddPlanViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			children = (
 				B309AFD029DDC29F00C44BC4 /* CampingSiteData.swift */,
 				272239F229DEDC070015B291 /* CategoryModel.swift */,
+				B3DD53A329E471C800EC7620 /* AddPlanModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,12 +415,15 @@
 				A156907E29D2EE9E00EA3C56 /* Persistence.swift in Sources */,
 				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
 				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
+				B3DD53A429E471C800EC7620 /* AddPlanModel.swift in Sources */,
 				27223A0F29E41CDE0015B291 /* Constant.swift in Sources */,
+				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
 				B309AFCE29DDC27500C44BC4 /* HomeViewModel.swift in Sources */,
 				B305CD9529E441F0007781DB /* PermissionView.swift in Sources */,
 				B3D6C9D929E4448D00232B53 /* CampingSite.xcdatamodeld in Sources */,
 				B305CD9729E4420A007781DB /* NavigationTabView.swift in Sources */,
 				66133D9B29DE1FC500FE61AE /* OnBoardView.swift in Sources */,
+				B3DD53A229E4710500EC7620 /* AddPlanViewModel.swift in Sources */,
 				A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */,
 				2787CFD629DAFDD1000B4865 /* HomeView.swift in Sources */,
 				2787CFDA29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
