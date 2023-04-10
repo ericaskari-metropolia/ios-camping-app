@@ -133,16 +133,13 @@ struct ChooseLocationModalView: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-//            Map(
-//                coordinateRegion: $viewModel.region,
-//                showsUserLocation: true,
-//                annotationItems: [],
-//                annotationContent: { Identifiable in
-//
-//                }
-//            )
-//            .ignoresSafeArea()
-//            .tint(.pink)
+            Map(
+                coordinateRegion: $viewModel.region,
+                showsUserLocation: true
+             
+            )
+            .ignoresSafeArea()
+            .tint(.pink)
 
             VStack {
                 LocationButton(.currentLocation) {
