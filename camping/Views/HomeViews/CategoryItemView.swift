@@ -7,35 +7,37 @@
 
 import SwiftUI
 
-let category: Category
 
 struct CategoryItemView: View {
-    let categories: Category
+    // PROPERTY
+    let category: Category
+    // BODY
     var body: some View {
         ZStack {
             VStack{
                 // CATEGORY: IMAGE
-                Image(categories.image)
+                Image(category.image)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 250, alignment: .center)
-                
+                    .frame(width: 250,height: 200, alignment: .center)
             }
+            .frame(width: 250,height: 200, alignment: .center)
             // CATEGORY: TITLE
-            Text(categories.title)
+            Text(category.title)
                 .foregroundColor(.white)
                 .font(.system(.title3))
                 .fontWeight(.bold)
                 .offset(y: 50)
                 
         }
-        .cornerRadius(30)
-        
     }
 }
 
-struct CategoryCardView_Previews: PreviewProvider {
+// PREVIEW
+struct CategoryItemView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryCardView(category: category[0])
+        CategoryItemView(category: categories[0])
+            .previewLayout(.sizeThatFits)
+            .padding()
     }
 }

@@ -7,14 +7,31 @@
 
 import SwiftUI
 
+// MARK: - CAMPSITE LIST BASED ON CATEGORY
+
 struct CategoryListView: View {
+    
+    @State var category: Category
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.vertical, showsIndicators: false){
+            VStack(alignment: .leading, spacing: 25){
+                //IMAGE
+                Image(category.image)
+                    .resizable()
+                    .edgesIgnoringSafeArea(.top)
+                    .frame(width: .infinity, height: .infinity, alignment: .top)
+                    .edgesIgnoringSafeArea(.all)
+                    
+            }
+            //Title
+            .navigationTitle(category.title)
+        }
     }
 }
 
 struct CategoryListView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryListView()
+        CategoryListView(category: categories[0])
     }
 }

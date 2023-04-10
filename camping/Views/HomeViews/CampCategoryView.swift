@@ -7,20 +7,29 @@
 
 import SwiftUI
 
+// MARK: - CAMPSITE CATEGORIES VIEW
+
 struct CampCategoryView: View {
-    
-    let campCategories = categories
-    
+        
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false){
-            HStack{
-                
-            }
+        NavigationView{
+            ScrollView(.horizontal, showsIndicators: false){
+                    HStack(alignment: .center, spacing: columnSpacing){
+                        ForEach(categories){category in
+                            NavigationLink(destination: CategoryListView(category:category)){
+                                CategoryItemView(category: category)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                    }
+                }
+        
         }
+        .navigationBarTitle(Text("Categories"))
     }
 }
 
-struct CategoriesView_Previews: PreviewProvider {
+struct CampCategoryView_Previews: PreviewProvider {
     static var previews: some View {
         CampCategoryView()
     }

@@ -11,10 +11,10 @@ import MapKit
 struct Home: View {
     
     var body: some View {
-        VStack{
-            Color.white
-            Text("Homepage")
+        VStack(alignment: .leading, spacing: 10){
+            CampCategoryView()
         }
+        .padding()
     }
 }
 
