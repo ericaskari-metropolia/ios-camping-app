@@ -9,10 +9,7 @@ import SwiftUI
 
 struct TripsView: View {
     var body: some View {
-        ZStack {
-            Color.brown
-            Text("Welcome to trips!")
-        }
+        MyTripsEmptyView()
         
     }
 }
