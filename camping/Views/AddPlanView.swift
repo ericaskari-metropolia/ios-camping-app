@@ -49,128 +49,135 @@ struct AddPlanView: View {
                 .padding(.bottom, 30)
             }.ignoresSafeArea()
 
-            VStack(alignment: .leading) {
-                Text("Start location")
-                Button(
-                    action: {
-                        self.isStartLocationModalOpen.toggle()
-                    }, label: {
-                        HStack {
-                            Image(systemName: "location")
-                            Text("Start location")
-                            Spacer()
+            VStack{
+                VStack(alignment: .leading) {
+                    Text("Start location")
+                    Button(
+                        action: {
+                            self.isStartLocationModalOpen.toggle()
+                        }, label: {
+                            HStack {
+                                Image(systemName: "location")
+                                Text("Start location")
+                                Spacer()
+                            }.padding(.vertical)
                         }
-                    }
-                )
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .contentShape(Rectangle())
-                .cornerRadius(10)
-                .sheet(isPresented: $isStartLocationModalOpen) {
-                    ChooseLocationModalView(
-                        isPresented: self.$isStartLocationModalOpen
-                    ) {
-                        coordinates in
-
-                        print(coordinates)
-                    }
-                }.padding(.bottom)
-
-                Text("Destination location")
-                Button(
-                    action: {
-                        self.isDestinationLocationModalOpen.toggle()
-                    }, label: {
-                        HStack {
-                            Image(systemName: "location")
-                            Text("Destination location")
-                            Spacer()
-                        }
-                    }
-                )
-                
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .contentShape(Rectangle())
-                .cornerRadius(10)
-                .sheet(isPresented: $isDestinationLocationModalOpen) {
-                    ChooseLocationModalView(
-                        isPresented: self.$isDestinationLocationModalOpen
-                    ) {
-                        coordinates in
-
-                        print(coordinates)
-                    }
-                }.padding(.bottom)
-
-                Text("Start Date")
-                Button(
-                    action: {
-                        self.isStartDatePickerVisible.toggle()
-                    }, label: {
-                        HStack {
-                            Image(systemName: "location")
-                            Text("Destination location")
-                            Spacer()
-                        }
-                    }
-                )
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .contentShape(Rectangle())
-                .cornerRadius(10)
-                .padding(.bottom)
-
-                if isStartDatePickerVisible {
-                    DatePicker(
-                        "",
-                        selection: $startDate,
-                        displayedComponents: .date
                     )
-                    .labelsHidden()
-                    .datePickerStyle(.graphical)
+                    .buttonStyle(.bordered)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .contentShape(Rectangle())
+                    .cornerRadius(10)
+                    .sheet(isPresented: $isStartLocationModalOpen) {
+                        ChooseLocationModalView(
+                            isPresented: self.$isStartLocationModalOpen
+                        ) {
+                            coordinates in
+
+                            print(coordinates)
+                        }
+                    }.padding(.bottom)
+
+                    Text("Destination location")
+                    Button(
+                        action: {
+                            self.isDestinationLocationModalOpen.toggle()
+                        }, label: {
+                            HStack {
+                                Image(systemName: "location")
+                                Text("Destination location")
+                                Spacer()
+                            }.padding(.vertical)
+                        }
+                    )
+                    .buttonStyle(.bordered)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .contentShape(Rectangle())
+                    .cornerRadius(10)
+                    .sheet(isPresented: $isDestinationLocationModalOpen) {
+                        ChooseLocationModalView(
+                            isPresented: self.$isDestinationLocationModalOpen
+                        ) {
+                            coordinates in
+
+                            print(coordinates)
+                        }
+                    }.padding(.bottom)
+
+                    Text("Start Date")
+                    Button(
+                        action: {
+                            self.isStartDatePickerVisible.toggle()
+                        }, label: {
+                            HStack {
+                                Image(systemName: "location")
+                                Text("Destination location")
+                                Spacer()
+                            }.padding(.vertical)
+                        }
+                    )
+                    .buttonStyle(.bordered)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .contentShape(Rectangle())
+                    .cornerRadius(10)
+                    .padding(.bottom)
+
+                    if isStartDatePickerVisible {
+                        DatePicker(
+                            "",
+                            selection: $startDate,
+                            displayedComponents: .date
+                        )
+                        .labelsHidden()
+                        .datePickerStyle(.graphical)
+                    }
+
+                    Text("End Date")
+                    Button(
+                        action: {
+                            self.isEndDatePickerVisible.toggle()
+                        }, label: {
+                            HStack {
+                                Image(systemName: "location")
+                                Text("Destination location")
+                                Spacer()
+                            }.padding(.vertical)
+                        }
+                    )
+                    .buttonStyle(.bordered)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .contentShape(Rectangle())
+                    .cornerRadius(10)
+                    .padding(.bottom)
+                    if isEndDatePickerVisible {
+                        DatePicker(
+                            "",
+                            selection: $endDate,
+                            displayedComponents: .date
+                        )
+                        .labelsHidden()
+                        .datePickerStyle(.graphical)
+                    }
+                    // Extra arguments in call =  Maximum number of views in this VStack
                 }
 
-                Text("End Date")
-                Button(
-                    action: {
-                        self.isEndDatePickerVisible.toggle()
-                    }, label: {
-                        HStack {
-                            Image(systemName: "location")
-                            Text("Destination location")
-                            Spacer()
-                        }
+                NavigationLink(
+                    destination: AddPlantSecondStepView(input: value()),
+                    label: {
+                        Text("Choose Location")
                     }
                 )
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .contentShape(Rectangle())
-                .cornerRadius(10)
-                .padding(.bottom)
+                .bold()
+                .frame(width: 280, height: 50)
+                .background(Color.black)
+                .foregroundColor(.white)
+                .cornerRadius(50)
 
-                if isEndDatePickerVisible {
-                    DatePicker(
-                        "",
-                        selection: $endDate,
-                        displayedComponents: .date
-                    )
-                    .labelsHidden()
-                    .datePickerStyle(.graphical)
-                }
             }.padding(.horizontal)
 
-            NavigationLink(
-                destination: AddPlantSecondStepView(input: value()),
-                label: {
-                    Text("Choose Location")
-                }
-            )
-            .bold()
-            .frame(width: 280, height: 50)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
         }.ignoresSafeArea()
     }
 
