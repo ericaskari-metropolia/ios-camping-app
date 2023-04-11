@@ -14,7 +14,8 @@ struct PastTripCard: View {
                 Image("promo6")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 200,height: 200)
+                    .frame(width: 200,height: 120)
+                    .frame(maxWidth: (UIScreen.main.bounds.width - 100) / 2)
                     .cornerRadius(15)
             }
             VStack{
