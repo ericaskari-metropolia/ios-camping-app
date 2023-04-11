@@ -13,26 +13,58 @@ import SwiftUI
 struct AddPlanView: View {
     @State private var isStartLocationModalOpen = false
     @State private var isDestinationLocationModalOpen = false
+    @State private var isStartDatePickerVisible = false
+    @State private var isEndDatePickerVisible = false
     @State var startLocationText: String = ""
     @State var destinationLocationText: String = ""
     @State private var startDate = Date()
     @State private var endDate = Date()
     @StateObject private var viewModel = AddPlanViewModel()
+    @State var username: String = ""
+    @State private var selectedDate = Date()
+    @State private var showDatePicker = false
 
     var body: some View {
-        VStack {
-            VStack {
+        ScrollView {
+            ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
+                Image("header")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: 400, maxHeight: 350)
+                    .clipped()
+
+                VStack {
+                    Text("My trips")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+
+                    // The location Espoo is hardcoded, need to be changed
+                    Label("You are in Espoo", systemImage: "globe.europe.africa")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding(.bottom, 5)
+                }
+                .padding()
+                .padding(.bottom, 30)
+            }.ignoresSafeArea()
+
+            VStack(alignment: .leading) {
+                Text("Start location")
                 Button(
                     action: {
                         self.isStartLocationModalOpen.toggle()
                     }, label: {
-                        Text("Start location")
+                        HStack {
+                            Image(systemName: "location")
+                            Text("Start location")
+                            Spacer()
+                        }
                     }
                 )
-                .bold()
-                .frame(width: 280, height: 50)
-                .background(Color.blue)
-                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .frame(height: 50)
+                .contentShape(Rectangle())
                 .cornerRadius(10)
                 .sheet(isPresented: $isStartLocationModalOpen) {
                     ChooseLocationModalView(
@@ -42,19 +74,24 @@ struct AddPlanView: View {
 
                         print(coordinates)
                     }
-                }
+                }.padding(.bottom)
 
+                Text("Destination location")
                 Button(
                     action: {
                         self.isDestinationLocationModalOpen.toggle()
                     }, label: {
-                        Text("Destination location")
+                        HStack {
+                            Image(systemName: "location")
+                            Text("Destination location")
+                            Spacer()
+                        }
                     }
                 )
-                .bold()
-                .frame(width: 280, height: 50)
-                .background(Color.blue)
-                .foregroundColor(.white)
+                
+                .frame(maxWidth: .infinity)
+                .frame(height: 50)
+                .contentShape(Rectangle())
                 .cornerRadius(10)
                 .sheet(isPresented: $isDestinationLocationModalOpen) {
                     ChooseLocationModalView(
@@ -64,35 +101,77 @@ struct AddPlanView: View {
 
                         print(coordinates)
                     }
-                }
+                }.padding(.bottom)
 
-                DatePicker(
-                    "Start Date",
-                    selection: $startDate,
-                    displayedComponents: [.date]
-                )
-                .padding()
-
-                DatePicker(
-                    "End Date",
-                    selection: $endDate,
-                    displayedComponents: [.date]
-                )
-                .padding()
-
-                NavigationLink(
-                    destination: AddPlantSecondStepView(input: value()),
-                    label: {
-                        Text("Choose Location")
+                Text("Start Date")
+                Button(
+                    action: {
+                        self.isStartDatePickerVisible.toggle()
+                    }, label: {
+                        HStack {
+                            Image(systemName: "location")
+                            Text("Destination location")
+                            Spacer()
+                        }
                     }
                 )
-                .bold()
-                .frame(width: 280, height: 50)
-                .background(Color.blue)
-                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .frame(height: 50)
+                .contentShape(Rectangle())
                 .cornerRadius(10)
-            }
-        }
+                .padding(.bottom)
+
+                if isStartDatePickerVisible {
+                    DatePicker(
+                        "",
+                        selection: $startDate,
+                        displayedComponents: .date
+                    )
+                    .labelsHidden()
+                    .datePickerStyle(.graphical)
+                }
+
+                Text("End Date")
+                Button(
+                    action: {
+                        self.isEndDatePickerVisible.toggle()
+                    }, label: {
+                        HStack {
+                            Image(systemName: "location")
+                            Text("Destination location")
+                            Spacer()
+                        }
+                    }
+                )
+                .frame(maxWidth: .infinity)
+                .frame(height: 50)
+                .contentShape(Rectangle())
+                .cornerRadius(10)
+                .padding(.bottom)
+
+                if isEndDatePickerVisible {
+                    DatePicker(
+                        "",
+                        selection: $endDate,
+                        displayedComponents: .date
+                    )
+                    .labelsHidden()
+                    .datePickerStyle(.graphical)
+                }
+            }.padding(.horizontal)
+
+            NavigationLink(
+                destination: AddPlantSecondStepView(input: value()),
+                label: {
+                    Text("Choose Location")
+                }
+            )
+            .bold()
+            .frame(width: 280, height: 50)
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+        }.ignoresSafeArea()
     }
 
     func value() -> AddPlantFirstStepViewOutput {
@@ -116,7 +195,6 @@ struct ChooseLocationModalView: View {
             Map(
                 coordinateRegion: $viewModel.region,
                 showsUserLocation: true
-             
             )
             .ignoresSafeArea()
             .tint(.pink)
