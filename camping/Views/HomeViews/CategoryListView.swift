@@ -22,7 +22,7 @@ struct CategoryListView: View {
                     .edgesIgnoringSafeArea(.top)
                     .frame(width: .infinity, height: .infinity, alignment: .top)
                     .edgesIgnoringSafeArea(.all)
-                    
+                
             }
             //Title
             .navigationTitle(category.title)
