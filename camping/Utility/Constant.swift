@@ -13,8 +13,8 @@ let categories: [Category] = Bundle.main.decode("category.json")
 
 // LAYOUT
 
-let columnSpacing: CGFloat = 20
-let rowSpacing: CGFloat = 20
+let spacing: CGFloat = 20
+
 
 
 // COLOR
