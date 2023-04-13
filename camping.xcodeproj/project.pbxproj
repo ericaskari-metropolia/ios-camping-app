@@ -39,6 +39,7 @@
 		66E4E1C829E49AA200A87706 /* MyTripsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4E1C729E49AA200A87706 /* MyTripsEmptyView.swift */; };
 		66E4E1CB29E543A200A87706 /* OngoingTripCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4E1CA29E543A200A87706 /* OngoingTripCard.swift */; };
 		66E4E1CD29E54B0800A87706 /* PastTripCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4E1CC29E54B0800A87706 /* PastTripCard.swift */; };
+		A106FEE729E82A78005671D6 /* AddPlanChooseLocationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106FEE629E82A78005671D6 /* AddPlanChooseLocationModalView.swift */; };
 		A156907529D2EE9D00EA3C56 /* CampingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907429D2EE9D00EA3C56 /* CampingApp.swift */; };
 		A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907629D2EE9D00EA3C56 /* ContentView.swift */; };
 		A156907929D2EE9E00EA3C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A156907829D2EE9E00EA3C56 /* Assets.xcassets */; };
@@ -57,7 +58,7 @@
 		B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD329DDC30A00C44BC4 /* Service.swift */; };
 		B3D6C9D929E4448D00232B53 /* CampingSite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3D6C9D729E4448D00232B53 /* CampingSite.xcdatamodeld */; };
 		B3D6C9DB29E445E600232B53 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6C9DA29E445E600232B53 /* PersistenceController.swift */; };
-		B3DD53A229E4710500EC7620 /* AddPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD53A129E4710500EC7620 /* AddPlanViewModel.swift */; };
+		B3DD53A229E4710500EC7620 /* PlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD53A129E4710500EC7620 /* PlanViewModel.swift */; };
 		B3DD53A429E471C800EC7620 /* AddPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD53A329E471C800EC7620 /* AddPlanModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		66E4E1C729E49AA200A87706 /* MyTripsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsEmptyView.swift; sourceTree = "<group>"; };
 		66E4E1CA29E543A200A87706 /* OngoingTripCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingTripCard.swift; sourceTree = "<group>"; };
 		66E4E1CC29E54B0800A87706 /* PastTripCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripCard.swift; sourceTree = "<group>"; };
+		A106FEE629E82A78005671D6 /* AddPlanChooseLocationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanChooseLocationModalView.swift; sourceTree = "<group>"; };
 		A156907129D2EE9D00EA3C56 /* camping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = camping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A156907429D2EE9D00EA3C56 /* CampingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingApp.swift; sourceTree = "<group>"; };
 		A156907629D2EE9D00EA3C56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,7 +117,7 @@
 		B397B80B29DC4C6700F37807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3D6C9D829E4448D00232B53 /* CampingSite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CampingSite.xcdatamodel; sourceTree = "<group>"; };
 		B3D6C9DA29E445E600232B53 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		B3DD53A129E4710500EC7620 /* AddPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewModel.swift; sourceTree = "<group>"; };
+		B3DD53A129E4710500EC7620 /* PlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewModel.swift; sourceTree = "<group>"; };
 		B3DD53A329E471C800EC7620 /* AddPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +180,7 @@
 				2787CFD929DAFDE7000B4865 /* FavoriteView.swift */,
 				2787CFDD29DAFDF6000B4865 /* TripsView.swift */,
 				2787CFE129DAFE16000B4865 /* AddPlanView.swift */,
+				A106FEE629E82A78005671D6 /* AddPlanChooseLocationModalView.swift */,
 				B305CD9429E441F0007781DB /* PermissionView.swift */,
 				B305CD9629E4420A007781DB /* NavigationTabView.swift */,
 				2787CFD529DAFDD1000B4865 /* HomeView.swift */,
@@ -268,7 +271,7 @@
 			children = (
 				B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */,
 				B305CD9229E44177007781DB /* LocationViewModel.swift */,
-				B3DD53A129E4710500EC7620 /* AddPlanViewModel.swift */,
+				B3DD53A129E4710500EC7620 /* PlanViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
 				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
 				66E4E1CD29E54B0800A87706 /* PastTripCard.swift in Sources */,
+				A106FEE729E82A78005671D6 /* AddPlanChooseLocationModalView.swift in Sources */,
 				B3DD53A429E471C800EC7620 /* AddPlanModel.swift in Sources */,
 				27223A0F29E41CDE0015B291 /* Constant.swift in Sources */,
 				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
@@ -444,7 +448,7 @@
 				B3D6C9D929E4448D00232B53 /* CampingSite.xcdatamodeld in Sources */,
 				B305CD9729E4420A007781DB /* NavigationTabView.swift in Sources */,
 				66133D9B29DE1FC500FE61AE /* OnBoardView.swift in Sources */,
-				B3DD53A229E4710500EC7620 /* AddPlanViewModel.swift in Sources */,
+				B3DD53A229E4710500EC7620 /* PlanViewModel.swift in Sources */,
 				A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */,
 				2787CFD629DAFDD1000B4865 /* HomeView.swift in Sources */,
 				66E4E1C829E49AA200A87706 /* MyTripsEmptyView.swift in Sources */,

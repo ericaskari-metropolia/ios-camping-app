@@ -11,6 +11,11 @@ import MapKit
 import SwiftUI
 
 struct AddPlanView: View {
+    
+    //  To Access Plans and save them
+    @StateObject private var viewModel = PlanViewModel()
+    //  To Access Campsites to show on map
+    @StateObject private var locationViewModel = LocationViewModel()
     @State private var isStartLocationModalOpen = false
     @State private var isDestinationLocationModalOpen = false
     @State private var isStartDatePickerVisible = false
@@ -20,8 +25,11 @@ struct AddPlanView: View {
     @State private var startDate: Date = .today
     @State private var endDate: Date = .tomorrow
     @State private var dateFormatter = formatter()
-    @StateObject private var viewModel = AddPlanViewModel()
+    @State private var annotations: [CampingSiteData] = []
 
+
+
+    
     var body: some View {
         ScrollView {
             ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
@@ -67,7 +75,7 @@ struct AddPlanView: View {
                     .contentShape(Rectangle())
                     .cornerRadius(10)
                     .sheet(isPresented: $isStartLocationModalOpen) {
-                        ChooseLocationModalView(
+                        AddPlanChooseLocationModalView(
                             isPresented: self.$isStartLocationModalOpen
                         ) {
                             coordinates in
@@ -94,7 +102,7 @@ struct AddPlanView: View {
                     .contentShape(Rectangle())
                     .cornerRadius(10)
                     .sheet(isPresented: $isDestinationLocationModalOpen) {
-                        ChooseLocationModalView(
+                        AddPlanChooseLocationModalView(
                             isPresented: self.$isDestinationLocationModalOpen
                         ) {
                             coordinates in
@@ -207,12 +215,11 @@ struct AddPlanView: View {
 
         }.ignoresSafeArea()
     }
-    
-    
+
     var isFormValid: Bool {
         return startDate.timeIntervalSince1970 <= endDate.timeIntervalSince1970
     }
-    
+
     var submitButtonBackground: Color {
         return isFormValid ? Color.black : Color.gray
     }
@@ -230,59 +237,6 @@ struct AddPlanView: View {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm E, d MMM y"
         return formatter
-    }
-}
-
-struct ChooseLocationModalView: View {
-    @StateObject private var viewModel = AddPlanViewModel()
-    @Binding var isPresented: Bool
-
-    var didChooseLocation: (CLLocationCoordinate2D) -> ()
-
-    var body: some View {
-        ZStack(alignment: .bottom) {
-            Map(
-                coordinateRegion: $viewModel.region,
-                showsUserLocation: true
-            )
-            .ignoresSafeArea()
-            .tint(.pink)
-
-            VStack {
-                LocationButton(.currentLocation) {
-                    viewModel.requestAllowOnceLocationPermission()
-                }
-                .foregroundColor(.white)
-                .cornerRadius(8)
-                .symbolVariant(.fill)
-                .labelStyle(.titleAndIcon)
-                .symbolVariant(.fill)
-                .tint(.pink)
-                .padding()
-
-                Button(
-                    action: {
-                        self.isPresented.toggle()
-                    }, label: {
-                        Text("Close")
-                    }
-                ).padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-
-                Button(
-                    action: {
-                        self.isPresented.toggle()
-                    }, label: {
-                        Text("Choose")
-                    }
-                ).padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
-        }
     }
 }
 
