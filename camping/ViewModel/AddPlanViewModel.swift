@@ -14,21 +14,21 @@ final class AddPlanViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         span: MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100)
     )
     let locationManager = CLLocationManager()
-
+    
     override init() {
         super.init()
         locationManager.delegate = self
     }
-
+    
     func requestAllowOnceLocationPermission() {
         locationManager.requestLocation()
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let latestLocation = locations.first else {
             return
         }
-
+        
         DispatchQueue.main.async {
             self.region = MKCoordinateRegion(
                 center: latestLocation.coordinate,
@@ -36,7 +36,7 @@ final class AddPlanViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
             )
         }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
     }

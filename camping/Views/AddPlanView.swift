@@ -18,7 +18,7 @@ struct AddPlanView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
     @StateObject private var viewModel = AddPlanViewModel()
-
+    
     var body: some View {
         VStack {
             VStack {
@@ -39,11 +39,11 @@ struct AddPlanView: View {
                         isPresented: self.$isStartLocationModalOpen
                     ) {
                         coordinates in
-
+                        
                         print(coordinates)
                     }
                 }
-
+                
                 Button(
                     action: {
                         self.isDestinationLocationModalOpen.toggle()
@@ -61,25 +61,25 @@ struct AddPlanView: View {
                         isPresented: self.$isDestinationLocationModalOpen
                     ) {
                         coordinates in
-
+                        
                         print(coordinates)
                     }
                 }
-
+                
                 DatePicker(
                     "Start Date",
                     selection: $startDate,
                     displayedComponents: [.date]
                 )
                 .padding()
-
+                
                 DatePicker(
                     "End Date",
                     selection: $endDate,
                     displayedComponents: [.date]
                 )
                 .padding()
-
+                
                 NavigationLink(
                     destination: AddPlantSecondStepView(input: value()),
                     label: {
@@ -94,7 +94,7 @@ struct AddPlanView: View {
             }
         }
     }
-
+    
     func value() -> AddPlantFirstStepViewOutput {
         return AddPlantFirstStepViewOutput(
             startLocationText: startLocationText,
@@ -108,19 +108,19 @@ struct AddPlanView: View {
 struct ChooseLocationModalView: View {
     @StateObject private var viewModel = AddPlanViewModel()
     @Binding var isPresented: Bool
-
+    
     var didChooseLocation: (CLLocationCoordinate2D) -> ()
-
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             Map(
                 coordinateRegion: $viewModel.region,
                 showsUserLocation: true
-             
+                
             )
             .ignoresSafeArea()
             .tint(.pink)
-
+            
             VStack {
                 LocationButton(.currentLocation) {
                     viewModel.requestAllowOnceLocationPermission()
@@ -132,7 +132,7 @@ struct ChooseLocationModalView: View {
                 .symbolVariant(.fill)
                 .tint(.pink)
                 .padding()
-
+                
                 Button(
                     action: {
                         self.isPresented.toggle()
@@ -143,7 +143,7 @@ struct ChooseLocationModalView: View {
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
-
+                
                 Button(
                     action: {
                         self.isPresented.toggle()
@@ -161,7 +161,7 @@ struct ChooseLocationModalView: View {
 
 struct AddPlantSecondStepView: View {
     var input: AddPlantFirstStepViewOutput
-
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
