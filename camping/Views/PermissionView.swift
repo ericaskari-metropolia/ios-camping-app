@@ -40,7 +40,7 @@ struct RequestLocationView: View {
             } label: {
                 Text("Allow permission")
             }
-
+            
         }
         .navigationBarBackButtonHidden(true)
     }

@@ -28,7 +28,7 @@ struct CategoryItemView: View {
                 .font(.system(.title3))
                 .fontWeight(.bold)
                 .offset(y: 50)
-                
+            
         }
     }
 }
