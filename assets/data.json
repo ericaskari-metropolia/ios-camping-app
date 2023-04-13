@@ -2,10 +2,6 @@
   {
     "id": "6b6e3a8a-35cf-442c-abda-298ccf08644d",
     "name": "Etelä-Konneveden kansallispuisto",
-    "location": [
-      62.5924528,
-      26.70897249999999
-    ],
     "imageUrl": "https://www.luontoon.fi/documents/10550/56970047/EtelaKonnevesi_lapinsalonluoto_talvi_JouniLehmonen_1050x590.jpg/bdad1cd7-c84b-516f-470f-b27ddd46aef6?t=1539077864166",
     "description": {
       "EN": "In Etelä-Konnevesi, you can boat on open lake beds or paddle in a maze of archipelagos in the shelter of flat silo rocks and vertical rock walls. In the clear water, you can see deep into the realm of wild lake trout. In the park of exciting contrasts, you hike from the groves to the high rocky slopes to admire the osprey's gallant home landscape.",
@@ -19,15 +15,13 @@
     "region": "Central Finland and North Savo",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 62.5924528,
+    "longitude": 26.70897249999999
   },
   {
     "id": "4d543c13-47bf-4c2d-9199-d936eae679aa",
     "name": "Helvetinjärven kansallispuisto",
-    "location": [
-      62.0234115,
-      23.8463498
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1652175902_helvetinjarvikpjormamurto17.jpg",
     "description": {
       "EN": "Come find out what caused natural forces to move the Earth's crust millions of years ago! As a result, the gorge valley of Helvetinjärvi and Helvetinkolu, a rock pass a couple of meters wide and 40 meters high, were born. You can ponder the geological riddle on the wonderful sandy beach of Haukanhieta.",
@@ -41,15 +35,13 @@
     "region": "Pirkanmaa",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 62.0234115,
+    "longitude": 23.8463498
   },
   {
     "id": "f2a80bc2-1ccf-47d5-9cf4-2f91c2ac898e",
     "name": "Hiidenportin kansallispuisto",
-    "location": [
-      63.87419740000001,
-      29.056237700000004
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542615915_kermankuorijathiidenportti2846.jpg",
     "description": {
       "EN": "The pristine gorge landscape of Hiidenportti, located in the heart of the Sotkamo region, is an impressive sight. The national park also offers destinations and stories for those interested in cultural history. Along the path leading to the steep rocky gorge, you can experience the atmosphere of a mysterious grove, a beautifully barren flower meadow and a kaski skin.",
@@ -63,15 +55,13 @@
     "region": "Kainuu",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 63.87419740000001,
+    "longitude": 29.056237700000004
   },
   {
     "id": "e554d569-d750-480e-bd87-0461ff548dbd",
     "name": "Hossan kansallispuisto",
-    "location": [
-      65.46764879999999,
-      29.518353700000002
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1652186821_julmaolkky3.jpg",
     "description": {
       "EN": "Hossa's landscapes open up easily to the visitor, its forests and waters are easily accessible. There are plenty of trails for hiking and cycling, the waters invite you to paddle and fish. Here you follow the same routes as the first inhabitants of the area 10,000 years ago. Värikallio's Stone Age rock paintings take you on a day trip to the world of shamanism on vacation.",
@@ -85,15 +75,13 @@
     "region": "Kainuu",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 65.46764879999999,
+    "longitude": 29.518353700000002
   },
   {
     "id": "93c98d9e-ef6f-4041-9c1c-3f96a33c9735",
     "name": "Isojärven kansallispuisto",
-    "location": [
-      61.690591,
-      25.0021541
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1654841401_isojarvi-mtb2.jpg",
     "description": {
       "EN": "Isojärvi's landscapes will take you on a time trip far into the past. The huts built in the recesses of the million-year-old gorge valleys and the bicycle paths smoothed by the hands of the lumberjacks whispered stories from the barren lands of half a century ago. Now that the lumberjacks have left, the park's hardest-working logger and most famous resident is the mysterious beaver. You may not see it, but you can't help but notice the traces.",
@@ -107,15 +95,13 @@
     "region": "Pirkanmaa",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 61.690591,
+    "longitude": 25.0021541
   },
   {
     "id": "360087ae-15ef-45da-aba5-1e0a99b3fd7c",
     "name": "Itäisen Suomenlahden kansallispuisto",
-    "location": [
-      60.347921,
-      27.4565509
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1652182021_itaisensuomenlahdenk20.jpg",
     "description": {
       "EN": "Here you can see the finest spring spectacles in Europe, when the migratory flocks of millions of arctic birds fly over the Eastern Gulf of Finland. Archipelago villages blossom in summer. True stories and legends about the region's military history, trade and smuggling will set the imagination in motion.",
@@ -129,15 +115,13 @@
     "region": "Kymenlaakso",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 60.347921,
+    "longitude": 27.4565509
   },
   {
     "id": "02f25d8b-e7f9-4b0c-9686-7b61efcb44d4",
     "name": "Kauhanevan-Pohjankankaan kansallispuisto",
-    "location": [
-      62.195845999999996,
-      22.4502732
-    ],
     "imageUrl": "https://www.luontoon.fi/documents/10550/56970263/Kauhanevaa_talvihamarassa_IsmoNousiainen_1050x590.jpg/607147a1-710e-1897-7771-706293226c35?t=1540452071876",
     "description": {
       "EN": "Kauhaneva-Pohjankankas National Park is a gem of the southern wetlands, a wilderness bird oasis along the medieval route. The Kyrönkangas road takes you through open pine forests to the banks of Kauhaneva. In the springtime, Kauhaneva's diverse and valuable birds give a multi-vocal concert. At other times, the untouched nature of the marsh invites you to enjoy silence and peace. \\n \\n Kauhaneva-Pohjankankas National Park is part of the Lauhanvuori-Hämeenkangas Geopark (lhgeopark.fi), which received status in the UNESCO network of unique geological sites in 2020.",
@@ -151,15 +135,13 @@
     "region": "Southern Ostrobothnia",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": false
+    "hasRentalHut": false,
+    "latitude": 62.195845999999996,
+    "longitude": 22.4502732
   },
   {
     "id": "ed3ff63f-77c8-4819-8d30-af2c52cfa3f9",
     "name": "Kolin kansallispuisto",
-    "location": [
-      63.096858,
-      29.80623139999999
-    ],
     "imageUrl": "https://www.luontoon.fi/documents/10550/60584804/KOLI_marraskuu_2109_TiinaMannisto_1050.jpg/0b6c5c99-187b-7737-194b-9131ff90e3dd?t=1668696121114",
     "description": {
       "EN": "Finland's most famous national landscape. Experience the magic of Koli, the spacious and wonderful landscape from the top of the steep cliffs. Look for peace of mind and soul in ancient forests and views over Lake Pielinen. The landscape, which inspired Jean Sibelius, Eero Järnefelt and Juhani Aho, among others, is still loved by nature walkers, hikers and artists.",
@@ -173,15 +155,13 @@
     "region": "North Karelia",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 63.096858,
+    "longitude": 29.80623139999999
   },
   {
     "id": "e518e7d8-b21d-47c0-94ed-7edf5c1c5be7",
     "name": "Koloveden kansallispuisto",
-    "location": [
-      62.26577450000001,
-      28.7873719
-    ],
     "imageUrl": "https://www.luontoon.fi/documents/10550/56971486/Kolovesi_Kaunis_paiva_SaaraLavi_Metsahallitus_1050.jpg/a81a2e2e-4b0c-0820-7b2f-d5d3f80d9584?t=1624342758247",
     "description": {
       "EN": "In Kolovesi National Park, the water carries the paddler into the arms of the rocky cliffs, over the depths of Saimaa. The rock paintings tell about the millennial coexistence of nature and man, and amidst the silence you feel a connection to ancient times. If luck is on your way, a curious Saimaa grouse might come to greet you.",
@@ -195,15 +175,13 @@
     "region": "Southern Savonia",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 62.26577450000001,
+    "longitude": 28.7873719
   },
   {
     "id": "8b2d1d09-1bd0-47d5-b07a-785164104056",
     "name": "Kurjenrahkan kansallispuisto",
-    "location": [
-      60.7399567,
-      22.4130304
-    ],
     "imageUrl": "https://www.luontoon.fi/documents/10550/56971766/Kurjenrahka_talvi_tahtitaivas_JarnoMaenpaa_1050x590.jpg/b955cc47-a4f1-86dc-0df5-18c45f06b755?t=1677155371364",
     "description": {
       "EN": "Leave the hustle and bustle of the cultural city of Turku for a few hours' day trip or a night trip to the nature of Kurjenrahka. Kurjenrahka is, as the name suggests, the home of cranes, but here you can also experience the springtime frenzy of owls. In good snowy winters, the ski trail takes you to the middle of the peaceful nature of the marsh.",
@@ -217,15 +195,13 @@
     "region": "Southwest Finland",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 60.7399567,
+    "longitude": 22.4130304
   },
   {
     "id": "48f7ad49-375e-469e-aaa5-782a2365204c",
     "name": "Lauhanvuoren kansallispuisto",
-    "location": [
-      62.15211569999999,
-      22.1751258
-    ],
     "imageUrl": "https://www.luontoon.fi/documents/10550/56971821/lauhanvuori_hero_talvinuotio_ismo_nousiainen_taikapolku_1050.jpg/e8cdc43c-d14e-d840-b8a4-0b3f6cdcfbff?t=1644993745851",
     "description": {
       "EN": "From the top of Lauhanvuori, a stunning landscape opens up to the forests and sea of lowland Ostrobothnia. You travel back in time at the same time. The wide pine forests of the mountain slopes and the lush groves of the ceiling hide the traces of the ice age, vast fields of heather and ancient shore ramparts. Come in winter too: the tracks are kept in good condition. \\n\\n Lauhanvuori National Park is part of Lauhanvuori-Hämeenkangas Geopark (lhgeopark.fi), which received status in UNESCO's network of unique geological sites in 2020. The area also includes Kauhaneva-Pohjankangas National Park and Hämeenkangas multi-use area.",
@@ -239,15 +215,13 @@
     "region": "Southern Ostrobothnia",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 62.15211569999999,
+    "longitude": 22.1751258
   },
   {
     "id": "4cea3216-c826-41a1-8b53-d5a494b12f41",
     "name": "Leivonmäen kansallispuisto",
-    "location": [
-      61.934819,
-      25.9798101
-    ],
     "imageUrl": "https://www.luontoon.fi/documents/10550/55540151/Leivonmaki_Retkeilijat_talvisessa_metsassa_Ulla_Keituri_1050.jpg/36a58ae9-34a9-25c2-a17a-0f5ec35575bf?t=1667908444758",
     "description": {
       "EN": "Leivonmäki's forests, lakes and marshes can be explored on family-friendly paths, including enticing duckboard trails. Enjoy your picnic in delightful scenery by the lakeside or up on an esker ridge.",
@@ -261,15 +235,13 @@
     "region": "Central Finland",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 61.934819,
+    "longitude": 25.9798101
   },
   {
     "id": "4e942858-8551-439a-add2-9838888f1221",
     "name": "Lemmenjoen kansallispuisto",
-    "location": [
-      68.6388189,
-      25.5985362
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542622334_lemmenjoen-kansallispuisto-ja-kaapinjouni-30.jpg",
     "description": {
       "EN": "The legendary River Lemmenjoki leads into the homelands of Laplands indigenous Sámi People. Experience the wilds and try panning for gold on a guided river trip. Tuck into tasty reindeer stew as you scan the night sky for the Northern Lights in winter, or bathe in the rays of the Midnight Sun in summer. Finlands largest national park has plenty of wild places to explore off the beaten track.",
@@ -283,15 +255,13 @@
     "region": "Lapland",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 68.6388189,
+    "longitude": 25.5985362
   },
   {
     "id": "925d1a63-2634-4c5a-8b42-6bf8ed7b08b1",
     "name": "Liesjärven kansallispuisto",
-    "location": [
-      60.65358919999999,
-      23.8977183
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542620895_liesj-nrvi-4-of-23.jpg",
     "description": {
       "EN": "Spend a day at Korteniemi Heritage Farm to find out how people used to live in rural Finland. Help out with farm chores, count sheep, and make hay while the sun shines! You can also head off along the old crofters paths to explore the surrounding scenic forests and lakes.",
@@ -305,15 +275,13 @@
     "region": "Kanta Hame",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 60.65358919999999,
+    "longitude": 23.8977183
   },
   {
     "id": "7b656c5b-a660-45c5-8ac6-0ba4ab461284",
     "name": "Linnansaaren kansallispuisto",
-    "location": [
-      62.110321500000005,
-      28.509837
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542638054_potkukelkka-haukivesi-upenykanen.jpg",
     "description": {
       "EN": "Linnansaari, in the heart of the Finnish Lake District, is an ideal place to spot rare lake seals and majestic ospreys. The waters of the park are dotted with lush green islands and rocky islets. At Linnansaari Croft traditional slash-and-burn farming practices are preserved. The lakeland scenery is a delight all year round. A boat service takes trippers to the main island during the summer. Longer lake cruises set off from the nearby historic town of Savonlinna.",
@@ -327,15 +295,13 @@
     "region": "Etelä-Savo",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 62.110321500000005,
+    "longitude": 28.509837
   },
   {
     "id": "050b4d5e-1f77-472c-b73a-44f3beb8e910",
     "name": "Nuuksion kansallispuisto",
-    "location": [
-      60.29272890000001,
-      24.5565108
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1664356022_nahkiais10.jpg",
     "description": {
       "EN": "Within easy reach of the Finnish capital you can escape into wild natural settings and enjoy typically Finnish scenery, with lovely lakes, green forests and rugged crags. Pack your backpack for a memorable family picnic or campout. The nearby Finnish Nature Centre Haltia spotlights the best of Finlands natural treasures from across the country.",
@@ -349,15 +315,13 @@
     "region": "Espoo",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 60.29272890000001,
+    "longitude": 24.5565108
   },
   {
     "id": "5d3bf23b-e6cf-4a93-a079-88003aea6568",
     "name": "Oulangan kansallispuisto",
-    "location": [
-      66.37457189999999,
-      29.322234099999996
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542633676_konkaankeino-6.jpg",
     "description": {
       "EN": "In the rugged landscape of the Karhunkierros Trail, you will observe the power of water. The many trail options and hanging bridges of the Oulanka National Park will take you to the most impressive waterfalls in Finland. The jumps of wild brown trout, the dives of European dippers, the unlimited beauty of the aapa mires and the lovely calypso will challenge even the experienced nature photographer. Nature doesn't recognise any state boundaries: the vast wilderness of the Paanajärvi National Park is to be found on the Russian side of the border.",
@@ -371,15 +335,13 @@
     "category": "Forest",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 66.37457189999999,
+    "longitude": 29.322234099999996
   },
   {
     "id": "bcc662b6-7ee7-48a0-8942-4e560d16593f",
     "name": "Pallas-Yllästunturin kansallispuisto",
-    "location": [
-      67.96666669999999,
-      24.1333333
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1493289765_hettapallas-1-31.jpg",
     "description": {
       "EN": "World’s purest air with breathtaking views. Breathe the world's purest air and experience the vastness of the fell landscapes around you. The versatile trails of Pallas-Yllästunturi National Park take you easily to open fell tops and cosy campfire sites. Spend an active and relaxing holiday enjoying Lapland's natural wonders and friendly services.",
@@ -393,15 +355,13 @@
     "category": "Hills",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 67.96666669999999,
+    "longitude": 24.1333333
   },
   {
     "id": "d43ce90b-e8be-409b-b898-5ce14137e3c4",
     "name": "Patvinsuon kansallispuisto",
-    "location": [
-      63.1131218,
-      30.701186200000002
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1493289705_suomu7.jpg",
     "description": {
       "EN": "Scanning the open marshes of Patvinsuo you might be lucky enough to see a distant bear, though bears typically do their best to avoid people. From viewing towers you can overlook the changing marshland scene on misty autumn mornings, light summer nights, or in the springtime when birds flock to the bogs to feed and breed. After a nice walk take a cooling dip by a sandy shore or the lakeside sauna at Suomunjärvi.",
@@ -415,15 +375,13 @@
     "category": "Lakes",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 63.1131218,
+    "longitude": 30.701186200000002
   },
   {
     "id": "4e319a1a-4402-4057-8896-ba5cec7cd4e0",
     "name": "Perämeren kansallispuisto",
-    "location": [
-      65.73099979999999,
-      24.5524965
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542633494_selkasarvi6.jpg",
     "description": {
       "EN": "The wide and open waters of the Bothnian Bay invite boaters. Take a break at a fishing hut and admire the sea through its window, just like a fisherman. The plinths and the drying racks for fishing nets are signs of the life in the past, on the rugged islands in the middle of this northern sea. During the winter, the arctic sea and packed ice fascinate tourists.",
@@ -437,15 +395,13 @@
     "category": "Island",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": false
+    "hasRentalHut": false,
+    "latitude": 65.73099979999999,
+    "longitude": 24.5524965
   },
   {
     "id": "a8197b0c-e794-4883-b436-7cdd7f3806d4",
     "name": "Petkeljärven kansallispuisto",
-    "location": [
-      62.59043290000001,
-      31.1790635
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542678374_petkeljarvi-kuva-8.jpg",
     "description": {
       "EN": "Pine-clad esker ridges formed during the Ice Age rise over pristine blue lakes in this beautiful part of Finland's eastern borderlands, well worth a day trip or a longer stay. Don't miss the lively and picturesque old Karelian village of Möhkö near the park. The colourful history of the area during World War Two is also of interest.",
@@ -459,15 +415,13 @@
     "category": "Forest",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 62.59043290000001,
+    "longitude": 31.1790635
   },
   {
     "id": "3864c6a5-32d5-49fd-8bda-2179177443e4",
     "name": "Puurijärven ja isosuon kansallispuisto",
-    "location": [
-      61.24354480000001,
-      22.5610578
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1631548014_p1010020.jpg",
     "description": {
       "EN": "This national park protects a peaceful oasis of wild marshlands and lakeshores rich in bird life in a region mainly dominated by farmlands. Bring your binoculars and scan the skies to search for the park's many winged inhabitants while enjoying the ever-changing natural scene.",
@@ -481,15 +435,13 @@
     "category": "Hills",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 61.24354480000001,
+    "longitude": 22.5610578
   },
   {
     "id": "53954b58-0528-4315-9b80-beea1b683813",
     "name": "Pyhä-Häkin kansallispuisto",
-    "location": [
-      62.8448328,
-      25.4693978
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542677835_pyha-hakki-4.jpg",
     "description": {
       "EN": "Take a stroll into the best preserved old-growth forests in Southern Finland. See 400-year-old pine trees that bear scars of ancient forest fires. Such forests give you a sense of timelessness, encouraging you to slow down and savour the natural scene. The residents of the old croft at Poika-aho surely told their children tales of the trolls and elves who lived out in the wild woods.",
@@ -503,15 +455,13 @@
     "category": "Forest",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 62.8448328,
+    "longitude": 25.4693978
   },
   {
     "id": "42e91938-7af2-4da1-9030-247737caaaf0",
     "name": "Pyhä-Luoston kansallispuisto",
-    "location": [
-      67.0851971,
-      26.9197389
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542625514_peurakuru54.jpg",
     "description": {
       "EN": " Pyhä-Luoston kansallispuistossa miljardien vuosien historia seuraa mukanasi retkellä. Kiipeät kerolle, katsot kuruun – metsäsaamelaisten pyhät paikat ovat aivan lähellä. Niiden tunnelma tuo päiväretkellekin pyhiinvaelluksen tuntua. Aarniometsät reunustavat tunturiketjua, jonka pääset näkemään pidemmällä vaelluksella Pyhätunturilta Luostolle kokonaan. Lähde löytöretkelle omaan itseesi ja luonnon ihmeisiin!",
@@ -525,15 +475,13 @@
     "category": "Hills",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 67.0851971,
+    "longitude": 26.9197389
   },
   {
     "id": "5e814692-4001-4b4f-9425-90f2c0e3e8fa",
     "name": "Päijänteen kansallispuisto",
-    "location": [
-      61.3896745,
-      25.4401744
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542617054_20160713_125715-2.jpg",
     "description": {
       "EN": "The pristine waters of Lake Päijänne wash the sandy shores of a chain of islands formed by an esker ridge that dates back to the Ice Age. Take a boat trip or rent a kayak and explore the park's many islands and their sandy coves and rocky shores. The nature trail at Pulkkilanharju ridge, accessible by road, also offers fine lakekand views. Look out for ospreys soaring over the lake.",
@@ -547,15 +495,13 @@
     "category": "Lakes",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 61.3896745,
+    "longitude": 25.4401744
   },
   {
     "id": "35633a10-8f82-46fa-bc12-8daad0a48470",
     "name": "Repoveden kansallispuisto",
-    "location": [
-      61.187995300000004,
-      26.9023636
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1667121001_21paulstevensolhavanvuorelta.jpg",
     "description": {
       "EN": "Repovesi's rugged forests are dotted with blue lakes and ponds. The park offers accessible adventures for everyone. Its hills and cliffs challenge keen hikers and climbers. Highlights for families include the Lapinsalmi bridge, the hand-operated Fox's Ferry, cosy rental campfire huts, and fine views over the treetops from the park's high spots. Repovesi is just a couple of hours from Helsinki, but when you sit round a campfire listening to the eerie calls of red-throated divers echoing over the lake the city feels a million miles away.",
@@ -569,15 +515,13 @@
     "category": "Forest",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 61.187995300000004,
+    "longitude": 26.9023636
   },
   {
     "id": "7bdf0cb8-7de3-40ce-a3a1-f795474eb202",
     "name": "Riisitunturin kansallispuisto",
-    "location": [
-      66.2263529,
-      28.4939695
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1507272287_riisitunturi-6.jpg",
     "description": {
       "EN": "Humid climatic conditions contribute to Riisitunturi's natural beauty. The park has some of the finest sloping bogs anywhere in Europe. In winter the spruce trees that cover many of Riisitunturi National Park's hillsides are clad with a thick coating of condensed frost, creating a photogenic white forest. Enticing trails suitable for day-trips or longer treks welcome hikers in summer and snowshoe trekkers in winter.",
@@ -591,15 +535,13 @@
     "category": "Hills",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 66.2263529,
+    "longitude": 28.4939695
   },
   {
     "id": "d8222080-539c-458f-ad3e-f0059c81fbf8",
     "name": "Rokuan Kansallispuisto",
-    "location": [
-      64.586423,
-      26.50527569999999
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1632998840_rokua8.jpg",
     "description": {
       "EN": "When you explore the esker ridges, sandhills and kettle hole lakes of Rokua it's easy to see the clear traces of the Ice Age that explain why this area forms part of Finland's first UNESCO Geopark. Family-friendly trails lead off through the park's wooded sandhills, where the forest floor is blanketed with silvery lichens. Scattered through the park are many kettle hole lakes nestling in sandy hollows.",
@@ -613,15 +555,13 @@
     "category": "Forest",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 64.586423,
+    "longitude": 26.50527569999999
   },
   {
     "id": "ec9ac6f3-5036-4303-ac69-7193a3d18fe6",
     "name": "Saaristomeren kansallispuisto",
-    "location": [
-      59.93449339999999,
-      21.8116588
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1576827962_bodo8.jpg",
     "description": {
       "EN": "The labyrinthine Archipelago Sea, off Southwestern Finland, has more islands than any other archipelago in the world. It has also been described as the world's most beautiful archipelago. The archipelago scene varies from larger islands dotted with rustic pastures and vibrant villages, to wild and windswept rocky islets. Scheduled ferry services take locals and trippers to the main islands all year round. ",
@@ -635,15 +575,13 @@
     "category": "Island",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": false
+    "hasRentalHut": false,
+    "latitude": 59.93449339999999,
+    "longitude": 21.8116588
   },
   {
     "id": "75d42d3a-d60c-413d-b67e-3a905188503a",
     "name": "Salamajärven kansallispuisto",
-    "location": [
-      63.2357871,
-      24.8229325
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1658232361_kokkolaretkibussijniemela15-min.jpg",
     "description": {
       "EN": "Follow in the hoofprints of wild forest reindeer on the Peuran Polku Trail. You might even spot some of these rare animals. The park's varied wild scenery includes rockstrewn pinewoods, open bogs and lakes full of tasty fish. Use the facilities at Koirasalmi as a base for exploring the wilds.",
@@ -657,15 +595,13 @@
     "category": "Lakes",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 63.2357871,
+    "longitude": 24.8229325
   },
   {
     "id": "efc26834-2a3d-4240-9fad-e2b1b2c737b8",
     "name": "Sallan kansallispuisto",
-    "location": [
-      66.7396305,
-      28.823661899999998
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1662973561_hangasjarvisallajonnasaari6.jpg",
     "description": {
       "EN": "The old-growth forests of Salla National Park stretch from ravines and mires to the tops of the fells. Hiking trails wind along ridges and gorges and beside small pristine lakes filled with clean fresh water. From the top of Iso Pyhätunturi fell you can admire the vast landscapes and large fells on the Russian side. The night sky of the hushed winter wilderness is illuminated by the Milky Way and the colourful Northern Lights and in summer by the midnight sun. In winter the forests of spruce trees completely covered in crown snow load will take your breath away. This is the home of the capercaillie – in the middle of nowhere.",
@@ -679,15 +615,13 @@
     "category": "Lakes",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 66.7396305,
+    "longitude": 28.823661899999998
   },
   {
     "id": "b937e85d-d32a-4235-9785-cb1c5e4732b6",
     "name": "Seitsemisen kansallispuisto",
-    "location": [
-      61.9696952,
-      23.3613644
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542641834_seitseminen18.jpg",
     "description": {
       "EN": "Experience how crofters used to make their living in these remote backwoods at the heritage farm at Kovero. Learn about the park's flora and fauna at the pleasant Seitseminen Nature Centre – the best place to start exploring the old forests, lakes and marshes of this fascinating part of Finland's backwoods.",
@@ -701,15 +635,13 @@
     "category": "Lakes",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 61.9696952,
+    "longitude": 23.3613644
   },
   {
     "id": "4a76ec93-7df3-4063-9df4-6fc41e29b520",
     "name": "Selkämeren kansallispuisto (Pori)",
-    "location": [
-      61.5354681,
-      21.56400229999999
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1656828601_isokari_ksako_2022-14.jpg",
     "description": {
       "EN": "By the shores of the Bothnian Sea you can enjoy bracing sea winds and fine views out over the wild waves. History comes alive on the park's remote lighthouse islands. Divers can here explore Finland's most pristine marine waters.",
@@ -723,15 +655,13 @@
     "category": "Island",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": false
+    "hasRentalHut": false,
+    "latitude": 61.5354681,
+    "longitude": 21.56400229999999
   },
   {
     "id": "32c61878-28ac-43cb-9dbd-22e6af45a079",
     "name": "Sipoonkorven kansallispuisto",
-    "location": [
-      60.3125087,
-      25.1624515
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1652195881_sipoonkorpiesteeton.jpg",
     "description": {
       "EN": "The woodlands of Sipoonkorpi lie within easy reach of the Finnish capital, surrounded by rolling fields and picturesque villages. Sipoonkorpi's peaceful settings are a welcome green haven for local townies, especially in late summer and autumn when anyone can come here to gather plentiful wild mushrooms and berries.",
@@ -745,15 +675,13 @@
     "category": "Forest",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 60.3125087,
+    "longitude": 25.1624515
   },
   {
     "id": "668aa738-4198-463f-a080-f83cf217f2ce",
     "name": "Syötteen kansallispuisto",
-    "location": [
-      65.7735495,
-      27.6592391
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542639315_mylly-10-of-13.jpg",
     "description": {
       "EN": "The wild wooded hills of Syöte provide an ideal setting for many activities. Ski-trek through the magical snow-covered winter forests, or pedal up hill and down dale along the park's fine mountain-biking routes. The log cabin sauna at Ahmatupa in the heart of the park is a great place to soothe your body and soul.",
@@ -767,15 +695,13 @@
     "category": "Forest",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 65.7735495,
+    "longitude": 27.6592391
   },
   {
     "id": "ac5eccc0-46fb-4d56-acaa-c1f510f1f2ce",
     "name": "Tammisaaren saariston kansallispuisto",
-    "location": [
-      59.8728056,
-      23.3970549
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1652175241_jussaro-23.jpg",
     "description": {
       "EN": "Enjoy an unforgettable summer outing to this lovely part of Finland's coastal archipelago with its larger wooded islands, small rocky islets and open seascapes. Watch majestic white-tailed eagles soaring overhead. Take a boat excursion from Ekenäs to one of the main islands, or head off to explore smaller islands and bays in your own sailboat or kayak.",
@@ -789,15 +715,13 @@
     "category": "Island",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 59.8728056,
+    "longitude": 23.3970549
   },
   {
     "id": "41f6c4a7-102d-4456-84b2-eea19baaa1dc",
     "name": "Teijon kansallispuisto",
-    "location": [
-      60.21688779999998,
-      22.9518962
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542658814_kalasuntti3.jpg",
     "description": {
       "EN": "Teijo's attractions include peaceful lakes and forests, as well as historic ironworks villages where traditional crafts still thrive. From these picturesque settlements you can head straight out to explore the lakes, seashores, marshes and forests of the national park - and go hiking, canoeing or fishing. You can get a good taste of Teijo on a day trip, but it's also well worth staying over - out in the wilds under a starry sky, or in cosy lodgnings in a charming village.",
@@ -811,15 +735,13 @@
     "category": "Lakes",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 60.21688779999998,
+    "longitude": 22.9518962
   },
   {
     "id": "a3ea7bed-21c1-41c9-8068-3a5a8d1f81cb",
     "name": "Tiilikkajärven kansallispuisto",
-    "location": [
-      63.6614721,
-      28.2993964
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1652188081_kermankuorijat-tiilikka-0020.jpg",
     "description": {
       "EN": "The park's lovely lakeshores include the beautiful beach of Venäjänhiekka (Russian Sands), whose name relates to the 1595 Treaty of Teusina which divided these lands between Sweden and Russia. An old border stone in Lake Tiilikkajärvi still bears a crown and a cross symbolising the two countries. A sandy esker ridge formation runs through the lake, adding to the varied natural scene. Slow down, relax, and enjoy a refreshing dip in the lake.",
@@ -833,15 +755,13 @@
     "category": "Lakes",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 63.6614721,
+    "longitude": 28.2993964
   },
   {
     "id": "24f87949-913d-4d02-9443-78882f02a02c",
     "name": "Torronsuon kansallispuisto",
-    "location": [
-      60.73134890000001,
-      23.6325656
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542645315_teerisaariteijo-1.jpg",
     "description": {
       "EN": "Walk safely over Finland's deepest bog along sturdy duckboard trails. A high birdwatching tower offers fine views over the vast open bog, which is visited by many migrating cranes and geese in spring and autumn. In winter cross-country skiers come to the bog to explore the wide open white wintry scene.",
@@ -855,15 +775,13 @@
     "category": "Hills",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 60.73134890000001,
+    "longitude": 23.6325656
   },
   {
     "id": "130b993d-61f5-4bfb-a6af-52375f2b00ff",
     "name": "Urho Kekkosen kansallispuisto",
-    "location": [
-      68.1666667,
-      28.25
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1542664154_13696380083_f3232fc0be_b.jpg",
     "description": {
       "EN": "Trek through this magnificent arctic fell country on foot or on skis, finding your way to a welcoming wilderness hut for the night. This vast park extends eastwards from the resort of Saariselkä through the wilderness of Finnish Lapland all the way to the Russian border. The remote fell of Korvatunturi is famous among Finns as the home of Father Christmas. The night sky is illuminated by the Aurora Borealis in winter and the Midnight Sun in summer.",
@@ -877,15 +795,13 @@
     "category": "Hills",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 68.1666667,
+    "longitude": 28.25
   },
   {
     "id": "ac03f036-33c5-4bb1-a6fe-618630959542",
     "name": "Valkmusan kansallispuisto",
-    "location": [
-      60.57205439999999,
-      26.705125
-    ],
     "imageUrl": "https://explori.es/images/news/medium/1655985962_k.sako-valkmusa-2021-37.jpg",
     "description": {
       "EN": "Valkmusa's extensive natural open bogs give visitors a chance to wind down and see, hear, smell and even taste nature all around. Look out for wetland birds and fluttering marshland butterflies, especially in spring and summer when the air is filled with birdsong. Find tasty cranberries growing among the bog moss.",
@@ -899,6 +815,8 @@
     "category": "Forest",
     "hasTentSite": true,
     "hasCampfireSite": true,
-    "hasRentalHut": true
+    "hasRentalHut": true,
+    "latitude": 60.57205439999999,
+    "longitude": 26.705125
   }
 ]
