@@ -17,12 +17,10 @@ struct AddPlanView: View {
     @State private var isEndDatePickerVisible = false
     @State var startLocationText: String = ""
     @State var destinationLocationText: String = ""
-    @State private var startDate = Date()
-    @State private var endDate = Date()
+    @State private var startDate: Date = .today
+    @State private var endDate: Date = .tomorrow
+    @State private var dateFormatter = formatter()
     @StateObject private var viewModel = AddPlanViewModel()
-    @State var username: String = ""
-    @State private var selectedDate = Date()
-    @State private var showDatePicker = false
 
     var body: some View {
         ScrollView {
@@ -49,7 +47,7 @@ struct AddPlanView: View {
                 .padding(.bottom, 30)
             }.ignoresSafeArea()
 
-            VStack{
+            VStack {
                 VStack(alignment: .leading) {
                     Text("Start location")
                     Button(
@@ -112,7 +110,9 @@ struct AddPlanView: View {
                         }, label: {
                             HStack {
                                 Image(systemName: "location")
-                                Text("Destination location")
+                                Text(
+                                    dateFormatter.string(from: startDate)
+                                )
                                 Spacer()
                             }.padding(.vertical)
                         }
@@ -128,20 +128,34 @@ struct AddPlanView: View {
                         DatePicker(
                             "",
                             selection: $startDate,
-                            displayedComponents: .date
+                            displayedComponents: [.date, .hourAndMinute]
                         )
                         .labelsHidden()
                         .datePickerStyle(.graphical)
+
+                        Button(
+                            action: {
+                                self.isStartDatePickerVisible.toggle()
+                            }, label: {
+                                Text("Close")
+                            }
+                        )
+                        .frame(maxWidth: .infinity)
+                        .cornerRadius(10)
+                        .padding(.bottom)
                     }
 
                     Text("End Date")
                     Button(
                         action: {
                             self.isEndDatePickerVisible.toggle()
+
                         }, label: {
                             HStack {
                                 Image(systemName: "location")
-                                Text("Destination location")
+                                Text(
+                                    dateFormatter.string(from: endDate)
+                                )
                                 Spacer()
                             }.padding(.vertical)
                         }
@@ -152,33 +166,55 @@ struct AddPlanView: View {
                     .contentShape(Rectangle())
                     .cornerRadius(10)
                     .padding(.bottom)
+
                     if isEndDatePickerVisible {
                         DatePicker(
                             "",
                             selection: $endDate,
-                            displayedComponents: .date
+                            displayedComponents: [.date, .hourAndMinute]
                         )
                         .labelsHidden()
                         .datePickerStyle(.graphical)
+
+                        Button(
+                            action: {
+                                self.isEndDatePickerVisible.toggle()
+                            }, label: {
+                                Text("Close")
+                            }
+                        )
+                        .frame(maxWidth: .infinity)
+                        .cornerRadius(10)
+                        .padding(.bottom)
                     }
                     // Extra arguments in call =  Maximum number of views in this VStack
-                }
+                }.padding()
 
                 NavigationLink(
                     destination: AddPlantSecondStepView(input: value()),
                     label: {
-                        Text("Choose Location")
+                        Text("Create trip")
                     }
                 )
                 .bold()
                 .frame(width: 280, height: 50)
-                .background(Color.black)
+                .background(submitButtonBackground)
                 .foregroundColor(.white)
                 .cornerRadius(50)
+                .disabled(!isFormValid)
 
-            }.padding(.horizontal)
+            }.padding([.leading, .bottom, .trailing], 25)
 
         }.ignoresSafeArea()
+    }
+    
+    
+    var isFormValid: Bool {
+        return startDate.timeIntervalSince1970 <= endDate.timeIntervalSince1970
+    }
+    
+    var submitButtonBackground: Color {
+        return isFormValid ? Color.black : Color.gray
     }
 
     func value() -> AddPlantFirstStepViewOutput {
@@ -188,6 +224,12 @@ struct AddPlanView: View {
             startDate: startDate,
             endDate: endDate
         )
+    }
+
+    static func formatter() -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm E, d MMM y"
+        return formatter
     }
 }
 

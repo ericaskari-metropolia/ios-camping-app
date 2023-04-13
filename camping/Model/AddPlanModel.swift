@@ -22,6 +22,6 @@ struct AddPlanCampsite: Identifiable, Codable {
 struct AddPlantFirstStepViewOutput {
     var startLocationText: String
     var destinationLocationText: String
-    var startDate: Date
-    var endDate: Date
+    var startDate: Date?
+    var endDate: Date?
 }

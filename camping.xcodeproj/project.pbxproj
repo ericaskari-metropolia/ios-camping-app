@@ -48,6 +48,7 @@
 		A156908B29D2EE9E00EA3C56 /* campingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156908A29D2EE9E00EA3C56 /* campingTests.swift */; };
 		A156909529D2EE9F00EA3C56 /* campingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156909429D2EE9F00EA3C56 /* campingUITests.swift */; };
 		A156909729D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156909629D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift */; };
+		A1CD9EC829E5D4D000091865 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD9EC729E5D4D000091865 /* Extensions.swift */; };
 		B305CD9329E44177007781DB /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305CD9229E44177007781DB /* LocationViewModel.swift */; };
 		B305CD9529E441F0007781DB /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305CD9429E441F0007781DB /* PermissionView.swift */; };
 		B305CD9729E4420A007781DB /* NavigationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305CD9629E4420A007781DB /* NavigationTabView.swift */; };
@@ -104,6 +105,7 @@
 		A156909029D2EE9F00EA3C56 /* campingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = campingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A156909429D2EE9F00EA3C56 /* campingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campingUITests.swift; sourceTree = "<group>"; };
 		A156909629D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A1CD9EC729E5D4D000091865 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B305CD9229E44177007781DB /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		B305CD9429E441F0007781DB /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		B305CD9629E4420A007781DB /* NavigationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				27223A0E29E41CDE0015B291 /* Constant.swift */,
+				A1CD9EC729E5D4D000091865 /* Extensions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				66E4E1C829E49AA200A87706 /* MyTripsEmptyView.swift in Sources */,
 				66E4E1CB29E543A200A87706 /* OngoingTripCard.swift in Sources */,
 				2787CFDA29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
+				A1CD9EC829E5D4D000091865 /* Extensions.swift in Sources */,
 				B3D6C9DB29E445E600232B53 /* PersistenceController.swift in Sources */,
 				2787CFE229DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				B305CD9329E44177007781DB /* LocationViewModel.swift in Sources */,
