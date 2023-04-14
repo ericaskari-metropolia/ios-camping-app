@@ -20,7 +20,7 @@ struct CategoryListItemView: View {
                 .scaledToFill()
                 .frame(width: 200, height: 150)
                 .clipShape(
-                RoundedRectangle(cornerRadius: 12)
+                    RoundedRectangle(cornerRadius: 12)
                 )
             Text(category.title)
                 .foregroundColor(.white)

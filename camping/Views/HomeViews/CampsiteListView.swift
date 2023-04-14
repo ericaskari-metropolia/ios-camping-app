@@ -34,13 +34,13 @@ struct CampsiteListView: View {
             .background(Color.clear)
             .navigationTitle("\(category.title) campsites")
             .edgesIgnoringSafeArea(.top)
-
-        }
-        
             
         }
         
+        
     }
+    
+}
 
 
 struct CampsiteListView_Previews: PreviewProvider {

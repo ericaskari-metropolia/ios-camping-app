@@ -14,32 +14,32 @@ struct MyTripsEmptyView: View {
     var body: some View {
         VStack {
             ZStack(alignment:Alignment(horizontal: .leading, vertical: .bottom)){
-               
+                
                 Image("header")
                     .resizable()
                     .scaledToFill()
                     .frame(maxWidth: 400, maxHeight: 350)
                     .clipped()
-               
+                
                 VStack{
                     //The location Espoo is hardcoded, need to be changed
                     Label("You are in Espoo", systemImage: "globe.europe.africa")
-                      .font(.headline)
-                         .foregroundColor(.white)
-                         .padding(.bottom,5)
-                        
-                         
-                      Text("My trips")
-                          .font(.title)
-                          .foregroundColor(.white)
-                          .fontWeight(.bold)
-                       
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding(.bottom,5)
+                    
+                    
+                    Text("My trips")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                    
                 }
                 .padding()
                 .padding(.bottom,30)
-                }
-           
-          .ignoresSafeArea()
+            }
+            
+            .ignoresSafeArea()
             Spacer()
             VStack{
                 Text("Ongoing trips")
