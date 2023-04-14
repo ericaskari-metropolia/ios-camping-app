@@ -5,10 +5,11 @@
 //  Created by Thu Hoang on 5.4.2023.
 //
 
-import Foundation
-import CoreLocation
 import CoreData
+import CoreLocation
+import Foundation
 import MapKit
+import SwiftUI
 
 class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var authorizationStatus: CLAuthorizationStatus
@@ -16,8 +17,8 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var currentPlacemark: CLPlacemark?
     @Published var campingSites: [CampingSite] = []
     @Published var region: MKCoordinateRegion = .init(
-        center: CLLocationCoordinate2D(latitude: 40, longitude: 120),
-        span: MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100)
+        center: CLLocationCoordinate2D(latitude: 60.192059, longitude: 24.945831),
+        span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
     )
     var array: [CampingSite] = []
     
@@ -47,7 +48,15 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastSeenLocation = locations.first
         fetchCity(for: lastSeenLocation)
-        
+        guard let latestLocation = lastSeenLocation else {
+            return
+        }
+        DispatchQueue.main.async {
+            self.region = MKCoordinateRegion(
+                center: latestLocation.coordinate,
+                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            )
+        }
     }
     
     // Fetch city based on current location
