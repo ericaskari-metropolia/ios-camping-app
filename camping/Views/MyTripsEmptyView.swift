@@ -14,7 +14,6 @@ struct MyTripsEmptyView: View {
     var body: some View {
         VStack {
             header
-            
                 .ignoresSafeArea()
             Spacer()
             noTripsView

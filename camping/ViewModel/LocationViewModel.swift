@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import CoreData
 
 class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var authorizationStatus: CLAuthorizationStatus
@@ -56,7 +57,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Fetch data from URL and store it to CoreData
     func fetchCampingSites() {
-        let url = "https://users.metropolia.fi/~thuh/camping.json"
+        let url = "https://users.metropolia.fi/~thuh/camping-3.json"
         guard let url = URL(string: url) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -66,29 +67,55 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                 
                 DispatchQueue.main.async {
                     let context = PersistenceController.shared.container.viewContext
-                    for campingSite in campingSites {
-                        let campingSiteEntity = CampingSite(context: context)
+                    
+                    let request:NSFetchRequest<CampingSite> = CampingSite.fetchRequest()
+                    
+                    // Checking if the data is in core data or not.
+                    // If data from JSON is updated then updated to core data.
+                    // If the data is the same, skip saving to avoid duplicate.
+                    // If there is no data in core data, save it.
+                    do {
+                        let fetchedCampingSitesCD = try context.fetch(request)
                         
-                        campingSiteEntity.name = campingSite.name
-                        campingSiteEntity.location = campingSite.location as NSObject
-                        campingSiteEntity.imageURL = campingSite.imageUrl
-                        campingSiteEntity.descriptionEN = campingSite.description.EN
-                        campingSiteEntity.descriptionFI = campingSite.description.FI
-                        campingSiteEntity.suitabilityEN = campingSite.suitability.EN
-                        campingSiteEntity.suitabilityFI = campingSite.suitability.FI
-                        campingSiteEntity.category = campingSite.category
-                        campingSiteEntity.region = campingSite.region
-                        campingSiteEntity.hasTentSite = campingSite.hasTentSite
-                        campingSiteEntity.hasCampfireSite = campingSite.hasCampfireSite
-                        campingSiteEntity.hasRentalHut = campingSite.hasRentalHut
-                        
-                        do {
-                            try context.save()
-                            self.campingSites.append(campingSiteEntity)
-                        } catch {
-                            print("error")
+                        for campingSite in campingSites {
+                            if !fetchedCampingSitesCD.isEmpty {
+                                for fetchedCampingSiteCD in fetchedCampingSitesCD {
+                                    if fetchedCampingSiteCD.placeId == campingSite.placeId {
+                                        continue
+                                    }
+                                }
+                            } else {
+                                let newCampingSiteEntity = NSEntityDescription.insertNewObject(forEntityName: "CampingSite", into: context) as! CampingSite
+                                
+                                newCampingSiteEntity.placeId = campingSite.placeId
+                                newCampingSiteEntity.name = campingSite.name
+                                newCampingSiteEntity.imageURL = campingSite.imageUrl
+                                newCampingSiteEntity.descriptionEN = campingSite.description.EN
+                                newCampingSiteEntity.descriptionFI = campingSite.description.FI
+                                newCampingSiteEntity.suitabilityEN = campingSite.suitability.EN
+                                newCampingSiteEntity.suitabilityFI = campingSite.suitability.FI
+                                newCampingSiteEntity.category = campingSite.category
+                                newCampingSiteEntity.region = campingSite.region
+                                newCampingSiteEntity.city = campingSite.city
+                                newCampingSiteEntity.websiteURL = campingSite.websiteURL
+                                newCampingSiteEntity.hasTentSite = campingSite.hasTentSite
+                                newCampingSiteEntity.hasCampfireSite = campingSite.hasCampfireSite
+                                newCampingSiteEntity.hasRentalHut = campingSite.hasRentalHut
+                                newCampingSiteEntity.latitude = campingSite.latitude
+                                newCampingSiteEntity.longitude = campingSite.longitude
+                            }
                         }
+                        
+                    } catch {
+                        print("FAIL fetch camping site")
                     }
+                    do {
+                        try context.save()
+                        print("Saved to core data")
+                    } catch {
+                        print("error")
+                    }
+                    
                 }
             } catch let jsonError {
                 print("Error serializing json:", jsonError)
