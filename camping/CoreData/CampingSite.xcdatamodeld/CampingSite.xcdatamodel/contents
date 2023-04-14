@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CampingSite" representedClassName="CampingSite" isAbstract="YES" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
         <attribute name="descriptionEN" optional="YES" attributeType="String"/>
         <attribute name="descriptionFI" optional="YES" attributeType="String"/>
         <attribute name="hasCampfireSite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -15,5 +16,6 @@
         <attribute name="region" optional="YES" attributeType="String"/>
         <attribute name="suitabilityEN" optional="YES" attributeType="String"/>
         <attribute name="suitabilityFI" optional="YES" attributeType="String"/>
+        <attribute name="websiteURL" optional="YES" attributeType="String"/>
     </entity>
 </model>

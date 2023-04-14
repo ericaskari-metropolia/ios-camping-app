@@ -44,7 +44,7 @@ struct HomeView: View {
                 ForEach(results, id: \.self) { campingSite in
                     HStack{
                         Text("Camping site:")
-                        Text(campingSite.name ?? "")
+                        Text(campingSite.websiteURL ?? "")
                     }
                 }
             }
