@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct AddPlanOverview: View {
+    @Environment(\.dismiss) var dismiss
     //  To Access Plans and save them
     @StateObject private var viewModel = PlanViewModel()
+    @State private var saved = false
+    var completed: () -> ()
 
     var input: AddPlantFirstStepViewOutput?
     var body: some View {
@@ -22,10 +25,13 @@ struct AddPlanOverview: View {
 
             Button {
                 viewModel.savePlan(input: input!)
+                saved = true
+                completed()
+                dismiss()
             } label: {
                 Text("Save")
             }
-            .disabled(input == nil)
+            .disabled(input == nil || saved)
          
         }
     }
@@ -33,6 +39,8 @@ struct AddPlanOverview: View {
 
 struct AddPlanOverview_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlanOverview()
+        AddPlanOverview(){
+            print("AddPlanOverview_Previews: Completed")
+        }
     }
 }

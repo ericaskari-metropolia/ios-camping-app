@@ -26,10 +26,9 @@ struct AddPlanView: View {
     @State private var endDate: Date = .tomorrow
     @State private var dateFormatter = formatter()
     @State private var annotations: [CampingSiteData] = []
-
-
-
-
+    
+    var completed: () -> ()
+    
     var body: some View {
         ScrollView {
             ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
@@ -197,11 +196,14 @@ struct AddPlanView: View {
                 }.padding()
 
                 NavigationLink(
-                    destination: AddPlanOverview(input: value()),
+                    destination: AddPlanOverview(completed: {
+                        completed()
+                    }, input: value()),
                     label: {
                         Text("Create trip")
                     }
                 )
+
                 .bold()
                 .frame(width: 280, height: 50)
                 .background(submitButtonBackground)
@@ -234,7 +236,6 @@ struct AddPlanView: View {
         guard let destinationLocation = destinationLocation else {
             return nil
         }
-     
 
         return AddPlantFirstStepViewOutput(
             startLocation: startLocation,
@@ -253,6 +254,9 @@ struct AddPlanView: View {
 
 struct AddPlanView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlanView()
+        AddPlanView(){
+            print("AddPlanView_Previews: Completed")
+
+        }
     }
 }

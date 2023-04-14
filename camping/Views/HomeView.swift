@@ -12,7 +12,8 @@ import CoreData
 struct HomeView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
-    
+    @FetchRequest(entity: Plan.entity(), sortDescriptors:[]) var planResults: FetchedResults<Plan>
+
     var body: some View {
         VStack(spacing: spacing){
             HeaderView()
@@ -40,11 +41,18 @@ struct HomeView: View {
                     Text("campsite:")
                     Text("\(results.count)")
                 }
-
+                
                 ForEach(results, id: \.self) { campingSite in
                     HStack{
                         Text("Camping site:")
                         Text(campingSite.name ?? "")
+                    }
+                }
+                
+                ForEach(planResults, id: \.self) { plan in
+                    HStack{
+                        Text("Plan Destination:")
+                        Text(plan.campingSite?.name ?? "No Campsite name")
                     }
                 }
             }

@@ -27,7 +27,7 @@ struct AddPlanChooseDestinationLocationModalView: View {
                 annotationItems: campingSites,
                 annotationContent: {
                     n in MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: n.latitude, longitude: n.longitude)) {
-                        Image("location")
+                        Image(systemName: "tent.fill")
                             .frame(width: 44, height: 44)
                             .onTapGesture(count: 1, perform: {
                                 didChooseLocation(n)
@@ -39,29 +39,39 @@ struct AddPlanChooseDestinationLocationModalView: View {
             .ignoresSafeArea()
             .tint(.pink)
 
-            VStack {
-                LocationButton(.currentLocation) {
-                    viewModel.requestPermission()
-                }
-                .foregroundColor(.white)
-                .cornerRadius(8)
-                .symbolVariant(.fill)
-                .labelStyle(.titleAndIcon)
-                .symbolVariant(.fill)
-                .tint(.pink)
-                .padding()
 
-                Button(
-                    action: {
-                        print(campingSites.count)
-                        self.isPresented.toggle()
-                    }, label: {
-                        Text("Close")
-                    }
-                ).padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    VStack {
+                        Button(
+                            action: {
+                                viewModel.requestPermission()
+                            }, label: {
+                                Image(systemName: "location.circle.fill")
+                                    .padding()
+                                    .background(Color.red)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                                    .font(.system(size: 20))
+                            }
+                        )
+                        Button(
+                            action: {
+                                self.isPresented.toggle()
+                            }, label: {
+                                Image(systemName: "return")
+                                    .padding()
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                                    .font(.system(size: 20))
+                            }
+                        )
+
+                    }.padding()
+                }
             }
         }
     }

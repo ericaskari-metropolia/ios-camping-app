@@ -27,7 +27,7 @@ struct AddPlanChooseStartLocationModalView: View {
                 annotationItems: campingSites,
                 annotationContent: {
                     n in MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: n.latitude, longitude: n.longitude)) {
-                        Image("location")
+                        Image(systemName: "tent.fill")
                             .frame(width: 44, height: 44)
                             .onTapGesture(count: 1, perform: {
                              
