@@ -17,7 +17,11 @@ struct CampsiteListView: View {
     // Fetch user
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
     
-    
+    @State var list: Array<CampingSite> = []
+    func getList() {
+        self.list = results.filter{$0.category?.lowercased() == self.category.title.lowercased() }
+        print(type(of: list[0]))
+        }
     
     // BODY
     var body: some View {
@@ -34,8 +38,18 @@ struct CampsiteListView: View {
             .background(Color.clear)
             .navigationTitle("\(category.title) campsites")
             .edgesIgnoringSafeArea(.top)
-
+            
+            ScrollView{
+                ForEach(list, id: \.self) {campingSite in
+                    NavigationLink(destination: CampsiteDetailView()){
+                        CampsiteListItemView()
+        
+                    }
+                }
+            }
+            
         }
+        .onAppear(perform: {getList()})
         
             
         }

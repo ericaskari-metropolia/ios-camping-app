@@ -19,6 +19,9 @@
 		2707B81129E8B38300728026 /* CampsiteListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B81029E8B38300728026 /* CampsiteListItemView.swift */; };
 		2707B81229E8B38300728026 /* CampsiteListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B81029E8B38300728026 /* CampsiteListItemView.swift */; };
 		2707B81329E8B38300728026 /* CampsiteListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B81029E8B38300728026 /* CampsiteListItemView.swift */; };
+		2707B81929E8D7DE00728026 /* CampsiteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B81829E8D7DE00728026 /* CampsiteDetailView.swift */; };
+		2707B81A29E8D7DE00728026 /* CampsiteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B81829E8D7DE00728026 /* CampsiteDetailView.swift */; };
+		2707B81B29E8D7DE00728026 /* CampsiteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B81829E8D7DE00728026 /* CampsiteDetailView.swift */; };
 		270EE5D429E42C7A00EEDF00 /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 27223A0C29E41C160015B291 /* category.json */; };
 		272239F329DEDC070015B291 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239F229DEDC070015B291 /* CategoryModel.swift */; };
 		272239F429DEDC070015B291 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239F229DEDC070015B291 /* CategoryModel.swift */; };
@@ -88,6 +91,7 @@
 		2707B80829E8A80A00728026 /* CategoryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListItemView.swift; sourceTree = "<group>"; };
 		2707B80C29E8AADB00728026 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		2707B81029E8B38300728026 /* CampsiteListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampsiteListItemView.swift; sourceTree = "<group>"; };
+		2707B81829E8D7DE00728026 /* CampsiteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampsiteDetailView.swift; sourceTree = "<group>"; };
 		272239F229DEDC070015B291 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		272239FF29E4103E0015B291 /* CampsiteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampsiteListView.swift; sourceTree = "<group>"; };
 		27223A0C29E41C160015B291 /* category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				2707B80829E8A80A00728026 /* CategoryListItemView.swift */,
 				2707B80C29E8AADB00728026 /* CategoryListView.swift */,
 				2707B81029E8B38300728026 /* CampsiteListItemView.swift */,
+				2707B81829E8D7DE00728026 /* CampsiteDetailView.swift */,
 			);
 			path = HomeViews;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				2787CFE229DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				B305CD9329E44177007781DB /* LocationViewModel.swift in Sources */,
 				A156907529D2EE9D00EA3C56 /* CampingApp.swift in Sources */,
+				2707B81929E8D7DE00728026 /* CampsiteDetailView.swift in Sources */,
 				2787CFD629DAFDD1000B4865 /* HomeView.swift in Sources */,
 				272239F329DEDC070015B291 /* CategoryModel.swift in Sources */,
 				27223A0029E4103E0015B291 /* CampsiteListView.swift in Sources */,
@@ -496,6 +502,7 @@
 				2787CFD729DAFDD1000B4865 /* HomeView.swift in Sources */,
 				2707B80629E8A50100728026 /* HeaderView.swift in Sources */,
 				A156908B29D2EE9E00EA3C56 /* campingTests.swift in Sources */,
+				2707B81A29E8D7DE00728026 /* CampsiteDetailView.swift in Sources */,
 				27223A1029E41CDE0015B291 /* Constant.swift in Sources */,
 				272239F429DEDC070015B291 /* CategoryModel.swift in Sources */,
 			);
@@ -516,6 +523,7 @@
 				27223A1129E41CDE0015B291 /* Constant.swift in Sources */,
 				2787CFD829DAFDD1000B4865 /* HomeView.swift in Sources */,
 				2707B80B29E8A80A00728026 /* CategoryListItemView.swift in Sources */,
+				2707B81B29E8D7DE00728026 /* CampsiteDetailView.swift in Sources */,
 				A156909529D2EE9F00EA3C56 /* campingUITests.swift in Sources */,
 				2707B80729E8A50100728026 /* HeaderView.swift in Sources */,
 				2707B81329E8B38300728026 /* CampsiteListItemView.swift in Sources */,
