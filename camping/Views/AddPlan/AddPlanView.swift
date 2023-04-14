@@ -78,8 +78,8 @@ struct AddPlanView: View {
                         AddPlanChooseStartLocationModalView(
                             isPresented: self.$isStartLocationModalOpen
                         ) {
-                            campingSite in
-                            destinationLocation = campingSite
+                            location in
+                            startLocation = location
                         }
                     }.padding(.bottom)
 
@@ -197,7 +197,7 @@ struct AddPlanView: View {
                 }.padding()
 
                 NavigationLink(
-                    destination: AddPlantSecondStepView(input: value()),
+                    destination: AddPlanOverview(input: value()),
                     label: {
                         Text("Create trip")
                     }
@@ -248,14 +248,6 @@ struct AddPlanView: View {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm E, d MMM y"
         return formatter
-    }
-}
-
-struct AddPlantSecondStepView: View {
-    var input: AddPlantFirstStepViewOutput?
-
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 

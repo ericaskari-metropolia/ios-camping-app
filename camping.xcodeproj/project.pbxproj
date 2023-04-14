@@ -47,6 +47,7 @@
 		66E4E1CD29E54B0800A87706 /* PastTripCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4E1CC29E54B0800A87706 /* PastTripCard.swift */; };
 		A106FEE729E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106FEE629E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift */; };
 		A1220B2329E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1220B2229E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift */; };
+		A1220B2629E9621900AAA08C /* AddPlanOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1220B2529E9621900AAA08C /* AddPlanOverview.swift */; };
 		A156907529D2EE9D00EA3C56 /* CampingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907429D2EE9D00EA3C56 /* CampingApp.swift */; };
 		A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907629D2EE9D00EA3C56 /* ContentView.swift */; };
 		A156907929D2EE9E00EA3C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A156907829D2EE9E00EA3C56 /* Assets.xcassets */; };
@@ -103,6 +104,7 @@
 		66E4E1CC29E54B0800A87706 /* PastTripCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripCard.swift; sourceTree = "<group>"; };
 		A106FEE629E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanChooseStartLocationModalView.swift; sourceTree = "<group>"; };
 		A1220B2229E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanChooseDestinationLocationModalView.swift; sourceTree = "<group>"; };
+		A1220B2529E9621900AAA08C /* AddPlanOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanOverview.swift; sourceTree = "<group>"; };
 		A156907129D2EE9D00EA3C56 /* camping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = camping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A156907429D2EE9D00EA3C56 /* CampingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingApp.swift; sourceTree = "<group>"; };
 		A156907629D2EE9D00EA3C56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -191,13 +193,11 @@
 		2787CFD429DAFD7C000B4865 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1220B2429E961F500AAA08C /* AddPlan */,
 				2707B80329E8A4E800728026 /* CommonViews */,
 				66133D9A29DE1FC500FE61AE /* OnBoardView.swift */,
 				2787CFD929DAFDE7000B4865 /* FavoriteView.swift */,
 				2787CFDD29DAFDF6000B4865 /* TripsView.swift */,
-				2787CFE129DAFE16000B4865 /* AddPlanView.swift */,
-				A106FEE629E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift */,
-				A1220B2229E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift */,
 				B305CD9429E441F0007781DB /* PermissionView.swift */,
 				B305CD9629E4420A007781DB /* NavigationTabView.swift */,
 				2787CFD529DAFDD1000B4865 /* HomeView.swift */,
@@ -214,6 +214,17 @@
 				66E4E1CC29E54B0800A87706 /* PastTripCard.swift */,
 			);
 			path = MyTripCards;
+			sourceTree = "<group>";
+		};
+		A1220B2429E961F500AAA08C /* AddPlan */ = {
+			isa = PBXGroup;
+			children = (
+				2787CFE129DAFE16000B4865 /* AddPlanView.swift */,
+				A106FEE629E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift */,
+				A1220B2229E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift */,
+				A1220B2529E9621900AAA08C /* AddPlanOverview.swift */,
+			);
+			path = AddPlan;
 			sourceTree = "<group>";
 		};
 		A156906829D2EE9D00EA3C56 = {
@@ -462,6 +473,7 @@
 				B3D6C9D929E4448D00232B53 /* CampingSite.xcdatamodeld in Sources */,
 				B305CD9729E4420A007781DB /* NavigationTabView.swift in Sources */,
 				66133D9B29DE1FC500FE61AE /* OnBoardView.swift in Sources */,
+				A1220B2629E9621900AAA08C /* AddPlanOverview.swift in Sources */,
 				A1220B2329E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift in Sources */,
 				B3DD53A229E4710500EC7620 /* PlanViewModel.swift in Sources */,
 				A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */,

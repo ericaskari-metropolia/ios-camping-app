@@ -10,14 +10,15 @@ import MapKit
 import SwiftUI
 
 final class PlanViewModel: NSObject, ObservableObject {
-
     //  Saves Plan to Storage
-    func savePlan(campingSite: CampingSite, startDate: Date, endDate: Date) {
+    func savePlan(input: AddPlantFirstStepViewOutput) {
         let context = PersistenceController.shared.container.viewContext
         let plan = Plan(context: context)
-        plan.campingSite = campingSite
-        plan.startDate = startDate
-        plan.endDate = endDate
+        plan.campingSite = input.destinationLocation
+        plan.startLatitude = input.startLocation.latitude
+        plan.startLongitude = input.startLocation.longitude
+        plan.startDate = input.startDate
+        plan.endDate = input.endDate
 
         do {
             try context.save()
@@ -26,5 +27,4 @@ final class PlanViewModel: NSObject, ObservableObject {
             print("Cannot save Plan.")
         }
     }
-
 }
