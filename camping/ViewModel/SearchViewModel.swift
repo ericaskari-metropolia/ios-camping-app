@@ -13,7 +13,7 @@ class SearchViewModel: ObservableObject {
     @Published var filteredCities: [String] = []
     @Published var filteredCampingSites: [CampingSite] = []
     var fetchedCities: [String] = []
-
+    
     init(searchText: String) {
         self.searchText = searchText
     }

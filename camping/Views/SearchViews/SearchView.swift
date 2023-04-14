@@ -50,8 +50,8 @@ struct SearchView: View {
                             } label: {
                                 EmptyView()
                             }
-                            .opacity(0)
-                            .background(.clear)
+                                .opacity(0)
+                                .background(.clear)
                         )
                         .listRowBackground(Color.clear)
                 }
