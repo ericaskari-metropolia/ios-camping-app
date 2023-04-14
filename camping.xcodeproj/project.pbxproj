@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2707B80529E8A50100728026 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B80429E8A50100728026 /* HeaderView.swift */; };
+		2707B80629E8A50100728026 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B80429E8A50100728026 /* HeaderView.swift */; };
+		2707B80729E8A50100728026 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B80429E8A50100728026 /* HeaderView.swift */; };
+		2707B80929E8A80A00728026 /* CategoryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B80829E8A80A00728026 /* CategoryListItemView.swift */; };
+		2707B80A29E8A80A00728026 /* CategoryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B80829E8A80A00728026 /* CategoryListItemView.swift */; };
+		2707B80B29E8A80A00728026 /* CategoryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B80829E8A80A00728026 /* CategoryListItemView.swift */; };
+		2707B80D29E8AADB00728026 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B80C29E8AADB00728026 /* CategoryListView.swift */; };
+		2707B80E29E8AADB00728026 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B80C29E8AADB00728026 /* CategoryListView.swift */; };
+		2707B80F29E8AADB00728026 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B80C29E8AADB00728026 /* CategoryListView.swift */; };
+		2707B81129E8B38300728026 /* CampsiteListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B81029E8B38300728026 /* CampsiteListItemView.swift */; };
+		2707B81229E8B38300728026 /* CampsiteListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B81029E8B38300728026 /* CampsiteListItemView.swift */; };
+		2707B81329E8B38300728026 /* CampsiteListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707B81029E8B38300728026 /* CampsiteListItemView.swift */; };
 		270EE5D429E42C7A00EEDF00 /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 27223A0C29E41C160015B291 /* category.json */; };
 		272239F329DEDC070015B291 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239F229DEDC070015B291 /* CategoryModel.swift */; };
 		272239F429DEDC070015B291 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239F229DEDC070015B291 /* CategoryModel.swift */; };
 		272239F529DEDC070015B291 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239F229DEDC070015B291 /* CategoryModel.swift */; };
-		272239FC29E40A9A0015B291 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239FB29E40A9A0015B291 /* CategoryItemView.swift */; };
-		272239FD29E40A9A0015B291 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239FB29E40A9A0015B291 /* CategoryItemView.swift */; };
-		272239FE29E40A9A0015B291 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239FB29E40A9A0015B291 /* CategoryItemView.swift */; };
-		27223A0029E4103E0015B291 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239FF29E4103E0015B291 /* CategoryListView.swift */; };
-		27223A0129E4103E0015B291 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239FF29E4103E0015B291 /* CategoryListView.swift */; };
-		27223A0229E4103E0015B291 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239FF29E4103E0015B291 /* CategoryListView.swift */; };
-		27223A0429E410A20015B291 /* CampCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27223A0329E410A20015B291 /* CampCategoryView.swift */; };
-		27223A0529E410A20015B291 /* CampCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27223A0329E410A20015B291 /* CampCategoryView.swift */; };
-		27223A0629E410A20015B291 /* CampCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27223A0329E410A20015B291 /* CampCategoryView.swift */; };
+		27223A0029E4103E0015B291 /* CampsiteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239FF29E4103E0015B291 /* CampsiteListView.swift */; };
+		27223A0129E4103E0015B291 /* CampsiteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239FF29E4103E0015B291 /* CampsiteListView.swift */; };
+		27223A0229E4103E0015B291 /* CampsiteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239FF29E4103E0015B291 /* CampsiteListView.swift */; };
 		27223A0F29E41CDE0015B291 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27223A0E29E41CDE0015B291 /* Constant.swift */; };
 		27223A1029E41CDE0015B291 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27223A0E29E41CDE0015B291 /* Constant.swift */; };
 		27223A1129E41CDE0015B291 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27223A0E29E41CDE0015B291 /* Constant.swift */; };
@@ -80,10 +86,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2707B80429E8A50100728026 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		2707B80829E8A80A00728026 /* CategoryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListItemView.swift; sourceTree = "<group>"; };
+		2707B80C29E8AADB00728026 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		2707B81029E8B38300728026 /* CampsiteListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampsiteListItemView.swift; sourceTree = "<group>"; };
 		272239F229DEDC070015B291 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
-		272239FB29E40A9A0015B291 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
-		272239FF29E4103E0015B291 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
-		27223A0329E410A20015B291 /* CampCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampCategoryView.swift; sourceTree = "<group>"; };
+		272239FF29E4103E0015B291 /* CampsiteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampsiteListView.swift; sourceTree = "<group>"; };
 		27223A0C29E41C160015B291 /* category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
 		27223A0E29E41CDE0015B291 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		2787CFD529DAFDD1000B4865 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -146,12 +154,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2707B80329E8A4E800728026 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				2707B80429E8A50100728026 /* HeaderView.swift */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
 		272239FA29E40A5F0015B291 /* HomeViews */ = {
 			isa = PBXGroup;
 			children = (
-				272239FB29E40A9A0015B291 /* CategoryItemView.swift */,
-				272239FF29E4103E0015B291 /* CategoryListView.swift */,
-				27223A0329E410A20015B291 /* CampCategoryView.swift */,
+				272239FF29E4103E0015B291 /* CampsiteListView.swift */,
+				2707B80829E8A80A00728026 /* CategoryListItemView.swift */,
+				2707B80C29E8AADB00728026 /* CategoryListView.swift */,
+				2707B81029E8B38300728026 /* CampsiteListItemView.swift */,
 			);
 			path = HomeViews;
 			sourceTree = "<group>";
@@ -176,6 +193,7 @@
 		2787CFD429DAFD7C000B4865 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2707B80329E8A4E800728026 /* CommonViews */,
 				66133D9A29DE1FC500FE61AE /* OnBoardView.swift */,
 				2787CFD929DAFDE7000B4865 /* FavoriteView.swift */,
 				2787CFDD29DAFDF6000B4865 /* TripsView.swift */,
@@ -434,10 +452,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27223A0429E410A20015B291 /* CampCategoryView.swift in Sources */,
 				A156907E29D2EE9E00EA3C56 /* Persistence.swift in Sources */,
 				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
 				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
+				2707B80929E8A80A00728026 /* CategoryListItemView.swift in Sources */,
 				66E4E1CD29E54B0800A87706 /* PastTripCard.swift in Sources */,
 				A106FEE729E82A78005671D6 /* AddPlanChooseLocationModalView.swift in Sources */,
 				B3DD53A429E471C800EC7620 /* AddPlanModel.swift in Sources */,
@@ -452,17 +470,19 @@
 				A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */,
 				2787CFD629DAFDD1000B4865 /* HomeView.swift in Sources */,
 				66E4E1C829E49AA200A87706 /* MyTripsEmptyView.swift in Sources */,
+				2707B81129E8B38300728026 /* CampsiteListItemView.swift in Sources */,
+				2707B80D29E8AADB00728026 /* CategoryListView.swift in Sources */,
 				66E4E1CB29E543A200A87706 /* OngoingTripCard.swift in Sources */,
 				2787CFDA29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
 				A1CD9EC829E5D4D000091865 /* Extensions.swift in Sources */,
+                2707B80529E8A50100728026 /* HeaderView.swift in Sources */,
 				B3D6C9DB29E445E600232B53 /* PersistenceController.swift in Sources */,
 				2787CFE229DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				B305CD9329E44177007781DB /* LocationViewModel.swift in Sources */,
 				A156907529D2EE9D00EA3C56 /* CampingApp.swift in Sources */,
 				2787CFD629DAFDD1000B4865 /* HomeView.swift in Sources */,
 				272239F329DEDC070015B291 /* CategoryModel.swift in Sources */,
-				272239FC29E40A9A0015B291 /* CategoryItemView.swift in Sources */,
-				27223A0029E4103E0015B291 /* CategoryListView.swift in Sources */,
+				27223A0029E4103E0015B291 /* CampsiteListView.swift in Sources */,
 				B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */,
 				A156908129D2EE9E00EA3C56 /* camping.xcdatamodeld in Sources */,
 				2787CFDE29DAFDF6000B4865 /* TripsView.swift in Sources */,
@@ -475,14 +495,16 @@
 			files = (
 				2787CFDF29DAFDF6000B4865 /* TripsView.swift in Sources */,
 				2787CFDB29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
+				2707B81229E8B38300728026 /* CampsiteListItemView.swift in Sources */,
 				2787CFE329DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				2787CFD729DAFDD1000B4865 /* HomeView.swift in Sources */,
-				27223A0129E4103E0015B291 /* CategoryListView.swift in Sources */,
-				272239FD29E40A9A0015B291 /* CategoryItemView.swift in Sources */,
+				27223A0129E4103E0015B291 /* CampsiteListView.swift in Sources */,
+				2707B80A29E8A80A00728026 /* CategoryListItemView.swift in Sources */,
+				2707B80E29E8AADB00728026 /* CategoryListView.swift in Sources */,
 				2787CFD729DAFDD1000B4865 /* HomeView.swift in Sources */,
+				2707B80629E8A50100728026 /* HeaderView.swift in Sources */,
 				A156908B29D2EE9E00EA3C56 /* campingTests.swift in Sources */,
 				27223A1029E41CDE0015B291 /* Constant.swift in Sources */,
-				27223A0529E410A20015B291 /* CampCategoryView.swift in Sources */,
 				272239F429DEDC070015B291 /* CategoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,13 +518,15 @@
 				2787CFE429DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				2787CFDC29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
 				2787CFD829DAFDD1000B4865 /* HomeView.swift in Sources */,
-				27223A0229E4103E0015B291 /* CategoryListView.swift in Sources */,
-				272239FE29E40A9A0015B291 /* CategoryItemView.swift in Sources */,
+				2707B80F29E8AADB00728026 /* CategoryListView.swift in Sources */,
+				27223A0229E4103E0015B291 /* CampsiteListView.swift in Sources */,
 				272239F529DEDC070015B291 /* CategoryModel.swift in Sources */,
-				27223A0629E410A20015B291 /* CampCategoryView.swift in Sources */,
 				27223A1129E41CDE0015B291 /* Constant.swift in Sources */,
 				2787CFD829DAFDD1000B4865 /* HomeView.swift in Sources */,
+				2707B80B29E8A80A00728026 /* CategoryListItemView.swift in Sources */,
 				A156909529D2EE9F00EA3C56 /* campingUITests.swift in Sources */,
+				2707B80729E8A50100728026 /* HeaderView.swift in Sources */,
+				2707B81329E8B38300728026 /* CampsiteListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

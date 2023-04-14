@@ -24,22 +24,22 @@ struct NavigationTabView: View {
                     Image(systemName: "plus")
                     Text("Add plan")
                 }
-
+            
             FavoriteView()
                 .tabItem(){
                     Image(systemName: "heart")
                     Text("Saved locations")
                 }
-
+            
             TripsView()
                 .tabItem(){
                     Image(systemName: "road.lanes")
                     Text("Trips")
                 }
-
+            
         }
         .navigationBarBackButtonHidden(true)
-
+        
         
     }
 }
@@ -48,6 +48,7 @@ struct NavigationTabView: View {
 struct NavigationTabView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationTabView()
-//            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        //            .environmentObject(LocationViewModel())
+        //            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

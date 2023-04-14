@@ -32,7 +32,7 @@ struct OnBoardView: View {
     
     init() {
         
-//Sets the global appearance of UIScroll view not to bounce at the end
+        //Sets the global appearance of UIScroll view not to bounce at the end
         UIScrollView.appearance().bounces = false
     }
     
@@ -59,83 +59,83 @@ struct OnBoardView: View {
                         Text("Camplify")
                             .font(.title)
                             .fontWeight(.bold)
-                    Spacer()
+                        Spacer()
                         if currentStep < 2 {
                             Image(systemName: "chevron.right")
                                 .onTapGesture {
                                     currentStep += 1
                                 }
                         }
-                     Spacer()
+                        Spacer()
                     } .padding()
                     
                     
+                    
+                    TabView(selection: $currentStep) {
                         
-                        TabView(selection: $currentStep) {
+                        ForEach(0..<3) { item in
                             
-                            ForEach(0..<3) { item in
-                               
-                                VStack{
-                                    Spacer()
-                                    Text(onBoardItems[item].title)
-                                        .font(.title)
-                                        .bold()
-                                        .padding(.horizontal,40)
-                                        
-                                    Text(onBoardItems[item].description)
-                                        .multilineTextAlignment(.center)
-                                      
-                                    
-                                }
-                                .foregroundColor(.white)
-                                .tag(item)
+                            VStack{
+                                Spacer()
+                                Text(onBoardItems[item].title)
+                                    .font(.title)
+                                    .bold()
+                                    .padding(.horizontal,40)
+                                
+                                Text(onBoardItems[item].description)
+                                    .multilineTextAlignment(.center)
+                                
+                                
                             }
-                        }
-                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                        
-                        HStack{
-                            ForEach(0..<3) { item in
-                                if item == currentStep {
-                                    Rectangle()
-                                        .frame(width: 20,height: 10)
-                                        .cornerRadius(10)
-                                        .foregroundColor(.purple)
-                                } else {
-                                    Circle()
-                                        .frame(width: 10, height:10)
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                        }
-                        
-                        Button(action:{
-                            if self.currentStep < onBoardItems.count - 1 {
-                                self.currentStep += 1
-                            } else {
-                                //Get started logic
-                                self.isFinishOnboarding = true
-                            }
-                        }){
-                            Text( currentStep < onBoardItems.count - 1 ? "Next" : "Get Started")
-                                .font(.headline)
-                                .padding(16)
-                                .background(Color.purple)
-                                .cornerRadius(16)
-                                .padding(.horizontal, 16)
-                                .foregroundColor(.white)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        
-                    NavigationLink(destination: PermissionView(), isActive: $isFinishOnboarding) {
-                            EmptyView()
+                            .foregroundColor(.white)
+                            .tag(item)
                         }
                     }
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    
+                    HStack{
+                        ForEach(0..<3) { item in
+                            if item == currentStep {
+                                Rectangle()
+                                    .frame(width: 20,height: 10)
+                                    .cornerRadius(10)
+                                    .foregroundColor(.purple)
+                            } else {
+                                Circle()
+                                    .frame(width: 10, height:10)
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
+                    
+                    Button(action:{
+                        if self.currentStep < onBoardItems.count - 1 {
+                            self.currentStep += 1
+                        } else {
+                            //Get started logic
+                            self.isFinishOnboarding = true
+                        }
+                    }){
+                        Text( currentStep < onBoardItems.count - 1 ? "Next" : "Get Started")
+                            .font(.headline)
+                            .padding(16)
+                            .background(Color.purple)
+                            .cornerRadius(16)
+                            .padding(.horizontal, 16)
+                            .foregroundColor(.white)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    NavigationLink(destination: PermissionView(), isActive: $isFinishOnboarding) {
+                        EmptyView()
+                    }
+                }
                 
             }
         }
     }
 }
-    
+
 
 
 struct OnBoardView_Previews: PreviewProvider {

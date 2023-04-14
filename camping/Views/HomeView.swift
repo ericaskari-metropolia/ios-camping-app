@@ -1,29 +1,3 @@
-////
-////  Home.swift
-////  camping
-////
-////  Created by Chi Nguyen on 3.4.2023.
-////
-//
-//import SwiftUI
-//import MapKit
-//
-//struct HomeView: View {
-//
-//    var body: some View {
-//        VStack(alignment: .leading, spacing: 10){
-//            CampCategoryView()
-//        }
-//        .padding()
-//    }
-//}
-//
-//struct HomeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeView()
-//    }
-//}
-
 //
 //  Home.swift
 //  camping
@@ -37,36 +11,50 @@ import CoreData
 
 struct HomeView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
+    @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10){
-            CampCategoryView()
-            HStack{
-                Text("Latitude:")
-                Text("\(locationViewModel.lastSeenLocation?.coordinate.latitude ?? 0)")
-            }
+        VStack(spacing: spacing){
+            HeaderView()
+                
+            CategoryListView().padding(.horizontal, 5)
             
-            HStack{
-                Text("Longitude:")
-                Text("\(locationViewModel.lastSeenLocation?.coordinate.longitude ?? 0)")
-            }
-            
-            HStack{
-                Text("City:")
-                Text(locationViewModel.currentPlacemark?.locality ?? "")
+            ScrollView{
+
+                HStack{
+                    Text("Latitude:")
+                    Text("\(locationViewModel.lastSeenLocation?.coordinate.latitude ?? 0)")
+                }
+
+                HStack{
+                    Text("Longitude:")
+                    Text("\(locationViewModel.lastSeenLocation?.coordinate.longitude ?? 0)")
+                }
+
+                HStack{
+                    Text("City:")
+                    Text(locationViewModel.currentPlacemark?.locality ?? "")
+                }
+
+                HStack{
+                    Text("campsite:")
+                    Text("\(results.count)")
+                }
+
+                ForEach(results, id: \.self) { campingSite in
+                    HStack{
+                        Text("Camping site:")
+                        Text(campingSite.name ?? "")
+                    }
+                }
             }
         }
-        .padding()
         .onAppear {
             locationViewModel.fetchCampingSites()
         }
+        .ignoresSafeArea(edges: .top)
         
-//        ForEach(locationViewModel.campingSites, id: \.self) { campingSite in
-//                    HStack{
-//                        Text("Camping site:")
-//                        Text(campingSite.name ?? "")
-//                    }
-//                }
+        
     }
 }
 

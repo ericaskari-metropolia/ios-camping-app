@@ -11,7 +11,7 @@ import MapKit
 import SwiftUI
 
 struct AddPlanView: View {
-    
+
     //  To Access Plans and save them
     @StateObject private var viewModel = PlanViewModel()
     //  To Access Campsites to show on map
@@ -29,7 +29,7 @@ struct AddPlanView: View {
 
 
 
-    
+
     var body: some View {
         ScrollView {
             ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {

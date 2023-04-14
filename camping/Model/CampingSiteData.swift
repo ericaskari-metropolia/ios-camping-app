@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct CampingSiteData: Decodable, Identifiable {
-    var id: String
+struct CampingSiteData: Decodable {
+    //     var id: String
+    var placeId: String
     var name: String
-    var location: [Double]
     var imageUrl: String
     var description: Translation
     var suitability: Translation
@@ -19,9 +19,12 @@ struct CampingSiteData: Decodable, Identifiable {
     var hasTentSite: Bool
     var hasCampfireSite: Bool
     var hasRentalHut: Bool
+    var latitude: Double
+    var longitude: Double
 }
 
 struct Translation: Decodable {
     var EN: String
     var FI: String
 }
+
