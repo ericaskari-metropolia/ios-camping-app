@@ -8,13 +8,17 @@
 import Foundation
 import CoreLocation
 import CoreData
+import MapKit
 
 class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var authorizationStatus: CLAuthorizationStatus
     @Published var lastSeenLocation: CLLocation?
     @Published var currentPlacemark: CLPlacemark?
     @Published var campingSites: [CampingSite] = []
-    
+    @Published var region: MKCoordinateRegion = .init(
+        center: CLLocationCoordinate2D(latitude: 40, longitude: 120),
+        span: MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100)
+    )
     var array: [CampingSite] = []
     
     private let locationManager: CLLocationManager
@@ -57,7 +61,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Fetch data from URL and store it to CoreData
     func fetchCampingSites() {
-        let url = "https://users.metropolia.fi/~thuh/camping%20(2).json"
+        let url = "https://users.metropolia.fi/~mohamas/2023-ios-camping-app/Features/add-plan-part-2/assets/data.json"
         guard let url = URL(string: url) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -80,14 +84,14 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                         for campingSite in campingSites {
                             if !fetchedCampingSitesCD.isEmpty {
                                 for fetchedCampingSiteCD in fetchedCampingSitesCD {
-                                    if fetchedCampingSiteCD.placeId == campingSite.placeId {
+                                    if fetchedCampingSiteCD.id == campingSite.id {
                                         continue
                                     }
                                 }
                             } else {
                                 let newCampingSiteEntity = NSEntityDescription.insertNewObject(forEntityName: "CampingSite", into: context) as! CampingSite
                                 
-                                newCampingSiteEntity.placeId = campingSite.placeId
+                                newCampingSiteEntity.id = campingSite.id
                                 newCampingSiteEntity.name = campingSite.name
                                 newCampingSiteEntity.imageURL = campingSite.imageUrl
                                 newCampingSiteEntity.descriptionEN = campingSite.description.EN
