@@ -7,38 +7,48 @@
 
 import SwiftUI
 
+// MARK: Display a list of campsites based on choosen category
+
 struct CampsiteListItemView: View {
     
-    // PROPERTIES
-//    @State var campsite: CampingSiteData
+     //PROPERTIES
+    @State var campsite: CampingSite
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16){
-            AsyncImage(url: URL(string: "https://www.luontoon.fi/documents/10550/56970047/EtelaKonnevesi_lapinsalonluoto_talvi_JouniLehmonen_1050x590.jpg/bdad1cd7-c84b-516f-470f-b27ddd46aef6?t=1539077864166")) { image in
+        HStack(alignment: .top, spacing: 16){
+            AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
                 image
                     .resizable()
+                    .scaledToFill()
+                    .frame(width: 150, height: 100)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+
             } placeholder: {
                 ProgressView()
             }
-            .frame(width: 350, height: 200)
-            HStack(alignment: .top, spacing: 200) {
-                Text("Hello world")
-                    .font(.title2)
-                .foregroundColor(.primary)
+                        
+            VStack(alignment: .leading, spacing: 8) {
+                Text(campsite.name ?? "nil")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .multilineTextAlignment(.leading)
                 
-                Label("", systemImage: "map.circle")
-                    .labelStyle(.iconOnly)
-                    .font(.system(size: 30))
+                    Text(campsite.region ?? "nil")
+                        .font(.footnote)
+                    
+                }
+                
                 
             }
             
         }
     }
-}
 
-struct CampsiteListItemView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        CampsiteListItemView()
-    }
-}
+
+//struct CampsiteListItemView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        CampsiteListItemView(campsite: .constant(CampingSite()))
+//    }
+//}
