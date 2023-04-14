@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct Coordinate: Codable {
     var latitude: Double
@@ -20,8 +21,8 @@ struct AddPlanCampsite: Identifiable, Codable {
 }
 
 struct AddPlantFirstStepViewOutput {
-    var startLocationText: String
-    var destinationLocationText: String
-    var startDate: Date?
-    var endDate: Date?
+    var startLocation: CLLocationCoordinate2D
+    var destinationLocation: CampingSite
+    var startDate: Date
+    var endDate: Date
 }

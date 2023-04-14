@@ -20,8 +20,8 @@ struct AddPlanView: View {
     @State private var isDestinationLocationModalOpen = false
     @State private var isStartDatePickerVisible = false
     @State private var isEndDatePickerVisible = false
-    @State var startLocationText: String = ""
-    @State var destinationLocationText: String = ""
+    @State var startLocation: CLLocationCoordinate2D?
+    @State var destinationLocation: CampingSite?
     @State private var startDate: Date = .today
     @State private var endDate: Date = .tomorrow
     @State private var dateFormatter = formatter()
@@ -75,12 +75,11 @@ struct AddPlanView: View {
                     .contentShape(Rectangle())
                     .cornerRadius(10)
                     .sheet(isPresented: $isStartLocationModalOpen) {
-                        AddPlanChooseLocationModalView(
+                        AddPlanChooseStartLocationModalView(
                             isPresented: self.$isStartLocationModalOpen
                         ) {
-                            coordinates in
-
-                            print(coordinates)
+                            campingSite in
+                            destinationLocation = campingSite
                         }
                     }.padding(.bottom)
 
@@ -91,7 +90,7 @@ struct AddPlanView: View {
                         }, label: {
                             HStack {
                                 Image(systemName: "location")
-                                Text("Destination location")
+                                Text(destinationLocation?.name ?? "Destination location")
                                 Spacer()
                             }.padding(.vertical)
                         }
@@ -102,12 +101,11 @@ struct AddPlanView: View {
                     .contentShape(Rectangle())
                     .cornerRadius(10)
                     .sheet(isPresented: $isDestinationLocationModalOpen) {
-                        AddPlanChooseLocationModalView(
+                        AddPlanChooseDestinationLocationModalView(
                             isPresented: self.$isDestinationLocationModalOpen
                         ) {
-                            coordinates in
-
-                            print(coordinates)
+                            campingSite in
+                            destinationLocation = campingSite
                         }
                     }.padding(.bottom)
 
@@ -217,17 +215,30 @@ struct AddPlanView: View {
     }
 
     var isFormValid: Bool {
-        return startDate.timeIntervalSince1970 <= endDate.timeIntervalSince1970
+        let correctDates = startDate.timeIntervalSince1970 <= endDate.timeIntervalSince1970
+        let hasStartLocation = startLocation != nil
+        let hasDestinationLocation = destinationLocation != nil
+
+        return correctDates && hasStartLocation && hasDestinationLocation
     }
 
     var submitButtonBackground: Color {
         return isFormValid ? Color.black : Color.gray
     }
 
-    func value() -> AddPlantFirstStepViewOutput {
+    func value() -> AddPlantFirstStepViewOutput? {
+        //  It should be used only when form is validated and fields are filled
+        guard let startLocation = startLocation else {
+            return nil
+        }
+        guard let destinationLocation = destinationLocation else {
+            return nil
+        }
+     
+
         return AddPlantFirstStepViewOutput(
-            startLocationText: startLocationText,
-            destinationLocationText: destinationLocationText,
+            startLocation: startLocation,
+            destinationLocation: destinationLocation,
             startDate: startDate,
             endDate: endDate
         )
@@ -241,7 +252,7 @@ struct AddPlanView: View {
 }
 
 struct AddPlantSecondStepView: View {
-    var input: AddPlantFirstStepViewOutput
+    var input: AddPlantFirstStepViewOutput?
 
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)

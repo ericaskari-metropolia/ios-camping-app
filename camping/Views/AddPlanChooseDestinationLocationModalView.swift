@@ -10,25 +10,32 @@ import CoreLocationUI
 import MapKit
 import SwiftUI
 
-struct AddPlanChooseLocationModalView: View {
+struct AddPlanChooseDestinationLocationModalView: View {
     @StateObject private var viewModel = LocationViewModel()
 
     @Binding var isPresented: Bool
-    
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.name, order: .reverse)]) var campingSites: FetchedResults<CampingSite>
-    
 
-    var didChooseLocation: (CLLocationCoordinate2D) -> ()
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name, order: .reverse)]) var campingSites: FetchedResults<CampingSite>
+
+    var didChooseLocation: (CampingSite) -> ()
 
     var body: some View {
         ZStack(alignment: .bottom) {
             Map(
                 coordinateRegion: $viewModel.region,
-                annotationItems: campingSites
-            ) {
-                annotation in
-                MapMarker(coordinate: CLLocationCoordinate2D(latitude: annotation.latitude, longitude: annotation.longitude))
-            }
+                showsUserLocation: true,
+                annotationItems: campingSites,
+                annotationContent: {
+                    n in MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: n.latitude, longitude: n.longitude)) {
+                        Image("location")
+                            .frame(width: 44, height: 44)
+                            .onTapGesture(count: 1, perform: {
+                                didChooseLocation(n)
+                                self.isPresented.toggle()
+                            })
+                    }
+                }
+            )
             .ignoresSafeArea()
             .tint(.pink)
 
@@ -55,26 +62,15 @@ struct AddPlanChooseLocationModalView: View {
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
-
-                Button(
-                    action: {
-                        self.isPresented.toggle()
-                    }, label: {
-                        Text("Choose")
-                    }
-                ).padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
             }
         }
     }
 }
 
-struct AddPlanChooseLocationModalView_Previews: PreviewProvider {
+struct AddPlanChooseDestinationModalView_Previews: PreviewProvider {
     @State var isPresented: Bool = true
     static var previews: some View {
-        AddPlanChooseLocationModalView(
+        AddPlanChooseDestinationLocationModalView(
             isPresented: .constant(true)
         ) {
             coordinates in
