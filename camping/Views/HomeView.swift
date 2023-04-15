@@ -15,36 +15,36 @@ struct HomeView: View {
     
     var body: some View {
         VStack(spacing: spacing){
-            HeaderView()
-                
+            HeaderHomePageView()
+            
             CategoryListView().padding(.horizontal, 5)
             
             ScrollView{
-
+                
                 HStack{
                     Text("Latitude:")
                     Text("\(locationViewModel.lastSeenLocation?.coordinate.latitude ?? 0)")
                 }
-
+                
                 HStack{
                     Text("Longitude:")
                     Text("\(locationViewModel.lastSeenLocation?.coordinate.longitude ?? 0)")
                 }
-
+                
                 HStack{
                     Text("City:")
                     Text(locationViewModel.currentPlacemark?.locality ?? "")
                 }
-
+                
                 HStack{
                     Text("campsite:")
                     Text("\(results.count)")
                 }
-
+                
                 ForEach(results, id: \.self) { campingSite in
                     HStack{
                         Text("Camping site:")
-                        Text(campingSite.name ?? "")
+                        Text(campingSite.websiteURL ?? "")
                     }
                 }
             }

@@ -10,9 +10,11 @@ import SwiftUI
 struct HeaderView: View {
     
     @EnvironmentObject var locationViewModel: LocationViewModel
-
+    @State private var isSearchFieldButtonPressed = false
+    
     
     var body: some View {
+        
         ZStack(alignment: .leading){
             Image("header")
                 .resizable()
@@ -28,38 +30,16 @@ struct HeaderView: View {
                 Text("You are in \(locationViewModel.currentPlacemark?.locality ?? "")")
                     .foregroundColor(.white).bold()
             }
-            .offset(x: 40, y: 30)
-            
-            Text("Discovery")
-                .bold()
-                .font(.system(size: 30))
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .offset(x: 40, y: 60)
-            
-            Button(action: {}){
-                HStack{
-                    Label("", systemImage: "magnifyingglass")
-                        .labelStyle(.iconOnly)
-                        .font(.system(size: 20))
-                    Text("Where do you want to go?").foregroundColor(.gray)
-                    Label("", systemImage: "mic")
-                        .labelStyle(.iconOnly)
-                        .font(.system(size: 20))
-                }
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(.gray, lineWidth: 1.5)
-                )
-            }
-            .foregroundColor(.black)
-            .background(.white)
-            .cornerRadius(20)
-            .offset(x: UIScreen.main.bounds.width/5, y: 150)
+            .offset(x: 40, y: 90)
         }
         .padding(.bottom, 20)
-        .background(Color.clear)    }
+        .background(Color.clear)
+        
+        NavigationLink(destination: SearchView(), isActive: $isSearchFieldButtonPressed) {
+            EmptyView()
+        }
+        
+    }
 }
 
 struct HeaderView_Previews: PreviewProvider {
