@@ -29,3 +29,4 @@ struct Translation: Decodable {
     var FI: String
 }
 
+
