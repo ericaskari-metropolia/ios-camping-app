@@ -14,7 +14,7 @@ struct CampsiteDetailView: View {
     
     var body: some View {
         VStack(){
-            // Image
+            // Campsite Image
             ZStack(alignment: .leading){
                 
                 AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
@@ -27,51 +27,58 @@ struct CampsiteDetailView: View {
                     ProgressView()
                 }
                 
-//                Image(campsite.imageURL)
-//                    .resizable()
-//                    .scaledToFill()
-//                    .frame(maxWidth: .infinity)
-//                    .frame(height: 300)
+                Button(action: {}, label: {
+                    Image(systemName: "heart")
+                        .font(.title)
+                        .foregroundColor(.white)
+                })
+                .offset(x: 350, y: -75)
+                
                 
             }
             .background(Color.clear)
-            .navigationTitle(campsite.name ?? "nil")
             .edgesIgnoringSafeArea(.top)
             
-            // Text
+            // Campsite detail
             ScrollView {
-                ZStack() {
-                    Text(campsite.name ?? "")
+                VStack(alignment: .center, spacing: 20) {
+                    Text(campsite.name ?? "Not available")
                         .font(.title)
                         .padding(.vertical, 8)
                     .foregroundColor(.primary)
                     
-                    HStack{
-                        Label("", systemImage: "mappin.and.ellipse")
-                            .labelStyle(.iconOnly)
-                            .font(.system(size: 20))
-                            .foregroundColor(.primary)
-                        Text("Espoo")
-                            .foregroundColor(.primary).bold()
+                    HStack {
+                        HStack{
+                            Label("", systemImage: "mappin.and.ellipse")
+                                .labelStyle(.iconOnly)
+                                .font(.system(size: 20))
+                                .foregroundColor(.primary)
+                            Text(campsite.region ?? "Not available")
+                                .foregroundColor(.primary).bold()
+                        }
+                        HStack{
+                            Label("", systemImage: "mappin.and.ellipse")
+                                .labelStyle(.iconOnly)
+                                .font(.system(size: 20))
+                                .foregroundColor(.primary)
+                            Text("Weather condition")
+                                .foregroundColor(.primary).bold()
+                        }
                     }
-                    .offset(x: 40, y: 30)
                     
-                }
-                VStack{
-                    Label("", systemImage: "mappin.and.ellipse")
-                        .labelStyle(.iconOnly)
-                        .font(.system(size: 20))
+                    Text(campsite.descriptionEN ?? "nil")
+                        .font(.headline)
+                        .multilineTextAlignment(.leading)
                         .foregroundColor(.primary)
-                    Text("Rain")
-                        .foregroundColor(.primary).bold()
+                        .padding(.horizontal)
+                    
+                    // Buttons
+                    HStack{
+                        ViewOnMapButtonView()
+                        PlanNewTripButtonView()
+                    }
+                    .padding()
                 }
-                
-                Text(campsite.descriptionEN ?? "nil")
-                    .font(.headline)
-                    .multilineTextAlignment(.leading)
-                    .foregroundColor(.primary)
-                    .padding(.horizontal)
-                
                 
             }
             
