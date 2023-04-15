@@ -30,7 +30,7 @@ struct HeaderView: View {
                 Text("You are in \(locationViewModel.currentPlacemark?.locality ?? "")")
                     .foregroundColor(.white).bold()
             }
-            .offset(x: 40, y: 90)
+            .offset(x: 40, y: 40)
         }
         .padding(.bottom, 20)
         .background(Color.clear)

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+
+class Favorite: ObservableObject {
+    @Published var favorite: Bool = false
+    @Published var selectedCampsite: CampingSite? = nil
+}
+ 
