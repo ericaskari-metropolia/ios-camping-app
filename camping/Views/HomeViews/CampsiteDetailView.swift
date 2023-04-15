@@ -71,6 +71,8 @@ struct CampsiteDetailView: View {
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.primary)
                     .padding(.horizontal)
+                
+                
             }
             
         }
