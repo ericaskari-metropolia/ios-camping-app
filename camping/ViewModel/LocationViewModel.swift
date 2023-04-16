@@ -5,11 +5,9 @@
 //  Created by Thu Hoang on 5.4.2023.
 //
 
-import CoreData
-import CoreLocation
 import Foundation
-import MapKit
-import SwiftUI
+import CoreLocation
+import CoreData
 
 class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var authorizationStatus: CLAuthorizationStatus
@@ -70,7 +68,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Fetch data from URL and store it to CoreData
     func fetchCampingSites() {
-        let url = "https://users.metropolia.fi/~mohamas/2023-ios-camping-app/Features/add-plan-part-2/assets/data.json"
+        let url = "https://users.metropolia.fi/~thuh/camping-3.json"
         guard let url = URL(string: url) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -100,7 +98,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                             } else {
                                 let newCampingSiteEntity = NSEntityDescription.insertNewObject(forEntityName: "CampingSite", into: context) as! CampingSite
                                 
-                                newCampingSiteEntity.id = campingSite.id
+                                newCampingSiteEntity.placeId = campingSite.placeId
                                 newCampingSiteEntity.name = campingSite.name
                                 newCampingSiteEntity.imageURL = campingSite.imageUrl
                                 newCampingSiteEntity.descriptionEN = campingSite.description.EN
@@ -109,6 +107,8 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                                 newCampingSiteEntity.suitabilityFI = campingSite.suitability.FI
                                 newCampingSiteEntity.category = campingSite.category
                                 newCampingSiteEntity.region = campingSite.region
+                                newCampingSiteEntity.city = campingSite.city
+                                newCampingSiteEntity.websiteURL = campingSite.websiteURL
                                 newCampingSiteEntity.hasTentSite = campingSite.hasTentSite
                                 newCampingSiteEntity.hasCampfireSite = campingSite.hasCampfireSite
                                 newCampingSiteEntity.hasRentalHut = campingSite.hasRentalHut

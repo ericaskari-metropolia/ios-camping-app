@@ -8,10 +8,26 @@
 import SwiftUI
 
 struct FavoriteView: View {
+    
+    @EnvironmentObject var favorite: Favorite
+    @EnvironmentObject var locationViewModel: LocationViewModel
+    
     var body: some View {
-        ZStack{
-            Color.blue
-            Text("Welcome to favorite!")
+        VStack{
+            ZStack{
+                HeaderView()
+                Text("Saved locations")
+                    .bold()
+                    .font(.system(size: 30))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .offset(x: -75, y: 60)
+            }
+            .edgesIgnoringSafeArea(.top)
+            ScrollView{
+                
+            }
+            
         }
     }
 }
@@ -19,5 +35,7 @@ struct FavoriteView: View {
 struct FavoriteView_Previews: PreviewProvider {
     static var previews: some View {
         FavoriteView()
+            .environmentObject(LocationViewModel())
+            .environmentObject(Favorite())
     }
 }

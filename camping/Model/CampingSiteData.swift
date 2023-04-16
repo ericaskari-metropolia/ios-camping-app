@@ -15,6 +15,8 @@ struct CampingSiteData: Decodable, Identifiable {
     var suitability: Translation
     var category: String
     var region: String
+    var city: String
+    var websiteURL: String
     var hasTentSite: Bool
     var hasCampfireSite: Bool
     var hasRentalHut: Bool
@@ -26,4 +28,5 @@ struct Translation: Decodable {
     var EN: String
     var FI: String
 }
+
 

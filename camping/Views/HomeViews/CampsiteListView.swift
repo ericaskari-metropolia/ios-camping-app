@@ -14,10 +14,15 @@ struct CampsiteListView: View {
     // PROPERTIES
     @State var category: Category
     
-    // Fetch user
+    // Fetch campsites
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
     
+    // Filter list
+    @State var list: [CampingSite] = []
     
+    func filterList(){
+        self.list = results.filter{$0.category?.lowercased() == category.title.lowercased()}
+    }
     
     // BODY
     var body: some View {
@@ -34,10 +39,20 @@ struct CampsiteListView: View {
             .background(Color.clear)
             .navigationTitle("\(category.title) campsites")
             .edgesIgnoringSafeArea(.top)
-
-        }
-        
             
+            ScrollView{
+                ForEach(list, id: \.self) {campingSite in
+//                    if(campingSite.category == category.title){
+                        NavigationLink(destination: CampsiteDetailView(campsite: campingSite)){
+                            CampsiteListItemView(campsite: campingSite)
+                        }
+//                    }
+                }
+            }
+            
+        }
+        .onAppear(perform: {filterList()})
+        
         }
         
     }

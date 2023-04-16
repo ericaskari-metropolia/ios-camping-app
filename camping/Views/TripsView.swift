@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TripsView: View {
     var body: some View {
-        MyTripsEmptyView()
+        MyTripsFilledView()
         
     }
 }
