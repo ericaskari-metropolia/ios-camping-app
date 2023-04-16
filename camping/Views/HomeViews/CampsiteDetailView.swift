@@ -30,13 +30,26 @@ struct CampsiteDetailView: View {
                 }
                 
                 Button{
-                    favoriteManger.addToFavorite(campsite: campsite)
+                    if favoriteManger.favoriteCampsites.contains(campsite){
+                        favoriteManger.removeFromFavorite(campsite: campsite)
+                    }else{
+                        favoriteManger.addToFavorite(campsite: campsite)
+                    }
+                    
                     print(favoriteManger.favoriteCampsites)
                 } label: {
-                    Image(systemName: "heart")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .padding()
+                    favoriteManger.favoriteCampsites.contains(campsite) ? (
+                        Image(systemName: "heart.fill")
+                            .font(.title)
+                            .foregroundColor(.red)
+                            .padding()
+                    ) : (
+                        Image(systemName: "heart")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+                    )
+                    
                 }
                 
             }
