@@ -28,7 +28,15 @@ struct FavoriteView: View {
                 if favoriteManager.favoriteCampsites.count > 0{
                     ForEach(favoriteManager.favoriteCampsites, id: \.self){
                         campsite in
-                        Text(campsite.name ?? "")
+            
+//                        NavigationLink(destination: CampsiteDetailView(campsite: campsite)){
+//                            FavoriteItemView(campsite:campsite)
+//                        }
+                        NavigationLink{
+                            CampsiteDetailView(campsite: campsite)
+                        } label :{
+                            FavoriteItemView(campsite: campsite)
+                        }
                     }
                 } else {
                     Text ("You don't have any saved campsite yet!")

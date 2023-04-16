@@ -29,9 +29,6 @@
 		2712B5C829EAF16E00C7D7D0 /* PlanNewTripButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712B5C729EAF16E00C7D7D0 /* PlanNewTripButtonView.swift */; };
 		2712B5C929EAF16E00C7D7D0 /* PlanNewTripButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712B5C729EAF16E00C7D7D0 /* PlanNewTripButtonView.swift */; };
 		2712B5CA29EAF16E00C7D7D0 /* PlanNewTripButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712B5C729EAF16E00C7D7D0 /* PlanNewTripButtonView.swift */; };
-		2712B5CC29EAF2A100C7D7D0 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712B5CB29EAF2A100C7D7D0 /* Favorite.swift */; };
-		2712B5CD29EAF2A100C7D7D0 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712B5CB29EAF2A100C7D7D0 /* Favorite.swift */; };
-		2712B5CE29EAF2A100C7D7D0 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712B5CB29EAF2A100C7D7D0 /* Favorite.swift */; };
 		272239F329DEDC070015B291 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239F229DEDC070015B291 /* CategoryModel.swift */; };
 		272239F429DEDC070015B291 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239F229DEDC070015B291 /* CategoryModel.swift */; };
 		272239F529DEDC070015B291 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272239F229DEDC070015B291 /* CategoryModel.swift */; };
@@ -41,6 +38,12 @@
 		27223A0F29E41CDE0015B291 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27223A0E29E41CDE0015B291 /* Constant.swift */; };
 		27223A1029E41CDE0015B291 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27223A0E29E41CDE0015B291 /* Constant.swift */; };
 		27223A1129E41CDE0015B291 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27223A0E29E41CDE0015B291 /* Constant.swift */; };
+		2787216D29EC20E50000BE8E /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787216C29EC20E50000BE8E /* FavoriteManager.swift */; };
+		2787216E29EC20E50000BE8E /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787216C29EC20E50000BE8E /* FavoriteManager.swift */; };
+		2787216F29EC20E50000BE8E /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787216C29EC20E50000BE8E /* FavoriteManager.swift */; };
+		2787217229EC25AF0000BE8E /* FavoriteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787217129EC25AF0000BE8E /* FavoriteItemView.swift */; };
+		2787217329EC25AF0000BE8E /* FavoriteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787217129EC25AF0000BE8E /* FavoriteItemView.swift */; };
+		2787217429EC25AF0000BE8E /* FavoriteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787217129EC25AF0000BE8E /* FavoriteItemView.swift */; };
 		2787CFD629DAFDD1000B4865 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD529DAFDD1000B4865 /* HomeView.swift */; };
 		2787CFD729DAFDD1000B4865 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD529DAFDD1000B4865 /* HomeView.swift */; };
 		2787CFD829DAFDD1000B4865 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD529DAFDD1000B4865 /* HomeView.swift */; };
@@ -109,11 +112,12 @@
 		2712B5BB29EA9AA400C7D7D0 /* CampsiteDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampsiteDetailView.swift; sourceTree = "<group>"; };
 		2712B5C329EAF04D00C7D7D0 /* ViewOnMapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOnMapButtonView.swift; sourceTree = "<group>"; };
 		2712B5C729EAF16E00C7D7D0 /* PlanNewTripButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanNewTripButtonView.swift; sourceTree = "<group>"; };
-		2712B5CB29EAF2A100C7D7D0 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		272239F229DEDC070015B291 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		272239FF29E4103E0015B291 /* CampsiteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampsiteListView.swift; sourceTree = "<group>"; };
 		27223A0C29E41C160015B291 /* category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
 		27223A0E29E41CDE0015B291 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		2787216C29EC20E50000BE8E /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
+		2787217129EC25AF0000BE8E /* FavoriteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItemView.swift; sourceTree = "<group>"; };
 		2787CFD529DAFDD1000B4865 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2787CFD929DAFDE7000B4865 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		2787CFDD29DAFDF6000B4865 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
@@ -213,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				27223A0E29E41CDE0015B291 /* Constant.swift */,
-				2712B5CB29EAF2A100C7D7D0 /* Favorite.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -225,9 +228,18 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		2787217029EC25820000BE8E /* FavoriteViews */ = {
+			isa = PBXGroup;
+			children = (
+				2787217129EC25AF0000BE8E /* FavoriteItemView.swift */,
+			);
+			path = FavoriteViews;
+			sourceTree = "<group>";
+		};
 		2787CFD429DAFD7C000B4865 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2787217029EC25820000BE8E /* FavoriteViews */,
 				B3C028C029E9B7AF00DDBF06 /* SearchViews */,
 				2707B80329E8A4E800728026 /* CommonViews */,
 				66133D9A29DE1FC500FE61AE /* OnBoardView.swift */,
@@ -328,6 +340,7 @@
 				B305CD9229E44177007781DB /* LocationViewModel.swift */,
 				B3DD53A129E4710500EC7620 /* AddPlanViewModel.swift */,
 				B3C028BE29E9AA5C00DDBF06 /* SearchViewModel.swift */,
+				2787216C29EC20E50000BE8E /* FavoriteManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -525,6 +538,7 @@
 				2707B80D29E8AADB00728026 /* CategoryListView.swift in Sources */,
 				B3C028C629E9CB5C00DDBF06 /* HeaderHomePageView.swift in Sources */,
 				66E4E1CB29E543A200A87706 /* OngoingTripCard.swift in Sources */,
+				2787216D29EC20E50000BE8E /* FavoriteManager.swift in Sources */,
 				2787CFDA29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
 				2707B80529E8A50100728026 /* HeaderView.swift in Sources */,
 				B3C028C229E9B7E900DDBF06 /* CityListItemView.swift in Sources */,
@@ -532,12 +546,12 @@
 				2787CFE229DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				B305CD9329E44177007781DB /* LocationViewModel.swift in Sources */,
 				A156907529D2EE9D00EA3C56 /* CampingApp.swift in Sources */,
-				2712B5CC29EAF2A100C7D7D0 /* Favorite.swift in Sources */,
 				2787CFD629DAFDD1000B4865 /* HomeView.swift in Sources */,
 				272239F329DEDC070015B291 /* CategoryModel.swift in Sources */,
 				2712B5C829EAF16E00C7D7D0 /* PlanNewTripButtonView.swift in Sources */,
 				27223A0029E4103E0015B291 /* CampsiteListView.swift in Sources */,
 				B3C028C429E9C29800DDBF06 /* CampingSitesFilteredByCityListView.swift in Sources */,
+				2787217229EC25AF0000BE8E /* FavoriteItemView.swift in Sources */,
 				B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */,
 				A156908129D2EE9E00EA3C56 /* camping.xcdatamodeld in Sources */,
 				2787CFDE29DAFDF6000B4865 /* TripsView.swift in Sources */,
@@ -551,7 +565,9 @@
 			files = (
 				2787CFDF29DAFDF6000B4865 /* TripsView.swift in Sources */,
 				2712B5C929EAF16E00C7D7D0 /* PlanNewTripButtonView.swift in Sources */,
+				2787217329EC25AF0000BE8E /* FavoriteItemView.swift in Sources */,
 				2787CFDB29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
+				2787216E29EC20E50000BE8E /* FavoriteManager.swift in Sources */,
 				2707B81229E8B38300728026 /* CampsiteListItemView.swift in Sources */,
 				2787CFE329DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				2787CFD729DAFDD1000B4865 /* HomeView.swift in Sources */,
@@ -561,7 +577,6 @@
 				2787CFD729DAFDD1000B4865 /* HomeView.swift in Sources */,
 				2707B80629E8A50100728026 /* HeaderView.swift in Sources */,
 				A156908B29D2EE9E00EA3C56 /* campingTests.swift in Sources */,
-				2712B5CD29EAF2A100C7D7D0 /* Favorite.swift in Sources */,
 				2712B5C529EAF04D00C7D7D0 /* ViewOnMapButtonView.swift in Sources */,
 				2712B5BD29EA9AA400C7D7D0 /* CampsiteDetailView.swift in Sources */,
 				27223A1029E41CDE0015B291 /* Constant.swift in Sources */,
@@ -580,6 +595,7 @@
 				2787CFD829DAFDD1000B4865 /* HomeView.swift in Sources */,
 				2707B80F29E8AADB00728026 /* CategoryListView.swift in Sources */,
 				27223A0229E4103E0015B291 /* CampsiteListView.swift in Sources */,
+				2787217429EC25AF0000BE8E /* FavoriteItemView.swift in Sources */,
 				2712B5BE29EA9AA400C7D7D0 /* CampsiteDetailView.swift in Sources */,
 				272239F529DEDC070015B291 /* CategoryModel.swift in Sources */,
 				27223A1129E41CDE0015B291 /* Constant.swift in Sources */,
@@ -588,7 +604,7 @@
 				A156909529D2EE9F00EA3C56 /* campingUITests.swift in Sources */,
 				2707B80729E8A50100728026 /* HeaderView.swift in Sources */,
 				2707B81329E8B38300728026 /* CampsiteListItemView.swift in Sources */,
-				2712B5CE29EAF2A100C7D7D0 /* Favorite.swift in Sources */,
+				2787216F29EC20E50000BE8E /* FavoriteManager.swift in Sources */,
 				2712B5C629EAF04D00C7D7D0 /* ViewOnMapButtonView.swift in Sources */,
 				2712B5CA29EAF16E00C7D7D0 /* PlanNewTripButtonView.swift in Sources */,
 			);
