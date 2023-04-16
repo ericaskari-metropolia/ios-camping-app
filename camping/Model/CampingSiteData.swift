@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CampingSiteData: Decodable, Identifiable {
-    var id: UUID
+struct CampingSiteData: Decodable {
+    var placeId: String
     var name: String
     var imageUrl: String
     var description: Translation

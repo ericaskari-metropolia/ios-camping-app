@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import CoreData
+import MapKit
 
 class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var authorizationStatus: CLAuthorizationStatus
@@ -91,7 +92,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                         for campingSite in campingSites {
                             if !fetchedCampingSitesCD.isEmpty {
                                 for fetchedCampingSiteCD in fetchedCampingSitesCD {
-                                    if fetchedCampingSiteCD.id == campingSite.id {
+                                    if fetchedCampingSiteCD.placeId == campingSite.placeId {
                                         continue
                                     }
                                 }
