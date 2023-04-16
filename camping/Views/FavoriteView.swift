@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FavoriteView: View {
     
-    @EnvironmentObject var favorite: Favorite
+    @EnvironmentObject var favoriteManager: FavoriteManager
     @EnvironmentObject var locationViewModel: LocationViewModel
     
     var body: some View {
@@ -25,6 +25,14 @@ struct FavoriteView: View {
             }
             .edgesIgnoringSafeArea(.top)
             ScrollView{
+                if favoriteManager.favoriteCampsites.count > 0{
+                    ForEach(favoriteManager.favoriteCampsites, id: \.self){
+                        campsite in
+                        Text(campsite.name ?? "")
+                    }
+                } else {
+                    Text ("You don't have any saved campsite yet!")
+                }
                 
             }
             
@@ -36,6 +44,6 @@ struct FavoriteView_Previews: PreviewProvider {
     static var previews: some View {
         FavoriteView()
             .environmentObject(LocationViewModel())
-            .environmentObject(Favorite())
+            .environmentObject(FavoriteManager())
     }
 }

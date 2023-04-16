@@ -10,30 +10,34 @@ import SwiftUI
 struct CampsiteDetailView: View {
     
     //PROPERTIES
-   @State var campsite: CampingSite
+    @State var campsite: CampingSite
+    
+    @EnvironmentObject var favoriteManger : FavoriteManager
     
     var body: some View {
         VStack(){
             // Campsite Image
-            ZStack(alignment: .leading){
+            ZStack(alignment: .bottomLeading){
                 
                 AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
                     image
                         .resizable()
                         .scaledToFill()
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: UIScreen.main.bounds.width)
                         .frame(height: 300)
                 } placeholder: {
                     ProgressView()
                 }
                 
-                Button(action: {}, label: {
+                Button{
+                    favoriteManger.addToFavorite(campsite: campsite)
+                    print(favoriteManger.favoriteCampsites)
+                } label: {
                     Image(systemName: "heart")
                         .font(.title)
                         .foregroundColor(.white)
-                })
-                .offset(x: 350, y: -75)
-                
+                        .padding()
+                }
                 
             }
             .background(Color.clear)
@@ -88,6 +92,6 @@ struct CampsiteDetailView: View {
 
 //struct CampsiteDetailView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        CampsiteDetailView()
+//        CampsiteDetailView(campsite: campsite)
 //    }
 //}
