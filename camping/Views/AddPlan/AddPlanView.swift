@@ -11,11 +11,11 @@ import MapKit
 import SwiftUI
 
 struct AddPlanView: View {
-
     //  To Access Plans and save them
-    @StateObject private var viewModel = PlanViewModel()
+    @EnvironmentObject var viewModel: PlanViewModel
     //  To Access Campsites to show on map
-    @StateObject private var locationViewModel = LocationViewModel()
+    @EnvironmentObject var locationViewModel: LocationViewModel
+
     @State private var isStartLocationModalOpen = false
     @State private var isDestinationLocationModalOpen = false
     @State private var isStartDatePickerVisible = false
@@ -26,35 +26,13 @@ struct AddPlanView: View {
     @State private var endDate: Date = .tomorrow
     @State private var dateFormatter = formatter()
     @State private var annotations: [CampingSiteData] = []
-    
+
     var completed: () -> ()
-    
+
     var body: some View {
-        ScrollView {
-            ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
-                Image("header")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: 400, maxHeight: 350)
-                    .clipped()
-
-                VStack {
-                    Text("My trips")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-
-                    // The location Espoo is hardcoded, need to be changed
-                    Label("You are in Espoo", systemImage: "globe.europe.africa")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding(.bottom, 5)
-                }
-                .padding()
-                .padding(.bottom, 30)
-            }.ignoresSafeArea()
-
-            VStack {
+        VStack {
+            HeaderView()
+            ScrollView {
                 VStack(alignment: .leading) {
                     Text("Start location")
                     Button(
@@ -63,7 +41,7 @@ struct AddPlanView: View {
                         }, label: {
                             HStack {
                                 Image(systemName: "location")
-                                Text("Start location")
+                                Text(startLocation == nil ? "Start location" : "Chosen on the map")
                                 Spacer()
                             }.padding(.vertical)
                         }
@@ -82,136 +60,141 @@ struct AddPlanView: View {
                         }
                     }.padding(.bottom)
 
-                    Text("Destination location")
-                    Button(
-                        action: {
-                            self.isDestinationLocationModalOpen.toggle()
-                        }, label: {
-                            HStack {
-                                Image(systemName: "location")
-                                Text(destinationLocation?.name ?? "Destination location")
-                                Spacer()
-                            }.padding(.vertical)
-                        }
-                    )
-                    .buttonStyle(.bordered)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .contentShape(Rectangle())
-                    .cornerRadius(10)
-                    .sheet(isPresented: $isDestinationLocationModalOpen) {
-                        AddPlanChooseDestinationLocationModalView(
-                            isPresented: self.$isDestinationLocationModalOpen
-                        ) {
-                            campingSite in
-                            destinationLocation = campingSite
-                        }
-                    }.padding(.bottom)
-
-                    Text("Start Date")
-                    Button(
-                        action: {
-                            self.isStartDatePickerVisible.toggle()
-                        }, label: {
-                            HStack {
-                                Image(systemName: "location")
-                                Text(
-                                    dateFormatter.string(from: startDate)
-                                )
-                                Spacer()
-                            }.padding(.vertical)
-                        }
-                    )
-                    .buttonStyle(.bordered)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .contentShape(Rectangle())
-                    .cornerRadius(10)
-                    .padding(.bottom)
-
-                    if isStartDatePickerVisible {
-                        DatePicker(
-                            "",
-                            selection: $startDate,
-                            displayedComponents: [.date, .hourAndMinute]
+                    VStack(alignment: .leading) {
+                        Text("Destination location")
+                        Button(
+                            action: {
+                                self.isDestinationLocationModalOpen.toggle()
+                            }, label: {
+                                HStack {
+                                    Image(systemName: "location")
+                                    Text(destinationLocation?.name ?? "Destination location")
+                                    Spacer()
+                                }.padding(.vertical)
+                            }
                         )
-                        .labelsHidden()
-                        .datePickerStyle(.graphical)
+                        .buttonStyle(.bordered)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .contentShape(Rectangle())
+                        .cornerRadius(10)
+                        .sheet(isPresented: $isDestinationLocationModalOpen) {
+                            AddPlanChooseDestinationLocationModalView(
+                                isPresented: self.$isDestinationLocationModalOpen
+                            ) {
+                                campingSite in
+                                destinationLocation = campingSite
+                            }
+                        }.padding(.bottom)
 
+                        Text("Start Date")
                         Button(
                             action: {
                                 self.isStartDatePickerVisible.toggle()
                             }, label: {
-                                Text("Close")
+                                HStack {
+                                    Image(systemName: "location")
+                                    Text(
+                                        dateFormatter.string(from: startDate)
+                                    )
+                                    Spacer()
+                                }.padding(.vertical)
                             }
                         )
+                        .buttonStyle(.bordered)
                         .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .contentShape(Rectangle())
                         .cornerRadius(10)
                         .padding(.bottom)
+
+                        if isStartDatePickerVisible {
+                            DatePicker(
+                                "",
+                                selection: $startDate,
+                                displayedComponents: [.date, .hourAndMinute]
+                            )
+                            .labelsHidden()
+                            .datePickerStyle(.graphical)
+
+                            Button(
+                                action: {
+                                    self.isStartDatePickerVisible.toggle()
+                                }, label: {
+                                    Text("Close")
+                                }
+                            )
+                            .frame(maxWidth: .infinity)
+                            .cornerRadius(10)
+                            .padding(.bottom)
+                        }
                     }
 
-                    Text("End Date")
-                    Button(
-                        action: {
-                            self.isEndDatePickerVisible.toggle()
-
-                        }, label: {
-                            HStack {
-                                Image(systemName: "location")
-                                Text(
-                                    dateFormatter.string(from: endDate)
-                                )
-                                Spacer()
-                            }.padding(.vertical)
-                        }
-                    )
-                    .buttonStyle(.bordered)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .contentShape(Rectangle())
-                    .cornerRadius(10)
-                    .padding(.bottom)
-
-                    if isEndDatePickerVisible {
-                        DatePicker(
-                            "",
-                            selection: $endDate,
-                            displayedComponents: [.date, .hourAndMinute]
-                        )
-                        .labelsHidden()
-                        .datePickerStyle(.graphical)
-
+                    VStack(alignment: .leading) {
+                        Text("End Date")
                         Button(
                             action: {
                                 self.isEndDatePickerVisible.toggle()
+
                             }, label: {
-                                Text("Close")
+                                HStack {
+                                    Image(systemName: "location")
+                                    Text(
+                                        dateFormatter.string(from: endDate)
+                                    )
+                                    Spacer()
+                                }.padding(.vertical)
                             }
                         )
+                        .buttonStyle(.bordered)
                         .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .contentShape(Rectangle())
                         .cornerRadius(10)
                         .padding(.bottom)
+
+                        if isEndDatePickerVisible {
+                            DatePicker(
+                                "",
+                                selection: $endDate,
+                                displayedComponents: [.date, .hourAndMinute]
+                            )
+                            .labelsHidden()
+                            .datePickerStyle(.graphical)
+
+                            Button(
+                                action: {
+                                    self.isEndDatePickerVisible.toggle()
+                                }, label: {
+                                    Text("Close")
+                                }
+                            )
+                            .frame(maxWidth: .infinity)
+                            .cornerRadius(10)
+                            .padding(.bottom)
+                        }
                     }
+
+                    VStack(alignment: .leading) {
+                        NavigationLink(
+                            destination: AddPlanOverview(completed: {
+                                completed()
+                            }, input: value()),
+                            label: {
+                                Text("Create trip")
+                            }
+                        )
+
+                        .bold()
+                        .frame(width: 280, height: 50)
+                        .background(submitButtonBackground)
+                        .foregroundColor(.white)
+                        .cornerRadius(50)
+                        .disabled(!isFormValid)
+                    }.padding([.bottom], 50)
                     // Extra arguments in call =  Maximum number of views in this VStack
-                }.padding()
-
-                NavigationLink(
-                    destination: AddPlanOverview(completed: {
-                        completed()
-                    }, input: value()),
-                    label: {
-                        Text("Create trip")
-                    }
-                )
-
-                .bold()
-                .frame(width: 280, height: 50)
-                .background(submitButtonBackground)
-                .foregroundColor(.white)
-                .cornerRadius(50)
-                .disabled(!isFormValid)
-
-            }.padding([.leading, .bottom, .trailing], 25)
+                }.padding([.leading, .bottom, .trailing], 60)
+            }
 
         }.ignoresSafeArea()
     }
@@ -254,9 +237,10 @@ struct AddPlanView: View {
 
 struct AddPlanView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlanView(){
+        AddPlanView {
             print("AddPlanView_Previews: Completed")
-
         }
+        .environmentObject(LocationViewModel())
+        .environmentObject(PlanViewModel())
     }
 }

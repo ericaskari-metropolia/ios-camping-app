@@ -11,7 +11,8 @@ import MapKit
 import SwiftUI
 
 struct AddPlanChooseDestinationLocationModalView: View {
-    @StateObject private var viewModel = LocationViewModel()
+    //  To Access Location
+    @EnvironmentObject var viewModel: LocationViewModel
 
     @Binding var isPresented: Bool
 
@@ -86,5 +87,6 @@ struct AddPlanChooseDestinationModalView_Previews: PreviewProvider {
             coordinates in
             print(coordinates)
         }
+        .environmentObject(LocationViewModel())
     }
 }

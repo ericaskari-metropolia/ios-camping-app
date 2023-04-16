@@ -10,7 +10,8 @@ import SwiftUI
 struct AddPlanOverview: View {
     @Environment(\.dismiss) var dismiss
     //  To Access Plans and save them
-    @StateObject private var viewModel = PlanViewModel()
+    @EnvironmentObject var viewModel: PlanViewModel
+
     @State private var saved = false
     var completed: () -> ()
 
@@ -32,15 +33,15 @@ struct AddPlanOverview: View {
                 Text("Save")
             }
             .disabled(input == nil || saved)
-         
         }
     }
 }
 
 struct AddPlanOverview_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlanOverview(){
+        AddPlanOverview {
             print("AddPlanOverview_Previews: Completed")
         }
+        .environmentObject(PlanViewModel())
     }
 }
