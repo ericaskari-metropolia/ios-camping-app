@@ -15,40 +15,32 @@ struct CampsiteListItemView: View {
     @State var campsite: CampingSite
     
     var body: some View {
-        HStack(alignment: .top, spacing: 16){
-            
-            HStack {
-                AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 150, height: 100, alignment: .center)
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
-
-                } placeholder: {
-                    ProgressView()
-            }
-                Spacer()
+        
+        HStack(spacing: spacing){
+            AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 150, height: 100)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                
+            } placeholder: {
+                ProgressView()
             }
             .padding()
             
-        
-            VStack(alignment: .center, spacing: 8) {
-                    Text(campsite.name ?? "nil")
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
+            VStack(alignment: .leading, spacing: 10){
+                Text(campsite.name ?? "")
+                        .bold()
                         .multilineTextAlignment(.leading)
-                    
-                        Text(campsite.region ?? "nil")
-                            .font(.footnote)
-                        
-                }
+                        .foregroundColor(Color.primary)
+                Text(campsite.region ?? "")
+                    .multilineTextAlignment(.leading)
+            }
                 
             Spacer()
-                
-                
-            }
+
+        }
             
         }
     }
@@ -60,3 +52,5 @@ struct CampsiteListItemView: View {
 //        CampsiteListItemView(campsite: .constant(CampingSite()))
 //    }
 //}
+
+

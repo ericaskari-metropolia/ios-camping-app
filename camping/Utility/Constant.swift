@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // DATA
 
@@ -15,6 +16,7 @@ let categories: [Category] = Bundle.main.decode("category.json")
 
 let spacing: CGFloat = 20
 
-
-
 // COLOR
+
+let primary = Color("PrimaryColor")
+let background = Color("BackgroundColor")

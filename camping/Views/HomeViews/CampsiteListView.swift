@@ -38,20 +38,19 @@ struct CampsiteListView: View {
             }
             .background(Color.clear)
             .navigationTitle("\(category.title) campsites")
-            .edgesIgnoringSafeArea(.top)
+            
             
             ScrollView{
                 ForEach(list, id: \.self) {campingSite in
-//                    if(campingSite.category == category.title){
                         NavigationLink(destination: CampsiteDetailView(campsite: campingSite)){
                             CampsiteListItemView(campsite: campingSite)
                         }
-//                    }
                 }
             }
             
         }
         .onAppear(perform: {filterList()})
+        .edgesIgnoringSafeArea(.top)
         
         }
         

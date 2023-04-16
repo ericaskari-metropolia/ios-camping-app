@@ -17,7 +17,7 @@ struct ViewOnMapButtonView: View {
             Spacer()
         })
         .padding(15)
-        .background(Color(.blue))
+        .background(Color.primary)
         .clipShape(Capsule())
     }
 }

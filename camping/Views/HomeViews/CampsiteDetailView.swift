@@ -29,6 +29,7 @@ struct CampsiteDetailView: View {
                     ProgressView()
                 }
                 
+                // Button to add or remove campsite from favorite
                 Button{
                     if favoriteManger.favoriteCampsites.contains(campsite){
                         favoriteManger.removeFromFavorite(campsite: campsite)
@@ -54,7 +55,6 @@ struct CampsiteDetailView: View {
                 
             }
             .background(Color.clear)
-            .edgesIgnoringSafeArea(.top)
             
             // Campsite detail
             ScrollView {
@@ -73,6 +73,10 @@ struct CampsiteDetailView: View {
                             Text(campsite.region ?? "Not available")
                                 .foregroundColor(.primary).bold()
                         }
+                        .padding()
+                        
+                        Spacer()
+                        
                         HStack{
                             Label("", systemImage: "mappin.and.ellipse")
                                 .labelStyle(.iconOnly)
@@ -81,15 +85,15 @@ struct CampsiteDetailView: View {
                             Text("Weather condition")
                                 .foregroundColor(.primary).bold()
                         }
+                        .padding()
                     }
                     
                     Text(campsite.descriptionEN ?? "nil")
-                        .font(.headline)
+                        .font(.subheadline)
                         .multilineTextAlignment(.leading)
-                        .foregroundColor(.primary)
+                        .foregroundColor(Color.primary)
                         .padding(.horizontal)
                     
-                    // Buttons
                     HStack{
                         ViewOnMapButtonView()
                         PlanNewTripButtonView()
@@ -100,7 +104,10 @@ struct CampsiteDetailView: View {
             }
             
         }
+        .edgesIgnoringSafeArea(.top)
+        
     }
+    
 }
 
 //struct CampsiteDetailView_Previews: PreviewProvider {
