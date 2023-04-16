@@ -19,8 +19,9 @@ struct OngoingTripCard: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: 350,height: 200)
+                    .frame(maxWidth: (UIScreen.main.bounds.width - 70))
                     .cornerRadius(15)
-                Image(systemName: "multiply.circle")
+                Image(systemName: "multiply.circle.fill")
                     .foregroundColor(.white)
                     .font(.system(size: 24))                    .padding()
             }
