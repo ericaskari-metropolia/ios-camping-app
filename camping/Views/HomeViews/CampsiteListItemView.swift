@@ -16,28 +16,36 @@ struct CampsiteListItemView: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 16){
-            AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
-                image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 150, height: 100)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
+            
+            HStack {
+                AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 150, height: 100, alignment: .center)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
 
-            } placeholder: {
-                ProgressView()
+                } placeholder: {
+                    ProgressView()
             }
-                        
-            VStack(alignment: .leading, spacing: 8) {
-                Text(campsite.name ?? "nil")
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .multilineTextAlignment(.leading)
-                
-                    Text(campsite.region ?? "nil")
-                        .font(.footnote)
+                Spacer()
+            }
+            .padding()
+            
+        
+            VStack(alignment: .center, spacing: 8) {
+                    Text(campsite.name ?? "nil")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.primary)
+                        .multilineTextAlignment(.leading)
                     
+                        Text(campsite.region ?? "nil")
+                            .font(.footnote)
+                        
                 }
+                
+            Spacer()
                 
                 
             }
