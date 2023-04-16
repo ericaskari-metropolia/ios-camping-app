@@ -1,6 +1,6 @@
 [
   {
-    "id": "6b6e3a8a-35cf-442c-abda-298ccf08644d",
+    "placeId": "6b6e3a8a-35cf-442c-abda-298ccf08644d",
     "name": "Etelä-Konneveden kansallispuisto",
     "imageUrl": "https://www.luontoon.fi/documents/10550/56970047/EtelaKonnevesi_lapinsalonluoto_talvi_JouniLehmonen_1050x590.jpg/bdad1cd7-c84b-516f-470f-b27ddd46aef6?t=1539077864166",
     "description": {
@@ -13,6 +13,8 @@
     },
     "category": "Island",
     "region": "Central Finland and North Savo",
+    "city": "Rautalampi",
+    "websiteURL": "https://www.luontoon.fi/etela-konnevesi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -20,7 +22,7 @@
     "longitude": 26.70897249999999
   },
   {
-    "id": "4d543c13-47bf-4c2d-9199-d936eae679aa",
+    "placeId": "4d543c13-47bf-4c2d-9199-d936eae679aa",
     "name": "Helvetinjärven kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1652175902_helvetinjarvikpjormamurto17.jpg",
     "description": {
@@ -33,6 +35,8 @@
     },
     "category": "Forest",
     "region": "Pirkanmaa",
+    "city": "Ruovesi",
+    "websiteURL": "https://www.luontoon.fi/helvetinjarvi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -40,7 +44,7 @@
     "longitude": 23.8463498
   },
   {
-    "id": "f2a80bc2-1ccf-47d5-9cf4-2f91c2ac898e",
+    "placeId": "f2a80bc2-1ccf-47d5-9cf4-2f91c2ac898e",
     "name": "Hiidenportin kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542615915_kermankuorijathiidenportti2846.jpg",
     "description": {
@@ -53,6 +57,8 @@
     },
     "category": "Forest",
     "region": "Kainuu",
+    "city": "Sotkamo",
+    "websiteURL": "https://www.luontoon.fi/hiidenportti",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -60,7 +66,7 @@
     "longitude": 29.056237700000004
   },
   {
-    "id": "e554d569-d750-480e-bd87-0461ff548dbd",
+    "placeId": "e554d569-d750-480e-bd87-0461ff548dbd",
     "name": "Hossan kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1652186821_julmaolkky3.jpg",
     "description": {
@@ -73,6 +79,8 @@
     },
     "category": "Forest",
     "region": "Kainuu",
+    "city": "Suomussalmi",
+    "websiteURL": "https://www.luontoon.fi/hossa",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -80,7 +88,7 @@
     "longitude": 29.518353700000002
   },
   {
-    "id": "93c98d9e-ef6f-4041-9c1c-3f96a33c9735",
+    "placeId": "93c98d9e-ef6f-4041-9c1c-3f96a33c9735",
     "name": "Isojärven kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1654841401_isojarvi-mtb2.jpg",
     "description": {
@@ -93,6 +101,8 @@
     },
     "category": "Forest",
     "region": "Pirkanmaa",
+    "city": "Kuhmoinen",
+    "websiteURL": "https://www.luontoon.fi/isojarvi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -100,7 +110,7 @@
     "longitude": 25.0021541
   },
   {
-    "id": "360087ae-15ef-45da-aba5-1e0a99b3fd7c",
+    "placeId": "360087ae-15ef-45da-aba5-1e0a99b3fd7c",
     "name": "Itäisen Suomenlahden kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1652182021_itaisensuomenlahdenk20.jpg",
     "description": {
@@ -113,6 +123,8 @@
     },
     "category": "Forest",
     "region": "Kymenlaakso",
+    "city": "Fredrikshamn",
+    "websiteURL": "https://www.luontoon.fi/itainensuomenlahti",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -120,7 +132,7 @@
     "longitude": 27.4565509
   },
   {
-    "id": "02f25d8b-e7f9-4b0c-9686-7b61efcb44d4",
+    "placeId": "02f25d8b-e7f9-4b0c-9686-7b61efcb44d4",
     "name": "Kauhanevan-Pohjankankaan kansallispuisto",
     "imageUrl": "https://www.luontoon.fi/documents/10550/56970263/Kauhanevaa_talvihamarassa_IsmoNousiainen_1050x590.jpg/607147a1-710e-1897-7771-706293226c35?t=1540452071876",
     "description": {
@@ -133,6 +145,8 @@
     },
     "category": "Forest",
     "region": "Southern Ostrobothnia",
+    "city": "Karvia",
+    "websiteURL": "https://www.luontoon.fi/kauhaneva-pohjankangas",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": false,
@@ -140,7 +154,7 @@
     "longitude": 22.4502732
   },
   {
-    "id": "ed3ff63f-77c8-4819-8d30-af2c52cfa3f9",
+    "placeId": "ed3ff63f-77c8-4819-8d30-af2c52cfa3f9",
     "name": "Kolin kansallispuisto",
     "imageUrl": "https://www.luontoon.fi/documents/10550/60584804/KOLI_marraskuu_2109_TiinaMannisto_1050.jpg/0b6c5c99-187b-7737-194b-9131ff90e3dd?t=1668696121114",
     "description": {
@@ -153,6 +167,8 @@
     },
     "category": "Forest",
     "region": "North Karelia",
+    "city": "Joensuu",
+    "websiteURL": "https://www.luontoon.fi/koli",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -160,7 +176,7 @@
     "longitude": 29.80623139999999
   },
   {
-    "id": "e518e7d8-b21d-47c0-94ed-7edf5c1c5be7",
+    "placeId": "e518e7d8-b21d-47c0-94ed-7edf5c1c5be7",
     "name": "Koloveden kansallispuisto",
     "imageUrl": "https://www.luontoon.fi/documents/10550/56971486/Kolovesi_Kaunis_paiva_SaaraLavi_Metsahallitus_1050.jpg/a81a2e2e-4b0c-0820-7b2f-d5d3f80d9584?t=1624342758247",
     "description": {
@@ -173,6 +189,8 @@
     },
     "category": "Lakes",
     "region": "Southern Savonia",
+    "city": "Enonkoski",
+    "websiteURL": "https://www.luontoon.fi/kolovesi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -180,7 +198,7 @@
     "longitude": 28.7873719
   },
   {
-    "id": "8b2d1d09-1bd0-47d5-b07a-785164104056",
+    "placeId": "8b2d1d09-1bd0-47d5-b07a-785164104056",
     "name": "Kurjenrahkan kansallispuisto",
     "imageUrl": "https://www.luontoon.fi/documents/10550/56971766/Kurjenrahka_talvi_tahtitaivas_JarnoMaenpaa_1050x590.jpg/b955cc47-a4f1-86dc-0df5-18c45f06b755?t=1677155371364",
     "description": {
@@ -193,6 +211,8 @@
     },
     "category": "Forest",
     "region": "Southwest Finland",
+    "city": "Pöytyä",
+    "websiteURL": "https://www.luontoon.fi/kurjenrahka",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -200,7 +220,7 @@
     "longitude": 22.4130304
   },
   {
-    "id": "48f7ad49-375e-469e-aaa5-782a2365204c",
+    "placeId": "48f7ad49-375e-469e-aaa5-782a2365204c",
     "name": "Lauhanvuoren kansallispuisto",
     "imageUrl": "https://www.luontoon.fi/documents/10550/56971821/lauhanvuori_hero_talvinuotio_ismo_nousiainen_taikapolku_1050.jpg/e8cdc43c-d14e-d840-b8a4-0b3f6cdcfbff?t=1644993745851",
     "description": {
@@ -212,7 +232,9 @@
       "FI": "Sopii niin päiväretkeilijälle kuin kokeneelle vaeltajalle."
     },
     "category": "Forest",
+    "city": "Isojoki",
     "region": "Southern Ostrobothnia",
+    "websiteURL": "https://www.luontoon.fi/lauhanvuori",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -220,7 +242,7 @@
     "longitude": 22.1751258
   },
   {
-    "id": "4cea3216-c826-41a1-8b53-d5a494b12f41",
+    "placeId": "4cea3216-c826-41a1-8b53-d5a494b12f41",
     "name": "Leivonmäen kansallispuisto",
     "imageUrl": "https://www.luontoon.fi/documents/10550/55540151/Leivonmaki_Retkeilijat_talvisessa_metsassa_Ulla_Keituri_1050.jpg/36a58ae9-34a9-25c2-a17a-0f5ec35575bf?t=1667908444758",
     "description": {
@@ -233,6 +255,8 @@
     },
     "category": "Lakes",
     "region": "Central Finland",
+    "city": "Joutsa",
+    "websiteURL": "https://www.luontoon.fi/leivonmaki",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -240,7 +264,7 @@
     "longitude": 25.9798101
   },
   {
-    "id": "4e942858-8551-439a-add2-9838888f1221",
+    "placeId": "4e942858-8551-439a-add2-9838888f1221",
     "name": "Lemmenjoen kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542622334_lemmenjoen-kansallispuisto-ja-kaapinjouni-30.jpg",
     "description": {
@@ -253,6 +277,8 @@
     },
     "category": "Lakes",
     "region": "Lapland",
+    "city": "Lapland",
+    "websiteURL": "",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -260,7 +286,7 @@
     "longitude": 25.5985362
   },
   {
-    "id": "925d1a63-2634-4c5a-8b42-6bf8ed7b08b1",
+    "placeId": "925d1a63-2634-4c5a-8b42-6bf8ed7b08b1",
     "name": "Liesjärven kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542620895_liesj-nrvi-4-of-23.jpg",
     "description": {
@@ -273,6 +299,8 @@
     },
     "category": "Lakes",
     "region": "Kanta Hame",
+    "city": "Tammela",
+    "websiteURL": "https://www.luontoon.fi/liesjarvi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -280,7 +308,7 @@
     "longitude": 23.8977183
   },
   {
-    "id": "7b656c5b-a660-45c5-8ac6-0ba4ab461284",
+    "placeId": "7b656c5b-a660-45c5-8ac6-0ba4ab461284",
     "name": "Linnansaaren kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542638054_potkukelkka-haukivesi-upenykanen.jpg",
     "description": {
@@ -293,6 +321,8 @@
     },
     "category": "Island",
     "region": "Etelä-Savo",
+    "city": "Oravi",
+    "websiteURL": "https://www.luontoon.fi/linnansaari",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -300,7 +330,7 @@
     "longitude": 28.509837
   },
   {
-    "id": "050b4d5e-1f77-472c-b73a-44f3beb8e910",
+    "placeId": "050b4d5e-1f77-472c-b73a-44f3beb8e910",
     "name": "Nuuksion kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1664356022_nahkiais10.jpg",
     "description": {
@@ -313,6 +343,8 @@
     },
     "category": "Lakes",
     "region": "Espoo",
+    "city": "Espoo",
+    "websiteURL": "https://www.luontoon.fi/nuuksio",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -320,7 +352,7 @@
     "longitude": 24.5565108
   },
   {
-    "id": "5d3bf23b-e6cf-4a93-a079-88003aea6568",
+    "placeId": "5d3bf23b-e6cf-4a93-a079-88003aea6568",
     "name": "Oulangan kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542633676_konkaankeino-6.jpg",
     "description": {
@@ -333,6 +365,8 @@
     },
     "region": "Lapland, Northern Ostrobothnia",
     "category": "Forest",
+    "city": "Kuusamo",
+    "websiteURL": "https://www.luontoon.fi/oulanka",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -340,7 +374,7 @@
     "longitude": 29.322234099999996
   },
   {
-    "id": "bcc662b6-7ee7-48a0-8942-4e560d16593f",
+    "placeId": "bcc662b6-7ee7-48a0-8942-4e560d16593f",
     "name": "Pallas-Yllästunturin kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1493289765_hettapallas-1-31.jpg",
     "description": {
@@ -353,6 +387,8 @@
     },
     "region": "Lapland",
     "category": "Hills",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/pallas-yllastunturi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -360,7 +396,7 @@
     "longitude": 24.1333333
   },
   {
-    "id": "d43ce90b-e8be-409b-b898-5ce14137e3c4",
+    "placeId": "d43ce90b-e8be-409b-b898-5ce14137e3c4",
     "name": "Patvinsuon kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1493289705_suomu7.jpg",
     "description": {
@@ -373,6 +409,8 @@
     },
     "region": "North Karjala",
     "category": "Lakes",
+    "city": "Lieksa",
+    "websiteURL": "https://www.luontoon.fi/patvinsuo",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -380,7 +418,7 @@
     "longitude": 30.701186200000002
   },
   {
-    "id": "4e319a1a-4402-4057-8896-ba5cec7cd4e0",
+    "placeId": "4e319a1a-4402-4057-8896-ba5cec7cd4e0",
     "name": "Perämeren kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542633494_selkasarvi6.jpg",
     "description": {
@@ -393,6 +431,8 @@
     },
     "region": "Kemi Tornio",
     "category": "Island",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/perameri",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": false,
@@ -400,7 +440,7 @@
     "longitude": 24.5524965
   },
   {
-    "id": "a8197b0c-e794-4883-b436-7cdd7f3806d4",
+    "placeId": "a8197b0c-e794-4883-b436-7cdd7f3806d4",
     "name": "Petkeljärven kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542678374_petkeljarvi-kuva-8.jpg",
     "description": {
@@ -413,6 +453,8 @@
     },
     "region": "North Karelia",
     "category": "Forest",
+    "city": "Ilomantsi",
+    "websiteURL": "https://www.luontoon.fi/petkeljarvi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -420,7 +462,7 @@
     "longitude": 31.1790635
   },
   {
-    "id": "3864c6a5-32d5-49fd-8bda-2179177443e4",
+    "placeId": "3864c6a5-32d5-49fd-8bda-2179177443e4",
     "name": "Puurijärven ja isosuon kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1631548014_p1010020.jpg",
     "description": {
@@ -433,6 +475,8 @@
     },
     "region": "Satakunta Pirkanmaa",
     "category": "Hills",
+    "city": "Huittinen",
+    "websiteURL": "https://www.luontoon.fi/puurijarvi-isosuo",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -440,7 +484,7 @@
     "longitude": 22.5610578
   },
   {
-    "id": "53954b58-0528-4315-9b80-beea1b683813",
+    "placeId": "53954b58-0528-4315-9b80-beea1b683813",
     "name": "Pyhä-Häkin kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542677835_pyha-hakki-4.jpg",
     "description": {
@@ -453,6 +497,8 @@
     },
     "region": "Central Finland",
     "category": "Forest",
+    "city": "Saarijärvi",
+    "websiteURL": "https://www.luontoon.fi/pyha-hakki",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -460,7 +506,7 @@
     "longitude": 25.4693978
   },
   {
-    "id": "42e91938-7af2-4da1-9030-247737caaaf0",
+    "placeId": "42e91938-7af2-4da1-9030-247737caaaf0",
     "name": "Pyhä-Luoston kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542625514_peurakuru54.jpg",
     "description": {
@@ -473,6 +519,8 @@
     },
     "region": "Sodankylä, Lapland",
     "category": "Hills",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/pyha-luosto",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -480,7 +528,7 @@
     "longitude": 26.9197389
   },
   {
-    "id": "5e814692-4001-4b4f-9425-90f2c0e3e8fa",
+    "placeId": "5e814692-4001-4b4f-9425-90f2c0e3e8fa",
     "name": "Päijänteen kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542617054_20160713_125715-2.jpg",
     "description": {
@@ -493,6 +541,8 @@
     },
     "region": "Päijat Häme, Padasjoki",
     "category": "Lakes",
+    "city": "Lahti",
+    "websiteURL": "https://www.luontoon.fi/paijanne",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -500,7 +550,7 @@
     "longitude": 25.4401744
   },
   {
-    "id": "35633a10-8f82-46fa-bc12-8daad0a48470",
+    "placeId": "35633a10-8f82-46fa-bc12-8daad0a48470",
     "name": "Repoveden kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1667121001_21paulstevensolhavanvuorelta.jpg",
     "description": {
@@ -513,6 +563,8 @@
     },
     "region": "Kymenlaakso",
     "category": "Forest",
+    "city": "Kouvola",
+    "websiteURL": "https://www.nationalparks.fi/repovesinp",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -520,7 +572,7 @@
     "longitude": 26.9023636
   },
   {
-    "id": "7bdf0cb8-7de3-40ce-a3a1-f795474eb202",
+    "placeId": "7bdf0cb8-7de3-40ce-a3a1-f795474eb202",
     "name": "Riisitunturin kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1507272287_riisitunturi-6.jpg",
     "description": {
@@ -533,6 +585,8 @@
     },
     "region": "Southern Lapland",
     "category": "Hills",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/riisitunturi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -540,7 +594,7 @@
     "longitude": 28.4939695
   },
   {
-    "id": "d8222080-539c-458f-ad3e-f0059c81fbf8",
+    "placeId": "d8222080-539c-458f-ad3e-f0059c81fbf8",
     "name": "Rokuan Kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1632998840_rokua8.jpg",
     "description": {
@@ -553,6 +607,8 @@
     },
     "region": "Northern Ostrobothnia",
     "category": "Forest",
+    "city": "Utajärvi",
+    "websiteURL": "https://www.luontoon.fi/rokua",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -560,7 +616,7 @@
     "longitude": 26.50527569999999
   },
   {
-    "id": "ec9ac6f3-5036-4303-ac69-7193a3d18fe6",
+    "placeId": "ec9ac6f3-5036-4303-ac69-7193a3d18fe6",
     "name": "Saaristomeren kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1576827962_bodo8.jpg",
     "description": {
@@ -573,6 +629,8 @@
     },
     "region": "Southwest Finland",
     "category": "Island",
+    "city": "Turku",
+    "websiteURL": "https://www.luontoon.fi/saaristomeri",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": false,
@@ -580,7 +638,7 @@
     "longitude": 21.8116588
   },
   {
-    "id": "75d42d3a-d60c-413d-b67e-3a905188503a",
+    "placeId": "75d42d3a-d60c-413d-b67e-3a905188503a",
     "name": "Salamajärven kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1658232361_kokkolaretkibussijniemela15-min.jpg",
     "description": {
@@ -593,6 +651,8 @@
     },
     "region": "Central Finland",
     "category": "Lakes",
+    "city": "Kivijärvi",
+    "websiteURL": "https://www.luontoon.fi/salamajarvi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -600,7 +660,7 @@
     "longitude": 24.8229325
   },
   {
-    "id": "efc26834-2a3d-4240-9fad-e2b1b2c737b8",
+    "placeId": "efc26834-2a3d-4240-9fad-e2b1b2c737b8",
     "name": "Sallan kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1662973561_hangasjarvisallajonnasaari6.jpg",
     "description": {
@@ -613,6 +673,8 @@
     },
     "region": "East Lapland",
     "category": "Lakes",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/salla",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -620,7 +682,7 @@
     "longitude": 28.823661899999998
   },
   {
-    "id": "b937e85d-d32a-4235-9785-cb1c5e4732b6",
+    "placeId": "b937e85d-d32a-4235-9785-cb1c5e4732b6",
     "name": "Seitsemisen kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542641834_seitseminen18.jpg",
     "description": {
@@ -633,6 +695,8 @@
     },
     "region": "Pirkanmaa",
     "category": "Lakes",
+    "city": "Ylöjärvi",
+    "websiteURL": "https://www.luontoon.fi/seitseminen",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -640,7 +704,7 @@
     "longitude": 23.3613644
   },
   {
-    "id": "4a76ec93-7df3-4063-9df4-6fc41e29b520",
+    "placeId": "4a76ec93-7df3-4063-9df4-6fc41e29b520",
     "name": "Selkämeren kansallispuisto (Pori)",
     "imageUrl": "https://explori.es/images/news/medium/1656828601_isokari_ksako_2022-14.jpg",
     "description": {
@@ -653,6 +717,8 @@
     },
     "region": "Satakunta",
     "category": "Island",
+    "city": "Pori",
+    "websiteURL": "https://www.luontoon.fi/selkameri",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": false,
@@ -660,7 +726,7 @@
     "longitude": 21.56400229999999
   },
   {
-    "id": "32c61878-28ac-43cb-9dbd-22e6af45a079",
+    "placeId": "32c61878-28ac-43cb-9dbd-22e6af45a079",
     "name": "Sipoonkorven kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1652195881_sipoonkorpiesteeton.jpg",
     "description": {
@@ -673,6 +739,8 @@
     },
     "region": "Uusimaa",
     "category": "Forest",
+    "city": "Sipoo, Helsinki, Vantaa",
+    "websiteURL": "https://www.luontoon.fi/sipoonkorpi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -680,7 +748,7 @@
     "longitude": 25.1624515
   },
   {
-    "id": "668aa738-4198-463f-a080-f83cf217f2ce",
+    "placeId": "668aa738-4198-463f-a080-f83cf217f2ce",
     "name": "Syötteen kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542639315_mylly-10-of-13.jpg",
     "description": {
@@ -693,6 +761,8 @@
     },
     "region": "Northern Ostrobothnia",
     "category": "Forest",
+    "city": "Pudasjärvi",
+    "websiteURL": "https://www.luontoon.fi/syote",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -700,7 +770,7 @@
     "longitude": 27.6592391
   },
   {
-    "id": "ac5eccc0-46fb-4d56-acaa-c1f510f1f2ce",
+    "placeId": "ac5eccc0-46fb-4d56-acaa-c1f510f1f2ce",
     "name": "Tammisaaren saariston kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1652175241_jussaro-23.jpg",
     "description": {
@@ -713,6 +783,8 @@
     },
     "region": "Uusimaa, Rasepoori",
     "category": "Island",
+    "city": "Raseborg",
+    "websiteURL": "https://www.luontoon.fi/tammisaarensaaristo",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -720,7 +792,7 @@
     "longitude": 23.3970549
   },
   {
-    "id": "41f6c4a7-102d-4456-84b2-eea19baaa1dc",
+    "placeId": "41f6c4a7-102d-4456-84b2-eea19baaa1dc",
     "name": "Teijon kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542658814_kalasuntti3.jpg",
     "description": {
@@ -733,6 +805,8 @@
     },
     "region": "Southwest Finland, Salo",
     "category": "Lakes",
+    "city": "Salo",
+    "websiteURL": "https://www.luontoon.fi/teijo",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -740,7 +814,7 @@
     "longitude": 22.9518962
   },
   {
-    "id": "a3ea7bed-21c1-41c9-8068-3a5a8d1f81cb",
+    "placeId": "a3ea7bed-21c1-41c9-8068-3a5a8d1f81cb",
     "name": "Tiilikkajärven kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1652188081_kermankuorijat-tiilikka-0020.jpg",
     "description": {
@@ -753,6 +827,8 @@
     },
     "region": "North Savo",
     "category": "Lakes",
+    "city": "Rautavaara",
+    "websiteURL": "https://www.luontoon.fi/tiilikkajarvi",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -760,7 +836,7 @@
     "longitude": 28.2993964
   },
   {
-    "id": "24f87949-913d-4d02-9443-78882f02a02c",
+    "placeId": "24f87949-913d-4d02-9443-78882f02a02c",
     "name": "Torronsuon kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542645315_teerisaariteijo-1.jpg",
     "description": {
@@ -773,6 +849,8 @@
     },
     "region": "Kanta Häme",
     "category": "Hills",
+    "city": "Tammela",
+    "websiteURL": "https://www.luontoon.fi/torronsuo",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -780,7 +858,7 @@
     "longitude": 23.6325656
   },
   {
-    "id": "130b993d-61f5-4bfb-a6af-52375f2b00ff",
+    "placeId": "130b993d-61f5-4bfb-a6af-52375f2b00ff",
     "name": "Urho Kekkosen kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1542664154_13696380083_f3232fc0be_b.jpg",
     "description": {
@@ -793,6 +871,8 @@
     },
     "region": "Lapland",
     "category": "Hills",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/urhokekkosenkansallispuisto",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
@@ -800,7 +880,7 @@
     "longitude": 28.25
   },
   {
-    "id": "ac03f036-33c5-4bb1-a6fe-618630959542",
+    "placeId": "ac03f036-33c5-4bb1-a6fe-618630959542",
     "name": "Valkmusan kansallispuisto",
     "imageUrl": "https://explori.es/images/news/medium/1655985962_k.sako-valkmusa-2021-37.jpg",
     "description": {
@@ -813,6 +893,8 @@
     },
     "region": "Kymenlaakso",
     "category": "Forest",
+    "city": "Vastila",
+    "websiteURL": "https://www.luontoon.fi/valkmusa",
     "hasTentSite": true,
     "hasCampfireSite": true,
     "hasRentalHut": true,
