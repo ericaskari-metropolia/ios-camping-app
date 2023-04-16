@@ -1,3 +1,904 @@
-{
-  "testdata": true
-}
+[
+  {
+    "placeId": "6b6e3a8a-35cf-442c-abda-298ccf08644d",
+    "name": "Etelä-Konneveden kansallispuisto",
+    "imageUrl": "https://www.luontoon.fi/documents/10550/56970047/EtelaKonnevesi_lapinsalonluoto_talvi_JouniLehmonen_1050x590.jpg/bdad1cd7-c84b-516f-470f-b27ddd46aef6?t=1539077864166",
+    "description": {
+      "EN": "In Etelä-Konnevesi, you can boat on open lake beds or paddle in a maze of archipelagos in the shelter of flat silo rocks and vertical rock walls. In the clear water, you can see deep into the realm of wild lake trout. In the park of exciting contrasts, you hike from the groves to the high rocky slopes to admire the osprey's gallant home landscape.",
+      "FI": "Etelä-Konnevedellä veneilet aavoilla järvenselillä tai melot sokkeloisessa saaristossa laakeiden silokallioiden ja pystysuorien kallioseinämien lomassa. Kirkkaassa vedessä voit nähdä syvälle villin järvitaimenen valtakuntaan. Sykähdyttävien vastakohtien puistossa patikoit lehdoista korkeille kalliorinteille ihailemaan kalasääsken uljasta kotimaisemaa."
+    },
+    "suitability": {
+      "EN": "Suitable for both water hikers and those without a boat. The terrain is partly steep. In the Vuori-Kalaja area, you can move around with a wheelchair (300 m) with an assistant. There is an accessible pier on the island of Lapinsalo.",
+      "FI": "Sopii sekä vesiretkeilijöille että veneettömille. Maasto on osin jyrkkäpiirteistä. Vuori-Kalajan alueella pääsee liikkumaan pyörätuolilla (300 m) avustajan kanssa. Lapinsalon saaressa on esteetön laituri."
+    },
+    "category": "Island",
+    "region": "Central Finland and North Savo",
+    "city": "Rautalampi",
+    "websiteURL": "https://www.luontoon.fi/etela-konnevesi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 62.5924528,
+    "longitude": 26.70897249999999
+  },
+  {
+    "placeId": "4d543c13-47bf-4c2d-9199-d936eae679aa",
+    "name": "Helvetinjärven kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1652175902_helvetinjarvikpjormamurto17.jpg",
+    "description": {
+      "EN": "Come find out what caused natural forces to move the Earth's crust millions of years ago! As a result, the gorge valley of Helvetinjärvi and Helvetinkolu, a rock pass a couple of meters wide and 40 meters high, were born. You can ponder the geological riddle on the wonderful sandy beach of Haukanhieta.",
+      "FI": "Tule selvittämään, mikä sai luonnonvoimat siirtelemään maankuorta miljoonia vuosia sitten! Tuloksena syntyivät Helvetinjärven rotkolaakso sekä Helvetinkolu, pari metriä leveä ja 40 metriä korkea kalliosola. Geologista arvoitusta voi pohtia vaikka Haukanhiedan upealla hiekkarannalla."
+    },
+    "suitability": {
+      "EN": "Suitable for all ages all year round. The routes are demanding in some places due to the height differences. Kankimäki and the surrounding area of Haukanhieta are suitable for those traveling with an assistant.",
+      "FI": "Sopii kaiken ikäisille ympäri vuoden. Reitit ovat paikoin vaativia korkeuserojen takia. Kankimäki ja Haukanhiedan lähiympäristö soveltuvat avustajan kanssa liikkuville."
+    },
+    "category": "Forest",
+    "region": "Pirkanmaa",
+    "city": "Ruovesi",
+    "websiteURL": "https://www.luontoon.fi/helvetinjarvi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 62.0234115,
+    "longitude": 23.8463498
+  },
+  {
+    "placeId": "f2a80bc2-1ccf-47d5-9cf4-2f91c2ac898e",
+    "name": "Hiidenportin kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542615915_kermankuorijathiidenportti2846.jpg",
+    "description": {
+      "EN": "The pristine gorge landscape of Hiidenportti, located in the heart of the Sotkamo region, is an impressive sight. The national park also offers destinations and stories for those interested in cultural history. Along the path leading to the steep rocky gorge, you can experience the atmosphere of a mysterious grove, a beautifully barren flower meadow and a kaski skin.",
+      "FI": "Sotkamon saloseudun sydämessä sijaitsevan Hiidenportin alkuvoimainen rotkomaisema on vaikuttava näky. Kansallispuisto tarjoaa kohteita ja tarinoita myös kulttuurihistoriasta kiinnostuneelle. Jylhälle kalliorotkolle johtavan polun varrella voit kokea salaperäisen kuusikon, kauniisti karun kukkaniityn ja kaskiahon tunnelman."
+    },
+    "suitability": {
+      "EN": "For hikers and trekkers looking for their own peace. Hiidenportti is also suitable for beginner hikers, student groups and other group trips. No accessible services.",
+      "FI": "Omaa rauhaa etsiville retkeilijöille ja vaeltajille. Hiidenportti soveltuu myös aloitteleville retkeilijöille, opiskelijaryhmille ja muille ryhmäretkille. Ei esteettömiä palveluita."
+    },
+    "category": "Forest",
+    "region": "Kainuu",
+    "city": "Sotkamo",
+    "websiteURL": "https://www.luontoon.fi/hiidenportti",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 63.87419740000001,
+    "longitude": 29.056237700000004
+  },
+  {
+    "placeId": "e554d569-d750-480e-bd87-0461ff548dbd",
+    "name": "Hossan kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1652186821_julmaolkky3.jpg",
+    "description": {
+      "EN": "Hossa's landscapes open up easily to the visitor, its forests and waters are easily accessible. There are plenty of trails for hiking and cycling, the waters invite you to paddle and fish. Here you follow the same routes as the first inhabitants of the area 10,000 years ago. Värikallio's Stone Age rock paintings take you on a day trip to the world of shamanism on vacation.",
+      "FI": "Hossan maisemat avautuvat kävijälle helposti, sen metsiin ja vesille pääsee vaivattomasti. Polkuja riittää patikoida ja pyöräillä, vedet kutsuvat melomaan ja kalastamaan. Täällä kuljet samoja reittejä kuin alueen ensimmäiset asukkaat 10 000 vuotta sitten. Värikallion kivikautiset kalliomaalaukset vievät retkipäivän lomassa shamanismin maailmaan."
+    },
+    "suitability": {
+      "EN": "Hossa is great for the whole family. There are also accessible services in Hossa: some of the paths can be used by wheelchairs and strollers. The national park also has accessible fishing piers, a lean-to and rental cabins.",
+      "FI": "Hossa sopii hyvin koko perheelle. Hossassa on myös esteettömiä palveluita: osa poluista kuljettavissa on pyörätuolilla ja lastenrattailla. Kansallispuistossa on myös esteettömiä kalastuslaitureita, laavu ja vuokramökkejä."
+    },
+    "category": "Forest",
+    "region": "Kainuu",
+    "city": "Suomussalmi",
+    "websiteURL": "https://www.luontoon.fi/hossa",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 65.46764879999999,
+    "longitude": 29.518353700000002
+  },
+  {
+    "placeId": "93c98d9e-ef6f-4041-9c1c-3f96a33c9735",
+    "name": "Isojärven kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1654841401_isojarvi-mtb2.jpg",
+    "description": {
+      "EN": "Isojärvi's landscapes will take you on a time trip far into the past. The huts built in the recesses of the million-year-old gorge valleys and the bicycle paths smoothed by the hands of the lumberjacks whispered stories from the barren lands of half a century ago. Now that the lumberjacks have left, the park's hardest-working logger and most famous resident is the mysterious beaver. You may not see it, but you can't help but notice the traces.",
+      "FI": "Isojärven maisemat vievät sinut aikamatkalle kauas menneisyyteen. Miljoonia vuosia vanhojen rotkolaaksojen lomaan rakennetut kämpät ja jätkien käsin tasoittamat polkupyörätiet kuiskivat tarinoita puolen vuosisadan takaisilta savottamailta. Nyt, kun lentojätkät ovat lähteneet, puiston ahkerin metsuri ja tunnetuin asukas on salaperäinen majava. Sitä et välttämättä näe, mutta jälkiä et voi olla huomaamatta."
+    },
+    "suitability": {
+      "EN": "Suitable for all ages all year round. The terrain is difficult to navigate in some places. A demanding accessible route from Herety to Kannuslahti (500 m / direction).",
+      "FI": "Sopii kaiken ikäisille ympäri vuoden. Maasto on paikoin vaikeakulkuista. Vaativa esteetön reitti Heretystä Kannuslahteen (500 m / suunta)."
+    },
+    "category": "Forest",
+    "region": "Pirkanmaa",
+    "city": "Kuhmoinen",
+    "websiteURL": "https://www.luontoon.fi/isojarvi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 61.690591,
+    "longitude": 25.0021541
+  },
+  {
+    "placeId": "360087ae-15ef-45da-aba5-1e0a99b3fd7c",
+    "name": "Itäisen Suomenlahden kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1652182021_itaisensuomenlahdenk20.jpg",
+    "description": {
+      "EN": "Here you can see the finest spring spectacles in Europe, when the migratory flocks of millions of arctic birds fly over the Eastern Gulf of Finland. Archipelago villages blossom in summer. True stories and legends about the region's military history, trade and smuggling will set the imagination in motion.",
+      "FI": "Täällä voit nähdä Euroopan hienoimpia kevätnäytelmiä, kun miljoonien arktisten lintujen muuttoparvet lentävät yli Itäisen Suomenlahden. Saaristokylät puhkeavat kukkaan kesäisin. Tosijutut ja legendat alueen sotahistoriasta, kaupankäynnistä ja salakuljetuksesta pistävät mielikuvituksen liikkeelle. "
+    },
+    "suitability": {
+      "EN": "Especially suitable for boaters and hikers in good shape, as the terrain is mostly difficult to navigate. No accessible services.",
+      "FI": "Sopii erityisesti veneilijöille sekä hyväkuntoisille retkeilijöille, sillä maasto pääosin vaikeakulkuista. Ei esteettömiä palveluita."
+    },
+    "category": "Forest",
+    "region": "Kymenlaakso",
+    "city": "Fredrikshamn",
+    "websiteURL": "https://www.luontoon.fi/itainensuomenlahti",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 60.347921,
+    "longitude": 27.4565509
+  },
+  {
+    "placeId": "02f25d8b-e7f9-4b0c-9686-7b61efcb44d4",
+    "name": "Kauhanevan-Pohjankankaan kansallispuisto",
+    "imageUrl": "https://www.luontoon.fi/documents/10550/56970263/Kauhanevaa_talvihamarassa_IsmoNousiainen_1050x590.jpg/607147a1-710e-1897-7771-706293226c35?t=1540452071876",
+    "description": {
+      "EN": "Kauhaneva-Pohjankankas National Park is a gem of the southern wetlands, a wilderness bird oasis along the medieval route. The Kyrönkangas road takes you through open pine forests to the banks of Kauhaneva. In the springtime, Kauhaneva's diverse and valuable birds give a multi-vocal concert. At other times, the untouched nature of the marsh invites you to enjoy silence and peace. \\n \\n Kauhaneva-Pohjankankas National Park is part of the Lauhanvuori-Hämeenkangas Geopark (lhgeopark.fi), which received status in the UNESCO network of unique geological sites in 2020.",
+      "FI": "Kauhanevan-Pohjankankaan kansallispuisto on eteläisen suoluonnon helmi, erämainen lintukeidas keskiaikaisen kulkureitin varrella. Kyrönkankaan tie vie sinut avarien mäntykankaiden halki Kauhanevan kermien ja kuljujen äärelle. Kevätaikaan Kauhanevan monipuolinen ja arvokas linnusto konsertoi moniäänisesti. Muina aikoina koskematon suoluonto kutsuu nauttimaan hiljaisuudesta ja rauhasta. \\n \\n Kauhanevan-Pohjankankaan kansallispuisto on osa Lauhanvuori-Hämeenkangas Geoparkia (lhgeopark.fi), joka sai statuksen UNESCOn ainutlaatuisten geologisten kohteiden verkostossa vuonna 2020."
+    },
+    "suitability": {
+      "EN": "Suitable for all ages all the year.",
+      "FI": "Sopii kaiken ikäisille ympäri vuoden. "
+    },
+    "category": "Forest",
+    "region": "Southern Ostrobothnia",
+    "city": "Karvia",
+    "websiteURL": "https://www.luontoon.fi/kauhaneva-pohjankangas",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": false,
+    "latitude": 62.195845999999996,
+    "longitude": 22.4502732
+  },
+  {
+    "placeId": "ed3ff63f-77c8-4819-8d30-af2c52cfa3f9",
+    "name": "Kolin kansallispuisto",
+    "imageUrl": "https://www.luontoon.fi/documents/10550/60584804/KOLI_marraskuu_2109_TiinaMannisto_1050.jpg/0b6c5c99-187b-7737-194b-9131ff90e3dd?t=1668696121114",
+    "description": {
+      "EN": "Finland's most famous national landscape. Experience the magic of Koli, the spacious and wonderful landscape from the top of the steep cliffs. Look for peace of mind and soul in ancient forests and views over Lake Pielinen. The landscape, which inspired Jean Sibelius, Eero Järnefelt and Juhani Aho, among others, is still loved by nature walkers, hikers and artists.",
+      "FI": " Suomen tunnetuin kansallismaisema. Koe Kolin lumo, avara ja upea maisema jylhien vaarojen laelta. Etsi mielen ja sielun rauhaa ikiaikaisista metsistä ja näkymistä yli Pielisen. Muun muassa Jean Sibeliusta, Eero Järnefeltiä ja Juhani Ahoa innoittanut maisema on yhä luonnossa liikkujien, vaeltajien ja taiteilijoiden rakastama."
+    },
+    "suitability": {
+      "EN": "Suitable for all ages and all fitness levels all year. Has some accesibility services.",
+      "FI": "Sopii kaiken ikäisille ja kaikenkuntoisille vuoden ympäri. Joitakin esteettömiä palveluita."
+    },
+    "category": "Forest",
+    "region": "North Karelia",
+    "city": "Joensuu",
+    "websiteURL": "https://www.luontoon.fi/koli",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 63.096858,
+    "longitude": 29.80623139999999
+  },
+  {
+    "placeId": "e518e7d8-b21d-47c0-94ed-7edf5c1c5be7",
+    "name": "Koloveden kansallispuisto",
+    "imageUrl": "https://www.luontoon.fi/documents/10550/56971486/Kolovesi_Kaunis_paiva_SaaraLavi_Metsahallitus_1050.jpg/a81a2e2e-4b0c-0820-7b2f-d5d3f80d9584?t=1624342758247",
+    "description": {
+      "EN": "In Kolovesi National Park, the water carries the paddler into the arms of the rocky cliffs, over the depths of Saimaa. The rock paintings tell about the millennial coexistence of nature and man, and amidst the silence you feel a connection to ancient times. If luck is on your way, a curious Saimaa grouse might come to greet you.",
+      "FI": "Koloveden kansallispuistossa vesi kantaa melojan kalliojyrkänteiden syliin, Saimaan syvyyksien ylle. Kalliomaalaukset kertovat luonnon ja ihmisen vuosituhantisesta yhteiselosta, ja hiljaisuuden keskellä tunnet yhteyden muinaiseen aikaan. Jos onni on matkassasi, utelias saimaannorppa saattaa tulla tervehtimään sinua."
+    },
+    "suitability": {
+      "EN": "Only suitable for summer camping. During the winter, there is a ban on movement in the Kolovesi islands, and the roads leading to the area do not have winter maintenance. Some of the services are suitable for those traveling with an assistant or strollers.",
+      "FI": "Sopii vain kesäaikaiseen retkeilyyn. Talviaikaan Koloveden saarissa on liikkumiskielto eikä alueelle johtavilla teillä ole talvikunnossapitoa. Osa palveluista soveltuu avustajan tai lastenvaunujen kanssa liikkuville."
+    },
+    "category": "Lakes",
+    "region": "Southern Savonia",
+    "city": "Enonkoski",
+    "websiteURL": "https://www.luontoon.fi/kolovesi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 62.26577450000001,
+    "longitude": 28.7873719
+  },
+  {
+    "placeId": "8b2d1d09-1bd0-47d5-b07a-785164104056",
+    "name": "Kurjenrahkan kansallispuisto",
+    "imageUrl": "https://www.luontoon.fi/documents/10550/56971766/Kurjenrahka_talvi_tahtitaivas_JarnoMaenpaa_1050x590.jpg/b955cc47-a4f1-86dc-0df5-18c45f06b755?t=1677155371364",
+    "description": {
+      "EN": "Leave the hustle and bustle of the cultural city of Turku for a few hours' day trip or a night trip to the nature of Kurjenrahka. Kurjenrahka is, as the name suggests, the home of cranes, but here you can also experience the springtime frenzy of owls. In good snowy winters, the ski trail takes you to the middle of the peaceful nature of the marsh.",
+      "FI": "Poikkea kulttuurikaupunki Turun kuhinasta muutaman tunnin päivä- tai yöretkelle Kurjenrahkan luontoon. Kurjenrahka on nimensä mukaisesti kurkien kotisuo, mutta täällä voit kokea myös pöllöjen keväthuuman. Hyvinä lumitalvina hiihtolatu vie sinut levollisen suoluonnon keskelle."
+    },
+    "suitability": {
+      "EN": "Suitable for all ages all year round. The courtyard of the Kurjenpesä nature shelter is accessible.",
+      "FI": "Sopii kaikenikäisille ympäri vuoden. Kurjenpesän luontotuvan piha on esteetön."
+    },
+    "category": "Forest",
+    "region": "Southwest Finland",
+    "city": "Pöytyä",
+    "websiteURL": "https://www.luontoon.fi/kurjenrahka",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 60.7399567,
+    "longitude": 22.4130304
+  },
+  {
+    "placeId": "48f7ad49-375e-469e-aaa5-782a2365204c",
+    "name": "Lauhanvuoren kansallispuisto",
+    "imageUrl": "https://www.luontoon.fi/documents/10550/56971821/lauhanvuori_hero_talvinuotio_ismo_nousiainen_taikapolku_1050.jpg/e8cdc43c-d14e-d840-b8a4-0b3f6cdcfbff?t=1644993745851",
+    "description": {
+      "EN": "From the top of Lauhanvuori, a stunning landscape opens up to the forests and sea of lowland Ostrobothnia. You travel back in time at the same time. The wide pine forests of the mountain slopes and the lush groves of the ceiling hide the traces of the ice age, vast fields of heather and ancient shore ramparts. Come in winter too: the tracks are kept in good condition. \\n\\n Lauhanvuori National Park is part of Lauhanvuori-Hämeenkangas Geopark (lhgeopark.fi), which received status in UNESCO's network of unique geological sites in 2020. The area also includes Kauhaneva-Pohjankangas National Park and Hämeenkangas multi-use area.",
+      "FI": "Lauhanvuoren huipulta avautuu huikea maisema laakean Pohjanmaan metsiin ja merelle saakka. Matkustat samalla ajassa menneeseen. Vuorenrinteiden avarat mäntykankaat ja laen rehevä kuusikko kätkevät jääkauden jälkiä, laajoja pirunpeltoja ja muinaisia rantavalleja. Tule myös talvella: ladut pidetään hyvässä kunnossa. \\n\\n Lauhanvuoren kansallispuisto on osa Lauhanvuori-Hämeenkangas Geoparkia (lhgeopark.fi), joka sai statuksen UNESCOn ainutlaatuisten geologisten kohteiden verkostossa vuonna 2020. Alueeseen kuuluvat myös Kauhanevan-Pohjankankaan kansallispuisto sekä Hämeenkankaan monikäyttöalue."
+    },
+    "suitability": {
+      "EN": "Suitable for both day hikers and experienced hikers.",
+      "FI": "Sopii niin päiväretkeilijälle kuin kokeneelle vaeltajalle."
+    },
+    "category": "Forest",
+    "city": "Isojoki",
+    "region": "Southern Ostrobothnia",
+    "websiteURL": "https://www.luontoon.fi/lauhanvuori",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 62.15211569999999,
+    "longitude": 22.1751258
+  },
+  {
+    "placeId": "4cea3216-c826-41a1-8b53-d5a494b12f41",
+    "name": "Leivonmäen kansallispuisto",
+    "imageUrl": "https://www.luontoon.fi/documents/10550/55540151/Leivonmaki_Retkeilijat_talvisessa_metsassa_Ulla_Keituri_1050.jpg/36a58ae9-34a9-25c2-a17a-0f5ec35575bf?t=1667908444758",
+    "description": {
+      "EN": "Leivonmäki's forests, lakes and marshes can be explored on family-friendly paths, including enticing duckboard trails. Enjoy your picnic in delightful scenery by the lakeside or up on an esker ridge.",
+      "FI": "Leivonmäen kansallispuiston turvallisilla ja helppokulkuisilla poluilla ja pitkospuureiteillä viihtyy koko perhe. Jo päivän retkellä näet Keski-Suomen luonnon monet kasvot – järvet, harjut, suot ja metsät."
+    },
+    "suitability": {
+      "EN": "Suitable for all ages all year round. Harjujärvi kitchen canopy and its surroundings are accessible.",
+      "FI": "Sopii kaiken ikäisille ympäri vuoden. Harjujärven keittokatos ympäristöineen on esteetön."
+    },
+    "category": "Lakes",
+    "region": "Central Finland",
+    "city": "Joutsa",
+    "websiteURL": "https://www.luontoon.fi/leivonmaki",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 61.934819,
+    "longitude": 25.9798101
+  },
+  {
+    "placeId": "4e942858-8551-439a-add2-9838888f1221",
+    "name": "Lemmenjoen kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542622334_lemmenjoen-kansallispuisto-ja-kaapinjouni-30.jpg",
+    "description": {
+      "EN": "The legendary River Lemmenjoki leads into the homelands of Laplands indigenous Sámi People. Experience the wilds and try panning for gold on a guided river trip. Tuck into tasty reindeer stew as you scan the night sky for the Northern Lights in winter, or bathe in the rays of the Midnight Sun in summer. Finlands largest national park has plenty of wild places to explore off the beaten track.",
+      "FI": "Kultainen jokilaakso johdattaa sinut Saamenmaan sydämeen. Lemmenjoella pääset aidon erämaan ja Lapin kullan tunnelmaan jo päiväretkellä hyppäämällä oppaan luotsaamaan jokiveneeseen. Voit tutustua entisaikojen pororuhtinaan Kaapin Jounin tilaan ja alueen saamelaiseen elämäntapaan osallistumalla opastetulle retkelle. Suomen suurimmassa kansallispuistossa voit myös retkeillä omassa rauhassa merkittyjen reittien ulkopuolella. "
+    },
+    "suitability": {
+      "EN": "Day trippers and more experienced hikers.",
+      "FI": "Sopii niin päiväretkeilijälle kuin kokeneelle vaeltajalle."
+    },
+    "category": "Lakes",
+    "region": "Lapland",
+    "city": "Lapland",
+    "websiteURL": "",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 68.6388189,
+    "longitude": 25.5985362
+  },
+  {
+    "placeId": "925d1a63-2634-4c5a-8b42-6bf8ed7b08b1",
+    "name": "Liesjärven kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542620895_liesj-nrvi-4-of-23.jpg",
+    "description": {
+      "EN": "Spend a day at Korteniemi Heritage Farm to find out how people used to live in rural Finland. Help out with farm chores, count sheep, and make hay while the sun shines! You can also head off along the old crofters paths to explore the surrounding scenic forests and lakes.",
+      "FI": "Kulje jo metsänvartijan tallaamia polkuja pitkin Ahonnokasta Liesjärveä halkovalle upealle Kyynäränharjulle ja nauti hämäläisestä maisemasta parhaimmillaan. Elä kesällä päivä entisajan elämää Korteniemen perinnetilalla. Osallistu tilan askareisiin, ihastele lampaita tai heittäydy heinäpellolle korsi suussa katselemaan yli lipuvia pilviä."
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages all year. Partly accessible if assisted.",
+      "FI": "Sopii kaiken ikäisille ympäri vuoden. Soveltuu osin myös avustajan kanssa liikkuville."
+    },
+    "category": "Lakes",
+    "region": "Kanta Hame",
+    "city": "Tammela",
+    "websiteURL": "https://www.luontoon.fi/liesjarvi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 60.65358919999999,
+    "longitude": 23.8977183
+  },
+  {
+    "placeId": "7b656c5b-a660-45c5-8ac6-0ba4ab461284",
+    "name": "Linnansaaren kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542638054_potkukelkka-haukivesi-upenykanen.jpg",
+    "description": {
+      "EN": "Linnansaari, in the heart of the Finnish Lake District, is an ideal place to spot rare lake seals and majestic ospreys. The waters of the park are dotted with lush green islands and rocky islets. At Linnansaari Croft traditional slash-and-burn farming practices are preserved. The lakeland scenery is a delight all year round. A boat service takes trippers to the main island during the summer. Longer lake cruises set off from the nearby historic town of Savonlinna.",
+      "FI": "Linnansaaressa olet saimaannorpan kotivesillä. Kansallispuiston avaria järvenselkiä pilkuttavat saaret ja rantakallioiden takana piileskelevät rehevät lehdot ovat Saimaan järviluontoa parhaimmillaan. Linnansaaren torpalla palaat kaskenpolton aikaan."
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages and all conditions, in summer and during the skating season. There is a trail from Sammakkoniemi Camping to Linnansaari Croft (0,7 km) on the main island which is accessible by wheelchair, but assistance is needed. Also there is an accessible dry toilet at Sammakkoniemi.",
+      "FI": "Soveltuu kaikenikäisille ja kaikenkuntoisille kesällä ja luistelukaudella. Sammakkoniemessä on esteetön käymälä ja avustajan kanssa kuljettava polku. "
+    },
+    "category": "Island",
+    "region": "Etelä-Savo",
+    "city": "Oravi",
+    "websiteURL": "https://www.luontoon.fi/linnansaari",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 62.110321500000005,
+    "longitude": 28.509837
+  },
+  {
+    "placeId": "050b4d5e-1f77-472c-b73a-44f3beb8e910",
+    "name": "Nuuksion kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1664356022_nahkiais10.jpg",
+    "description": {
+      "EN": "Within easy reach of the Finnish capital you can escape into wild natural settings and enjoy typically Finnish scenery, with lovely lakes, green forests and rugged crags. Pack your backpack for a memorable family picnic or campout. The nearby Finnish Nature Centre Haltia spotlights the best of Finlands natural treasures from across the country.",
+      "FI": "Viritä arkesi uudelle tasolle metropolin lähikansallispuistossa. Nuuksion luonnossa voit liikkua monipuolisesti: harrastaa työpäivän jälkeen tai kaupunkilomalla tai pakata repun reippaalle viikonloppuretkelle perheen kanssa. Nuuksion järvet, metsät, laaksot, suot ja kalliot tarjoavat täydellisen retkiympäristön. Piipahda myös Suomen luontokeskus Haltiassa tutustumassa koko Suomen luontoon. "
+    },
+    "suitability": {
+      "EN": "Suitable for the entire family and tourists. Wheelchair access to the Haukkalampi, Kattila and Haltia areas.",
+      "FI": "Koko perheen ja matkailijan kohde. Haukkalammen, Kattilan ja Haltian alueella pääsee liikkumaan pyörätuolilla."
+    },
+    "category": "Lakes",
+    "region": "Espoo",
+    "city": "Espoo",
+    "websiteURL": "https://www.luontoon.fi/nuuksio",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 60.29272890000001,
+    "longitude": 24.5565108
+  },
+  {
+    "placeId": "5d3bf23b-e6cf-4a93-a079-88003aea6568",
+    "name": "Oulangan kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542633676_konkaankeino-6.jpg",
+    "description": {
+      "EN": "In the rugged landscape of the Karhunkierros Trail, you will observe the power of water. The many trail options and hanging bridges of the Oulanka National Park will take you to the most impressive waterfalls in Finland. The jumps of wild brown trout, the dives of European dippers, the unlimited beauty of the aapa mires and the lovely calypso will challenge even the experienced nature photographer. Nature doesn't recognise any state boundaries: the vast wilderness of the Paanajärvi National Park is to be found on the Russian side of the border.",
+      "FI": "Karhunkierroksen jylhissä maisemissa näet ikiaikaisen veden voiman. Oulangan kansallispuiston monet reittivaihtoehdot ja lukuisat riippusillat johtavat sinut Suomen komeimpien könkäiden äärelle. Siellä villin taimenen hypyt, koskikaran sukellus, aapasoiden ääretön kauneus ja piilotteleva kasvikaunotar neidonkenkä haastavat kokeneenkin kuvaajan. Luonto ei tunne rajoja: Venäjän puolella aukeaa Paanajärven valtava erämainen kansallispuisto."
+    },
+    "suitability": {
+      "EN": "Suitable for everyone, all year round. Also accessible services, visitor centre and a trail.",
+      "FI": "Oulanka sopii kaikenikäisille ja kaikenkuntoisille ympäri vuoden. Luontokeskukseen ja sen kahvilaan saa tuoda lemmikkieläimiä. Myös esteettömiä palveluita, kuten luontokeskus ja kaksi luontoreittiä."
+    },
+    "region": "Lapland, Northern Ostrobothnia",
+    "category": "Forest",
+    "city": "Kuusamo",
+    "websiteURL": "https://www.luontoon.fi/oulanka",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 66.37457189999999,
+    "longitude": 29.322234099999996
+  },
+  {
+    "placeId": "bcc662b6-7ee7-48a0-8942-4e560d16593f",
+    "name": "Pallas-Yllästunturin kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1493289765_hettapallas-1-31.jpg",
+    "description": {
+      "EN": "World’s purest air with breathtaking views. Breathe the world's purest air and experience the vastness of the fell landscapes around you. The versatile trails of Pallas-Yllästunturi National Park take you easily to open fell tops and cosy campfire sites. Spend an active and relaxing holiday enjoying Lapland's natural wonders and friendly services.",
+      "FI": "Tunturien raikkaimmat huiput. Hengitä maailman puhtainta ilmaa ja koe ympärilläsi tunturimaiseman avaruus. Pallas-Yllästunturin kansallispuiston monipuoliset retkeilyreitit vievät helposti huipulta huipulle ja tunnelmallisille tulentekopaikoille. Liikut, lepäät ja lomailet Lapin luonnon ihmeiden ja hyvien palvelujen ympäröimänä."
+    },
+    "suitability": {
+      "EN": "Inexperienced and experienced hikers, trekkers, skiers, cyclists, suitable for families with children, accessible.",
+      "FI": "Aloitteleville ja kokeneille retkeilijöille ja vaeltajille, hiihtäjille, pyöräilijöille. Sopii koko perheelle, myös esteettömiä kohteita."
+    },
+    "region": "Lapland",
+    "category": "Hills",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/pallas-yllastunturi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 67.96666669999999,
+    "longitude": 24.1333333
+  },
+  {
+    "placeId": "d43ce90b-e8be-409b-b898-5ce14137e3c4",
+    "name": "Patvinsuon kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1493289705_suomu7.jpg",
+    "description": {
+      "EN": "Scanning the open marshes of Patvinsuo you might be lucky enough to see a distant bear, though bears typically do their best to avoid people. From viewing towers you can overlook the changing marshland scene on misty autumn mornings, light summer nights, or in the springtime when birds flock to the bogs to feed and breed. After a nice walk take a cooling dip by a sandy shore or the lakeside sauna at Suomunjärvi.",
+      "FI": "Tähyä aapasoiden yli, niin voit nähdä metsien ruhtinaan – kontion – ilman että se vainuaa ihmisen läsnäolon. Luontotornista pääset seuraamaan suon kiihkeää kevätrytmiä, yötöntä sydänkesää ja syksyn usvaista maisemaa. Retken kruunaa pulahtaminen järveen silkkisiltä hiekkarannoilta tai Suomunjärven rantasaunasta. "
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages all year. Access for wheelchairs, if assisted, from Suomu Nature Information Hut to the campfire site by Lake Suomunjärvi.",
+      "FI": "Sopii kaiken ikäisille ympäri vuoden. Suomun luontotuvalta pääsee pyörätuolilla avustajan kanssa Suomunjärven rannan tulentekopaikalle."
+    },
+    "region": "North Karjala",
+    "category": "Lakes",
+    "city": "Lieksa",
+    "websiteURL": "https://www.luontoon.fi/patvinsuo",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 63.1131218,
+    "longitude": 30.701186200000002
+  },
+  {
+    "placeId": "4e319a1a-4402-4057-8896-ba5cec7cd4e0",
+    "name": "Perämeren kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542633494_selkasarvi6.jpg",
+    "description": {
+      "EN": "The wide and open waters of the Bothnian Bay invite boaters. Take a break at a fishing hut and admire the sea through its window, just like a fisherman. The plinths and the drying racks for fishing nets are signs of the life in the past, on the rugged islands in the middle of this northern sea. During the winter, the arctic sea and packed ice fascinate tourists.",
+      "FI": "Aava kirkas meri kutsuu veneilijää. Levähdä kalakämpässä ja ihaile ikkunasta rantaa huuhtovaa merta kuin silakanpyytäjä. Kivijalat ja kierimet kertovat karujen saarten entisestä elämästä keskellä pohjoista ulappaa. Talvella arktinen meri ahtojäineen kiehtoo matkailijaa."
+    },
+    "suitability": {
+      "EN": "Chiefly a summer destination. Particularly suitable for boaters and hikers: you will need your own boat or boat transport. There are no special accessible services. During the winter, you can access the closest islands by skis or by snowmobile.",
+      "FI": "Pääasiassa kesäkohde. Perämeri sopii erityisesti veneilijöille ja retkeilijöille: tarvitset oman veneen tai venekyydin. Esteettömiä palveluita ei ole. Talvella lähimpiin saariin pääsee hiihtäen ja moottorikelkalla."
+    },
+    "region": "Kemi Tornio",
+    "category": "Island",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/perameri",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": false,
+    "latitude": 65.73099979999999,
+    "longitude": 24.5524965
+  },
+  {
+    "placeId": "a8197b0c-e794-4883-b436-7cdd7f3806d4",
+    "name": "Petkeljärven kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542678374_petkeljarvi-kuva-8.jpg",
+    "description": {
+      "EN": "Pine-clad esker ridges formed during the Ice Age rise over pristine blue lakes in this beautiful part of Finland's eastern borderlands, well worth a day trip or a longer stay. Don't miss the lively and picturesque old Karelian village of Möhkö near the park. The colourful history of the area during World War Two is also of interest.",
+      "FI": "Petkeljärven sotahistoria ja Möhkön kylän rajakarjalainen kulttuuri puhuttelevat aiheesta kiinnostuneita. Jo päiväretkellä tunnet olevasi osa luontoa, kun ikihongat humisevat, lammet välkkyvät ja askeleesi kulkee yli 10 000 vuotta vanhaa harjua pitkin."
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages all year. The Petkeljärvi Outdoor Centre and its immediate surroundings are accessible.",
+      "FI": "Sopii kaiken ikäisille vuoden ympäri. Petkeljärven retkeilykeskuksessa lähiympäristöineen on esteettömiä palveluita."
+    },
+    "region": "North Karelia",
+    "category": "Forest",
+    "city": "Ilomantsi",
+    "websiteURL": "https://www.luontoon.fi/petkeljarvi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 62.59043290000001,
+    "longitude": 31.1790635
+  },
+  {
+    "placeId": "3864c6a5-32d5-49fd-8bda-2179177443e4",
+    "name": "Puurijärven ja isosuon kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1631548014_p1010020.jpg",
+    "description": {
+      "EN": "This national park protects a peaceful oasis of wild marshlands and lakeshores rich in bird life in a region mainly dominated by farmlands. Bring your binoculars and scan the skies to search for the park's many winged inhabitants while enjoying the ever-changing natural scene.",
+      "FI": "Puurijärven ja Isosuon luontokeidas lepää satakuntalaisen kulttuurimaiseman sylissä. Irtaudu hetkeksi arjesta ja anna lintumaailman temmata mukaansa: jokaisella käynnillä näet uudenlaisen kiehtovan näytelmän."
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages all year. The Kärjenkallio bird watching tower is suitable for visitors with mobility difficulties.",
+      "FI": "Sopii kaiken ikäisille ympäri vuoden. Kärjenkallion lintulava ja sinne johtava polku ovat esteettömiä."
+    },
+    "region": "Satakunta Pirkanmaa",
+    "category": "Hills",
+    "city": "Huittinen",
+    "websiteURL": "https://www.luontoon.fi/puurijarvi-isosuo",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 61.24354480000001,
+    "longitude": 22.5610578
+  },
+  {
+    "placeId": "53954b58-0528-4315-9b80-beea1b683813",
+    "name": "Pyhä-Häkin kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542677835_pyha-hakki-4.jpg",
+    "description": {
+      "EN": "Take a stroll into the best preserved old-growth forests in Southern Finland. See 400-year-old pine trees that bear scars of ancient forest fires. Such forests give you a sense of timelessness, encouraging you to slow down and savour the natural scene. The residents of the old croft at Poika-aho surely told their children tales of the trolls and elves who lived out in the wild woods.",
+      "FI": "Etelä-Suomen hienoimmassa vanhassa metsässä humisevat 400 vuotta vanhat ikihongat. Kilpikaarnaisten mäntyjen palokorot muistuttavat menneiden vuosisatojen metsäpaloista, ja Mastomäen ikimetsät pysäyttävät kiireisenkin kulkijan hämmästelemään ihmisen pienuutta. Poika-ahon kruununmetsätorppa kertoo tarinaa syrjäseutujen varhaisista asukkaista. Pyhä-Häkin ikiaikaisen aarniometsän siimeksessä samoilet muinaisten haltioiden tunnelmissa ja tarinoissa."
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages. Easy access. No accessible services.",
+      "FI": "Sopii kaiken ikäisille, ja tänne helppo tulla. Ei esteettömiä palveluita."
+    },
+    "region": "Central Finland",
+    "category": "Forest",
+    "city": "Saarijärvi",
+    "websiteURL": "https://www.luontoon.fi/pyha-hakki",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 62.8448328,
+    "longitude": 25.4693978
+  },
+  {
+    "placeId": "42e91938-7af2-4da1-9030-247737caaaf0",
+    "name": "Pyhä-Luoston kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542625514_peurakuru54.jpg",
+    "description": {
+      "EN": " Pyhä-Luoston kansallispuistossa miljardien vuosien historia seuraa mukanasi retkellä. Kiipeät kerolle, katsot kuruun – metsäsaamelaisten pyhät paikat ovat aivan lähellä. Niiden tunnelma tuo päiväretkellekin pyhiinvaelluksen tuntua. Aarniometsät reunustavat tunturiketjua, jonka pääset näkemään pidemmällä vaelluksella Pyhätunturilta Luostolle kokonaan. Lähde löytöretkelle omaan itseesi ja luonnon ihmeisiin!",
+      "FI": "Deep gorges slice through these ancient rugged hills, where you can trek through age-old forests up onto windswept treeless fell-tops. Enjoy Lapland's big skies, lit by the Northern Lights in winter and the Midnight Sun around midsummer. Friendly Siberian jays appear from the woods as if by magic when hikers stop for a picnic. Visit picturesque places that were seen as sacred by the Forest Sámi people who used to live here. Take the epic trail between the park's two most famous fells – Pyhä and Luosto – both within reach of comfortable resort centres."
+    },
+    "suitability": {
+      "EN": "Perfect for families with children, and for daytrippers.",
+      "FI": "Sopii hyvin koko perheelle ja päiväretkeilijöille."
+    },
+    "region": "Sodankylä, Lapland",
+    "category": "Hills",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/pyha-luosto",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 67.0851971,
+    "longitude": 26.9197389
+  },
+  {
+    "placeId": "5e814692-4001-4b4f-9425-90f2c0e3e8fa",
+    "name": "Päijänteen kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542617054_20160713_125715-2.jpg",
+    "description": {
+      "EN": "The pristine waters of Lake Päijänne wash the sandy shores of a chain of islands formed by an esker ridge that dates back to the Ice Age. Take a boat trip or rent a kayak and explore the park's many islands and their sandy coves and rocky shores. The nature trail at Pulkkilanharju ridge, accessible by road, also offers fine lakekand views. Look out for ospreys soaring over the lake.",
+      "FI": "Hiekkarannat laguuneineen ja yllättäen kohoavat kalliorannat odottavat veneilijää, melojaa ja päiväretkeilijää Päijänteellä. Pulkkilanharjun luontopolulla pääset Järvi-Suomen tunnelmaan myös ilman vesille lähtöä. Päijänteen juotavan puhtaat vedet huuhtovat harjusaarten rantoja, ja kalasääsken huuto kaikuu rantakallioiden yllä."
+    },
+    "suitability": {
+      "EN": "In summer, suitable particularly for visitors by water. No accessible services.",
+      "FI": "Sopii kesäisin erityisesti vesiretkeilijöille. Ei esteettömiä palveluita."
+    },
+    "region": "Päijat Häme, Padasjoki",
+    "category": "Lakes",
+    "city": "Lahti",
+    "websiteURL": "https://www.luontoon.fi/paijanne",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 61.3896745,
+    "longitude": 25.4401744
+  },
+  {
+    "placeId": "35633a10-8f82-46fa-bc12-8daad0a48470",
+    "name": "Repoveden kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1667121001_21paulstevensolhavanvuorelta.jpg",
+    "description": {
+      "EN": "Repovesi's rugged forests are dotted with blue lakes and ponds. The park offers accessible adventures for everyone. Its hills and cliffs challenge keen hikers and climbers. Highlights for families include the Lapinsalmi bridge, the hand-operated Fox's Ferry, cosy rental campfire huts, and fine views over the treetops from the park's high spots. Repovesi is just a couple of hours from Helsinki, but when you sit round a campfire listening to the eerie calls of red-throated divers echoing over the lake the city feels a million miles away.",
+      "FI": "Lepuuta silmiäsi kymmenien järvien ja lampien muodostamassa metsämaisemassa. Repoveden mahtavat mäet ja jylhät kalliot haastavat harrastajan kiipeämään yhä korkeammalle. Lapinsalmen sillalta, Ketunlossilta, näkötornista ja monista muista kohteista voit löytää oman Repovesi-seikkailusi! Kaakkurin huuto täydentää retkikokemuksen."
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages all year. Partly accessible.",
+      "FI": "Sopii kaiken ikäisille vuoden ympäri. Joitakin esteettömiä palveluita."
+    },
+    "region": "Kymenlaakso",
+    "category": "Forest",
+    "city": "Kouvola",
+    "websiteURL": "https://www.nationalparks.fi/repovesinp",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 61.187995300000004,
+    "longitude": 26.9023636
+  },
+  {
+    "placeId": "7bdf0cb8-7de3-40ce-a3a1-f795474eb202",
+    "name": "Riisitunturin kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1507272287_riisitunturi-6.jpg",
+    "description": {
+      "EN": "Humid climatic conditions contribute to Riisitunturi's natural beauty. The park has some of the finest sloping bogs anywhere in Europe. In winter the spruce trees that cover many of Riisitunturi National Park's hillsides are clad with a thick coating of condensed frost, creating a photogenic white forest. Enticing trails suitable for day-trips or longer treks welcome hikers in summer and snowshoe trekkers in winter.",
+      "FI": "Riisitunturin taianomainen tykkymetsä kuutamoyön lumihahmoineen on talviretkeilijän ja valokuvaajan paratiisi. Kesällä pääset kulkemaan täällä pitkin Euroopan mahtavimpia rinnesoita ja ihailemaan Kitkajärveä, Euroopan suurinta lähdettä. Vesi on luonut Koillismaan satumaisen tunturi- ja vaaraluonnon kauneuden."
+    },
+    "suitability": {
+      "EN": "Suitable for people of all ages and beginners as well. A good destination for cross-country skiers, snowshoers, trekkers, bird watchers and photographers.",
+      "FI": "Suvun nuorimmasta vanhimpaan, soveltuu myös vasta-alkajalle. Riisitunturi on hyvä kohde patikoijille, linturetkeilijöille ja luontovalokuvaajille. Ei esteettömiä palveluita."
+    },
+    "region": "Southern Lapland",
+    "category": "Hills",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/riisitunturi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 66.2263529,
+    "longitude": 28.4939695
+  },
+  {
+    "placeId": "d8222080-539c-458f-ad3e-f0059c81fbf8",
+    "name": "Rokuan Kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1632998840_rokua8.jpg",
+    "description": {
+      "EN": "When you explore the esker ridges, sandhills and kettle hole lakes of Rokua it's easy to see the clear traces of the Ice Age that explain why this area forms part of Finland's first UNESCO Geopark. Family-friendly trails lead off through the park's wooded sandhills, where the forest floor is blanketed with silvery lichens. Scattered through the park are many kettle hole lakes nestling in sandy hollows.",
+      "FI": "Rokuan kansallispuisto on osa Rokua Geoparkia, joka on Suomen ensimmäinen kohde UNESCOn ainutlaatuisten geologisten kohteiden verkostossa.  Kansallispuiston lisäksi Rokua Geoparkiin kuuluvat Oulujärven ja Oulujokilaakson alueet. Rokuan karulla hiekkamaalla ikivanhassa männikössä kulkevat perheen pienimmätkin jalalle mukavia polkuja. Hopeisten jäkälien peittämät dyynit kehystävät pieniä lampia, jotka kertovat jääkauden suuresta maanpinnan muotoja muokanneesta voimasta. Kansallispuiston sydämessä sijaitsevasta Pookivaaran tornista näet jopa Kainuun merelle asti."
+    },
+    "suitability": {
+      "EN": "Excellent for families with children. The Pitkäjärvi Trail (0.8 km), the Camprife Hut hut and the dry toilet are accessible services",
+      "FI": "Rokua sopii hyvin koko perheelle. Pitkäjärven polku (0,8 km), kota ja kuivakäymälä ovat esteettömiä palveluita."
+    },
+    "region": "Northern Ostrobothnia",
+    "category": "Forest",
+    "city": "Utajärvi",
+    "websiteURL": "https://www.luontoon.fi/rokua",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 64.586423,
+    "longitude": 26.50527569999999
+  },
+  {
+    "placeId": "ec9ac6f3-5036-4303-ac69-7193a3d18fe6",
+    "name": "Saaristomeren kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1576827962_bodo8.jpg",
+    "description": {
+      "EN": "The labyrinthine Archipelago Sea, off Southwestern Finland, has more islands than any other archipelago in the world. It has also been described as the world's most beautiful archipelago. The archipelago scene varies from larger islands dotted with rustic pastures and vibrant villages, to wild and windswept rocky islets. Scheduled ferry services take locals and trippers to the main islands all year round. ",
+      "FI": "Maailman kauneimmaksi kuvaillussa saaristossa maisema vaihtuu jatkuvasti karuista kallioluodoista eläviin saaristokyliin ja ulkomeren ulapoista suojaisiin kalliopoukamiin. Saaristomerellä on enemmän saaria ja luotoja kuin missään muualla. Lähde lumoavalle seikkailulle saariston sokkeloihin tai hengähtämään avaran meren äärelle vaikkapa omalla veneellä tai ympäri vuoden yhteysaluksella!"
+    },
+    "suitability": {
+      "EN": "Since the national park is only accessible by sea, a visit requires thorough planning. No services for visitors with mobility difficulties.",
+      "FI": "Kansallispuistoon pääsy edellyttää merimatkaa, joten vierailu vaatii hyvää suunnittelua. Ei esteettömiä palveluita."
+    },
+    "region": "Southwest Finland",
+    "category": "Island",
+    "city": "Turku",
+    "websiteURL": "https://www.luontoon.fi/saaristomeri",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": false,
+    "latitude": 59.93449339999999,
+    "longitude": 21.8116588
+  },
+  {
+    "placeId": "75d42d3a-d60c-413d-b67e-3a905188503a",
+    "name": "Salamajärven kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1658232361_kokkolaretkibussijniemela15-min.jpg",
+    "description": {
+      "EN": "Follow in the hoofprints of wild forest reindeer on the Peuran Polku Trail. You might even spot some of these rare animals. The park's varied wild scenery includes rockstrewn pinewoods, open bogs and lakes full of tasty fish. Use the facilities at Koirasalmi as a base for exploring the wilds.",
+      "FI": "Vaella metsäpeuran jäljillä Peuran polulla ja kalasta taimenta kansallispuiston puhtaissa vesissä. Aisti metsäpeuran valtakunnan rauha ja tarkkaile kevääseen heräävän suon huumaa luontotornista. Kivikkoiset kankaat, laajat suot ja monipuoliset reitit tarjoavat unohtumattomia eräkokemuksia. Koirasalmi kämppäkartanoineen on portti koko perheen luontoelämyksiin."
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages all year. The Koirasalmi area is accessible.",
+      "FI": "Sopii kaiken ikäisille ympäri vuoden. Koirasalmen alueella on esteettömiä palveluita."
+    },
+    "region": "Central Finland",
+    "category": "Lakes",
+    "city": "Kivijärvi",
+    "websiteURL": "https://www.luontoon.fi/salamajarvi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 63.2357871,
+    "longitude": 24.8229325
+  },
+  {
+    "placeId": "efc26834-2a3d-4240-9fad-e2b1b2c737b8",
+    "name": "Sallan kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1662973561_hangasjarvisallajonnasaari6.jpg",
+    "description": {
+      "EN": "The old-growth forests of Salla National Park stretch from ravines and mires to the tops of the fells. Hiking trails wind along ridges and gorges and beside small pristine lakes filled with clean fresh water. From the top of Iso Pyhätunturi fell you can admire the vast landscapes and large fells on the Russian side. The night sky of the hushed winter wilderness is illuminated by the Milky Way and the colourful Northern Lights and in summer by the midnight sun. In winter the forests of spruce trees completely covered in crown snow load will take your breath away. This is the home of the capercaillie – in the middle of nowhere.",
+      "FI": "Sallan kansallispuiston vuosisatoja vanhat ikimetsät ulottuvat rotkolaaksosta soille ja ylängölle. Retkeilyreitit vievät jääkauden muovaamille harjuille ja kuruille sekä kirkasvetisille lammille. Iso Pyhätunturin huipulta voit ihailla laajalle aukeavia maisemia ja Venäjällä siintäviä tuntureita. Hiljaisen erämaan yöllistä taivasta valaisevat linnunradan tähdet ja revontulet sekä keskiyön aurinko kesäisin. Talviset tykkymetsät salpaavat hengityksen. Tämä on ukkometson ja koppelon koti - keskellä ei mitään. "
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages all year. The Koirasalmi area is accessible.",
+      "FI": "Sopii aloitteleville ja kokeneille retkeilijöille, patikoijille ja hiihtäjille. Sopiva kohde koko perheelle."
+    },
+    "region": "East Lapland",
+    "category": "Lakes",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/salla",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 66.7396305,
+    "longitude": 28.823661899999998
+  },
+  {
+    "placeId": "b937e85d-d32a-4235-9785-cb1c5e4732b6",
+    "name": "Seitsemisen kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542641834_seitseminen18.jpg",
+    "description": {
+      "EN": "Experience how crofters used to make their living in these remote backwoods at the heritage farm at Kovero. Learn about the park's flora and fauna at the pleasant Seitseminen Nature Centre – the best place to start exploring the old forests, lakes and marshes of this fascinating part of Finland's backwoods.",
+      "FI": "Seitsemisessä saloseutujen menneisyys herää eloon. Koveron perinnetilalla teet aikamatkan entisajan torpparielämään ja yösijan voit vuokrata vaikka Pitkäjärven historialliselta savottakämpältä. Seitsemisen luontokeskuksessa kartutat tietoasi luonnosta ja virkistyt kahvikupin äärellä. Tule nauttimaan ja oppimaan luonnon ja metsäkulttuurin aarreaittaan! "
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages and conditions all year, particularly groups of schoolchildren. Partly accessible.",
+      "FI": "Sopii kaikenkuntoisille ja kaiken ikäisille ympäri vuoden sekä erityisesti koululaisryhmille. Joitakin esteettömiä palveluita."
+    },
+    "region": "Pirkanmaa",
+    "category": "Lakes",
+    "city": "Ylöjärvi",
+    "websiteURL": "https://www.luontoon.fi/seitseminen",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 61.9696952,
+    "longitude": 23.3613644
+  },
+  {
+    "placeId": "4a76ec93-7df3-4063-9df4-6fc41e29b520",
+    "name": "Selkämeren kansallispuisto (Pori)",
+    "imageUrl": "https://explori.es/images/news/medium/1656828601_isokari_ksako_2022-14.jpg",
+    "description": {
+      "EN": "By the shores of the Bothnian Sea you can enjoy bracing sea winds and fine views out over the wild waves. History comes alive on the park's remote lighthouse islands. Divers can here explore Finland's most pristine marine waters.",
+      "FI": "Tee matka menneeseen aikaan Selkämeren majakkasaarilla ja sukella Suomen puhtaimman merialueen vedenalaiseen luontoon. Aavan meren äärellä luonnonvoimat tulevat iholle. Selkämeri avaa ihmisen ymmärtämään oman rajallisuutensa."
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages and conditions all year, but the islands are only accessible by sea. Observation platforms on the Preiviikinlahti Bay in Pori are suitable for visitors with mobility difficulties.",
+      "FI": "Sopii kaikenkuntoisille ja kaiken ikäisille ympäri vuoden, mutta saariin pääsy edellyttää merimatkaa. Porin Preiviikinlahdella on esteettömiä luontolavoja."
+    },
+    "region": "Satakunta",
+    "category": "Island",
+    "city": "Pori",
+    "websiteURL": "https://www.luontoon.fi/selkameri",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": false,
+    "latitude": 61.5354681,
+    "longitude": 21.56400229999999
+  },
+  {
+    "placeId": "32c61878-28ac-43cb-9dbd-22e6af45a079",
+    "name": "Sipoonkorven kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1652195881_sipoonkorpiesteeton.jpg",
+    "description": {
+      "EN": "The woodlands of Sipoonkorpi lie within easy reach of the Finnish capital, surrounded by rolling fields and picturesque villages. Sipoonkorpi's peaceful settings are a welcome green haven for local townies, especially in late summer and autumn when anyone can come here to gather plentiful wild mushrooms and berries.",
+      "FI": "Löydä vehmas maaseutu kaupungista, vain hetken matkan päässä Helsingistä. Kylät polveilevien perinnemaisemien keskellä, korpien hämy sekä mainiot sieni- ja marjamaastot kutsuvat sinut rentoutumaan ja nauttimaan Sipoonkorpeen."
+    },
+    "suitability": {
+      "EN": "Suitable for visitors of all ages all year.",
+      "FI": "Sopii kaiken ikäisille ympäri vuoden."
+    },
+    "region": "Uusimaa",
+    "category": "Forest",
+    "city": "Sipoo, Helsinki, Vantaa",
+    "websiteURL": "https://www.luontoon.fi/sipoonkorpi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 60.3125087,
+    "longitude": 25.1624515
+  },
+  {
+    "placeId": "668aa738-4198-463f-a080-f83cf217f2ce",
+    "name": "Syötteen kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542639315_mylly-10-of-13.jpg",
+    "description": {
+      "EN": "The wild wooded hills of Syöte provide an ideal setting for many activities. Ski-trek through the magical snow-covered winter forests, or pedal up hill and down dale along the park's fine mountain-biking routes. The log cabin sauna at Ahmatupa in the heart of the park is a great place to soothe your body and soul.",
+      "FI": "Vaarametsät kutsuvat liikkumaan luonnonrauhaan kaikkina vuodenaikoina. Lihakset saavat kyytiä hiihtoretkellä tykkykuusien lomassa tai vaarojen ja laaksojen läpi kulkevilla maastopyöräreiteillä. Ahmatuvan sauna kansallispuiston ytimessä pehmittää kehon ja rentouttaa mielen."
+    },
+    "suitability": {
+      "EN": "Excellent for families with children and for those who wish to go on an active holiday. Some accessible services like visitor centre and one trail.",
+      "FI": "Syöte sopii hyvin koko perheelle ja vauhtia etsivälle aktiivilomailijalle. Myös esteettömiä palveluita, luontokeskus ja reittejä."
+    },
+    "region": "Northern Ostrobothnia",
+    "category": "Forest",
+    "city": "Pudasjärvi",
+    "websiteURL": "https://www.luontoon.fi/syote",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 65.7735495,
+    "longitude": 27.6592391
+  },
+  {
+    "placeId": "ac5eccc0-46fb-4d56-acaa-c1f510f1f2ce",
+    "name": "Tammisaaren saariston kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1652175241_jussaro-23.jpg",
+    "description": {
+      "EN": "Enjoy an unforgettable summer outing to this lovely part of Finland's coastal archipelago with its larger wooded islands, small rocky islets and open seascapes. Watch majestic white-tailed eagles soaring overhead. Take a boat excursion from Ekenäs to one of the main islands, or head off to explore smaller islands and bays in your own sailboat or kayak.",
+      "FI": "Suojaisessa saaristossa nautit leppoisista kesäpäivistä, joihin merikotka tuo villin luonnon tunnelmaa. Voit rantautua veneellä tai kajakilla lukemattomiin luonnonsatamiin tai Jussarön ja Rödjanin palvelujen ääreen. Nauti maisemista sisäsaaristosta ulkomerelle."
+    },
+    "suitability": {
+      "EN": "A summer destination for friends of the sea of all ages. No services for visitors with mobility difficulties.",
+      "FI": "Kesäkohde kaiken ikäisille meren ystäville. Ei esteettömiä palveluja."
+    },
+    "region": "Uusimaa, Rasepoori",
+    "category": "Island",
+    "city": "Raseborg",
+    "websiteURL": "https://www.luontoon.fi/tammisaarensaaristo",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 59.8728056,
+    "longitude": 23.3970549
+  },
+  {
+    "placeId": "41f6c4a7-102d-4456-84b2-eea19baaa1dc",
+    "name": "Teijon kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542658814_kalasuntti3.jpg",
+    "description": {
+      "EN": "Teijo's attractions include peaceful lakes and forests, as well as historic ironworks villages where traditional crafts still thrive. From these picturesque settlements you can head straight out to explore the lakes, seashores, marshes and forests of the national park - and go hiking, canoeing or fishing. You can get a good taste of Teijo on a day trip, but it's also well worth staying over - out in the wilds under a starry sky, or in cosy lodgnings in a charming village.",
+      "FI": "Teijon kansallispuistossa luonnonrauha kohtaa historiallisten ruukkikylien nykyelämän ja käsityöläisperinteet. Ruukkikylistä pääset suoraan kansallispuiston vaihtelevaan meri-, järvi- ja suomaisemaan patikoimaan, melomaan ja kalastamaan. Teijosta nautit jo päiväkäynnillä, tai voit kruunata elämyksen yöpymällä kansallispuiston tähtitaivaan alla tai ruukkikylän viehättävissä majoituspaikoissa."
+    },
+    "suitability": {
+      "EN": "Partly accessible. Suitable for all ages all year round. The distance from the Kariholma parking area to the Kariholma rest stop, 600 m, is passable by wheelchairs and prams in snow-free weather.",
+      "FI": "Sopii kaiken ikäisille ympäri vuoden. Väli Kariholman pysäköintialueelta Kariholman taukopaikalle, 600 m, on kuljettavissa pyörätuolilla ja lastenvaunuilla lumettomana aikana."
+    },
+    "region": "Southwest Finland, Salo",
+    "category": "Lakes",
+    "city": "Salo",
+    "websiteURL": "https://www.luontoon.fi/teijo",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 60.21688779999998,
+    "longitude": 22.9518962
+  },
+  {
+    "placeId": "a3ea7bed-21c1-41c9-8068-3a5a8d1f81cb",
+    "name": "Tiilikkajärven kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1652188081_kermankuorijat-tiilikka-0020.jpg",
+    "description": {
+      "EN": "The park's lovely lakeshores include the beautiful beach of Venäjänhiekka (Russian Sands), whose name relates to the 1595 Treaty of Teusina which divided these lands between Sweden and Russia. An old border stone in Lake Tiilikkajärvi still bears a crown and a cross symbolising the two countries. A sandy esker ridge formation runs through the lake, adding to the varied natural scene. Slow down, relax, and enjoy a refreshing dip in the lake.",
+      "FI": "Rauhan rannat aukeavat kansallispuiston ytimessä. Puiston upein hiekkaranta on Venäjänhiekka, jonka nimi ei ole sattuma: Täyssinän rauhan (vuonna 1595) rajanvedosta jäi Tiilikkajärveen muistoksi kivi, johon on hakattu Ruotsin ja Venäjän merkkeinä kruunu ja risti. Tiilikkajärven hiekkarannoilla, harjuilla, tuoksuvilla tupasvillaisilla soilla ja metsien huminassa voit tuntea luonnon väkevän vaikutuksen."
+    },
+    "suitability": {
+      "EN": "For independent hikers who love nature. Even terrain but no accessible services.",
+      "FI": "Luonnossa viihtyville omatoimisille retkeilijöille. Tasainen maasto, mutta ei esteettömiä palveluita."
+    },
+    "region": "North Savo",
+    "category": "Lakes",
+    "city": "Rautavaara",
+    "websiteURL": "https://www.luontoon.fi/tiilikkajarvi",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 63.6614721,
+    "longitude": 28.2993964
+  },
+  {
+    "placeId": "24f87949-913d-4d02-9443-78882f02a02c",
+    "name": "Torronsuon kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542645315_teerisaariteijo-1.jpg",
+    "description": {
+      "EN": "Walk safely over Finland's deepest bog along sturdy duckboard trails. A high birdwatching tower offers fine views over the vast open bog, which is visited by many migrating cranes and geese in spring and autumn. In winter cross-country skiers come to the bog to explore the wide open white wintry scene.",
+      "FI": "Pitkospuilla taivaltavien jalkojen alle kurottuu Suomen syvin suo. Lintutorni kutsuu ihailemaan kurkien ja hanhien muuttoa, jonka aikaan karu suoluonto puhkeaa täyteen elämää. Hyvälumisina talvina Torronsuo tarjoaa oivallisen mahdollisuuden leppoisaan hiihtelyyn."
+    },
+    "suitability": {
+      "EN": "Suitable for day-trips all year. An accessible campfire site, wide duckboards and an observation platform.",
+      "FI": "Sopii päiväretkeilijöille ympäri vuoden. Esteetön tulentekopaikka, levennettyjä pitkospuita ja näköalatasanteet."
+    },
+    "region": "Kanta Häme",
+    "category": "Hills",
+    "city": "Tammela",
+    "websiteURL": "https://www.luontoon.fi/torronsuo",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 60.73134890000001,
+    "longitude": 23.6325656
+  },
+  {
+    "placeId": "130b993d-61f5-4bfb-a6af-52375f2b00ff",
+    "name": "Urho Kekkosen kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1542664154_13696380083_f3232fc0be_b.jpg",
+    "description": {
+      "EN": "Trek through this magnificent arctic fell country on foot or on skis, finding your way to a welcoming wilderness hut for the night. This vast park extends eastwards from the resort of Saariselkä through the wilderness of Finnish Lapland all the way to the Russian border. The remote fell of Korvatunturi is famous among Finns as the home of Father Christmas. The night sky is illuminated by the Aurora Borealis in winter and the Midnight Sun in summer.",
+      "FI": "Tunne laajojen kairojen sekä tuntureiden tarinat ja patikoi illaksi tuvan lämpöön. Vaeltajan haaveet täyttävä kansallispuisto on aivan Saariselän kupeessa. Näissä avarissa maisemissa on myös joulupukin koti, mystinen Korvatunturi."
+    },
+    "suitability": {
+      "EN": "Perfect for both experienced hikers and families with children.",
+      "FI": "Sopii niin kokeneelle vaeltajalle kuin koko perheelle."
+    },
+    "region": "Lapland",
+    "category": "Hills",
+    "city": "Lapland",
+    "websiteURL": "https://www.luontoon.fi/urhokekkosenkansallispuisto",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 68.1666667,
+    "longitude": 28.25
+  },
+  {
+    "placeId": "ac03f036-33c5-4bb1-a6fe-618630959542",
+    "name": "Valkmusan kansallispuisto",
+    "imageUrl": "https://explori.es/images/news/medium/1655985962_k.sako-valkmusa-2021-37.jpg",
+    "description": {
+      "EN": "Valkmusa's extensive natural open bogs give visitors a chance to wind down and see, hear, smell and even taste nature all around. Look out for wetland birds and fluttering marshland butterflies, especially in spring and summer when the air is filled with birdsong. Find tasty cranberries growing among the bog moss.",
+      "FI": "Valkmusa on Kymenlaakson harvojen tuntema aarre, jossa koskematon suo kutsuu kulkijaa rauhoittumaan. Suon viehätys aukeaa aisteille rahkasammalten syksyisessä väriloistossa, karpaloiden kirpeydessä, talven viimassa, kevään muuttolintujen huudoissa sekä kesän lämmössä ja suoperhosten siipien havinassa."
+    },
+    "suitability": {
+      "EN": "A day-trip destination suitable for visitors of all ages all year. No accessible services.",
+      "FI": "Sopii päiväretkikohteeksi kaiken ikäisille ympäri vuoden. Ei esteettömiä palveluita."
+    },
+    "region": "Kymenlaakso",
+    "category": "Forest",
+    "city": "Vastila",
+    "websiteURL": "https://www.luontoon.fi/valkmusa",
+    "hasTentSite": true,
+    "hasCampfireSite": true,
+    "hasRentalHut": true,
+    "latitude": 60.57205439999999,
+    "longitude": 26.705125
+  }
+]
