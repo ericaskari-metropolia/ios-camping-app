@@ -179,7 +179,8 @@ struct AddPlanView: View {
                         NavigationLink(
                             destination: AddPlanOverview(completed: {
                                 completed()
-                            }, input: value()),
+                            }, input: value())
+                            .environmentObject(PlanViewModel()),
                             label: {
                                 Text("Create trip")
                             }
