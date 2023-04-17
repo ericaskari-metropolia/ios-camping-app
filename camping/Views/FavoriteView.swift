@@ -23,15 +23,11 @@ struct FavoriteView: View {
                     .foregroundColor(.white)
                     .offset(x: -75, y: 60)
             }
-            .edgesIgnoringSafeArea(.top)
+            
             ScrollView{
                 if favoriteManager.favoriteCampsites.count > 0{
                     ForEach(favoriteManager.favoriteCampsites, id: \.self){
                         campsite in
-            
-//                        NavigationLink(destination: CampsiteDetailView(campsite: campsite)){
-//                            FavoriteItemView(campsite:campsite)
-//                        }
                         NavigationLink{
                             CampsiteDetailView(campsite: campsite)
                         } label :{
@@ -45,6 +41,7 @@ struct FavoriteView: View {
             }
             
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
