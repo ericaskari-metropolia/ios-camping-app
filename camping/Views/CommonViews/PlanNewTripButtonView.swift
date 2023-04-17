@@ -11,7 +11,7 @@ struct PlanNewTripButtonView: View {
     var body: some View {
         Button(action: {}, label: {
             Spacer()
-            Text("Plane new trip")
+            Text("Plan new trip")
                 .font(.system(.title3, design: .rounded))
                 .foregroundColor(.white)
             Spacer()

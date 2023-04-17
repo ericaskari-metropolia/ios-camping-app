@@ -21,3 +21,11 @@ extension Date {
       return Calendar.current.date(byAdding: .day, value: 1, to: Date())!
    }
 }
+
+
+// Round double to zero decimal
+extension Double {
+    func roundedDouble() -> String {
+        return String(format: "%.0f", self)
+    }
+}
