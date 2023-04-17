@@ -12,18 +12,13 @@ struct CityListItemView: View {
     let cityName: String
     var body: some View{
         HStack(){
+            Image(systemName: "mappin.and.ellipse")
             Text("\(cityName)")
             Spacer()
-            Label("", systemImage: "chevron.right")
-                .labelStyle(.iconOnly)
+            Image(systemName: "chevron.right")
         }
         .padding()
-        .frame(width: 300)
-        .cornerRadius(16)
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(.gray, lineWidth:1)
-        )
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
