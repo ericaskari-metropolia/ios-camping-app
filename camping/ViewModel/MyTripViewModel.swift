@@ -102,6 +102,13 @@ class MyTripViewModel: ObservableObject {
             return []
         }
     }
+    
+    func countOfOngoingAndPastPlans() -> (ongoingCount: Int, pastCount: Int) {
+           let currentDate = Date()
+           let ongoingPlans = planDetails.filter { $0.end >= currentDate }
+           let pastPlans = planDetails.filter { $0.end < currentDate }
+           return (ongoingCount: ongoingPlans.count, pastCount: pastPlans.count)
+       }
 }
 
 struct PlanDetail:Identifiable {
