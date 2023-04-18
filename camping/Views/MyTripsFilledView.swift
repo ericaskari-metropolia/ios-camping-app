@@ -8,19 +8,40 @@
 /* This is a view that displays the trip of a user*/
 
 import SwiftUI
+import CoreData
 
 struct MyTripsFilledView: View {
     
+    @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[])
+    var campResults: FetchedResults<CampingSite>
+    
+    @State var onGoingTrip:Bool = false
     var body: some View {
-        
         VStack {
             headerView
                 .padding(.bottom,-40)
                 .ignoresSafeArea()
             ScrollView{
                 VStack{
-                    onGoingTripView
-                        .padding(.top,0)
+                    if onGoingTrip {
+                        VStack(alignment: .leading){
+                            Text("Ongoing trips")
+                                .font(.headline)
+                                .padding(.top,-20)
+                                .padding()
+                            NoTripCard()
+                        }
+                        
+                    } else {
+                        VStack(alignment: .leading){
+                            Text("Ongoing trips")
+                                .font(.headline)
+                                .padding(.top,-20)
+                                .padding()
+                            OnGoingTripView()
+                        }
+                    }
+                    
                     Divider()
                     createNewTripButton
                     pastTripViewHeader
@@ -74,8 +95,21 @@ extension MyTripsFilledView {
                     ForEach(0..<4) {index in
                         OngoingTripCard()
                     }
+                    
                 }
             }
+        }
+    }
+    
+    private var noOngoingTripsView :some View {
+        VStack{
+            Image("no-plan")
+                .resizable()
+                .frame(maxWidth: 400, maxHeight: 250)
+                .padding(.top,-20)
+                .padding(.horizontal,20)
+            Text("Oops!! You don't have any ongoing trips!!")
+                .padding(.bottom,20)
         }
     }
     
@@ -101,6 +135,26 @@ extension MyTripsFilledView {
             .background(Color.black)
             .cornerRadius(15)
     }
+    private var campData :some View {
+        VStack{
+            Text("camp data")
+            if campResults.isEmpty {
+                Text("Camp Result is empty")
+            } else {
+                List {
+                    ForEach(campResults) {camp in
+                        Text(camp.city ?? "Helsinki")
+                            .font(.title)
+                            .frame(width: 80, height: 80)
+                        
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    
     private var pastTripGridView : some View {
         LazyVGrid(columns: [GridItem(.flexible(), spacing: 5), GridItem(.flexible(), spacing: 10)]) {
             ForEach(0..<4) { index in
