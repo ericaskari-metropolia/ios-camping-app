@@ -10,6 +10,7 @@ import SwiftUI
 // MARK: - CAMPSITE LIST BASED ON CATEGORY
 
 struct CampsiteListView: View {
+    @Environment(\.dismiss) var dismiss
     
     // PROPERTIES
     @State var category: Category
@@ -28,16 +29,40 @@ struct CampsiteListView: View {
     var body: some View {
         VStack(){
             
-            ZStack(alignment: .leading){
+            ZStack(alignment: .top){
                 Image(category.image)
                     .resizable()
                     .scaledToFill()
                     .frame(maxWidth: .infinity)
                     .frame(height: 300)
                 
+                VStack(spacing: 0.0){
+                    HStack {
+                        
+                        // Button to go back previous page
+                        Button{
+                            dismiss()
+                        } label: {
+                            Image(systemName: "chevron.left.circle.fill")
+                                .font(.title)
+                                .foregroundColor(.white)
+                                .padding()
+                        }
+                        
+                        Spacer()
+                        
+                        Text("\(category.title) campsites")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .padding()
+                        
+                        Spacer()
+                    }
+                    .padding(EdgeInsets(top: 50, leading: 40, bottom: 0, trailing: 40))
+                }
+                
             }
             .background(Color.clear)
-            .navigationTitle("\(category.title) campsites")
             
             
             ScrollView{
@@ -47,7 +72,7 @@ struct CampsiteListView: View {
                     }, label: {
                         CampsiteListItemView(campsite: campingSite)
                     })
-                    
+                    .navigationBarHidden(true)
                 }
             }
             

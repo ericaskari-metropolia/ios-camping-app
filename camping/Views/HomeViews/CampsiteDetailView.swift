@@ -36,10 +36,12 @@ struct CampsiteDetailView: View {
                     
                     VStack(spacing: 0.0){
                         HStack {
+                            
+                            // Button to go back previous page
                             Button{
                                 dismiss()
                             } label: {
-                                Image(systemName: "arrow.left")
+                                Image(systemName: "chevron.left.circle.fill")
                                     .font(.title)
                                     .foregroundColor(.white)
                                     .padding()
@@ -169,7 +171,6 @@ struct CampsiteDetailView: View {
             .edgesIgnoringSafeArea(.top)
         }
         .navigationBarBackButtonHidden(true)
-        
     }
     
 }
