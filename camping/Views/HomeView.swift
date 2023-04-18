@@ -13,6 +13,8 @@ struct HomeView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
     @FetchRequest(entity: Plan.entity(), sortDescriptors:[]) var planResults: FetchedResults<Plan>
+    
+    @StateObject var homeViewModel = HomeViewModel()
 
     var body: some View {
         VStack(spacing: spacing){
@@ -42,10 +44,10 @@ struct HomeView: View {
                     Text("\(results.count)")
                 }
                 
-                ForEach(results, id: \.self) { campingSite in
+                ForEach(homeViewModel.suggestCampsites, id: \.self) { campingSite in
                     HStack{
                         Text("Camping site:")
-                        Text(campingSite.websiteURL ?? "")
+                        Text(campingSite.name ?? "")
                     }
                 }
                 
@@ -59,6 +61,9 @@ struct HomeView: View {
         }
         .onAppear {
             locationViewModel.fetchCampingSites()
+        }
+        .onAppear{
+            homeViewModel.suggestCampsiteBasedOnDistance(campingSites: results)
         }
         .ignoresSafeArea(edges: .top)
         
