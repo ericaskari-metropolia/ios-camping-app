@@ -5,81 +5,34 @@
 //  Created by Binod Panta on 18.4.2023.
 //
 
+/* This is the view model that handles the data for the My Trips feature */
+
 import Foundation
 import CoreData
 import MapKit
 
-//class MyTripViewModel: ObservableObject {
-//    @Published var pastPlans: [AddPlantFirstStepViewOutput] = []
-//    @Published var upcomingPlans: [AddPlantFirstStepViewOutput] = []
-//    @Published var campingSites: [CampingSite] = []
-//
-//    private let context: NSManagedObjectContext
-//
-//        init(context: NSManagedObjectContext) {
-//            self.context = context
-//        }
-//
-//    func fetchAllPlans() -> [Plan] {
-//
-//           let fetchRequest = NSFetchRequest<Plan>(entityName: "Plan")
-//
-//           do {
-//               let plans = try context.fetch(fetchRequest)
-//               print(plans)
-//               return plans
-//           } catch {
-//               print("Error fetching plans: \(error)")
-//               return []
-//           }
-//       }
-//    func fetchPlans() -> (pastPlans: [AddPlantFirstStepViewOutput], upcomingPlans: [AddPlantFirstStepViewOutput]) {
-//        let plans = fetchAllPlans()
-//        let now = Date()
-//
-//        let pastPlans = plans.filter { $0.endDate! < now }
-//                              .map { AddPlantFirstStepViewOutput(startLocation: CLLocationCoordinate2D(latitude: $0.startLatitude, longitude: $0.startLongitude),
-//                                                                 destinationLocation: $0.campingSite!,
-//                                                                startDate: $0.startDate!,
-//                                                                endDate: $0.endDate!) }
-//
-//        let upcomingPlans = plans.filter { $0.startDate! >= now }
-//                                  .map { AddPlantFirstStepViewOutput(startLocation: CLLocationCoordinate2D(latitude: $0.startLatitude, longitude: $0.startLongitude),
-//                                                                    destinationLocation: $0.campingSite!,
-//                                                                    startDate: $0.startDate!,
-//                                                                    endDate: $0.endDate!) }
-//
-//        return (pastPlans: pastPlans, upcomingPlans: upcomingPlans)
-//    }
-//    func fetchAllCampingSites() -> [CampingSite] {
-//           let fetchRequest = NSFetchRequest<CampingSite>(entityName: "CampingSite")
-//
-//           do {
-//               let campingSites = try context.fetch(fetchRequest)
-//               return campingSites
-//           } catch {
-//               print("Error fetching camping sites: \(error)")
-//               return []
-//           }
-//       }
-//
-//}
 
 class MyTripViewModel: ObservableObject {
+    // Published properties that can be observed for changes
     @Published var planDetails: [PlanDetail] = []
     @Published var campingSites: [CampingSite] = []
 
+    // The context used for Core Data operations
     private let context: NSManagedObjectContext
 
+    // The initializer for the view model
     init(context: NSManagedObjectContext) {
         self.context = context
     }
 
+// A function that fetches all the plans from Core Data and converts them to PlanDetails
     func fetchAllPlans() -> [PlanDetail] {
         let fetchRequest: NSFetchRequest<Plan> = Plan.fetchRequest()
         do {
               let plans = try context.fetch(fetchRequest)
               let planDetails = plans.compactMap { (plan: Plan) -> PlanDetail? in
+                  
+                  // For each plan, we create a PlanDetail object that contains the plan's details
                   guard let destination = plan.campingSite else { return nil }
                   let start = plan.startDate ?? Date()
                   let end = plan.endDate ?? Date()
@@ -88,10 +41,13 @@ class MyTripViewModel: ObservableObject {
               }
               return planDetails
           } catch {
+
+              // If there is an error fetching the plans, we return an empty array
               print("Error fetching plans: \(error)")
               return []
           }    }
 
+    // A function that fetches all the camping sites from Core Data
     func fetchAllCampingSites() -> [CampingSite] {
         let fetchRequest: NSFetchRequest<CampingSite> = CampingSite.fetchRequest()
         do {
@@ -103,14 +59,34 @@ class MyTripViewModel: ObservableObject {
         }
     }
     
+    // A function that returns an array of PlanDetails for ongoing plans
+    func ongoingPlanDetails() -> [PlanDetail] {
+           let currentDate = Date()
+           return planDetails.filter { $0.end >= currentDate }
+       }
+       
+    
+    // A function that returns an array of PlanDetails for past plans
+       func pastPlanDetails() -> [PlanDetail] {
+           let currentDate = Date()
+           return planDetails.filter { $0.end < currentDate }
+       }
+    
+    // A function that returns the count of ongoing and past plans
     func countOfOngoingAndPastPlans() -> (ongoingCount: Int, pastCount: Int) {
            let currentDate = Date()
            let ongoingPlans = planDetails.filter { $0.end >= currentDate }
            let pastPlans = planDetails.filter { $0.end < currentDate }
            return (ongoingCount: ongoingPlans.count, pastCount: pastPlans.count)
        }
+    
+    // A function that returns a Boolean indicating if there are any plans or not
+    func hasPlans() -> Bool {
+        return !planDetails.isEmpty
+    }
 }
 
+// The PlanDetail struct that represents the details of a plan
 struct PlanDetail:Identifiable {
    
     

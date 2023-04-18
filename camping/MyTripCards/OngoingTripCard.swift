@@ -7,7 +7,8 @@
 
 /* This is a card view for ongoing trips  */
 
-//Logic not implemented yet, Mostly hardcoded values.
+//Just reference for the UI
+
 
 import SwiftUI
 

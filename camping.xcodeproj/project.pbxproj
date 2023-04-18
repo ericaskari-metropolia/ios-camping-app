@@ -48,8 +48,6 @@
 		2787CFDB29DAFDE7000B4865 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD929DAFDE7000B4865 /* FavoriteView.swift */; };
 		2787CFDC29DAFDE7000B4865 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFD929DAFDE7000B4865 /* FavoriteView.swift */; };
 		2787CFDE29DAFDF6000B4865 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFDD29DAFDF6000B4865 /* TripsView.swift */; };
-		2787CFDF29DAFDF6000B4865 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFDD29DAFDF6000B4865 /* TripsView.swift */; };
-		2787CFE029DAFDF6000B4865 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFDD29DAFDF6000B4865 /* TripsView.swift */; };
 		2787CFE229DAFE16000B4865 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlanView.swift */; };
 		2787CFE329DAFE16000B4865 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlanView.swift */; };
 		2787CFE429DAFE16000B4865 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlanView.swift */; };
@@ -247,13 +245,10 @@
 				2707B80329E8A4E800728026 /* CommonViews */,
 				66133D9A29DE1FC500FE61AE /* OnBoardView.swift */,
 				2787CFD929DAFDE7000B4865 /* FavoriteView.swift */,
-				2787CFDD29DAFDF6000B4865 /* TripsView.swift */,
 				B305CD9429E441F0007781DB /* PermissionView.swift */,
 				B305CD9629E4420A007781DB /* NavigationTabView.swift */,
 				2787CFD529DAFDD1000B4865 /* HomeView.swift */,
 				272239FA29E40A5F0015B291 /* HomeViews */,
-				66E4E1C729E49AA200A87706 /* MyTripsEmptyView.swift */,
-				66E4E1CE29E56A8900A87706 /* MyTripsFilledView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,7 +266,10 @@
 		66E4E1DC29EE888700A87706 /* MyTrip */ = {
 			isa = PBXGroup;
 			children = (
+				2787CFDD29DAFDF6000B4865 /* TripsView.swift */,
+				66E4E1CE29E56A8900A87706 /* MyTripsFilledView.swift */,
 				66E4E1DD29EE88A700A87706 /* OnGoingTripView.swift */,
+				66E4E1C729E49AA200A87706 /* MyTripsEmptyView.swift */,
 				66E4E1DF29EE88F700A87706 /* PastTripView.swift */,
 			);
 			path = MyTrip;
@@ -590,7 +588,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2787CFDF29DAFDF6000B4865 /* TripsView.swift in Sources */,
 				2712B5C929EAF16E00C7D7D0 /* PlanNewTripButtonView.swift in Sources */,
 				2787CFDB29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
 				2707B81229E8B38300728026 /* CampsiteListItemView.swift in Sources */,
@@ -614,7 +611,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2787CFE029DAFDF6000B4865 /* TripsView.swift in Sources */,
 				A156909729D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift in Sources */,
 				2787CFE429DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				2787CFDC29DAFDE7000B4865 /* FavoriteView.swift in Sources */,

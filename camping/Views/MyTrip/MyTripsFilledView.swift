@@ -12,50 +12,61 @@ import CoreData
 
 struct MyTripsFilledView: View {
     
-    @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[])
-    var campResults: FetchedResults<CampingSite>
+    // Use @EnvironmentObject property wrapper to inject an instance of LocationViewModel into this view
+    @EnvironmentObject var locationViewModel: LocationViewModel
     
-    @State var onGoingTrip:Bool = false
+    // Use @Environment property wrapper to inject the managed object context into this view
+    @Environment(\.managedObjectContext) var context
+
+    // Use @StateObject property wrapper to create an instance of MyTripViewModel for this view
+    @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
+        
     var body: some View {
         VStack {
             headerView
                 .padding(.bottom,-40)
                 .ignoresSafeArea()
+           
+           
             ScrollView{
-                VStack{
-                    if onGoingTrip {
-                        VStack(alignment: .leading){
-                            Text("Ongoing trips")
-                                .font(.headline)
-                                .padding(.top,-20)
-                                .padding()
-                            NoTripCard()
-                        }
-                        
-                    } else {
-                        VStack(alignment: .leading){
-                            Text("Ongoing trips")
-                                .font(.headline)
-                                .padding(.top,-20)
-                                .padding()
-                            OnGoingTripView()
-                        }
+                //*THIS CODE NEEDS A REVIEW
+                
+                // Check if there are any ongoing trips
+                if viewModel.countOfOngoingAndPastPlans().ongoingCount <= 0 {
+                    VStack(alignment: .leading){
+                        Text("Ongoing trips")
+                            .font(.headline)
+                            .padding(.top,-20)
+                            .padding()
+                        OnGoingTripView()
                     }
-                    
+                } else {
+                    noOngoingTripsView
+                }
                     Divider()
                     createNewTripButton
                     pastTripViewHeader
-                    pastTripGridView
+                
+                //*THIS CODE NEEDS A REVIEW
+
+                // Check if there are any past trips
+                if viewModel.countOfOngoingAndPastPlans().ongoingCount <= 0 {
+                    PastTripView()
                         .padding(.horizontal,-10)
                         .padding()
+                }else {
+                    noPastTripsView
+                        
+                }
                     
                 }
             }
-        }
+        
     }
     
 }
 
+// Extension to MyTripsFilledView containing private helper views
 extension MyTripsFilledView {
     private var headerView : some View {
         ZStack(alignment:Alignment(horizontal: .leading, vertical: .bottom)){
@@ -66,9 +77,9 @@ extension MyTripsFilledView {
                 .frame(maxWidth: 400, maxHeight: 300)
                 .clipped()
            
-            VStack{
-                //The location Espoo is hardcoded, need to be changed
-                Label("You are in Espoo", systemImage: "globe.europe.africa")
+            VStack(alignment: .leading){
+               
+                Label("You are in \(locationViewModel.currentPlacemark?.locality ?? "")", systemImage: "globe.europe.africa")
                   .font(.headline)
                      .foregroundColor(.white)
                      .padding(.bottom,5)
@@ -85,22 +96,8 @@ extension MyTripsFilledView {
             }
     }
     
-    private var onGoingTripView : some View {
-        VStack(alignment: .leading) {
-            Text("Ongoing trips")
-                .font(.headline)
-                .padding(.horizontal,10)
-            ScrollView(.horizontal,showsIndicators: false){
-                HStack{
-                    ForEach(0..<4) {index in
-                        OngoingTripCard()
-                    }
-                    
-                }
-            }
-        }
-    }
     
+    // View to display when there are no ongoing trips
     private var noOngoingTripsView :some View {
         VStack{
             Image("no-plan")
@@ -109,6 +106,19 @@ extension MyTripsFilledView {
                 .padding(.top,-20)
                 .padding(.horizontal,20)
             Text("Oops!! You don't have any ongoing trips!!")
+                .padding(.bottom,20)
+        }
+    }
+    
+    // View to display when there are no past trips
+    private var noPastTripsView :some View {
+        VStack{
+            Image("no-plan")
+                .resizable()
+                .frame(maxWidth: 400, maxHeight: 250)
+                .padding(.top,20)
+                .padding(.horizontal,20)
+            Text("Oops!! You don't have any past trips!!")
                 .padding(.bottom,20)
         }
     }
@@ -128,39 +138,14 @@ extension MyTripsFilledView {
         }
     }
     
+    
+    //View to display add new trip button
     private var createNewTripButton : some View {
         Label("Create new trip", systemImage: "plus")
             .foregroundColor(.white)
             .frame(width: 350, height: 50)
             .background(Color.black)
             .cornerRadius(15)
-    }
-    private var campData :some View {
-        VStack{
-            Text("camp data")
-            if campResults.isEmpty {
-                Text("Camp Result is empty")
-            } else {
-                List {
-                    ForEach(campResults) {camp in
-                        Text(camp.city ?? "Helsinki")
-                            .font(.title)
-                            .frame(width: 80, height: 80)
-                        
-                    }
-                }
-                
-            }
-        }
-    }
-    
-    
-    private var pastTripGridView : some View {
-        LazyVGrid(columns: [GridItem(.flexible(), spacing: 5), GridItem(.flexible(), spacing: 10)]) {
-            ForEach(0..<4) { index in
-                         PastTripCard()
-                        }
-                 }
     }
 }
 

@@ -16,7 +16,7 @@ struct OnGoingTripView: View {
     
     var body: some View {
         VStack {
-            OnGoingTripScrollView(planDetails: viewModel.planDetails)
+            OnGoingTripScrollView(planDetails: viewModel.ongoingPlanDetails())
         }
         
         //when the view appears, fetch all the plans and update the plandetails
@@ -90,7 +90,7 @@ struct OnGoingTripDetailScreen: View {
                 Text("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
-                                .padding(.top,5)
+                                .padding(.top,2)
             }
         }
         .padding()
@@ -120,4 +120,5 @@ extension Date{
                 .day()
         )
     }
+
 }
