@@ -42,9 +42,12 @@ struct CampsiteListView: View {
             
             ScrollView{
                 ForEach(list, id: \.self) {campingSite in
-                        NavigationLink(destination: CampsiteDetailView(campsite: campingSite)){
-                            CampsiteListItemView(campsite: campingSite)
-                        }
+                    NavigationLink(destination: {
+                        CampsiteDetailView(campsite: campingSite)
+                    }, label: {
+                        CampsiteListItemView(campsite: campingSite)
+                    })
+                    
                 }
             }
             
