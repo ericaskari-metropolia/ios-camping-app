@@ -16,27 +16,31 @@ struct CampingSitesFilteredByCityListView: View {
     var body: some View {
         List {
             ForEach(searchViewModel.filteredCampingSites, id: \.self) { campingSite in
-                CityListItemView(cityName: campingSite.name!)
-                //                    .background(
-                //                        NavigationLink {
-                //                            CampingSitesFilteredByCityListView()
-                //                        } label: {
-                //                            EmptyView()
-                //                        }
-                //                        .opacity(0)
-                //                        .background(.clear)
-                //                    )
-                //                    .listRowBackground(Color.clear)
-                //            }
-                    .listRowSeparator(.hidden)
-                    .listStyle(PlainListStyle())
+                CampingSiteFilteredByCityItemView(campingSiteFiltered: campingSite)
+                    .background(
+                        NavigationLink {
+                            CampsiteDetailView(campsite: campingSite)
+                        } label: {
+                            EmptyView()
+                        }
+                            .opacity(0)
+                            .background(.clear)
+                    )
+                
             }
             .scrollContentBackground(.hidden)
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
+            .padding(16)
         }
+        .listStyle(GroupedListStyle())
+        .background(Color(UIColor(red: 245/255, green: 246/255, blue: 245/255, alpha: 1.0)))
+        .scrollContentBackground(.hidden)
         .onAppear{
             searchViewModel.filterCampingSiteCity(city: cityString, campingSites: results)
         }
     }
+    
 }
 
 struct CampingSitesFilteredByCityListView_Previews: PreviewProvider {

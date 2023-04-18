@@ -28,18 +28,14 @@ struct SearchView: View {
                                 searchViewModel.searchTextUpdated(value: value)
                             })
                 )
-                
                 Label("", systemImage: "mic")
                     .labelStyle(.iconOnly)
                     .font(.system(size: 20))
             }
             .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(.gray, lineWidth: 1.5)
-            )
+            .background(.white)
+            .cornerRadius(20)
             .padding(.horizontal, 18)
-            
             
             List {
                 ForEach(searchViewModel.filteredCities, id: \.self) { city in
@@ -54,19 +50,25 @@ struct SearchView: View {
                                 .background(.clear)
                         )
                         .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets())
                 }
-                .listRowSeparator(.hidden)
-                .listStyle(PlainListStyle())
+                .listStyle(.plain)
+                .background(.white)
             }
             .scrollContentBackground(.hidden)
         }
         .padding(.top, 18)
+        .padding(.horizontal, 18)
+        .background(Color(UIColor(red: 245/255, green: 246/255, blue: 245/255, alpha: 1.0)))
         .onAppear {
             searchViewModel.filterFetchedCity(cities: results)
         }
     }
 }
 
+extension Color {
+    
+}
 
 //struct SearchView_Previews: PreviewProvider {
 //    static var previews: some View {

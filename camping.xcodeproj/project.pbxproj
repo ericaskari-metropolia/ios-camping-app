@@ -85,6 +85,7 @@
 		B309AFCE29DDC27500C44BC4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */; };
 		B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD029DDC29F00C44BC4 /* CampingSiteData.swift */; };
 		B309AFD429DDC30A00C44BC4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AFD329DDC30A00C44BC4 /* Service.swift */; };
+		B35F41E229ED8B3C008E3549 /* CampingSiteFilteredByCityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F41E129ED8B3C008E3549 /* CampingSiteFilteredByCityItemView.swift */; };
 		B3C028BD29E99BCA00DDBF06 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C028BC29E99BCA00DDBF06 /* SearchView.swift */; };
 		B3C028BF29E9AA5C00DDBF06 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C028BE29E9AA5C00DDBF06 /* SearchViewModel.swift */; };
 		B3C028C229E9B7E900DDBF06 /* CityListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C028C129E9B7E900DDBF06 /* CityListItemView.swift */; };
@@ -159,6 +160,7 @@
 		B309AFCD29DDC27500C44BC4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B309AFD029DDC29F00C44BC4 /* CampingSiteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingSiteData.swift; sourceTree = "<group>"; };
 		B309AFD329DDC30A00C44BC4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B35F41E129ED8B3C008E3549 /* CampingSiteFilteredByCityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingSiteFilteredByCityItemView.swift; sourceTree = "<group>"; };
 		B397B80B29DC4C6700F37807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3C028BC29E99BCA00DDBF06 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		B3C028BE29E9AA5C00DDBF06 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				B3C028BC29E99BCA00DDBF06 /* SearchView.swift */,
 				B3C028C129E9B7E900DDBF06 /* CityListItemView.swift */,
 				B3C028C329E9C29800DDBF06 /* CampingSitesFilteredByCityListView.swift */,
+				B35F41E129ED8B3C008E3549 /* CampingSiteFilteredByCityItemView.swift */,
 			);
 			path = SearchViews;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				2707B81129E8B38300728026 /* CampsiteListItemView.swift in Sources */,
 				2707B80D29E8AADB00728026 /* CategoryListView.swift in Sources */,
 				B3C028C629E9CB5C00DDBF06 /* HeaderHomePageView.swift in Sources */,
+				B35F41E229ED8B3C008E3549 /* CampingSiteFilteredByCityItemView.swift in Sources */,
 				66E4E1CB29E543A200A87706 /* OngoingTripCard.swift in Sources */,
 				2787216D29EC20E50000BE8E /* FavoriteManager.swift in Sources */,
 				2787CFDA29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
