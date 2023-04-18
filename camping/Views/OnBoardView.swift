@@ -132,7 +132,7 @@ struct OnBoardView: View {
                 }
                 
             }
-        }
+        }.background(Color(UIColor(red: 245/255, green: 246/255, blue: 245/255, alpha: 1.0)))
     }
 }
 

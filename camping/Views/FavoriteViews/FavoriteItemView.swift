@@ -1,56 +1,58 @@
 //
-//  CampsiteListItemView.swift
+//  FavoriteItemView.swift
 //  camping
 //
-//  Created by Chi Nguyen on 14.4.2023.
+//  Created by Chi Nguyen on 16.4.2023.
 //
 
 import SwiftUI
 
-// MARK: Display a list of campsites based on choosen category
-
-struct CampsiteListItemView: View {
+struct FavoriteItemView: View {
     
-     //PROPERTIES
-    @State var campsite: CampingSite
+    @EnvironmentObject var favoriteManager: FavoriteManager
+    var campsite: CampingSite
     
     var body: some View {
-        
         HStack(spacing: spacing){
             AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
                 image
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 150, height: 100)
+                    .frame(width: 100, height: 70)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                 
             } placeholder: {
                 ProgressView()
             }
-            .padding()
             
             VStack(alignment: .leading, spacing: 10){
                 Text(campsite.name ?? "")
                         .bold()
                         .multilineTextAlignment(.leading)
-                        .foregroundColor(Color.primary)
                 Text(campsite.region ?? "")
                     .multilineTextAlignment(.leading)
             }
                 
             Spacer()
-
-        }
+                
+            Image(systemName: "heart.fill")
+                    .foregroundColor(.red)
+                    .font(.title)
+                    .onTapGesture{
+                        favoriteManager.removeFromFavorite(campsite: campsite)
+                    }
             
+            }
+            .padding(.horizontal)
+
         }
     }
 
+    
 
-//struct CampsiteListItemView_Previews: PreviewProvider {
+//struct FavoriteItemView_Previews: PreviewProvider {
 //
 //    static var previews: some View {
-//        CampsiteListItemView(campsite: .constant(CampingSite()))
+//        FavoriteItemView()
 //    }
 //}
-
-

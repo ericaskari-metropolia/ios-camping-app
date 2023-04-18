@@ -53,7 +53,8 @@ struct NavigationTabView: View {
 struct NavigationTabView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationTabView()
-            .environmentObject(LocationViewModel())
+                    .environmentObject(LocationViewModel())
+                    .environmentObject(FavoriteManager())
         //            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
