@@ -156,7 +156,7 @@ struct CampsiteDetailView: View {
                         HStack{
                             
                             NavigationLink{
-                                let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: campsite.latitude, longitude: campsite.longitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                                let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: campsite.latitude, longitude: campsite.longitude), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
                                 CampsiteMapView(longtitude: campsite.latitude, latitude: campsite.longitude, region: region)
                             } label: {
                                 ViewOnMapButtonView()
