@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct CampsiteDetailView: View {
     @Environment(\.dismiss) var dismiss
@@ -155,12 +156,19 @@ struct CampsiteDetailView: View {
                         HStack{
                             
                             NavigationLink{
-                                Text ("Map view")
+                                let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: campsite.latitude, longitude: campsite.longitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                                CampsiteMapView(longtitude: campsite.latitude, latitude: campsite.longitude, region: region)
                             } label: {
                                 ViewOnMapButtonView()
                             }
                             
-                            PlanNewTripButtonView()
+                            NavigationLink{
+                                Text("Add campsite to add plan as default destination")
+                            } label: {
+                                PlanNewTripButtonView()
+                            }
+                            
+                            
                         }
                         .padding()
                     }

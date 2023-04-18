@@ -60,6 +60,9 @@
 		2787CFE229DAFE16000B4865 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlanView.swift */; };
 		2787CFE329DAFE16000B4865 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlanView.swift */; };
 		2787CFE429DAFE16000B4865 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787CFE129DAFE16000B4865 /* AddPlanView.swift */; };
+		27F477ED29EE9FE100B3786A /* CampsiteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F477EC29EE9FE100B3786A /* CampsiteMapView.swift */; };
+		27F477EE29EE9FE100B3786A /* CampsiteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F477EC29EE9FE100B3786A /* CampsiteMapView.swift */; };
+		27F477EF29EE9FE100B3786A /* CampsiteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F477EC29EE9FE100B3786A /* CampsiteMapView.swift */; };
 		66133D9B29DE1FC500FE61AE /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66133D9A29DE1FC500FE61AE /* OnBoardView.swift */; };
 		66E4E1C829E49AA200A87706 /* MyTripsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4E1C729E49AA200A87706 /* MyTripsEmptyView.swift */; };
 		66E4E1CB29E543A200A87706 /* OngoingTripCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4E1CA29E543A200A87706 /* OngoingTripCard.swift */; };
@@ -130,6 +133,7 @@
 		2787CFD929DAFDE7000B4865 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		2787CFDD29DAFDF6000B4865 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		2787CFE129DAFE16000B4865 /* AddPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanView.swift; sourceTree = "<group>"; };
+		27F477EC29EE9FE100B3786A /* CampsiteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampsiteMapView.swift; sourceTree = "<group>"; };
 		66133D9A29DE1FC500FE61AE /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		66E4E1C729E49AA200A87706 /* MyTripsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsEmptyView.swift; sourceTree = "<group>"; };
 		66E4E1CA29E543A200A87706 /* OngoingTripCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingTripCard.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				2707B81029E8B38300728026 /* CampsiteListItemView.swift */,
 				B3C028C529E9CB5C00DDBF06 /* HeaderHomePageView.swift */,
 				275D26BA29ED733D00279A42 /* WeatherConditionView.swift */,
+				27F477EC29EE9FE100B3786A /* CampsiteMapView.swift */,
 			);
 			path = HomeViews;
 			sourceTree = "<group>";
@@ -538,6 +543,7 @@
 				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
 				2712B5BC29EA9AA400C7D7D0 /* CampsiteDetailView.swift in Sources */,
 				B309AFD129DDC29F00C44BC4 /* CampingSiteData.swift in Sources */,
+				27F477ED29EE9FE100B3786A /* CampsiteMapView.swift in Sources */,
 				2707B80929E8A80A00728026 /* CategoryListItemView.swift in Sources */,
 				66E4E1CD29E54B0800A87706 /* PastTripCard.swift in Sources */,
 				2787217A29EC70090000BE8E /* WeatherManager.swift in Sources */,
@@ -597,6 +603,7 @@
 				2787216E29EC20E50000BE8E /* FavoriteManager.swift in Sources */,
 				2707B81229E8B38300728026 /* CampsiteListItemView.swift in Sources */,
 				275D26BC29ED733D00279A42 /* WeatherConditionView.swift in Sources */,
+				27F477EE29EE9FE100B3786A /* CampsiteMapView.swift in Sources */,
 				2787CFE329DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				2787CFD729DAFDD1000B4865 /* HomeView.swift in Sources */,
 				27223A0129E4103E0015B291 /* CampsiteListView.swift in Sources */,
@@ -619,6 +626,7 @@
 				2787CFE029DAFDF6000B4865 /* TripsView.swift in Sources */,
 				A156909729D2EE9F00EA3C56 /* campingUITestsLaunchTests.swift in Sources */,
 				2787CFE429DAFE16000B4865 /* AddPlanView.swift in Sources */,
+				27F477EF29EE9FE100B3786A /* CampsiteMapView.swift in Sources */,
 				2787CFDC29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
 				2787CFD829DAFDD1000B4865 /* HomeView.swift in Sources */,
 				2707B80F29E8AADB00728026 /* CategoryListView.swift in Sources */,
