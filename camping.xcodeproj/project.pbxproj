@@ -67,6 +67,8 @@
 		66B21E9D29EF3EB10053C741 /* OnGoingTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21E9C29EF3EB10053C741 /* OnGoingTripView.swift */; };
 		66B21E9F29EF3EEF0053C741 /* PastTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21E9E29EF3EEF0053C741 /* PastTripView.swift */; };
 		66B21EA529EF40620053C741 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21EA429EF40620053C741 /* TripsView.swift */; };
+		66B21EA729EFCAF20053C741 /* TripInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21EA629EFCAF20053C741 /* TripInfoView.swift */; };
+		66B21EA929EFD3340053C741 /* WeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21EA829EFD3340053C741 /* WeatherCardView.swift */; };
 		66E4E1CB29E543A200A87706 /* OngoingTripCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4E1CA29E543A200A87706 /* OngoingTripCard.swift */; };
 		66E4E1CD29E54B0800A87706 /* PastTripCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4E1CC29E54B0800A87706 /* PastTripCard.swift */; };
 		A106FEE729E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106FEE629E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift */; };
@@ -142,6 +144,8 @@
 		66B21E9C29EF3EB10053C741 /* OnGoingTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingTripView.swift; sourceTree = "<group>"; };
 		66B21E9E29EF3EEF0053C741 /* PastTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripView.swift; sourceTree = "<group>"; };
 		66B21EA429EF40620053C741 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
+		66B21EA629EFCAF20053C741 /* TripInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfoView.swift; sourceTree = "<group>"; };
+		66B21EA829EFD3340053C741 /* WeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCardView.swift; sourceTree = "<group>"; };
 		66E4E1CA29E543A200A87706 /* OngoingTripCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingTripCard.swift; sourceTree = "<group>"; };
 		66E4E1CC29E54B0800A87706 /* PastTripCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripCard.swift; sourceTree = "<group>"; };
 		A106FEE629E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanChooseStartLocationModalView.swift; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 				66B21E9C29EF3EB10053C741 /* OnGoingTripView.swift */,
 				66B21E9E29EF3EEF0053C741 /* PastTripView.swift */,
 				66B21EA429EF40620053C741 /* TripsView.swift */,
+				66B21EA629EFCAF20053C741 /* TripInfoView.swift */,
 			);
 			path = MyTrip;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			children = (
 				66E4E1CA29E543A200A87706 /* OngoingTripCard.swift */,
 				66E4E1CC29E54B0800A87706 /* PastTripCard.swift */,
+				66B21EA829EFD3340053C741 /* WeatherCardView.swift */,
 			);
 			path = MyTripCards;
 			sourceTree = "<group>";
@@ -601,6 +607,8 @@
 				2787CFE229DAFE16000B4865 /* AddPlanView.swift in Sources */,
 				B305CD9329E44177007781DB /* LocationViewModel.swift in Sources */,
 				A156907529D2EE9D00EA3C56 /* CampingApp.swift in Sources */,
+				66B21EA729EFCAF20053C741 /* TripInfoView.swift in Sources */,
+				66B21EA929EFD3340053C741 /* WeatherCardView.swift in Sources */,
 				2787CFD629DAFDD1000B4865 /* HomeView.swift in Sources */,
 				275D26BB29ED733D00279A42 /* WeatherConditionView.swift in Sources */,
 				66B21E9B29EF3E7D0053C741 /* MyTripsFilledView.swift in Sources */,
