@@ -40,7 +40,6 @@ struct AddPlanChooseDestinationLocationModalView: View {
             .ignoresSafeArea()
             .tint(.pink)
 
-
             VStack {
                 Spacer()
                 HStack {
@@ -50,28 +49,33 @@ struct AddPlanChooseDestinationLocationModalView: View {
                             action: {
                                 viewModel.requestPermission()
                             }, label: {
+                                Text("My location")
+                                    .frame(maxWidth: .infinity)
                                 Image(systemName: "location.circle.fill")
-                                    .padding()
-                                    .background(Color.red)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(10)
                                     .font(.system(size: 20))
                             }
                         )
+                        .padding()
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                         Button(
                             action: {
                                 self.isPresented.toggle()
                             }, label: {
+                                Text("Return")
+                                    .frame(maxWidth: .infinity)
                                 Image(systemName: "return")
-                                    .padding()
-                                    .background(Color.blue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(10)
                                     .font(.system(size: 20))
                             }
                         )
-
-                    }.padding()
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                    }
+                    .padding()
+                    .frame(maxWidth: 200)
                 }
             }
         }
