@@ -8,17 +8,21 @@
 import Foundation
 import SwiftUI
 
+// Search View
+
 struct SearchView: View {
     @StateObject var searchViewModel = SearchViewModel(searchText: "")
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
     
     var body: some View {
         VStack{
+            // Search input field
             HStack{
                 Label("", systemImage: "magnifyingglass")
                     .labelStyle(.iconOnly)
                     .font(.system(size: 20))
                 
+                // Get search input as the user types to show the result city list in an autocomplete way
                 TextField(
                     "Enter a city",
                     text:
@@ -37,6 +41,7 @@ struct SearchView: View {
             .cornerRadius(20)
             .padding(.horizontal, 18)
             
+            // City result list
             List {
                 ForEach(searchViewModel.filteredCities, id: \.self) { city in
                     CityListItemView(cityName: city)

@@ -219,15 +219,10 @@
 		272239FA29E40A5F0015B291 /* HomeViews */ = {
 			isa = PBXGroup;
 			children = (
+				B390208129F0170700A1D754 /* CampsiteDetail */,
+				B390208029F016F300A1D754 /* Category */,
 				B390207C29EFC30000A1D754 /* SuggestCampsites */,
-				2712B5BB29EA9AA400C7D7D0 /* CampsiteDetailView.swift */,
-				272239FF29E4103E0015B291 /* CampsiteListView.swift */,
-				2707B80829E8A80A00728026 /* CategoryListItemView.swift */,
-				2707B80C29E8AADB00728026 /* CategoryListView.swift */,
-				2707B81029E8B38300728026 /* CampsiteListItemView.swift */,
 				B3C028C529E9CB5C00DDBF06 /* HeaderHomePageView.swift */,
-				275D26BA29ED733D00279A42 /* WeatherConditionView.swift */,
-				27F477EC29EE9FE100B3786A /* CampsiteMapView.swift */,
 			);
 			path = HomeViews;
 			sourceTree = "<group>";
@@ -419,6 +414,27 @@
 				B390207D29EFC32900A1D754 /* SuggestCampsitesListItemView.swift */,
 			);
 			path = SuggestCampsites;
+			sourceTree = "<group>";
+		};
+		B390208029F016F300A1D754 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2707B80829E8A80A00728026 /* CategoryListItemView.swift */,
+				2707B80C29E8AADB00728026 /* CategoryListView.swift */,
+				272239FF29E4103E0015B291 /* CampsiteListView.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B390208129F0170700A1D754 /* CampsiteDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2712B5BB29EA9AA400C7D7D0 /* CampsiteDetailView.swift */,
+				2707B81029E8B38300728026 /* CampsiteListItemView.swift */,
+				275D26BA29ED733D00279A42 /* WeatherConditionView.swift */,
+				27F477EC29EE9FE100B3786A /* CampsiteMapView.swift */,
+			);
+			path = CampsiteDetail;
 			sourceTree = "<group>";
 		};
 		B3C028C029E9B7AF00DDBF06 /* SearchViews */ = {

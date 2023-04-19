@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// View for suggest camping sites based on user's location
+
 struct SuggestCampsitesView: View {
     @StateObject var homeViewModel = HomeViewModel()
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>

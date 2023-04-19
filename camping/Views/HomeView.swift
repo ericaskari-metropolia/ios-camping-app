@@ -9,9 +9,10 @@ import SwiftUI
 import MapKit
 import CoreData
 
+// View for Home
+
 struct HomeView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
-//    @StateObject var homeViewModel = HomeViewModel()
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
     @FetchRequest(entity: Plan.entity(), sortDescriptors:[]) var planResults: FetchedResults<Plan>
     

@@ -9,17 +9,24 @@ import Foundation
 import SwiftUI
 import MapKit
 
+// View to ask permission to get user's location
+
 struct PermissionView: View {
     
     @StateObject var locationViewModel = LocationViewModel()
     
     var body: some View {
+        
+        //Display view depends on the authorizationStatus
         switch locationViewModel.authorizationStatus {
+            // When the status is not determined, display asking permission view
         case .notDetermined:
             AnyView(RequestLocationView())
                 .environmentObject(locationViewModel)
+            // When the use refused, display error view
         case .denied, .restricted:
             ErrorView()
+            // When the use allowed, go to NavigationTabView
         case .authorizedWhenInUse, .authorizedAlways:
             NavigationTabView()
                 .environmentObject(locationViewModel)
@@ -29,38 +36,23 @@ struct PermissionView: View {
     }
 }
 
-// view ask permission
+// View to ask permission
 struct RequestLocationView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
     var body: some View {
         VStack{
             Text("Request location permission")
-            Button {
-                locationViewModel.requestPermission()
-            } label: {
-                Text("Allow permission")
-            }
-            
         }
+        .onAppear(perform: locationViewModel.requestPermission)
         .navigationBarBackButtonHidden(true)
     }
 }
 
-// view error
+// View when user's is not giving permission to get location
 struct ErrorView: View {
     var body: some View {
         VStack{
-            Text("Request location error")
-        }
-        .navigationBarBackButtonHidden(true)
-    }
-}
-
-// view success -> tracking user
-struct RequestLocationSuccessView: View {
-    var body: some View {
-        VStack{
-            Text("Request location success")
+            Text("Please give Camplify the permission \n to access to your location in the setting")
         }
         .navigationBarBackButtonHidden(true)
     }

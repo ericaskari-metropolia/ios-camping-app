@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// View for each item in the suggest camping sites based on user's location
+
 struct SuggestCampsitesListItemView: View {
     let campingSite: CampingSite
     var body: some View {

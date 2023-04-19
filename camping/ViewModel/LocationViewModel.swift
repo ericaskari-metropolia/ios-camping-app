@@ -10,6 +10,9 @@ import CoreLocation
 import CoreData
 import MapKit
 
+// This class is for handling asking everything about getting user's location
+// and fetching and saving data to core data from JSON
+
 class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var authorizationStatus: CLAuthorizationStatus
     @Published var lastSeenLocation: CLLocation?
@@ -33,7 +36,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     
-    // Request permission function
+    // Request permission to get user's location function
     func requestPermission() {
         locationManager.requestWhenInUseAuthorization()
     }
@@ -72,9 +75,11 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         let url = "https://users.metropolia.fi/~thuh/camping-4.json"
         guard let url = URL(string: url) else { return }
         
+        // Fetch from URL
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             do {
+                // Decode JSON
                 let campingSites = try JSONDecoder().decode([CampingSiteData].self, from: data)
                 
                 DispatchQueue.main.async {
@@ -99,6 +104,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                             } else {
                                 let newCampingSiteEntity = NSEntityDescription.insertNewObject(forEntityName: "CampingSite", into: context) as! CampingSite
                                 
+                                // Saving to core data
                                 newCampingSiteEntity.placeId = campingSite.placeId
                                 newCampingSiteEntity.name = campingSite.name
                                 newCampingSiteEntity.imageURL = campingSite.imageUrl
@@ -118,23 +124,18 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                                 newCampingSiteEntity.longitude = campingSite.longitude
                             }
                         }
-                        
                     } catch {
                         print("FAIL fetch camping site")
                     }
                     do {
                         try context.save()
-                        print("Saved to core data")
                     } catch {
                         print("error")
                     }
-                    
                 }
             } catch let jsonError {
                 print("Error serializing json:", jsonError)
             }
         }.resume()
-        
     }
-    
 }

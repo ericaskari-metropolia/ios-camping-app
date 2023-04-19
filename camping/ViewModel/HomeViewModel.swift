@@ -8,12 +8,21 @@
 import Foundation
 import SwiftUI
 
+// This class is to handle logic to filter camping sites based on user's location
+
 class HomeViewModel: ObservableObject {
     @Published var suggestCampsites: [CampingSite] = []
     
+    // Calculate distance between camping site coordinates and user's coordinates
     func calculateDistanceBetweenTwoCoordinates(campSiteLatitude: Double, campSitelogitude: Double) -> Double {
+        
+        // Get user's location. If there is none, set to Helsinki coordinates
         let userLatitude = LocationViewModel().lastSeenLocation?.coordinate.latitude ?? 60.192059
+        //        60.192059
+        //        67.92223
         let userLongitude = LocationViewModel().lastSeenLocation?.coordinate.longitude ?? 24.945831
+        //        24.945831
+        //        26.504644
         
         // Convert coordinate to radians
         let campSiteLongitudeRadian = campSitelogitude * Double.pi / 180
@@ -36,6 +45,7 @@ class HomeViewModel: ObservableObject {
         return (c*Double(r))
     }
     
+    // Filter camping sites based on distance
     func suggestCampsiteBasedOnDistance(campingSites: FetchedResults<CampingSite>) {
         let campingSites = campingSites.compactMap{$0}
         suggestCampsites = campingSites.filter { campingSite in
