@@ -11,27 +11,50 @@ import MapKit
 // Mark:
 struct CampsiteMapView: View {
     
-//    @Environment(\.dismiss) var dismiss
-
-    var longtitude: Double
-    var latitude: Double
-    @State var region: MKCoordinateRegion
+    struct Annotation: Identifiable {
+        let id = UUID().uuidString
+        var name: String
+        var address: String
+        var coordinate: CLLocationCoordinate2D
+    }
+    
+    var campsite: CampingSite
+    
+    @State private var region =  MKCoordinateRegion()
+    @State private var coordinate = CLLocationCoordinate2D()
+    @State private var annotations: [Annotation] = []
+    let regionSize = 2000.0 // meters
     
     var body: some View {
         
-        NavigationView {
-                    
-                Map(coordinateRegion: $region)
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                    .ignoresSafeArea(.all)
+        VStack {
+            Map(coordinateRegion: $region, annotationItems: annotations){
+                annotation in
+                MapAnnotation(
+                   coordinate: annotation.coordinate,
+                   content: {
+                       Image(systemName: "pin.circle.fill").foregroundColor(.red)
+                       Text(annotation.name)
+                           .font(.title3)
+                       Text(annotation.address)
+                           .font(.title3)
+                   }
+                )            }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .ignoresSafeArea(.all)
+        }
+        .onAppear{
+            coordinate = CLLocationCoordinate2D(latitude: campsite.latitude, longitude: campsite.longitude)
+            region = MKCoordinateRegion(center:  coordinate, latitudinalMeters: regionSize, longitudinalMeters: regionSize)
+            annotations = [Annotation(name: (campsite.name ?? ""),address: (campsite.region ?? ""), coordinate: coordinate)]
         }
         
     }
    
 }
 
-struct CampsiteMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        CampsiteMapView(longtitude: 23.8463498, latitude: 62.0234115, region: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 62.0234115, longitude: 23.8463498), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)))
-    }
-}
+//struct CampsiteMapView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CampsiteMapView()
+//    }
+//}
