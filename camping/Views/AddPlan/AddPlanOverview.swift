@@ -29,7 +29,7 @@ struct AddPlanOverview: View {
                         Group {
                             if let image = snapshotImage {
                                 Image(uiImage: image)
-                                    .frame(height: 300)
+                                    .frame(height: 600)
                             } else {
                                 VStack {
                                     Spacer()
@@ -44,32 +44,49 @@ struct AddPlanOverview: View {
                             }
                         }
                         .onAppear {
-                            self.generateSnapshot(width: geometry.size.width, height: geometry.size.height)
+                            self.generateSnapshot(width: geometry.size.width, height: 600)
+                            if let input = self.input {
+                                self.viewModel.savePlan(input: input)
+                                self.saved = true
+                                self.completed()
+                            }
                         }
                     }
                 }
                 .frame(maxWidth: .infinity)
-                .frame(height: 300)
+                .frame(height: 600)
                 .background(Color.red)
+                Text("You have created your new journey!")
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+                    .font(.system(size: 26))
+                    .bold()
+                    .padding()
 
-                
-                Text(self.input?.startDate.description ?? "No Start date")
-                Text(self.input?.endDate.description ?? "No End date")
-                Text(self.input?.startLocation.latitude.description ?? "No Start latitude")
-                Text(self.input?.startLocation.longitude.description ?? "No Start latitude")
-                Text(self.input?.destinationLocation.name ?? "No Destination name")
-
-                Button {
-                    self.viewModel.savePlan(input: self.input!)
-                    self.saved = true
-                    self.completed()
-                    self.dismiss()
-                } label: {
-                    Text("Save")
-                }
-                .disabled(self.input == nil || self.saved)
+                HStack {
+                    Button {
+                        self.dismiss()
+                    } label: {
+                        Text("Add gear")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .padding()
+                    .background(Color.black)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(30)
+                    
+                    Button {
+                        self.dismiss()
+                    } label: {
+                        Text("Skip")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .padding()
+                    .background(Color.black)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(30)
+                }.padding()
             }
-            .background(Color.red)
         }.ignoresSafeArea()
     }
 
@@ -127,9 +144,15 @@ struct AddPlanOverview: View {
                         withConfiguration: configuration
                     )!
 
-                    let pinImageCGPoint1 = CGPoint(x: point1.x - pinImage.size.width / 2, y: point1.y - pinImage.size.height / 2)
+                    let pinImageCGPoint1 = CGPoint(
+                        x: point1.x - pinImage.size.width / 2,
+                        y: point1.y - pinImage.size.height / 2
+                    )
 
-                    let pinImageCGPoint2 = CGPoint(x: point2.x - pinImage2.size.width / 2, y: point2.y - pinImage2.size.height / 2)
+                    let pinImageCGPoint2 = CGPoint(
+                        x: point2.x - pinImage2.size.width / 2,
+                        y: point2.y - pinImage2.size.height / 2
+                    )
 
                     mapImage.draw(at: .zero)
                     pinImage.draw(at: pinImageCGPoint1)
