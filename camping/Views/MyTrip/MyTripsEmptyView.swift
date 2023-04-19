@@ -4,7 +4,6 @@
 //
 //  Created by Binod Panta on 10.4.2023.
 //
-
 /* This view is displayed when the user doesnot have any trip plan yet.*/
 
 

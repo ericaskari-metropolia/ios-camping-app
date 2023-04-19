@@ -4,11 +4,9 @@
 //
 //  Created by Binod Panta on 6.4.2023.
 //
-
 import SwiftUI
 
 //The logic for home navigation not yet added
-
 //Model for the OnBoard items
 struct OnBoardItem {
     let image: String
@@ -99,7 +97,7 @@ struct OnBoardView: View {
                                 Rectangle()
                                     .frame(width: 20,height: 10)
                                     .cornerRadius(10)
-                                    .foregroundColor(.purple)
+                                    .foregroundColor(.black)
                             } else {
                                 Circle()
                                     .frame(width: 10, height:10)
@@ -119,7 +117,7 @@ struct OnBoardView: View {
                         Text( currentStep < onBoardItems.count - 1 ? "Next" : "Get Started")
                             .font(.headline)
                             .padding(16)
-                            .background(Color.purple)
+                            .background(Color.black)
                             .cornerRadius(16)
                             .padding(.horizontal, 16)
                             .foregroundColor(.white)
