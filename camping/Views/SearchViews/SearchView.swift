@@ -7,12 +7,16 @@
 
 import Foundation
 import SwiftUI
+import AVFoundation
 
 // Search View
 
 struct SearchView: View {
     @StateObject var searchViewModel = SearchViewModel(searchText: "")
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
+    @State private var showingRecordingSheet = false
+    
+    
     
     var body: some View {
         VStack{
@@ -35,6 +39,9 @@ struct SearchView: View {
                 Label("", systemImage: "mic")
                     .labelStyle(.iconOnly)
                     .font(.system(size: 20))
+                    .onTapGesture{
+                        showingRecordingSheet = true
+                    }
             }
             .padding()
             .background(.white)
@@ -65,6 +72,15 @@ struct SearchView: View {
         .padding(.top, 18)
         .padding(.horizontal, 18)
         .background(Color(UIColor(red: 245/255, green: 246/255, blue: 245/255, alpha: 1.0)))
+        .sheet(
+            isPresented: $showingRecordingSheet,
+            onDismiss: {
+                searchViewModel.searchTextUpdated(value: searchViewModel.searchText)
+            },
+            content: {
+                RecordingSheetView(transcript: $searchViewModel.searchText)
+                    .presentationDetents([.fraction(0.5)])
+            })
         .onAppear {
             searchViewModel.filterFetchedCity(cities: results)
         }
