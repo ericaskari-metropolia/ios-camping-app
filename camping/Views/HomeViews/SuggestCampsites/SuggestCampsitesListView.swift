@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import MapKit
 
 // View for suggest camping sites based on user's location
 
 struct SuggestCampsitesView: View {
-    @StateObject var homeViewModel = HomeViewModel()
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
+    @StateObject var homeViewModel = HomeViewModel(suggestCampsites: [], lastUserLocation: .init(latitude: 0, longitude: 0))
+    let userLocation: CLLocation
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
@@ -25,10 +27,10 @@ struct SuggestCampsitesView: View {
             .frame(height: 170)
             .padding(.vertical, 10)
         }
-        .onAppear{
-            homeViewModel.suggestCampsiteBasedOnDistance(campingSites: results)
-        }
-
+        // Change suggest camping sites list if user changed location
+        .onChange(of: userLocation, perform: { newValue in
+            homeViewModel.suggestCampsiteBasedOnDistance(campingSites: results, userLatitude: newValue.coordinate.latitude, userLongitude: newValue.coordinate.longitude)
+        })
     }
 }
 

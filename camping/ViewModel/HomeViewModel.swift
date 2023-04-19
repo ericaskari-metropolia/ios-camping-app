@@ -7,25 +7,24 @@
 
 import Foundation
 import SwiftUI
+import MapKit
 
 // This class is to handle logic to filter camping sites based on user's location
 
 class HomeViewModel: ObservableObject {
     @Published var suggestCampsites: [CampingSite] = []
+    private var lastUserLocation: CLLocation
+    
+    init(suggestCampsites: [CampingSite], lastUserLocation: CLLocation) {
+        self.suggestCampsites = suggestCampsites
+        self.lastUserLocation = lastUserLocation
+    }
     
     // Calculate distance between camping site coordinates and user's coordinates
-    func calculateDistanceBetweenTwoCoordinates(campSiteLatitude: Double, campSitelogitude: Double) -> Double {
-        
-        // Get user's location. If there is none, set to Helsinki coordinates
-        let userLatitude = LocationViewModel().lastSeenLocation?.coordinate.latitude ?? 60.192059
-        //        60.192059
-        //        67.92223
-        let userLongitude = LocationViewModel().lastSeenLocation?.coordinate.longitude ?? 24.945831
-        //        24.945831
-        //        26.504644
+    func calculateDistanceBetweenTwoCoordinates(campSiteLatitude: Double, campSiteLongitude: Double, userLatitude: CLLocationDegrees, userLongitude:  CLLocationDegrees ) -> Double {
         
         // Convert coordinate to radians
-        let campSiteLongitudeRadian = campSitelogitude * Double.pi / 180
+        let campSiteLongitudeRadian = campSiteLongitude * Double.pi / 180
         let userLongitudeRadian = userLongitude * Double.pi / 180
         let campSiteLatitudeRadian = campSiteLatitude * Double.pi / 180
         let userLatitudeRadian = userLatitude * Double.pi / 180
@@ -46,11 +45,20 @@ class HomeViewModel: ObservableObject {
     }
     
     // Filter camping sites based on distance
-    func suggestCampsiteBasedOnDistance(campingSites: FetchedResults<CampingSite>) {
-        let campingSites = campingSites.compactMap{$0}
-        suggestCampsites = campingSites.filter { campingSite in
-            calculateDistanceBetweenTwoCoordinates(campSiteLatitude: campingSite.latitude, campSitelogitude: campingSite.longitude) <= 100
+    func suggestCampsiteBasedOnDistance(campingSites: FetchedResults<CampingSite>, userLatitude: CLLocationDegrees, userLongitude:  CLLocationDegrees) {
+        let distanceInMeter = self.lastUserLocation.distance(from: CLLocation(latitude: userLatitude, longitude: userLongitude))
+        
+        // Checking if the user moved more than 50km from original location, then update new list, other wise return
+        if self.lastUserLocation == CLLocation(latitude: userLatitude, longitude: userLongitude) || distanceInMeter <= 50000 {
+            return
+        } else {
+            lastUserLocation = .init(latitude: userLatitude, longitude: userLongitude)
+            let campingSites = campingSites.compactMap{$0}
+            suggestCampsites = campingSites.filter { campingSite in
+                calculateDistanceBetweenTwoCoordinates(campSiteLatitude: campingSite.latitude, campSiteLongitude: campingSite.longitude, userLatitude: userLatitude, userLongitude: userLongitude) <= 50
+            }
         }
+        
     }
 }
 

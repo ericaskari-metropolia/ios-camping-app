@@ -29,7 +29,7 @@ struct HomeView: View {
                     Text("Suggested for you")
                         .bold()
                         .font(.system(size: 20))
-                    SuggestCampsitesView()
+                    SuggestCampsitesView(userLocation: locationViewModel.lastSeenLocation ?? .init(latitude: 0, longitude: 0))
                         .padding(.horizontal, 5)
                 }
                 .padding(.horizontal, 10)
