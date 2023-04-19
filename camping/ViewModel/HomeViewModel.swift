@@ -26,8 +26,8 @@ class HomeViewModel: ObservableObject {
         let distanceLogitude = userLongitudeRadian - campSiteLongitudeRadian
         let distanceLatitude = userLatitudeRadian - campSiteLatitudeRadian
         let a = pow(sin(distanceLatitude/2), 2)
-                    + cos(campSiteLatitudeRadian) * cos(userLatitudeRadian)
-                    * pow(sin(distanceLogitude/2), 2)
+        + cos(campSiteLatitudeRadian) * cos(userLatitudeRadian)
+        * pow(sin(distanceLogitude/2), 2)
         let c = 2 * asin(sqrt(a))
         
         // Radius of earth in kilometers.
@@ -35,7 +35,7 @@ class HomeViewModel: ObservableObject {
         
         return (c*Double(r))
     }
-
+    
     func suggestCampsiteBasedOnDistance(campingSites: FetchedResults<CampingSite>) {
         let campingSites = campingSites.compactMap{$0}
         suggestCampsites = campingSites.filter { campingSite in
