@@ -13,8 +13,17 @@ class PersistenceController {
     
     let container: NSPersistentContainer
     
+    var viewContext: NSManagedObjectContext {
+        container.viewContext
+    }
+    
+    var newContext: NSManagedObjectContext {
+        container.newBackgroundContext()
+    }
+    
     init() {
         container = NSPersistentContainer(name: "CampingSite")
+        container.viewContext.automaticallyMergesChangesFromParent = true
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Error \(error)")
@@ -33,4 +42,5 @@ class PersistenceController {
             }
         }
     }
+    
 }

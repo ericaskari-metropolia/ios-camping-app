@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 extension Binding {
      func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
@@ -28,4 +29,20 @@ extension Double {
     func roundedDouble() -> String {
         return String(format: "%.0f", self)
     }
+}
+
+extension CampingSite {
+    
+    private static var campingsiteFetchRequest: NSFetchRequest<CampingSite> {
+        NSFetchRequest(entityName: "CampingSite")
+    }
+    
+    static func all() -> NSFetchRequest<CampingSite> {
+        let request: NSFetchRequest<CampingSite> = campingsiteFetchRequest
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \CampingSite.name, ascending: true)
+        ]
+        return request
+    }
+    
 }
