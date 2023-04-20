@@ -9,60 +9,37 @@ import SwiftUI
 import MapKit
 import CoreData
 
+// View for Home
+
 struct HomeView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
     @FetchRequest(entity: Plan.entity(), sortDescriptors:[]) var planResults: FetchedResults<Plan>
-
+    
     var body: some View {
-        VStack(spacing: spacing){
+        VStack(spacing: 5){
             HeaderHomePageView()
-            
-            CategoryListView().padding(.horizontal, 5)
-            
             ScrollView{
-                
-                HStack{
-                    Text("Latitude:")
-                    Text("\(locationViewModel.lastSeenLocation?.coordinate.latitude ?? 0)")
+                VStack(alignment: .leading){
+                    Text("Category")
+                        .bold()
+                        .font(.system(size: 20))
+                    CategoryListView()
+                        .padding(.horizontal, 5)
+                    Text("Suggested for you")
+                        .bold()
+                        .font(.system(size: 20))
+                    SuggestCampsitesView(userLocation: locationViewModel.lastSeenLocation ?? .init(latitude: 0, longitude: 0))
+                        .padding(.horizontal, 5)
                 }
+                .padding(.horizontal, 10)
                 
-                HStack{
-                    Text("Longitude:")
-                    Text("\(locationViewModel.lastSeenLocation?.coordinate.longitude ?? 0)")
-                }
-                
-                HStack{
-                    Text("City:")
-                    Text(locationViewModel.currentPlacemark?.locality ?? "")
-                }
-                
-                HStack{
-                    Text("campsite:")
-                    Text("\(results.count)")
-                }
-                
-                ForEach(results, id: \.self) { campingSite in
-                    HStack{
-                        Text("Camping site:")
-                        Text(campingSite.websiteURL ?? "")
-                    }
-                }
-                
-                ForEach(planResults, id: \.self) { plan in
-                    HStack{
-                        Text("Plan Destination:")
-                        Text(plan.campingSite?.name ?? "No Campsite name")
-                    }
-                }
             }
         }
         .onAppear {
             locationViewModel.fetchCampingSites()
         }
         .ignoresSafeArea(edges: .top)
-        
-        
     }
 }
 

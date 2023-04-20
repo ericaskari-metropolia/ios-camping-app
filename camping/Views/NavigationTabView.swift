@@ -8,6 +8,8 @@
 import CoreData
 import SwiftUI
 
+// View for TabView contains navigation bar for tha app
+
 struct NavigationTabView: View {
     @State private var tabSelection = 1
 
@@ -55,6 +57,5 @@ struct NavigationTabView_Previews: PreviewProvider {
         NavigationTabView()
                     .environmentObject(LocationViewModel())
                     .environmentObject(FavoriteManager())
-        //            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
