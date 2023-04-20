@@ -22,6 +22,9 @@ struct PermissionView: View {
             // When the status is not determined, display asking permission view
         case .notDetermined:
             AnyView(RequestLocationView())
+                .onAppear{
+                    locationViewModel.fetchCampingSites()
+                }
                 .environmentObject(locationViewModel)
             // When the use refused, display error view
         case .denied, .restricted:
