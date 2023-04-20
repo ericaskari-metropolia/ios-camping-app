@@ -21,7 +21,7 @@ import CoreLocation
 
 class WeatherForecast {
     // API Key, add your own
-    let apiKey = "97999a9cada722ce4e59802bc6f66394"
+    let apiKey = ""
     
     func getWeatherForecast(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws -> Forecast {
         guard let url = URL(string: "https://pro.openweathermap.org/data/2.5/forecast/climate?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)")
