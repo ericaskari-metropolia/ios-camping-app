@@ -8,89 +8,114 @@
 import SwiftUI
 
 struct TripInfoView: View {
+    
+    // state variable to hold the plan detail
+    @State var planDetail: PlanDetail
+    
+    // instance of weather forecast manager
+    var weatherManager = WeatherForecast()
+    
+    // state variable to hold the forecast data
+    @State var weather: Forecast?
     var body: some View {
+        
         VStack{
-                    ZStack(alignment: .top){
-                        Image("mytripimg")
+            ZStack(alignment: .top){
+                if let imageURLString = planDetail.imageURL, let imgURL = URL(string: imageURLString) {
+                    //create an AsyncImage with the URL
+                    AsyncImage(url: imgURL) { image in
+                        image
                             .resizable()
                             .scaledToFill()
-                            .frame(maxWidth: .infinity)
                             .frame(height: 300)
-                        
-                        VStack(spacing: 0.0){
-                            HStack {
-                                Button{
-                                } label: {
-                                    Image(systemName: "chevron.left.circle.fill")
-                                        .font(.title)
-                                        .foregroundColor(.white)
-                                        
-                                }
-                                
-                                Spacer()
-                                
-                                Text("Trip information")
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    
-                                
-                                Spacer()
-                            }
-                            .padding(EdgeInsets(top: 50, leading: 40, bottom: 0, trailing: 40))
-                        }
-                        
+                            .frame(maxWidth: .infinity)
+                    } placeholder: {
+                        // if the image is still loading, show a ProgressView
+                        ProgressView()
                     }
-                    .background(Color.clear)
                     .ignoresSafeArea()
-            HStack{
-                Text("Kokkola Camping Finland")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    Spacer()
-                Image(systemName: "tent")
-            } .padding()
-                .padding(.top,-40)
-            
-            HStack{
-               Label("16 April 2023 - 25 April 2023 ", systemImage:"calendar")
-                    .foregroundColor(.gray)
-                Spacer()
-                Image(systemName: "note.text")
-            }.padding()
-                .padding(.top,-10)
-           
-            VStack(alignment: .leading){
-                Text("Weather Forecast")
-                    .multilineTextAlignment(.leading)
-                
-                ScrollView(.horizontal,showsIndicators: false){
-                    HStack{
-                        
-                        ForEach(0..<5) { index in
-                            WeatherCardView()
-                        }}
-                    .padding(.horizontal,0)
                 }
-            }.padding(.vertical,0)
+                VStack{
+                    Text("Trip information")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding()
+                    
+                }
+                Spacer()
+            }
+            HStack{
+                Label("Trip Status: Ongoing", systemImage: "figure.run.circle")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(width: 350, height: 40)
+                    .background(Color.cyan)
+                    .cornerRadius(15)
+                
+            }
+            .padding(.top,-80)
+            
+            ScrollView(.vertical,showsIndicators: false) {
+                HStack{
+                    Text(planDetail.destination.name ?? "")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                    Spacer()
+                    Image(systemName: "tent")
+                }
+                .padding()
+                HStack{
+                    Label("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)", systemImage:"calendar")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    
+                    Spacer()
+                    Image(systemName: "note.text")
+                }
+                .padding()
+                
+                VStack(alignment: .leading){
+                    Text("Weather Forecast")
+                        .multilineTextAlignment(.leading)
+                    if let weather = weather {
+                        WeatherCardView(weatherForecast:weather)
+                        
+                    }else {
+                        // if the weather data is not available, show a ProgressView and fetch the data asynchronously
+                        ProgressView()
+                            .task{
+                                do{
+                                    weather = try await weatherManager.getWeatherForecast(latitude: planDetail.destination.latitude, longitude: planDetail.destination.longitude)
+                                }catch{
+                                    print("Error getting weather condition: \(error)")
+                                }
+                            }
+                    }
+                }
+                .padding(.vertical,0)
                 .padding(.horizontal,15)
-           
-            Label("Gear List", systemImage: "list.bullet")
-            
-            Text("Oops!! you dont have any gears added.")
-            Spacer()
-            Label("Add Gear", systemImage: "plus")
-                .foregroundColor(.white)
-                .frame(width: 350, height: 50)
-                .background(Color.black)
-                .cornerRadius(15)
-            
+                VStack(alignment: .leading){
+                    Label("Gear List", systemImage: "list.bullet")
+                    Text("Oops!! you dont have any gears added.")
+                }
+                .padding()
+                Spacer()
+                Label("Add Gear", systemImage: "plus")
+                    .foregroundColor(.white)
+                    .frame(width: 350, height: 50)
+                    .background(Color.black)
+                    .cornerRadius(15)
+            }
+            .padding()
+            .ignoresSafeArea()
         }
     }
+    
 }
 
-struct TripInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        TripInfoView()
-    }
-}
+//struct TripInfoView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TripInfoView()
+//    }
+//}
