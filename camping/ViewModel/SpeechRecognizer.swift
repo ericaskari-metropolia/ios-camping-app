@@ -10,6 +10,10 @@ import AVFoundation
 import Speech
 import SwiftUI
 
+// This file followed Apple's instruction in https://developer.apple.com/tutorials/app-dev-training/transcribing-speech-to-text
+// And also made small adjustment.
+// This file is for transcribing speech to text in SearchView
+
 /// A helper for transcribing speech to text using SFSpeechRecognizer and AVAudioEngine.
 actor SpeechRecognizer: ObservableObject {
     enum RecognizerError: Error {
@@ -40,6 +44,7 @@ actor SpeechRecognizer: ObservableObject {
      requests access to the speech recognizer and the microphone.
      */
     init() {
+        // Initialize language to Finnish to transcript more precisely
         recognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "fi"))
         guard recognizer != nil else {
             transcribe(RecognizerError.nilRecognizer)
