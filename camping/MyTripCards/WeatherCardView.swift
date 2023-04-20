@@ -14,25 +14,39 @@ struct WeatherCardView: View {
     var body: some View {
         
         ScrollView(.horizontal,showsIndicators: false) {
-            HStack(spacing: 5) {
+            HStack{
                 
                 // A loop to iterate over each day's weather information
                 ForEach(weatherForecast.list.prefix(14), id: \.dt) { weatherList in
-                    VStack(alignment: .leading,spacing: 10){
+                    VStack(alignment: .leading){
                         Text(formattedDate(from:weatherList.dt))
-                        Image(systemName: "cloud")
-                            .font(.title)
-                        Text("\(Int(weatherList.temp.max - 273.15))°C / \(Int(weatherList.temp.min - 273.15))°C")
-                        //Text(weatherList.weather.description)
-                    }.padding()
+                        AsyncImage(url: weatherList.weather[0].weatherIconUrl) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .cornerRadius(15)
+                        } placeholder: {
+                        // if the image is still loading, show a ProgressView
+                            ProgressView()
+                        }
+                        HStack{
+                            Text("Max: \(Int(weatherList.temp.max - 273.15))°C ")
+                            Spacer()
+                            Text("Min: \(Int(weatherList.temp.min - 273.15))°C")
+                                 }
+                      
+                        
+                        Text(weatherList.weather[0].description.uppercased())
+                    }.padding(10)
                         .background(Rectangle()
-                            .foregroundColor(.white)
+                            .foregroundColor(Color(red: 135/255, green: 206/255, blue: 235/255))
                             .cornerRadius(20)
-                            .shadow(radius: 15))
-                        .padding()
+                            .shadow(radius: 10))
+                        .padding(5)
                 }
             }
         }
+        .padding()
     }
     
         

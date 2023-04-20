@@ -43,7 +43,7 @@ struct TripInfoView: View {
                         .padding()
                     
                 }
-                Spacer()
+            
             }
             HStack{
                 Label("Trip Status: Ongoing", systemImage: "figure.run.circle")
@@ -55,7 +55,7 @@ struct TripInfoView: View {
                 
             }
             .padding(.top,-80)
-            
+           
             ScrollView(.vertical,showsIndicators: false) {
                 HStack{
                     Text(planDetail.destination.name ?? "")
@@ -64,6 +64,7 @@ struct TripInfoView: View {
                     Spacer()
                     Image(systemName: "tent")
                 }
+                .padding(.bottom, -20)
                 .padding()
                 HStack{
                     Label("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)", systemImage:"calendar")
@@ -75,6 +76,7 @@ struct TripInfoView: View {
                 }
                 .padding()
                 
+                Divider()
                 VStack(alignment: .leading){
                     Text("Weather Forecast")
                         .multilineTextAlignment(.leading)
@@ -93,10 +95,11 @@ struct TripInfoView: View {
                             }
                     }
                 }
-                .padding(.vertical,0)
-                .padding(.horizontal,15)
+                Divider()
+               
                 VStack(alignment: .leading){
                     Label("Gear List", systemImage: "list.bullet")
+                        .padding(.vertical)
                     Text("Oops!! you dont have any gears added.")
                 }
                 .padding()
@@ -108,6 +111,7 @@ struct TripInfoView: View {
                     .cornerRadius(15)
             }
             .padding()
+            .padding(.top,-65)
             .ignoresSafeArea()
         }
     }
