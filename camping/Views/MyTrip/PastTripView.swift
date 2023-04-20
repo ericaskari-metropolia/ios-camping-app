@@ -39,8 +39,11 @@ struct PastTripGridView: View {
         // Use a LazyVGrid to create a grid of past trip cards having 2 columns
         LazyVGrid(columns: [GridItem(.flexible(), spacing: 5), GridItem(.flexible(), spacing: 10)]) {
             ForEach(planDetails) { planDetail in
-                MyPastTripCard(planDetail: planDetail)
-            }
+                NavigationLink(destination: {PastTripInfoView(planDetail:planDetail)}){
+                    MyPastTripCard(planDetail: planDetail)
+
+                }
+                            }
         }
     }
 }

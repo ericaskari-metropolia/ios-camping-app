@@ -24,6 +24,8 @@ struct TripsView: View {
             
         } else {
             MyTripsFilledView()
+            
+            
         }
       
         
