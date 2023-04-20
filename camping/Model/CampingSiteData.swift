@@ -23,6 +23,7 @@ struct CampingSiteData: Decodable {
     var hasRentalHut: Bool
     var latitude: Double
     var longitude: Double
+    var isFavorite: Bool
 }
 
 struct Translation: Decodable {

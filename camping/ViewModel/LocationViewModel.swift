@@ -72,7 +72,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Fetch data from URL and store it to CoreData
     func fetchCampingSites() {
-        let url = "https://users.metropolia.fi/~thuh/camping-4.json"
+        let url = "https://users.metropolia.fi/~thuh/camping-5.json"
         guard let url = URL(string: url) else { return }
         
         // Fetch from URL
@@ -122,6 +122,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                                 newCampingSiteEntity.hasRentalHut = campingSite.hasRentalHut
                                 newCampingSiteEntity.latitude = campingSite.latitude
                                 newCampingSiteEntity.longitude = campingSite.longitude
+                                newCampingSiteEntity.isFavorite = campingSite.isFavorite
                             }
                         }
                     } catch {
