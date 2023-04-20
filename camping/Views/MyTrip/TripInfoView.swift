@@ -81,7 +81,7 @@ struct TripInfoView: View {
                     Text("Weather Forecast")
                         .multilineTextAlignment(.leading)
                     if let weather = weather {
-                        WeatherCardView(weatherForecast:weather)
+                        WeatherCardView(weatherForecast:weather, startTimestamp: Int(planDetail.start.timeIntervalSince1970))
                         
                     }else {
                         // if the weather data is not available, show a ProgressView and fetch the data asynchronously
