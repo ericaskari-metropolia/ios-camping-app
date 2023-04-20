@@ -9,8 +9,11 @@ import SwiftUI
 
 struct FavoriteView: View {
     
-    @EnvironmentObject var favoriteManager: FavoriteManager
+    @Environment(\.managedObjectContext) private var moc
+    let provider = PersistenceController.shared
     @EnvironmentObject var locationViewModel: LocationViewModel
+    // Get the favorite campsites
+    @FetchRequest(sortDescriptors: [], predicate: NSPredicate(format: "isFavorite == %@", NSNumber(value: true))) var campsites: FetchedResults<CampingSite>
     
     var body: some View {
         VStack{
@@ -25,8 +28,8 @@ struct FavoriteView: View {
             }
             
             ScrollView{
-                if favoriteManager.favoriteCampsites.count > 0{
-                    ForEach(favoriteManager.favoriteCampsites, id: \.self){
+                if campsites.count > 0{
+                    ForEach(campsites, id: \.self){
                         campsite in
                         NavigationLink{
                             CampsiteDetailView(campsite: campsite)
@@ -37,8 +40,7 @@ struct FavoriteView: View {
                 } else {
                     Text ("You don't have any saved campsite yet!")
                 }
-                
-            }
+            }            
             
         }
         .edgesIgnoringSafeArea(.top)
@@ -49,6 +51,5 @@ struct FavoriteView_Previews: PreviewProvider {
     static var previews: some View {
         FavoriteView()
             .environmentObject(LocationViewModel())
-            .environmentObject(FavoriteManager())
     }
 }

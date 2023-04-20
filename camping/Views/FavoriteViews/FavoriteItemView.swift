@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FavoriteItemView: View {
     
-    @EnvironmentObject var favoriteManager: FavoriteManager
     var campsite: CampingSite
     
     var body: some View {
@@ -39,12 +38,10 @@ struct FavoriteItemView: View {
                     .foregroundColor(.red)
                     .font(.title)
                     .onTapGesture{
-                        favoriteManager.removeFromFavorite(campsite: campsite)
+                        campsite.isFavorite.toggle()
                     }
-            
             }
             .padding(.horizontal)
-
         }
     }
 
