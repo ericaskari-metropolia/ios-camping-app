@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// View for each item in the city list result
+
 struct CityListItemView: View {
     let cityName: String
     var body: some View{

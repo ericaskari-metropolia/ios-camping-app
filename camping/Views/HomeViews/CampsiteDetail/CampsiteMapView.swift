@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-// Mark:
+// Mark: Campsite view on map
 struct CampsiteMapView: View {
     
     struct Annotation: Identifiable {

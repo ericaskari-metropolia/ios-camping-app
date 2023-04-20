@@ -17,11 +17,13 @@ struct CampingSiteData: Decodable {
     var region: String
     var city: String
     var websiteURL: String
+    var address: String
     var hasTentSite: Bool
     var hasCampfireSite: Bool
     var hasRentalHut: Bool
     var latitude: Double
     var longitude: Double
+    var isFavorite: Bool
 }
 
 struct Translation: Decodable {

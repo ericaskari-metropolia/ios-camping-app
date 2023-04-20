@@ -9,13 +9,13 @@ import SwiftUI
 import MapKit
 
 struct CampsiteDetailView: View {
-    @Environment(\.dismiss) var dismiss
-    
     //PROPERTIES
-    @State var campsite: CampingSite
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) private var moc
+    let provider = PersistenceController.shared
     
-    @EnvironmentObject var favoriteManger : FavoriteManager
-    
+    @ObservedObject var campsite: CampingSite
+        
     var weatherManager = WeatherManager()
     @State var weather: ResponseBody?
     
@@ -52,25 +52,12 @@ struct CampsiteDetailView: View {
                             
                             // Button to add or remove campsite from favorite
                             Button{
-                                if favoriteManger.favoriteCampsites.contains(campsite){
-                                    favoriteManger.removeFromFavorite(campsite: campsite)
-                                }else{
-                                    favoriteManger.addToFavorite(campsite: campsite)
-                                }
-                                
-                                print(favoriteManger.favoriteCampsites)
+                                campsite.isFavorite.toggle()
                             } label: {
-                                favoriteManger.favoriteCampsites.contains(campsite) ? (
-                                    Image(systemName: "heart.fill")
-                                        .font(.title)
-                                        .foregroundColor(.red)
-                                        .padding()
-                                ) : (
-                                    Image(systemName: "heart")
-                                        .font(.title)
-                                        .foregroundColor(.white)
-                                        .padding()
-                                )
+                                Image(systemName: "heart.fill")
+                                    .font(.title)
+                                    .foregroundColor(campsite.isFavorite ? .red : .white)
+                                    .padding()
                                 
                             }
                         }
@@ -182,8 +169,3 @@ struct CampsiteDetailView: View {
     
 }
 
-//struct CampsiteDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CampsiteDetailView(campsite: campsite)
-//    }
-//}

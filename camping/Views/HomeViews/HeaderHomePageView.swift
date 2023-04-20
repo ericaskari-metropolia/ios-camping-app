@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// View for Header homepage
+
 struct HeaderHomePageView: View {
     
     @EnvironmentObject var locationViewModel: LocationViewModel
