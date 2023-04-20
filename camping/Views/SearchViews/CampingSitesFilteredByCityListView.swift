@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// View for the filter camping sites list that is in the same city
+
 struct CampingSitesFilteredByCityListView: View {
     let cityString: String
     @StateObject var searchViewModel = SearchViewModel(searchText: "")

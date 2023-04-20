@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// View for each camping site in the filter camping sites list that is in the same city
+
 struct CampingSiteFilteredByCityItemView: View {
     let campingSiteFiltered: CampingSite
     var body: some View{
@@ -27,11 +29,12 @@ struct CampingSiteFilteredByCityItemView: View {
             }
             .padding( 16)
         }
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.white)
         .cornerRadius(10)
     }
 }
+
+// Custom corner radius to set specific which corner is round
 
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {

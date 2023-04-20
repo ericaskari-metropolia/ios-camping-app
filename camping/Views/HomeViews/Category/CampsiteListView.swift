@@ -15,14 +15,13 @@ struct CampsiteListView: View {
     // PROPERTIES
     @State var category: Category
     
-    // Fetch campsites
-    @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
+    @FetchRequest(fetchRequest: CampingSite.all()) private var campsites
     
     // Filter list
     @State var list: [CampingSite] = []
     
     func filterList(){
-        self.list = results.filter{$0.category?.lowercased() == category.title.lowercased()}
+        self.list = campsites.filter{$0.category?.lowercased() == category.title.lowercased()}
     }
     
     // BODY
