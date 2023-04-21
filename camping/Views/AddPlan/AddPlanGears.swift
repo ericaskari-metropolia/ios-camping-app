@@ -72,7 +72,7 @@ struct AddPlanGears: View {
             return
         }
         withAnimation {
-            let gear = gearViewModel.addItem(name: gearName, plan: plan, checked: false)
+            let gear = gearViewModel.saveItem(name: gearName, plan: plan, checked: false)
             gearName = ""
         }
     }

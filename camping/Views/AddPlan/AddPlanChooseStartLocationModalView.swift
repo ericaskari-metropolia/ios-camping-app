@@ -12,31 +12,25 @@ import SwiftUI
 
 struct AddPlanChooseStartLocationModalView: View {
     //  To Access Location
-//    @EnvironmentObject var viewModel: LocationViewModel
+    @StateObject var viewModel: LocationViewModel = .init()
 
     @Binding var isPresented: Bool
 
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name, order: .reverse)]) var campingSites: FetchedResults<CampingSite>
-    
+
     @State var region: MKCoordinateRegion = .init(
         center: CLLocationCoordinate2D(latitude: 60.192059, longitude: 24.945831),
         span: MKCoordinateSpan(latitudeDelta: zoomSpan, longitudeDelta: zoomSpan)
     )
-    
+
     var didChooseLocation: (CLLocationCoordinate2D) -> ()
 
     var body: some View {
         ZStack(alignment: .top) {
-            Map(
-                coordinateRegion: $region,
-                showsUserLocation: true,
-                annotationItems: campingSites,
-                annotationContent: {
-                    n in MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: n.latitude, longitude: n.longitude)) {
-                        Image(systemName: "tent.fill")
-                            .frame(width: 44, height: 44)
-                            .onTapGesture(count: 1, perform: {})
-                    }
+            AnnotatedMap(
+                region: $viewModel.region,
+                campingSites: self.campingSites.map { $0 },
+                didChooseCampsite: { _ in
                 }
             )
             .ignoresSafeArea()
@@ -127,6 +121,5 @@ struct AddPlanChooseLocationModalView_Previews: PreviewProvider {
             coordinates in
             print(coordinates)
         }
-        .environmentObject(LocationViewModel())
     }
 }
