@@ -35,9 +35,9 @@ struct CampsiteMapView: View {
                    content: {
                        Image(systemName: "pin.circle.fill").foregroundColor(.red)
                        Text(annotation.name)
-                           .font(.title3)
+                           .font(.subheadline)
                        Text(annotation.address)
-                           .font(.title3)
+                           .font(.subheadline)
                    }
                 )            }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -46,7 +46,7 @@ struct CampsiteMapView: View {
         .onAppear{
             coordinate = CLLocationCoordinate2D(latitude: campsite.latitude, longitude: campsite.longitude)
             region = MKCoordinateRegion(center:  coordinate, latitudinalMeters: regionSize, longitudinalMeters: regionSize)
-            annotations = [Annotation(name: (campsite.name ?? ""),address: (campsite.region ?? ""), coordinate: coordinate)]
+            annotations = [Annotation(name: (campsite.name ?? ""),address: (campsite.address ?? ""), coordinate: coordinate)]
         }
         
     }

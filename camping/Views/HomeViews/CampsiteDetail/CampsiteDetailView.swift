@@ -125,7 +125,7 @@ struct CampsiteDetailView: View {
                         
                         Text("Description")
                             .font(.headline)
-                            .padding()
+                            .padding(.horizontal)
                         Text(campsite.descriptionEN ?? "nil")
                             .font(.subheadline)
                             .multilineTextAlignment(.leading)
@@ -133,12 +133,24 @@ struct CampsiteDetailView: View {
                             .padding(.horizontal)
                         Text("Accessibilty")
                             .font(.headline)
-                            .padding()
+                            .padding(.horizontal)
                         Text(campsite.suitabilityEN ?? "")
                             .font(.subheadline)
                             .multilineTextAlignment(.leading)
                             .foregroundColor(Color.primary)
                             .padding(.horizontal)
+                        
+                        Text("Website")
+                            .font(.headline)
+                            .padding(.horizontal)
+                        Link(destination: URL(string: "\(campsite.websiteURL ?? "")")!, label: {
+                            Text(campsite.websiteURL ?? "")
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color(.systemBlue))
+                                .padding(.horizontal)
+                        })
+                        
                         
                         HStack{
                             
