@@ -81,7 +81,8 @@ class MyTripViewModel: ObservableObject {
     
     // A function that returns a Boolean indicating if there are any plans or not
     func hasPlans() -> Bool {
-        return !planDetails.isEmpty
+        print("DEBUG_check size of plan array _ \(planDetails.isEmpty)")
+        return planDetails.isEmpty
     }
 }
 
