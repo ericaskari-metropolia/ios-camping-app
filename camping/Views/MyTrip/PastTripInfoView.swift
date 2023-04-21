@@ -19,7 +19,7 @@ struct PastTripInfoView: View {
         
         VStack{
             ZStack(alignment: .top){
-                if let imageURLString = planDetail.imageURL, let imgURL = URL(string: imageURLString) {
+                if let imgURL = URL(string: planDetail.imageURL) {
                     //create an AsyncImage with the URL
                     AsyncImage(url: imgURL) { image in
                         image

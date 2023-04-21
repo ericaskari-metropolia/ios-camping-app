@@ -19,10 +19,6 @@ struct GearListView: View {
 
     @ObservedObject private var viewModel: GearViewModel
 
-       init(context: NSManagedObjectContext) {
-           self.viewModel = GearViewModel(context: context)   // initialize
-       }
-    
     var body: some View {
         NavigationView {
             List {
@@ -38,28 +34,28 @@ struct GearListView: View {
                     gearViewModel.deleteItems(offsets: indexSet, items: items)
                 })
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: gearViewModel.addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    EditButton()
+//                }
+//                ToolbarItem {
+//                    Button(action: gearViewModel.addItem) {
+//                        Label("Add Item", systemImage: "plus")
+//                    }
+//                }
+//            }
             Text("Select an item")
         }
     }
 }
 
-struct GearListView_Previews: PreviewProvider {
-    static var previews: some View {
-        GearListView().environmentObject(
-            GearViewModel()
-        ).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
+//struct GearListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GearListView().environmentObject(
+//            GearViewModel()
+//        ).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}
 
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()

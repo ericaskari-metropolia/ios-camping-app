@@ -10,9 +10,6 @@ import MapKit
 import SwiftUI
 
  class GearViewModel: ObservableObject {
-    var context: NSManagedObjectContext
-
-//    @Environment(\.managedObjectContext) private var context
     
     //  Saves Plan to Storage
     func save(name: String, plan: Plan, checked: Bool = false) {
@@ -48,14 +45,14 @@ import SwiftUI
         }
     }
 
-    func addItem() {
-//        let context = PersistenceController.shared.container.viewContext
+     func addItem(name: String, plan: Plan, checked: Bool = false) {
+        let context = PersistenceController.shared.container.viewContext
         withAnimation {
             let newItem = Gear(context: context)
             newItem.name = Date().description
             newItem.id = UUID()
-            newItem.checked = false
-//            newItem.plan
+            newItem.checked = checked
+            newItem.plan = plan
             do {
                 try context.save()
             } catch {
