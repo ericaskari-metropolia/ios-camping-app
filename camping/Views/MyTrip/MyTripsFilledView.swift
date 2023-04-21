@@ -32,11 +32,13 @@ struct MyTripsFilledView: View {
                 
                 // Check if there are any ongoing trips
                 if viewModel.countOfOngoingAndPastPlans().ongoingCount <= 0 {
-                    VStack(alignment: .leading){
-                        Text("Ongoing trips")
+                    VStack{
+                        Label("Ongoing trip", systemImage: "figure.run.circle")
                             .font(.headline)
-                            .padding(.top,-20)
-                            .padding()
+                            .foregroundColor(.white)
+                            .frame(width: 350, height: 40)
+                            .background(Color.cyan)
+                            .cornerRadius(15)
                         OnGoingTripView()
                     }
                 } else {
@@ -44,6 +46,9 @@ struct MyTripsFilledView: View {
                 }
                     Divider()
                     createNewTripButton
+                
+                
+                Divider()
                     pastTripViewHeader
                 
                 //*THIS CODE NEEDS A REVIEW
@@ -124,10 +129,12 @@ extension MyTripsFilledView {
     private var pastTripViewHeader : some View {
         VStack(alignment: .leading){
             HStack{
-                Text("My Past Trips")
+                Label("Past trip", systemImage: "flag.square.fill")
                     .font(.headline)
-                    .fontWeight(.bold)
-                    .padding(.bottom,-30)
+                    .foregroundColor(.white)
+                    .frame(width: 350, height: 40)
+                    .background(Color.cyan)
+                    .cornerRadius(15)
                 Spacer()
               
             }

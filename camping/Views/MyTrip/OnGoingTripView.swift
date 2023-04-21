@@ -36,7 +36,11 @@ struct OnGoingTripScrollView: View {
                 
                 //Looping through the array and create a tripdetail screen
                 ForEach(planDetails) { planDetail in
-                    OnGoingTripDetailScreen(planDetail: planDetail)
+                    NavigationLink(destination: {TripInfoView(planDetail:planDetail)}) {
+                        OnGoingTripDetailScreen(planDetail: planDetail)
+                        }
+                       
+                    
                 }
             }
             .padding(.horizontal, 20)
