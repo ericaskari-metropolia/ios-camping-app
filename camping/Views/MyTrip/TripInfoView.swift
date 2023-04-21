@@ -32,18 +32,19 @@ struct TripInfoView: View {
                         // if the image is still loading, show a ProgressView
                         ProgressView()
                     }
-                    .ignoresSafeArea()
+                   
                 }
                 VStack{
                     Text("Trip information")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .padding()
+                        .padding(.top,55)
                     
                 }
             
             }
+            .ignoresSafeArea()
             HStack{
                 Label("Trip Status: Ongoing", systemImage: "figure.run.circle")
                     .font(.headline)
@@ -56,26 +57,42 @@ struct TripInfoView: View {
             .padding(.top,-80)
            
             ScrollView(.vertical,showsIndicators: false) {
-                HStack{
-                    Text(planDetail.destination.name ?? "")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                    Spacer()
-                    Image(systemName: "tent")
-                }
-                .padding(.bottom, -20)
-                .padding()
-                HStack{
-                    Label("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)", systemImage:"calendar")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                VStack{
+                    HStack{
+                        Text(planDetail.destination.name ?? "")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                        Spacer()
+                        Image(systemName: "tent")
+                    }
+                    .padding(.bottom, -15)
+                    .padding()
                     
-                    Spacer()
-                    Image(systemName: "note.text")
+                    Divider()
+                        .padding(.vertical,5)
+                        .frame(height:1)
+                        .background(Color.black.opacity(0.1))
+                        
+                    
+                    HStack{
+                        Label("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)", systemImage:"calendar")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            
+                        
+                        Spacer()
+                        Image(systemName: "note.text")
+                    }
+                    .padding(.vertical, -15)
+                    .padding()
                 }
-                .padding()
+               
+                .background(RoundedRectangle(cornerRadius: 15)
+                                .foregroundColor(.white)
+                                .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 0, y: 2))
+                .padding(.top,10)
+                .padding(.horizontal,3)
                 
-                Divider()
                 VStack(alignment: .leading){
                     Text("Weather Forecast")
                         .multilineTextAlignment(.leading)
