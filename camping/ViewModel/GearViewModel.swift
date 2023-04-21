@@ -44,20 +44,21 @@ class GearViewModel: ObservableObject {
 
     func addItem(name: String, plan: Plan, checked: Bool = false) {
         let context = PersistenceController.shared.container.viewContext
-       
+
         withAnimation {
             let newItem = Gear(context: context)
-            newItem.name = Date().description
+            newItem.name = name
             newItem.id = UUID()
             newItem.checked = checked
             newItem.plan = plan
             do {
                 try context.save()
+                print("Gear Saved!")
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                print("Cannot save Gear.")
                 let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                print(nsError)
+                print(nsError.userInfo)
             }
         }
     }

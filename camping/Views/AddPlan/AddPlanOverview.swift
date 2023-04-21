@@ -13,7 +13,6 @@ struct AddPlanOverview: View {
     //  To Access Plans and save them
     @EnvironmentObject var viewModel: PlanViewModel
 
-    @State private var saved = false
     var span: CLLocationDegrees = 0.01
 
     @State private var snapshotImage: UIImage? = nil
@@ -47,8 +46,6 @@ struct AddPlanOverview: View {
                             self.generateSnapshot(width: geometry.size.width, height: 600)
                             if let input = self.input {
                                 self.savedPlan = self.viewModel.savePlan(input: input)
-                                self.saved = true
-                                self.completed()
                             }
                         }
                     }
@@ -64,20 +61,23 @@ struct AddPlanOverview: View {
                     .padding()
 
                 HStack {
-                    NavigationLink(
-                        destination: GearListView(plan: self.savedPlan)
-                            .environmentObject(GearViewModel()),
-                        label: {
-                            Text("Add gear")
-                                .frame(maxWidth: .infinity)
-                        }
-                    )
-                    .padding()
-                    .background(Color.black)
-                    .foregroundColor(Color.white)
-                    .cornerRadius(30)
+                    if self.savedPlan != nil {
+                        NavigationLink(
+                            destination: GearListView(plan: self.savedPlan!)
+                                .environmentObject(GearViewModel()),
+                            label: {
+                                Text("Add gear")
+                                    .frame(maxWidth: .infinity)
+                            }
+                        )
+                        .padding()
+                        .background(Color.black)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(30)
+                    }
 
                     Button {
+                        self.completed()
                         self.dismiss()
                     } label: {
                         Text("Skip")
