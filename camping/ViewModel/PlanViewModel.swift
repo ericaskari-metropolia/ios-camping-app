@@ -14,6 +14,7 @@ final class PlanViewModel: NSObject, ObservableObject {
     func savePlan(input: AddPlantFirstStepViewOutput) -> Plan? {
         let context = PersistenceController.shared.container.viewContext
         let plan = Plan(context: context)
+        plan.id = UUID()
         plan.campingSite = input.destinationLocation
         plan.startLatitude = input.startLocation.latitude
         plan.startLongitude = input.startLocation.longitude

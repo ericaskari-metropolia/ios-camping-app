@@ -34,6 +34,6 @@
         <attribute name="startLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="startLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="campingSite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CampingSite" inverseName="plans" inverseEntity="CampingSite"/>
-        <relationship name="gears" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Gear" inverseName="plan" inverseEntity="Gear"/>
+        <relationship name="gears" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Gear" inverseName="plan" inverseEntity="Gear"/>
     </entity>
 </model>

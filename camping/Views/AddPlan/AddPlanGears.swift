@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-struct GearListView: View {
+struct AddPlanGears: View {
     //    Inputs
     var plan: Plan
 
@@ -18,31 +18,26 @@ struct GearListView: View {
 
     //    Data
     @FetchRequest(
-         sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
-         animation: .default
-     )
-     private var allItems: FetchedResults<Gear>
-    
-    @FetchRequest private var items: FetchedResults<Gear>
+        sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
+        animation: .default
+    )
+    private var allItems: FetchedResults<Gear>
 
-    init(plan: Plan) {
-        self.plan = plan
-        
-        self._items = FetchRequest<Gear>(
-            sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
-            predicate: NSPredicate(format: "plan = %@", plan),
-            animation: .default
-        )
-    }
-    
     var body: some View {
         VStack {
             List {
-                Text("allItems: \(allItems.count)")
-                Text("items: \(items.count)")
-                TextField("Placeholder", text: $gearName)
-                ForEach(items) { item in
-                    Text("\(item.name ?? "-") \(item.plan?.id?.uuidString ?? "-")")
+                TextField("Name", text: $gearName)
+                ForEach(allItems.filter {
+                    gear in
+                    if gear.plan?.id == nil {
+                        return false
+                    }
+                    if plan.id == nil {
+                        return false
+                    }
+                    return gear.plan!.id!.uuidString == plan.id!.uuidString
+                }) { item in
+                    Text("\(item.name ?? "-")")
                 }
                 .onDelete(perform: {
                     indexSet in
@@ -66,24 +61,27 @@ struct GearListView: View {
 
     private func deleteItems(indexSet: IndexSet) {
         withAnimation {
-            indexSet.forEach { index in
-                gearViewModel.deleteItems(gear: items[index])
+            indexSet.forEach { _ in
+//                gearViewModel.deleteItems(gear: plans[index])
             }
         }
     }
 
     private func addItem() {
+        if gearName == "" {
+            return
+        }
         withAnimation {
-            gearViewModel.addItem(name: gearName, plan: plan, checked: false)
+            let gear = gearViewModel.addItem(name: gearName, plan: plan, checked: false)
             gearName = ""
         }
     }
 }
 
-//struct GearListView_Previews: PreviewProvider {
+// struct GearListView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        GearListView().environmentObject(
 //            GearViewModel()
 //        )
 //    }
-//}
+// }

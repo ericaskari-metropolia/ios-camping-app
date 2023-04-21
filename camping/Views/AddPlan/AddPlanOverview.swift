@@ -63,7 +63,7 @@ struct AddPlanOverview: View {
                 HStack {
                     if self.savedPlan != nil {
                         NavigationLink(
-                            destination: GearListView(plan: self.savedPlan!)
+                            destination: AddPlanGears(plan: self.savedPlan!)
                                 .environmentObject(GearViewModel()),
                             label: {
                                 Text("Add gear")
@@ -80,7 +80,7 @@ struct AddPlanOverview: View {
                         self.completed()
                         self.dismiss()
                     } label: {
-                        Text("Skip")
+                        Text("Close")
                             .frame(maxWidth: .infinity)
                     }
                     .padding()

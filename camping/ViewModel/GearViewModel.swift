@@ -42,24 +42,24 @@ class GearViewModel: ObservableObject {
         }
     }
 
-    func addItem(name: String, plan: Plan, checked: Bool = false) {
+    func addItem(name: String, plan: Plan, checked: Bool = false) -> Gear? {
         let context = PersistenceController.shared.container.viewContext
 
-        withAnimation {
-            let newItem = Gear(context: context)
-            newItem.name = name
-            newItem.id = UUID()
-            newItem.checked = checked
-            newItem.plan = plan
-            do {
-                try context.save()
-                print("Gear Saved!")
-            } catch {
-                print("Cannot save Gear.")
-                let nsError = error as NSError
-                print(nsError)
-                print(nsError.userInfo)
-            }
+        let newItem = Gear(context: context)
+        newItem.name = name
+        newItem.id = UUID()
+        newItem.checked = checked
+        newItem.plan = plan
+        do {
+            try context.save()
+            print("Gear Saved!")
+            return newItem
+        } catch {
+            print("Cannot save Gear.")
+            let nsError = error as NSError
+            print(nsError)
+            print(nsError.userInfo)
+            return nil
         }
     }
 }
