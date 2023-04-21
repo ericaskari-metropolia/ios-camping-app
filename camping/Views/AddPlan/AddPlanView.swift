@@ -112,6 +112,7 @@ struct AddPlanView: View {
                             DatePicker(
                                 "",
                                 selection: $startDate,
+                                in: Date.today...,
                                 displayedComponents: [.date, .hourAndMinute]
                             )
                             .labelsHidden()
@@ -154,9 +155,11 @@ struct AddPlanView: View {
                         .padding(.bottom)
 
                         if isEndDatePickerVisible {
+                            
                             DatePicker(
                                 "",
                                 selection: $endDate,
+                                in: Date.today...,
                                 displayedComponents: [.date, .hourAndMinute]
                             )
                             .labelsHidden()
