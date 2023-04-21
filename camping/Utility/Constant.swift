@@ -20,3 +20,4 @@ let spacing: CGFloat = 20
 
 let primary = Color("PrimaryColor")
 let background = Color("BackgroundColor")
+let zoomSpan = 9.0

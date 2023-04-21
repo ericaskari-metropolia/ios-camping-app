@@ -45,7 +45,9 @@ struct AddPlanOverview: View {
                         .onAppear {
                             self.generateSnapshot(width: geometry.size.width, height: 600)
                             if let input = self.input {
-                                self.savedPlan = self.viewModel.savePlan(input: input)
+                                if self.savedPlan == nil {
+                                    self.savedPlan = self.viewModel.savePlan(input: input)
+                                }
                             }
                         }
                     }

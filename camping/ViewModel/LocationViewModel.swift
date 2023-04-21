@@ -20,7 +20,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var campingSites: [CampingSite] = []
     @Published var region: MKCoordinateRegion = .init(
         center: CLLocationCoordinate2D(latitude: 60.192059, longitude: 24.945831),
-        span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)
+        span: MKCoordinateSpan(latitudeDelta: zoomSpan, longitudeDelta: zoomSpan)
     )
     var array: [CampingSite] = []
     
@@ -56,7 +56,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         DispatchQueue.main.async {
             self.region = MKCoordinateRegion(
                 center: latestLocation.coordinate,
-                span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)
+                span: MKCoordinateSpan(latitudeDelta: zoomSpan, longitudeDelta: zoomSpan)
             )
         }
     }

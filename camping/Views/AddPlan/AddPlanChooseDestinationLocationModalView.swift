@@ -12,18 +12,23 @@ import SwiftUI
 
 struct AddPlanChooseDestinationLocationModalView: View {
     //  To Access Location
-    @EnvironmentObject var viewModel: LocationViewModel
+//    @EnvironmentObject var viewModel: LocationViewModel
 
     @Binding var isPresented: Bool
 
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name, order: .reverse)]) var campingSites: FetchedResults<CampingSite>
 
+    @State var region: MKCoordinateRegion = .init(
+        center: CLLocationCoordinate2D(latitude: 60.192059, longitude: 24.945831),
+        span: MKCoordinateSpan(latitudeDelta: zoomSpan, longitudeDelta: zoomSpan)
+    )
+    
     var didChooseLocation: (CampingSite) -> ()
 
     var body: some View {
         ZStack(alignment: .bottom) {
             Map(
-                coordinateRegion: $viewModel.region,
+                coordinateRegion: $region,
                 showsUserLocation: true,
                 annotationItems: campingSites,
                 annotationContent: {
@@ -47,7 +52,7 @@ struct AddPlanChooseDestinationLocationModalView: View {
                     VStack {
                         Button(
                             action: {
-                                viewModel.requestPermission()
+//                                viewModel.requestPermission()
                             }, label: {
                                 Text("My location")
                                     .frame(maxWidth: .infinity)
