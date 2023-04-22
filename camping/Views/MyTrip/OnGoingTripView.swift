@@ -38,8 +38,8 @@ struct OnGoingTripScrollView: View {
                 ForEach(planDetails) { planDetail in
                     NavigationLink(destination: {TripInfoView(planDetail:planDetail)}) {
                         OnGoingTripDetailScreen(planDetail: planDetail)
-                        }
-                       
+                    }
+                    
                     
                 }
             }
@@ -56,22 +56,22 @@ struct OnGoingTripDetailScreen: View {
     @State private var showingAlert = false
     @State private var showingActionSheet = false
     @State private var isEditing = false
-
+    
     @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
- 
+    
     
     var body: some View {
         
         NavigationLink(destination: EditPlanView(planDetail: planDetail), isActive: $isEditing) {
-                   EmptyView()
-               }
+            EmptyView()
+        }
         VStack(alignment: .leading, spacing: 10) {
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
-
+                
                 //convert string into URL if not nil
                 if let imageURLString = planDetail.imageURL, let imgURL = URL(string: imageURLString) {
                     //create an AsyncImage with the URL
-                        AsyncImage(url: imgURL) { image in
+                    AsyncImage(url: imgURL) { image in
                         image
                             .resizable()
                             .scaledToFill()
@@ -79,36 +79,36 @@ struct OnGoingTripDetailScreen: View {
                             .frame(maxWidth: (UIScreen.main.bounds.width - 70))
                             .cornerRadius(15)
                     } placeholder: {
-                    // if the image is still loading, show a ProgressView
+                        // if the image is still loading, show a ProgressView
                         ProgressView()
                     }
                     .overlay(
-                                                       HStack {
-                                                           Button(action: {
-                                                               showingActionSheet = true
-                                                           }) {
-                                                               Image(systemName: "ellipsis")
-                                                                   .foregroundColor(.white)
-                                                                   .font(.system(size: 30))
-                                                                   .padding()
-                                                           }
-                                                           .actionSheet(isPresented: $showingActionSheet) {
-                                                               ActionSheet(title: Text("Choose an action"), buttons: [
-                                                                   .default(Text("Edit")) {
-                                                                       // Navigate to the edit plan screen
-                                                                       isEditing = true
-                                                                       
-                                                                   },
-                                                                   .destructive(Text("Delete")) {
-                                                                       // Show the delete confirmation alert
-                                                                       showingAlert = true
-                                                                   },
-                                                                   .cancel()
-                                                               ])
-                                                           }
-                                                       },
-                                    alignment: .topTrailing
-                                )
+                        HStack {
+                            Button(action: {
+                                showingActionSheet = true
+                            }) {
+                                Image(systemName: "ellipsis")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 30))
+                                    .padding()
+                            }
+                            .actionSheet(isPresented: $showingActionSheet) {
+                                ActionSheet(title: Text("Choose an action"), buttons: [
+                                    .default(Text("Edit")) {
+                                        // Navigate to the edit plan screen
+                                        isEditing = true
+                                        
+                                    },
+                                    .destructive(Text("Delete")) {
+                                        // Show the delete confirmation alert
+                                        showingAlert = true
+                                    },
+                                    .cancel()
+                                ])
+                            }
+                        },
+                        alignment: .topTrailing
+                    )
                 } else {
                     Text("Image url not found")
                 }
@@ -120,17 +120,17 @@ struct OnGoingTripDetailScreen: View {
                     .fontWeight(.bold)
                 
                 Text("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                                .padding(.top,2)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .padding(.top,2)
             }
         }
         .padding()
         // add a background of white color with rounded corners and shadow
         .background(Rectangle()
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
-                        .shadow(radius: 15))
+            .foregroundColor(.white)
+            .cornerRadius(20)
+            .shadow(radius: 15))
         .padding()
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Delete trip?"), message: Text("Are you sure you want to delete this trip?"),
@@ -158,5 +158,5 @@ extension Date{
                 .day()
         )
     }
-
+    
 }
