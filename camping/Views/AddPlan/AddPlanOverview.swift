@@ -16,10 +16,10 @@ struct AddPlanOverview: View {
     var span: CLLocationDegrees = 0.01
 
     @State private var snapshotImage: UIImage? = nil
-    @State private var savedPlan: Plan?
+
+    var savedPlan: Plan?
     var completed: () -> ()
 
-    var input: AddPlantFirstStepViewOutput?
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -43,10 +43,20 @@ struct AddPlanOverview: View {
                             }
                         }
                         .onAppear {
-                            self.generateSnapshot(width: geometry.size.width, height: 600)
-                            if let input = self.input {
-                                if self.savedPlan == nil {
-                                    self.savedPlan = self.viewModel.savePlan(input: input)
+                            if let savedPlan = savedPlan {
+                                if let campingSite = savedPlan.campingSite {
+                                    self.generateSnapshot(
+                                        width: geometry.size.width,
+                                        height: 600,
+                                        start: CLLocationCoordinate2D(
+                                            latitude: savedPlan.startLatitude,
+                                            longitude: savedPlan.startLongitude
+                                        ),
+                                        end: CLLocationCoordinate2D(
+                                            latitude: campingSite.latitude,
+                                            longitude: campingSite.longitude
+                                        )
+                                    )
                                 }
                             }
                         }
@@ -96,14 +106,10 @@ struct AddPlanOverview: View {
 
     func generateImageUrl(start: CLLocationCoordinate2D, end: CLLocationCoordinate2D) {}
 
-    func generateSnapshot(width: CGFloat, height: CGFloat) {
-        let coordinate1 = self.input?.startLocation ?? CLLocationCoordinate2D(latitude: 60.192059, longitude: 24.945831)
-
-        let coordinate2 = CLLocationCoordinate2D(latitude: self.input?.destinationLocation.latitude ?? 60.229192, longitude: self.input?.destinationLocation.longitude ?? 24.748633)
-
+    func generateSnapshot(width: CGFloat, height: CGFloat, start: CLLocationCoordinate2D, end: CLLocationCoordinate2D) {
         // convert them to MKMapPoint
-        let p1 = MKMapPoint(coordinate1)
-        let p2 = MKMapPoint(coordinate2)
+        let p1 = MKMapPoint(start)
+        let p2 = MKMapPoint(end)
 
         let rectPadding = 70000
 
@@ -131,8 +137,8 @@ struct AddPlanOverview: View {
             if let snapshot = snapshotOrNil {
                 let mapImage = snapshot.image
 
-                let point1 = snapshot.point(for: coordinate1)
-                let point2 = snapshot.point(for: coordinate2)
+                let point1 = snapshot.point(for: start)
+                let point2 = snapshot.point(for: end)
 
                 let finalImage = UIGraphicsImageRenderer(size: mapOptions.size).image { _ in
                     UIColor.white.setFill()

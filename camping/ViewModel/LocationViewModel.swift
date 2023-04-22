@@ -5,9 +5,9 @@
 //  Created by Thu Hoang on 5.4.2023.
 //
 
-import Foundation
-import CoreLocation
 import CoreData
+import CoreLocation
+import Foundation
 import MapKit
 
 // This class is for handling asking everything about getting user's location
@@ -18,6 +18,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var lastSeenLocation: CLLocation?
     @Published var currentPlacemark: CLPlacemark?
     @Published var campingSites: [CampingSite] = []
+    
     @Published var region: MKCoordinateRegion = .init(
         center: CLLocationCoordinate2D(latitude: 60.192059, longitude: 24.945831),
         span: MKCoordinateSpan(latitudeDelta: zoomSpan, longitudeDelta: zoomSpan)
@@ -63,9 +64,9 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Fetch city based on current location
     func fetchCity(for location: CLLocation?) {
-        guard let location = location else {return}
+        guard let location = location else { return }
         let geocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+        geocoder.reverseGeocodeLocation(location) { placemarks, _ in
             self.currentPlacemark = placemarks?.first
         }
     }
@@ -76,7 +77,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let url = URL(string: url) else { return }
         
         // Fetch from URL
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { data, _, _ in
             guard let data = data else { return }
             do {
                 // Decode JSON
@@ -85,7 +86,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                 DispatchQueue.main.async {
                     let context = PersistenceController.shared.container.viewContext
                     
-                    let request:NSFetchRequest<CampingSite> = CampingSite.fetchRequest()
+                    let request: NSFetchRequest<CampingSite> = CampingSite.fetchRequest()
                     
                     // Checking if the data is in core data or not.
                     // If data from JSON is updated then updated to core data.

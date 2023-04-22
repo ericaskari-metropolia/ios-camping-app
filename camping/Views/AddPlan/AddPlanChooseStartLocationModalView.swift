@@ -18,11 +18,6 @@ struct AddPlanChooseStartLocationModalView: View {
 
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name, order: .reverse)]) var campingSites: FetchedResults<CampingSite>
 
-    @State var region: MKCoordinateRegion = .init(
-        center: CLLocationCoordinate2D(latitude: 60.192059, longitude: 24.945831),
-        span: MKCoordinateSpan(latitudeDelta: zoomSpan, longitudeDelta: zoomSpan)
-    )
-
     var didChooseLocation: (CLLocationCoordinate2D) -> ()
 
     var body: some View {
@@ -61,7 +56,7 @@ struct AddPlanChooseStartLocationModalView: View {
                     VStack(alignment: .trailing) {
                         Button(
                             action: {
-                                didChooseLocation(region.center)
+                                didChooseLocation(viewModel.region.center)
                                 isPresented.toggle()
                             }, label: {
                                 Text("Select")
@@ -77,7 +72,7 @@ struct AddPlanChooseStartLocationModalView: View {
 
                         Button(
                             action: {
-//                                viewModel.requestPermission()
+                                viewModel.requestPermission()
                             }, label: {
                                 Text("My location")
                                     .frame(maxWidth: .infinity)

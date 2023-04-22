@@ -20,7 +20,7 @@ struct AddPlanCampsite: Identifiable, Codable {
     var longitude: Double
 }
 
-struct AddPlantFirstStepViewOutput {
+struct NewPlan {
     var startLocation: CLLocationCoordinate2D
     var destinationLocation: CampingSite
     var startDate: Date

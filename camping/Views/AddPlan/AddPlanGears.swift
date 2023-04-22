@@ -9,14 +9,14 @@ import CoreData
 import SwiftUI
 
 struct AddPlanGears: View {
-    //    Inputs
+    // Inputs
     var plan: Plan
-
-    //    States
+    
+    // States
     @StateObject var gearViewModel: GearViewModel = .init()
     @State var gearName: String = ""
 
-    //    Data
+    // Data
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
         animation: .default

@@ -12,7 +12,7 @@ import SwiftUI
 // This class is responsible for interacting with CoreData stuff related to Plan
 final class PlanViewModel: NSObject, ObservableObject {
     //  Saves Plan to Storage
-    func savePlan(input: AddPlantFirstStepViewOutput) -> Plan? {
+    func savePlan(input: NewPlan) -> Plan? {
         let context = PersistenceController.shared.container.viewContext
         let plan = Plan(context: context)
         plan.id = UUID()

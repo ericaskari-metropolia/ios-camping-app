@@ -51,7 +51,7 @@ struct AddPlanChooseDestinationLocationModalView: View {
                     VStack {
                         Button(
                             action: {
-//                                viewModel.requestPermission()
+                                viewModel.requestPermission()
                             }, label: {
                                 Text("My location")
                                     .frame(maxWidth: .infinity)
