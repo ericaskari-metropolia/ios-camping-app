@@ -22,6 +22,8 @@ struct MyTripsFilledView: View {
     
     @FetchRequest(sortDescriptors: []) var plans: FetchedResults<Plan>
     
+   
+    
     func countOfOngoingAndPastPlans() -> (ongoingCount: Int, pastCount: Int) {
            let currentDate = Date()
         let ongoingPlans = plans.filter { $0.endDate ?? currentDate >= currentDate }

@@ -58,6 +58,7 @@
 		27F477EE29EE9FE100B3786A /* CampsiteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F477EC29EE9FE100B3786A /* CampsiteMapView.swift */; };
 		27F477EF29EE9FE100B3786A /* CampsiteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F477EC29EE9FE100B3786A /* CampsiteMapView.swift */; };
 		66133D9B29DE1FC500FE61AE /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66133D9A29DE1FC500FE61AE /* OnBoardView.swift */; };
+		6674010A29F48CAE00A3AAFA /* EditPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6674010929F48CAD00A3AAFA /* EditPlanView.swift */; };
 		66B21E9629EF3D860053C741 /* MyTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21E9529EF3D860053C741 /* MyTripViewModel.swift */; };
 		66B21E9929EF3DDF0053C741 /* MyTripsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21E9829EF3DDF0053C741 /* MyTripsEmptyView.swift */; };
 		66B21E9B29EF3E7D0053C741 /* MyTripsFilledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21E9A29EF3E7D0053C741 /* MyTripsFilledView.swift */; };
@@ -141,6 +142,7 @@
 		2787CFE129DAFE16000B4865 /* AddPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanView.swift; sourceTree = "<group>"; };
 		27F477EC29EE9FE100B3786A /* CampsiteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampsiteMapView.swift; sourceTree = "<group>"; };
 		66133D9A29DE1FC500FE61AE /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
+		6674010929F48CAD00A3AAFA /* EditPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlanView.swift; sourceTree = "<group>"; };
 		66B21E9529EF3D860053C741 /* MyTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripViewModel.swift; sourceTree = "<group>"; };
 		66B21E9829EF3DDF0053C741 /* MyTripsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsEmptyView.swift; sourceTree = "<group>"; };
 		66B21E9A29EF3E7D0053C741 /* MyTripsFilledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsFilledView.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				66B21EA429EF40620053C741 /* TripsView.swift */,
 				66E42CDB29F1DB1800BEFDA5 /* TripInfoView.swift */,
 				66E42CDD29F1DC1800BEFDA5 /* PastTripInfoView.swift */,
+				6674010929F48CAD00A3AAFA /* EditPlanView.swift */,
 			);
 			path = MyTrip;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				66B21E9F29EF3EEF0053C741 /* PastTripView.swift in Sources */,
 				2787217A29EC70090000BE8E /* WeatherManager.swift in Sources */,
 				66E42CDE29F1DC1800BEFDA5 /* PastTripInfoView.swift in Sources */,
+				6674010A29F48CAE00A3AAFA /* EditPlanView.swift in Sources */,
 				A106FEE729E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift in Sources */,
 				B3DD53A429E471C800EC7620 /* AddPlanModel.swift in Sources */,
 				27223A0F29E41CDE0015B291 /* Constant.swift in Sources */,

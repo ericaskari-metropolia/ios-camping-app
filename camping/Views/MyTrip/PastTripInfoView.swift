@@ -45,7 +45,7 @@ struct PastTripInfoView: View {
             }
             .ignoresSafeArea()
             HStack{
-                Label("Trip Status: Completed", systemImage: "figure.run.circle")
+                Label("Trip Status: Completed", systemImage: "trophy.circle.fill")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
