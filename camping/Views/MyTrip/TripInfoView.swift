@@ -10,7 +10,7 @@ struct TripInfoView: View {
     
     // state variable to hold the plan detail
     @State var planDetail: PlanDetail
-    
+  
     // instance of weather forecast manager
     var weatherManager = WeatherForecast()
     
@@ -116,7 +116,8 @@ struct TripInfoView: View {
                 VStack(alignment: .leading){
                     Label("Gear List", systemImage: "list.bullet")
                         .padding(.vertical)
-                    Text("Oops!! you dont have any gears added.")
+                    MyGearListView(planDetail: planDetail)
+                    //Text("Oops!! you dont have any gears added.")
                 }
                 .padding()
                 Spacer()

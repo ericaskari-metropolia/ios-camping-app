@@ -13,6 +13,8 @@ struct EditPlanView: View {
     @State private var isStartDatePickerVisible = false
     @State private var isEndDatePickerVisible = false
     @State private var dateFormatter = formatter()
+    @State private var startDate: Date = .today
+    @State private var endDate: Date = .tomorrow
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         
@@ -52,7 +54,7 @@ struct EditPlanView: View {
             .padding(.top,-60)
             Spacer()
             
-            ScrollView{
+            ScrollView(.horizontal,showsIndicators: false){
                 VStack(alignment: .leading){
                     Text("Start Date")
                     Button(
@@ -79,6 +81,7 @@ struct EditPlanView: View {
                         DatePicker(
                             "",
                             selection: $planDetail.start,
+                            in: Date.today...,
                             displayedComponents: [.date, .hourAndMinute]
                         )
                         .labelsHidden()
@@ -124,6 +127,7 @@ struct EditPlanView: View {
                             DatePicker(
                                 "",
                                 selection: $planDetail.end,
+                                in: Date.today...,
                                 displayedComponents: [.date, .hourAndMinute]
                             )
                             .labelsHidden()
@@ -149,9 +153,10 @@ struct EditPlanView: View {
                         }
                         .bold()
                         .frame(width: 280, height: 50)
-                        .background(Color.black)
+                        .background(submitButtonBackground)
                         .foregroundColor(.white)
                         .cornerRadius(50)
+                        .disabled(!isFormValid)
                     }.padding([.bottom], 50)
                         
                         
@@ -160,7 +165,17 @@ struct EditPlanView: View {
                 .padding([.leading, .bottom, .trailing], 60)
             }
         }
+    
+    var isFormValid: Bool {
+        let correctDates = planDetail.start.timeIntervalSince1970 <= planDetail.end.timeIntervalSince1970
+        return correctDates
     }
+    
+    var submitButtonBackground: Color {
+        return isFormValid ? Color.black : Color.gray
+    }
+
+}
 
 
 func formatter() -> DateFormatter {

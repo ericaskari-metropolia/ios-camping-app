@@ -132,8 +132,7 @@ class MyTripViewModel: ObservableObject {
         } catch {
             print("Error editing plan: \(error)")
         }
-    }
-    
+    }    
 }
 
 // The PlanDetail struct that represents the details of a plan
