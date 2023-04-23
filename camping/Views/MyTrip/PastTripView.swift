@@ -64,7 +64,7 @@ struct MyPastTripCard: View {
             ZStack{
                 
                 // Display an AsyncImage with the URL of the destination image
-                if let imageURLString = planDetail.imageURL, let imgURL = URL(string: imageURLString) {
+                if let imgURL = URL(string: planDetail.imageURL) {
                     AsyncImage(url: imgURL) { image in
                         image
                             .resizable()

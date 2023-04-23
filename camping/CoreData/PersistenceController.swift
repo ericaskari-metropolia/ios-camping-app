@@ -16,11 +16,11 @@ class PersistenceController {
     var viewContext: NSManagedObjectContext {
         container.viewContext
     }
-    
+
     var newContext: NSManagedObjectContext {
         container.newBackgroundContext()
     }
-    
+
     init() {
         container = NSPersistentContainer(name: "CampingSite")
         container.viewContext.automaticallyMergesChangesFromParent = true
@@ -42,5 +42,5 @@ class PersistenceController {
             }
         }
     }
-    
+
 }

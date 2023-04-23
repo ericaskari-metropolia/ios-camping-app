@@ -12,9 +12,9 @@ import SwiftUI
 
 struct AddPlanView: View {
     //  To Access Plans and save them
-    @EnvironmentObject var viewModel: PlanViewModel
+    @StateObject var viewModel: PlanViewModel = .init()
     //  To Access Campsites to show on map
-    @EnvironmentObject var locationViewModel: LocationViewModel
+    @StateObject var locationViewModel: LocationViewModel = .init()
 
     @State private var isStartLocationModalOpen = false
     @State private var isDestinationLocationModalOpen = false
@@ -26,6 +26,9 @@ struct AddPlanView: View {
     @State private var endDate: Date = .tomorrow
     @State private var dateFormatter = formatter()
     @State private var annotations: [CampingSiteData] = []
+
+    // Output
+    @State var savedPlan: Plan?
 
     var completed: () -> ()
 
@@ -112,6 +115,7 @@ struct AddPlanView: View {
                             DatePicker(
                                 "",
                                 selection: $startDate,
+                                in: Date.today...,
                                 displayedComponents: [.date, .hourAndMinute]
                             )
                             .labelsHidden()
@@ -157,6 +161,7 @@ struct AddPlanView: View {
                             DatePicker(
                                 "",
                                 selection: $endDate,
+                                in: Date.today...,
                                 displayedComponents: [.date, .hourAndMinute]
                             )
                             .labelsHidden()
@@ -177,14 +182,28 @@ struct AddPlanView: View {
 
                     VStack(alignment: .leading) {
                         NavigationLink(
-                            destination: AddPlanOverview(completed: {
-                                completed()
-                            }, input: value())
+                            destination: AddPlanOverview(
+                                savedPlan: savedPlan,
+                                completed: {
+                                    completed()
+                                }
+                            )
                             .environmentObject(PlanViewModel()),
                             label: {
                                 Text("Create trip")
                             }
-                        )
+                        ).simultaneousGesture(TapGesture().onEnded {
+                            let value = value()
+                            print("isFormValid: \(isFormValid)")
+                            print("isValueNil: \(value == nil)")
+                            print("isSavedPlanNil: \(savedPlan == nil)")
+
+                            if isFormValid {
+                                if savedPlan == nil {
+                                    savedPlan = viewModel.savePlan(input: value!)
+                                }
+                            }
+                        })
 
                         .bold()
                         .frame(width: 280, height: 50)
@@ -198,6 +217,9 @@ struct AddPlanView: View {
             }
 
         }.ignoresSafeArea()
+            .onAppear {
+                reset()
+            }
     }
 
     var isFormValid: Bool {
@@ -212,7 +234,7 @@ struct AddPlanView: View {
         return isFormValid ? Color.black : Color.gray
     }
 
-    func value() -> AddPlantFirstStepViewOutput? {
+    func value() -> NewPlan? {
         //  It should be used only when form is validated and fields are filled
         guard let startLocation = startLocation else {
             return nil
@@ -220,13 +242,19 @@ struct AddPlanView: View {
         guard let destinationLocation = destinationLocation else {
             return nil
         }
-
-        return AddPlantFirstStepViewOutput(
+        return NewPlan(
             startLocation: startLocation,
             destinationLocation: destinationLocation,
             startDate: startDate,
             endDate: endDate
         )
+    }
+
+    func reset() {
+        startLocation = nil
+        destinationLocation = nil
+        startDate = Date.today
+        endDate = Date.tomorrow
     }
 
     static func formatter() -> DateFormatter {
