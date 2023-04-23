@@ -20,11 +20,12 @@ struct TripsView: View {
         
         // Check if there are any plans/trips
         if viewModel.hasPlans() {
-            MyTripsEmptyView()
+            MyTripsFilledView()
+           
             
         } else {
-            MyTripsFilledView()
-            
+           
+            MyTripsEmptyView()
             
         }
       

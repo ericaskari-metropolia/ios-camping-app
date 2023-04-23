@@ -19,6 +19,17 @@ struct MyTripsFilledView: View {
 
     // Use @StateObject property wrapper to create an instance of MyTripViewModel for this view
     @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
+    
+    @FetchRequest(sortDescriptors: []) var plans: FetchedResults<Plan>
+    
+   
+    
+    func countOfOngoingAndPastPlans() -> (ongoingCount: Int, pastCount: Int) {
+           let currentDate = Date()
+        let ongoingPlans = plans.filter { $0.endDate ?? currentDate >= currentDate }
+           let pastPlans = plans.filter { $0.endDate ?? currentDate < currentDate }
+           return (ongoingCount: ongoingPlans.count, pastCount: pastPlans.count)
+       }
         
     var body: some View {
         VStack {
@@ -31,7 +42,7 @@ struct MyTripsFilledView: View {
                 //*THIS CODE NEEDS A REVIEW
                 
                 // Check if there are any ongoing trips
-                if viewModel.countOfOngoingAndPastPlans().ongoingCount <= 0 {
+                if countOfOngoingAndPastPlans().ongoingCount > 0 {
                     VStack{
                         Label("Ongoing trip", systemImage: "figure.run.circle")
                             .font(.headline)
@@ -51,9 +62,9 @@ struct MyTripsFilledView: View {
                 Divider()
                     pastTripViewHeader
                 
-                //*THIS CODE NEEDS A REVIEW
+               
                 // Check if there are any past trips
-                if viewModel.countOfOngoingAndPastPlans().ongoingCount <= 0 {
+                if countOfOngoingAndPastPlans().pastCount > 0 {
                     PastTripView()
                         .padding(.horizontal,-10)
                         .padding()

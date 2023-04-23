@@ -18,7 +18,7 @@ struct PastTripView: View {
         VStack{
             
             // Show a grid of past trip cards using the planDetails provided by the view model
-            PastTripGridView(planDetails: viewModel.pastPlanDetails())
+            PastTripScrollView(planDetails: viewModel.pastPlanDetails())
         }
         //when the view appears, fetch all the plans and update the plan details
         .onAppear {
@@ -27,23 +27,25 @@ struct PastTripView: View {
     }
 }
 
-
-// A view for displaying a grid of past trip cards
-struct PastTripGridView: View {
-
-    // An array of planDetails to be used to create the past trip cards
+struct PastTripScrollView: View {
+    
+    //An array of plandetail object
     let planDetails: [PlanDetail]
     
     var body: some View {
-        
-        // Use a LazyVGrid to create a grid of past trip cards having 2 columns
-        LazyVGrid(columns: [GridItem(.flexible(), spacing: 5), GridItem(.flexible(), spacing: 10)]) {
-            ForEach(planDetails) { planDetail in
-                NavigationLink(destination: {PastTripInfoView(planDetail:planDetail)}){
-                    MyPastTripCard(planDetail: planDetail)
-
+        ScrollView(.horizontal,showsIndicators: false) {
+            HStack(spacing: 10) {
+                
+                //Looping through the array and create a tripdetail screen
+                ForEach(planDetails) { planDetail in
+                    NavigationLink(destination: {PastTripInfoView(planDetail:planDetail)}) {
+                        MyPastTripCard(planDetail: planDetail)
+                        }
+                       
+                    
                 }
-                            }
+            }
+            .padding(.horizontal, 20)
         }
     }
 }
@@ -67,8 +69,8 @@ struct MyPastTripCard: View {
                         image
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 200,height: 140)
-                            .frame(maxWidth: (UIScreen.main.bounds.width - 100) / 2)
+                            .frame(width: 300, height: 200)
+                            .frame(maxWidth: (UIScreen.main.bounds.width - 70))
                             .cornerRadius(15)
                     } placeholder: {
                         // if the image is still loading, show a ProgressView
