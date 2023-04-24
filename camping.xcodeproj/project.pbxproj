@@ -61,6 +61,7 @@
 		6674010A29F48CAE00A3AAFA /* EditPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6674010929F48CAD00A3AAFA /* EditPlanView.swift */; };
 		6674010C29F5B79000A3AAFA /* MyGearListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6674010B29F5B79000A3AAFA /* MyGearListView.swift */; };
 		6674010E29F6700B00A3AAFA /* DeletePlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6674010D29F6700B00A3AAFA /* DeletePlanView.swift */; };
+		66812B3329F71B5100DF29D0 /* PastGearList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66812B3229F71B5100DF29D0 /* PastGearList.swift */; };
 		66B21E9629EF3D860053C741 /* MyTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21E9529EF3D860053C741 /* MyTripViewModel.swift */; };
 		66B21E9929EF3DDF0053C741 /* MyTripsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21E9829EF3DDF0053C741 /* MyTripsEmptyView.swift */; };
 		66B21E9B29EF3E7D0053C741 /* MyTripsFilledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B21E9A29EF3E7D0053C741 /* MyTripsFilledView.swift */; };
@@ -150,6 +151,7 @@
 		6674010929F48CAD00A3AAFA /* EditPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlanView.swift; sourceTree = "<group>"; };
 		6674010B29F5B79000A3AAFA /* MyGearListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGearListView.swift; sourceTree = "<group>"; };
 		6674010D29F6700B00A3AAFA /* DeletePlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlanView.swift; sourceTree = "<group>"; };
+		66812B3229F71B5100DF29D0 /* PastGearList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastGearList.swift; sourceTree = "<group>"; };
 		66B21E9529EF3D860053C741 /* MyTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripViewModel.swift; sourceTree = "<group>"; };
 		66B21E9829EF3DDF0053C741 /* MyTripsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsEmptyView.swift; sourceTree = "<group>"; };
 		66B21E9A29EF3E7D0053C741 /* MyTripsFilledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsFilledView.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				6674010929F48CAD00A3AAFA /* EditPlanView.swift */,
 				6674010B29F5B79000A3AAFA /* MyGearListView.swift */,
 				6674010D29F6700B00A3AAFA /* DeletePlanView.swift */,
+				66812B3229F71B5100DF29D0 /* PastGearList.swift */,
 			);
 			path = MyTrip;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				66B21EA529EF40620053C741 /* TripsView.swift in Sources */,
 				B3D6C9D929E4448D00232B53 /* CampingSite.xcdatamodeld in Sources */,
 				B305CD9729E4420A007781DB /* NavigationTabView.swift in Sources */,
+				66812B3329F71B5100DF29D0 /* PastGearList.swift in Sources */,
 				B390207B29EFC16100A1D754 /* SuggestCampsitesListView.swift in Sources */,
 				66B21E9629EF3D860053C741 /* MyTripViewModel.swift in Sources */,
 				66133D9B29DE1FC500FE61AE /* OnBoardView.swift in Sources */,

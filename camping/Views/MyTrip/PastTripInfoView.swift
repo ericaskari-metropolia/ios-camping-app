@@ -94,7 +94,7 @@ struct PastTripInfoView: View {
                 VStack(alignment: .leading){
                     Label("Gear List", systemImage: "list.bullet")
                         .padding(.vertical)
-                    MyGearListView(plan:planDetail.plan)
+                    PastGearListView(plan:planDetail.plan)
                    // Text("Oops!! Gear details not available.")
                 }
                 .padding()
