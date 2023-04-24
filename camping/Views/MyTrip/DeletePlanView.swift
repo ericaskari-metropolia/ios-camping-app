@@ -84,21 +84,29 @@ struct DeletePlanView: View {
             .padding(.top,10)
             .padding(.horizontal,5)
            
-            
-            Text("Are you sure you want to delete this plan?")
-                            .padding()
+            Divider()
+                Text("Are you sure you want to delete this plan?")
+                    .font(.title3)
+                    .padding(.horizontal,2)
+                    .padding(.vertical,10)
                         HStack {
                             Button("Cancel") {
                                 dismiss()
                             }
                             .padding()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 50)
+                            .background(Color.green)
+                            .cornerRadius(15)
 
                             Button("Delete") {
                                 deletePlan()
                                 dismiss()
                             }
-                            .padding()
-                            .foregroundColor(.red)
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 50)
+                            .background(Color.red)
+                            .cornerRadius(15)
         }
             Spacer()
         
@@ -114,6 +122,16 @@ struct DeletePlanView: View {
    func dismiss() {
              presentationMode.wrappedValue.dismiss()
          }
+}
+
+extension DeletePlanView {
+    var deleteButton: some View {
+        Label("Delete", systemImage: "trash")
+            .foregroundColor(.white)
+            .frame(width: 350, height: 50)
+            .background(Color.black)
+            .cornerRadius(15)
+    }
 }
 
 //struct DeletePlanView_Previews: PreviewProvider {

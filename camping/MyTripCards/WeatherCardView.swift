@@ -33,7 +33,7 @@ struct WeatherCardView: View {
                             // if the image is still loading, show a ProgressView
                             ProgressView()
                         }
-                        .frame(width: 50, height: 50, alignment: .center)
+                        .frame(width: 95, height: 50, alignment: .center)
                         HStack {
                             Text("Max: \(Int(weatherList.temp.max - 273.15))°C ")
                                 .font(.caption)
