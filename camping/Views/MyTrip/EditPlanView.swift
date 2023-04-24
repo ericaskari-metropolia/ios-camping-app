@@ -44,14 +44,15 @@ struct EditPlanView: View {
             } .ignoresSafeArea()
          
             HStack{
-                VStack{
+                VStack(alignment:.leading){
                     Text(planDetail.destination.name ?? "")
-                        .font(.title)
+                        .font(.title3)
                         .fontWeight(.bold)
                 }
                 Image(systemName: "tent")
             }
             .padding(.top,-60)
+            //.padding(.horizontal,10)
             Spacer()
             
             ScrollView(.horizontal,showsIndicators: false){
@@ -62,7 +63,7 @@ struct EditPlanView: View {
                             self.isStartDatePickerVisible.toggle()
                         }, label: {
                             HStack {
-                                Image(systemName: "location")
+                                Image(systemName: "clock")
                                 Text(
                                     dateFormatter.string(from: planDetail.start)
                                 )
@@ -97,6 +98,7 @@ struct EditPlanView: View {
                         .frame(maxWidth: .infinity)
                         .cornerRadius(10)
                         .padding(.bottom)
+                        .padding(.top, -20)
                     }
                     
                     
@@ -108,7 +110,7 @@ struct EditPlanView: View {
                                 
                             }, label: {
                                 HStack {
-                                    Image(systemName: "location")
+                                    Image(systemName: "clock")
                                     Text(
                                         dateFormatter.string(from: planDetail.end)
                                     )
@@ -142,6 +144,7 @@ struct EditPlanView: View {
                             )
                             .frame(maxWidth: .infinity)
                             .cornerRadius(10)
+                            .padding(.top, -20)
                             .padding(.bottom)
                         }
                         Spacer()
@@ -162,7 +165,7 @@ struct EditPlanView: View {
                         
                     }
                 }
-                .padding([.leading, .bottom, .trailing], 60)
+                .padding([.leading, .bottom, .trailing], 40)
             }
         }
     

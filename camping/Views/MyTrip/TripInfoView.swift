@@ -116,8 +116,8 @@ struct TripInfoView: View {
                 VStack(alignment: .leading){
                     Label("Gear List", systemImage: "list.bullet")
                         .padding(.vertical)
-                    MyGearListView(planDetail: planDetail)
-                    //Text("Oops!! you dont have any gears added.")
+                   // MyGearListView(plan: planDetail)
+                    Text("Oops!! you dont have any gears added.")
                 }
                 .padding()
                 Spacer()
