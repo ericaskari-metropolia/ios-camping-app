@@ -95,6 +95,9 @@ struct TripInfoView: View {
                 
                 VStack(alignment: .leading){
                     Text("Weather Forecast")
+                        .padding(.top,10)
+                        .padding(.bottom, -5)
+                        .padding(.leading,15)
                         .multilineTextAlignment(.leading)
                     if let weather = weather {
                         WeatherCardView(weatherForecast:weather, startTimestamp: Int(planDetail.start.timeIntervalSince1970))
@@ -115,17 +118,31 @@ struct TripInfoView: View {
                
                 VStack(alignment: .leading){
                     Label("Gear List", systemImage: "list.bullet")
-                        .padding(.vertical)
-                   // MyGearListView(plan: planDetail)
-                    Text("Oops!! you dont have any gears added.")
+                        .padding(.vertical,0)
+                  
+                   // Text("Oops!! you dont have any gears added.")
+                    MyGearListView(plan:planDetail.plan)
+                    
+                    NavigationLink(
+                        destination: AddPlanGears(plan: planDetail.plan)
+                            .environmentObject(GearViewModel()),
+                        label: {
+                            Text("Edit gear")
+                                .frame(maxWidth: .infinity)
+                        }
+                    )
+                    .padding()
+                    .background(Color.black)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(30)
                 }
                 .padding()
                 Spacer()
-                Label("Add Gear", systemImage: "plus")
-                    .foregroundColor(.white)
-                    .frame(width: 350, height: 50)
-                    .background(Color.black)
-                    .cornerRadius(15)
+//                Label("Add Gear", systemImage: "plus")
+//                    .foregroundColor(.white)
+//                    .frame(width: 350, height: 50)
+//                    .background(Color.black)
+//                    .cornerRadius(15)
             }
             .padding()
             .padding(.top,-65)
