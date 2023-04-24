@@ -53,10 +53,14 @@ class HomeViewModel: ObservableObject {
             return
         } else {
             lastUserLocation = .init(latitude: userLatitude, longitude: userLongitude)
-            let campingSites = campingSites.compactMap{$0}
             suggestCampsites = campingSites.filter { campingSite in
                 calculateDistanceBetweenTwoCoordinates(campSiteLatitude: campingSite.latitude, campSiteLongitude: campingSite.longitude, userLatitude: userLatitude, userLongitude: userLongitude) <= 50
             }
+        }
+        
+        // If suggestCampsites is empty, random in core data and take the first 5 campsites
+        if suggestCampsites.isEmpty {
+            suggestCampsites = Array(campingSites.shuffled().prefix(5))
         }
         
     }

@@ -15,10 +15,6 @@ class SearchViewModel: ObservableObject {
     @Published var searchText: String
     @Published var filteredCities: [String] = []
     @Published var filteredCampingSites: [CampingSite] = []
-    @Published var recognizedText = "" // Bindable property to hold recognized text
-    private let speechRecognizer = SFSpeechRecognizer() // Speech recognizer instance
-    private var recognitionTask: SFSpeechRecognitionTask? // Recognition task
-    private let audioEngine = AVAudioEngine() // Audio engine
     var fetchedCities: [String] = []
     
     init(searchText: String) {
