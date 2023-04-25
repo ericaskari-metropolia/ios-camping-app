@@ -38,10 +38,6 @@ struct PastGearListView: View {
                     }.indices, id: \.self) { index in
                         HStack (alignment: .center, spacing: 0){
                             Text("\(allItems[index].name ?? "-")")
-                            Spacer()
-                            Image(systemName: allItems[index].checked ? "checkmark.square.fill" : "square")
-                                .foregroundColor(allItems[index].checked ? Color(UIColor.systemBlue) : Color.secondary)
-                                .onTapGesture {gearViewModel.checkItem(gear: allItems[index])}
                         }
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
