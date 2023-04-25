@@ -21,6 +21,9 @@ struct AddPlanView: View {
     // Disable Destination Form Field (Allowed to be passed from parent)
     @State var isDestinationLocationPassedFromParent = false
 
+    // Disable/Enable Dismiss when pressed on close from Overview (Allowed to be passed from parent)
+    @State var dismissOnAppearEnabled = true
+
     //  State of Modal
     @State private var isStartLocationModalOpen = false
     //  State of Modal
@@ -203,7 +206,9 @@ struct AddPlanView: View {
                             destination: AddPlanOverview(
                                 savedPlan: savedPlan,
                                 completed: {
-                                    self.dismissOnAppear = true
+                                    if dismissOnAppearEnabled {
+                                        self.dismissOnAppear = true
+                                    }
                                     completed()
                                 }
                             ),
@@ -238,7 +243,7 @@ struct AddPlanView: View {
                     resetDestinationLocation: !isDestinationLocationPassedFromParent
                 )
 
-                if dismissOnAppear {
+                if dismissOnAppearEnabled && dismissOnAppear {
                     dismissOnAppear = false
                     dismiss()
                 }
