@@ -7,14 +7,22 @@
 
 import SwiftUI
 
-struct PlanNewTripButtonView: View {
+struct PlanNewTripButtonView<Content: View>: View {
     var campsite: CampingSite?
     var completed: () -> ()
+
+    let label: Content
+
+    init(campsite: CampingSite?, @ViewBuilder _ label: () -> Content, completed: @escaping () -> ()) {
+        self.campsite = campsite
+        self.label = label()
+        self.completed = completed
+    }
 
     var body: some View {
         NavigationLink(
             destination: AddPlanView(
-                isDestinationLocationPassedFromParent: true,
+                isDestinationLocationPassedFromParent: campsite != nil,
                 destinationLocation: campsite,
                 completed: {
                     print("[PlanNewTripButtonView] completed")
@@ -22,23 +30,22 @@ struct PlanNewTripButtonView: View {
                 }
             ),
             label: {
-                Text("Plan new trip")
-                    .font(.system(.title3, design: .rounded))
-                    .foregroundColor(.white)
+                label
             }
         )
-        .disabled(campsite == nil)
-        .padding()
-        .background(Color.primary)
-        .clipShape(Capsule())
     }
 }
 
 struct PlanNewTripButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        PlanNewTripButtonView(completed: {
-            print("[PlanNewTripButtonView_Previews] completed")
+        PlanNewTripButtonView(
+            campsite: nil,
+            {
+                Text("Plan new trip")
 
-        }).environmentObject(LocationViewModel())
+            }, completed: {
+                print("[PlanNewTripButtonView_Previews] completed")
+            }
+        )
     }
 }
