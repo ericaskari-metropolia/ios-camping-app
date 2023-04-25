@@ -37,19 +37,21 @@ struct MyGearListView: View {
                             return false
                         }
                         return gear.plan!.id!.uuidString == plan.id!.uuidString
-                    }) { item in
+                    }.indices, id: \.self) { index in
                         HStack (alignment: .center, spacing: 0){
-                            Text("\(item.name ?? "-")")
+                            Text("\(allItems[index].name ?? "-")")
                             Spacer()
-                            Image(systemName: item.checked ? "checkmark.square.fill" : "square")
-                                .foregroundColor(item.checked ? Color(UIColor.systemBlue) : Color.secondary)
-                                .onTapGesture {gearViewModel.checkItem(gear: item)}
+                            Image(systemName: allItems[index].checked ? "checkmark.square.fill" : "square")
+                                .foregroundColor(allItems[index].checked ? Color(UIColor.systemBlue) : Color.secondary)
+                                .onTapGesture {gearViewModel.checkItem(gear: allItems[index])}
                         }
                         .padding()
-                        .frame(maxWidth: .infinity, alignment: .leading)                }
-                    
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(index % 2 == 0 ? Color.white.cornerRadius(10) : Color.gray.opacity(0.1).cornerRadius(10))
+                    }
                 }
             }
+
             NavigationLink(
                 destination: AddPlanGears(plan:plan)
                     .environmentObject(GearViewModel()),

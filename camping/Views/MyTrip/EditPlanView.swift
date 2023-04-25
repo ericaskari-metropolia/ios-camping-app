@@ -41,22 +41,38 @@ struct EditPlanView: View {
                         .padding(.top,55)
                     
                 }
-            } .ignoresSafeArea()
-         
-            HStack{
-                VStack(alignment:.leading){
-                    Text(planDetail.destination.name ?? "")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                }
-                Image(systemName: "tent")
             }
-            .padding(.top,-60)
-            //.padding(.horizontal,10)
+            
+           .ignoresSafeArea()
+            HStack{
+                Label("Trip Status: Editing", systemImage: "pencil.circle.fill")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(width: 350, height: 40)
+                    .background(Color.cyan)
+                    .cornerRadius(15)
+
+            }
+            .padding(.top,-80)
+            .padding(.bottom,15)
+          
             Spacer()
             
-            ScrollView(.horizontal,showsIndicators: false){
+            ScrollView(){
                 VStack(alignment: .leading){
+                    HStack{
+                        VStack(alignment:.leading){
+                            Text(planDetail.destination.name ?? "")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                        }
+                        Image(systemName: "tent")
+                    }.padding(.bottom, -10)
+                        .padding()
+                    
+                    
+                    
+                    
                     Text("Start Date")
                     Button(
                         action: {
@@ -159,14 +175,20 @@ struct EditPlanView: View {
                         .background(submitButtonBackground)
                         .foregroundColor(.white)
                         .cornerRadius(50)
+                        .padding(.leading,15)
                         .disabled(!isFormValid)
                     }.padding([.bottom], 50)
                         
                         
                     }
-                }
                 .padding([.leading, .bottom, .trailing], 40)
-            }
+                }
+            
+
+            .padding(.top,-55)
+            .ignoresSafeArea()
+            
+        }
         }
     
     var isFormValid: Bool {

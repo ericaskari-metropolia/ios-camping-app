@@ -39,8 +39,6 @@ struct MyTripsFilledView: View {
            
            
             ScrollView{
-                //*THIS CODE NEEDS A REVIEW
-                
                 // Check if there are any ongoing trips
                 if countOfOngoingAndPastPlans().ongoingCount > 0 {
                     VStack{
@@ -93,7 +91,7 @@ extension MyTripsFilledView {
            
             VStack(alignment: .leading){
                
-                Label("You are in \(locationViewModel.currentPlacemark?.locality ?? "")", systemImage: "globe.europe.africa")
+                Label("You are in \(locationViewModel.currentPlacemark?.locality ?? "")", systemImage: "mappin.and.ellipse")
                   .font(.headline)
                      .foregroundColor(.white)
                      .padding(.bottom,5)
