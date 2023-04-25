@@ -63,8 +63,8 @@ struct AddPlanGears: View {
 
     private func deleteItems(indexSet: IndexSet) {
         withAnimation {
-            indexSet.forEach { _ in
-//                gearViewModel.deleteItems(gear: plans[index])
+            indexSet.forEach { index in
+                gearViewModel.deleteItem(gear: allItems[index])
             }
         }
     }
