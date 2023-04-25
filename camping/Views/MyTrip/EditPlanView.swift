@@ -43,36 +43,34 @@ struct EditPlanView: View {
                 }
             }
             
-           .ignoresSafeArea()
-            HStack{
-                Label("Trip Status: Editing", systemImage: "pencil.circle.fill")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(width: 350, height: 40)
-                    .background(Color.cyan)
-                    .cornerRadius(15)
-
+            .ignoresSafeArea()
+            VStack{
+                HStack{
+                    Label("Trip Status: Editing", systemImage: "pencil.circle.fill")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(width: 350, height: 40)
+                        .background(Color.cyan)
+                        .cornerRadius(15)
+                    
+                }    
+                HStack{
+                    VStack(alignment:.leading){
+                        Text(planDetail.destination.name ?? "")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                    }
+                    Image(systemName: "tent")
+                }
+                .padding()
             }
+            .padding(.bottom, 40)
             .padding(.top,-80)
-            .padding(.bottom,15)
-          
+            
             Spacer()
             
             ScrollView(){
                 VStack(alignment: .leading){
-                    HStack{
-                        VStack(alignment:.leading){
-                            Text(planDetail.destination.name ?? "")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                        }
-                        Image(systemName: "tent")
-                    }.padding(.bottom, -10)
-                        .padding()
-                    
-                    
-                    
-                    
                     Text("Start Date")
                     Button(
                         action: {
@@ -178,18 +176,18 @@ struct EditPlanView: View {
                         .padding(.leading,15)
                         .disabled(!isFormValid)
                     }.padding([.bottom], 50)
-                        
-                        
-                    }
-                .padding([.leading, .bottom, .trailing], 40)
+                    
+                    
                 }
+                .padding([.leading, .bottom, .trailing], 40)
+            }
             
-
+            
             .padding(.top,-55)
             .ignoresSafeArea()
             
         }
-        }
+    }
     
     var isFormValid: Bool {
         let correctDates = planDetail.start.timeIntervalSince1970 <= planDetail.end.timeIntervalSince1970
@@ -199,7 +197,7 @@ struct EditPlanView: View {
     var submitButtonBackground: Color {
         return isFormValid ? Color.black : Color.gray
     }
-
+    
 }
 
 

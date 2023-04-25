@@ -4,7 +4,6 @@
 //
 //  Created by Binod Panta on 23.4.2023.
 //
-
 import SwiftUI
 import CoreData
 
@@ -26,18 +25,9 @@ struct PastGearListView: View {
                     .fill(Color.white)
                     .shadow(color: Color.gray.opacity(0.5), radius: 5, x: 0, y: 2)
                 VStack(spacing: -10) {
-                    ForEach(allItems.filter {
-                        gear in
-                        if gear.plan?.id == nil {
-                            return false
-                        }
-                        if plan.id == nil {
-                            return false
-                        }
-                        return gear.plan!.id!.uuidString == plan.id!.uuidString
-                    }.indices, id: \.self) { index in
+                    ForEach(filteredItems.indices, id: \.self) { index in
                         HStack (alignment: .center, spacing: 0){
-                            Text("\(allItems[index].name ?? "-")")
+                            Text("\(filteredItems[index].name ?? "-")")
                         }
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
