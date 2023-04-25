@@ -36,7 +36,7 @@ class MyTripViewModel: ObservableObject {
                   let start = plan.startDate ?? Date()
                   let end = plan.endDate ?? Date()
                   let imageURL = destination.imageURL ?? ""
-                  return PlanDetail(destination: destination, start: start, end: end, imageURL: imageURL)
+                  return PlanDetail(destination: destination, start: start, end: end, imageURL: imageURL, plan: plan)
               }
               return planDetails
           } catch {
@@ -105,6 +105,7 @@ class MyTripViewModel: ObservableObject {
                 if let index = planDetails.firstIndex(of: planDetail) {
                     planDetails.remove(at: index)
                 }
+                //updatePlanDetails()
             }
         } catch {
             print("Error deleting plan: \(error)")
@@ -134,6 +135,9 @@ class MyTripViewModel: ObservableObject {
         }
     }
     
+    func updatePlanDetails() {
+        planDetails = fetchAllPlans()
+    }
 }
 
 // The PlanDetail struct that represents the details of a plan
@@ -144,11 +148,9 @@ struct PlanDetail:Identifiable,Equatable {
     var start: Date
     var end: Date
     var imageURL: String
+    let plan: Plan
+    var id = UUID()
     
-    var id: String {
-        return imageURL
-        
-    }
     static func ==(lhs: PlanDetail, rhs: PlanDetail) -> Bool {
             return lhs.destination == rhs.destination && lhs.start == rhs.start && lhs.end == rhs.end && lhs.imageURL == rhs.imageURL
         }

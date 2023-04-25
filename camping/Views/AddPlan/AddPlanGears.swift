@@ -26,23 +26,25 @@ struct AddPlanGears: View {
     var body: some View {
         VStack {
             List {
-                TextField("Name", text: $gearName)
-                ForEach(allItems.filter {
-                    gear in
-                    if gear.plan?.id == nil {
-                        return false
+                Section(header: Text("Gears for Trip")){
+                    TextField("Name", text: $gearName)
+                    ForEach(allItems.filter {
+                        gear in
+                        if gear.plan?.id == nil {
+                            return false
+                        }
+                        if plan.id == nil {
+                            return false
+                        }
+                        return gear.plan!.id!.uuidString == plan.id!.uuidString
+                    }) { item in
+                        Text("\(item.name ?? "-")")
                     }
-                    if plan.id == nil {
-                        return false
-                    }
-                    return gear.plan!.id!.uuidString == plan.id!.uuidString
-                }) { item in
-                    Text("\(item.name ?? "-")")
+                    .onDelete(perform: {
+                        indexSet in
+                        deleteItems(indexSet: indexSet)
+                    })
                 }
-                .onDelete(perform: {
-                    indexSet in
-                    deleteItems(indexSet: indexSet)
-                })
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

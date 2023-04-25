@@ -13,6 +13,8 @@ struct EditPlanView: View {
     @State private var isStartDatePickerVisible = false
     @State private var isEndDatePickerVisible = false
     @State private var dateFormatter = formatter()
+    @State private var startDate: Date = .today
+    @State private var endDate: Date = .tomorrow
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         
@@ -39,28 +41,45 @@ struct EditPlanView: View {
                         .padding(.top,55)
                     
                 }
-            } .ignoresSafeArea()
-         
-            HStack{
-                VStack{
-                    Text(planDetail.destination.name ?? "")
-                        .font(.title)
-                        .fontWeight(.bold)
-                }
-                Image(systemName: "tent")
             }
-            .padding(.top,-60)
+            
+           .ignoresSafeArea()
+            HStack{
+                Label("Trip Status: Editing", systemImage: "pencil.circle.fill")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(width: 350, height: 40)
+                    .background(Color.cyan)
+                    .cornerRadius(15)
+
+            }
+            .padding(.top,-80)
+            .padding(.bottom,15)
+          
             Spacer()
             
-            ScrollView{
+            ScrollView(){
                 VStack(alignment: .leading){
+                    HStack{
+                        VStack(alignment:.leading){
+                            Text(planDetail.destination.name ?? "")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                        }
+                        Image(systemName: "tent")
+                    }.padding(.bottom, -10)
+                        .padding()
+                    
+                    
+                    
+                    
                     Text("Start Date")
                     Button(
                         action: {
                             self.isStartDatePickerVisible.toggle()
                         }, label: {
                             HStack {
-                                Image(systemName: "location")
+                                Image(systemName: "clock")
                                 Text(
                                     dateFormatter.string(from: planDetail.start)
                                 )
@@ -79,6 +98,7 @@ struct EditPlanView: View {
                         DatePicker(
                             "",
                             selection: $planDetail.start,
+                            in: Date.today...,
                             displayedComponents: [.date, .hourAndMinute]
                         )
                         .labelsHidden()
@@ -94,6 +114,7 @@ struct EditPlanView: View {
                         .frame(maxWidth: .infinity)
                         .cornerRadius(10)
                         .padding(.bottom)
+                        .padding(.top, -20)
                     }
                     
                     
@@ -105,7 +126,7 @@ struct EditPlanView: View {
                                 
                             }, label: {
                                 HStack {
-                                    Image(systemName: "location")
+                                    Image(systemName: "clock")
                                     Text(
                                         dateFormatter.string(from: planDetail.end)
                                     )
@@ -124,6 +145,7 @@ struct EditPlanView: View {
                             DatePicker(
                                 "",
                                 selection: $planDetail.end,
+                                in: Date.today...,
                                 displayedComponents: [.date, .hourAndMinute]
                             )
                             .labelsHidden()
@@ -138,6 +160,7 @@ struct EditPlanView: View {
                             )
                             .frame(maxWidth: .infinity)
                             .cornerRadius(10)
+                            .padding(.top, -20)
                             .padding(.bottom)
                         }
                         Spacer()
@@ -149,18 +172,35 @@ struct EditPlanView: View {
                         }
                         .bold()
                         .frame(width: 280, height: 50)
-                        .background(Color.black)
+                        .background(submitButtonBackground)
                         .foregroundColor(.white)
                         .cornerRadius(50)
+                        .padding(.leading,15)
+                        .disabled(!isFormValid)
                     }.padding([.bottom], 50)
                         
                         
                     }
+                .padding([.leading, .bottom, .trailing], 40)
                 }
-                .padding([.leading, .bottom, .trailing], 60)
-            }
+            
+
+            .padding(.top,-55)
+            .ignoresSafeArea()
+            
         }
+        }
+    
+    var isFormValid: Bool {
+        let correctDates = planDetail.start.timeIntervalSince1970 <= planDetail.end.timeIntervalSince1970
+        return correctDates
     }
+    
+    var submitButtonBackground: Color {
+        return isFormValid ? Color.black : Color.gray
+    }
+
+}
 
 
 func formatter() -> DateFormatter {

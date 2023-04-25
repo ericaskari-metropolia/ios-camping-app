@@ -19,30 +19,43 @@ struct WeatherCardView: View {
             HStack {
                 // Filter the weather data based on the startTimestamp and show data for the next 14 days
                 ForEach(weatherForecast.list.filter({ $0.dt >= startTimestamp }).prefix(10), id: \.dt) { weatherList in
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 5) {
                         Text(formattedDate(from: weatherList.dt))
+                            .font(.subheadline)
+                            .foregroundColor(.white)
                         AsyncImage(url: weatherList.weather[0].weatherIconUrl) { image in
                             image
                                 .resizable()
-                                .scaledToFit()
+                                .aspectRatio(contentMode: .fit)
                                 .cornerRadius(15)
+                                
                         } placeholder: {
                             // if the image is still loading, show a ProgressView
                             ProgressView()
                         }
+                        .frame(width: 95, height: 50, alignment: .center)
                         HStack {
                             Text("Max: \(Int(weatherList.temp.max - 273.15))°C ")
+                                .font(.caption)
+                                .foregroundColor(.white)
                             Spacer()
                             Text("Min: \(Int(weatherList.temp.min - 273.15))°C")
+                                .font(.caption)
+                                .foregroundColor(.white)
                         }
                         Text(weatherList.weather[0].description.uppercased())
-                    }.padding(10)
+                            .font(.caption)
+                            .foregroundColor(.white)
+                    }
+                    .padding(10)
                     .background(Rectangle()
                         .foregroundColor(Color(red: 135/255, green: 206/255, blue: 235/255))
                         .cornerRadius(20)
                         .shadow(radius: 10))
                     .padding(5)
                 }
+            
+
                 // If there is no weather data available for the next 14 days,show data for the next 14 days
                 if weatherForecast.list.filter({ $0.dt >= startTimestamp }).count < 14 {
                     VStack{

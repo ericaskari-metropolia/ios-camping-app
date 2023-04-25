@@ -29,7 +29,7 @@ struct OnGoingTripScrollView: View {
     
     //An array of plandetail object
     let planDetails: [PlanDetail]
-    
+
     var body: some View {
         ScrollView(.horizontal,showsIndicators: false) {
             HStack(spacing: 10) {
@@ -43,8 +43,10 @@ struct OnGoingTripScrollView: View {
                     
                 }
             }
+            
             .padding(.horizontal, 20)
         }
+        
     }
 }
 
@@ -56,6 +58,7 @@ struct OnGoingTripDetailScreen: View {
     @State private var showingAlert = false
     @State private var showingActionSheet = false
     @State private var isEditing = false
+    @State private var isDeleting = false
     
     @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
     
@@ -65,6 +68,10 @@ struct OnGoingTripDetailScreen: View {
         NavigationLink(destination: EditPlanView(planDetail: planDetail), isActive: $isEditing) {
             EmptyView()
         }
+        NavigationLink(destination: DeletePlanView(planDetail: planDetail), isActive: $isDeleting) {
+            EmptyView()
+        }
+
         VStack(alignment: .leading, spacing: 10) {
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
                 
@@ -101,7 +108,7 @@ struct OnGoingTripDetailScreen: View {
                                     },
                                     .destructive(Text("Delete")) {
                                         // Show the delete confirmation alert
-                                        showingAlert = true
+                                        isDeleting = true
                                     },
                                     .cancel()
                                 ])
@@ -137,6 +144,8 @@ struct OnGoingTripDetailScreen: View {
                   primaryButton: .destructive(Text("Delete")) {
                 
                 viewModel.deletePlan(planDetail)
+                viewModel.updatePlanDetails()
+               
             }, secondaryButton: .cancel())
         }
     }

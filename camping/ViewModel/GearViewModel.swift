@@ -48,4 +48,19 @@ class GearViewModel: ObservableObject {
             print(nsError.userInfo)
         }
     }
+    
+    //  Mark as checked gear
+    func checkItem(gear: Gear) {
+        gear.checked = !gear.checked
+        do {
+            try context.save()
+            print("Gear checked!")
+        } catch {
+            print("Cannot check Gear.")
+            let nsError = error as NSError
+            print(nsError)
+            print(nsError.userInfo)
+        }
+    }
+    
 }
