@@ -13,8 +13,6 @@ import CoreData
 
 struct HomeView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
-    @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
-    @FetchRequest(entity: Plan.entity(), sortDescriptors:[]) var planResults: FetchedResults<Plan>
     
     var body: some View {
         VStack(spacing: 5){
