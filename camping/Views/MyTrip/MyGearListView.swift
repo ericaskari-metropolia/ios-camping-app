@@ -28,26 +28,18 @@ struct MyGearListView: View {
                     .fill(Color.white)
                     .shadow(color: Color.gray.opacity(0.5), radius: 5, x: 0, y: 2)
                 VStack(spacing: -10) {
-                    ForEach(allItems.filter {
-                        gear in
-                        if gear.plan?.id == nil {
-                            return false
-                        }
-                        if plan.id == nil {
-                            return false
-                        }
-                        return gear.plan!.id!.uuidString == plan.id!.uuidString
-                    }.indices, id: \.self) { index in
+                    ForEach(filteredItems.indices, id: \.self) { index in
                         HStack (alignment: .center, spacing: 0){
-                            Text("\(allItems[index].name ?? "-")")
+                            Text("\(filteredItems[index].name ?? "-")")
                             Spacer()
-                            Image(systemName: allItems[index].checked ? "checkmark.square.fill" : "square")
-                                .foregroundColor(allItems[index].checked ? Color(UIColor.systemBlue) : Color.secondary)
-                                .onTapGesture {gearViewModel.checkItem(gear: allItems[index])}
+                            Image(systemName: filteredItems[index].checked ? "checkmark.square.fill" : "square")
+                                .foregroundColor(filteredItems[index].checked ? Color(UIColor.systemBlue) : Color.secondary)
+                                .onTapGesture {gearViewModel.checkItem(gear: filteredItems[index])}
                         }
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .background(index % 2 == 0 ? Color.white.cornerRadius(10) : Color.gray.opacity(0.1).cornerRadius(10))
+                       
                     }
                 }
             }
