@@ -7,23 +7,45 @@
 
 import SwiftUI
 
-struct PlanNewTripButtonView: View {
+struct PlanNewTripButtonView<Content: View>: View {
+    var campsite: CampingSite?
+    var completed: () -> ()
+
+    let label: Content
+
+    init(campsite: CampingSite?, @ViewBuilder _ label: () -> Content, completed: @escaping () -> ()) {
+        self.campsite = campsite
+        self.label = label()
+        self.completed = completed
+    }
+
     var body: some View {
-        HStack {
-            Spacer()
-            Text("Plan new trip")
-                .font(.system(.title3, design: .rounded))
-                .foregroundColor(.white)
-            Spacer()
-        }
-        .padding(15)
-        .background(Color.primary)
-        .clipShape(Capsule())
+        NavigationLink(
+            destination: AddPlanView(
+                isDestinationLocationPassedFromParent: campsite != nil,
+                destinationLocation: campsite,
+                completed: {
+                    print("[PlanNewTripButtonView] completed")
+                    completed()
+                }
+            ),
+            label: {
+                label
+            }
+        )
     }
 }
 
 struct PlanNewTripButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        PlanNewTripButtonView()
+        PlanNewTripButtonView(
+            campsite: nil,
+            {
+                Text("Plan new trip")
+
+            }, completed: {
+                print("[PlanNewTripButtonView_Previews] completed")
+            }
+        )
     }
 }

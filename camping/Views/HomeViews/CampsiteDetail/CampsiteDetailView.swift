@@ -20,49 +20,16 @@ struct CampsiteDetailView: View {
     @State var weather: ResponseBody?
     
     var body: some View {
-        NavigationView {
             VStack(){
                 // Campsite Image
-                ZStack(alignment: .top){
-                    
-                    AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(maxWidth: UIScreen.main.bounds.width)
-                            .frame(height: 300)
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    
-                    VStack(spacing: 0.0){
-                        HStack {
-                            
-                            // Button to go back previous page
-                            Button{
-                                dismiss()
-                            } label: {
-                                Image(systemName: "chevron.left.circle.fill")
-                                    .font(.title)
-                                    .foregroundColor(.white)
-                                    .padding()
-                            }
-                            
-                            Spacer()
-                            
-                            // Button to add or remove campsite from favorite
-                            Button{
-                                campsite.isFavorite.toggle()
-                            } label: {
-                                Image(systemName: "heart.fill")
-                                    .font(.title)
-                                    .foregroundColor(campsite.isFavorite ? .red : .white)
-                                    .padding()
-                                
-                            }
-                        }
-                        .padding(EdgeInsets(top: 50, leading: 20, bottom: 0, trailing: 20))
-                    }
+                AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: UIScreen.main.bounds.width)
+                        .frame(height: 300)
+                } placeholder: {
+                    ProgressView()
                 }
                 .background(Color.clear)
                 
@@ -160,12 +127,16 @@ struct CampsiteDetailView: View {
                                 ViewOnMapButtonView()
                             }
                             
-                            NavigationLink{
-                                Text("Add campsite to add plan as default destination")
-                            } label: {
-                                PlanNewTripButtonView()
+                            PlanNewTripButtonView(campsite: campsite) {
+                                Text("Plan new trip")
+                                    .font(.system(.title3, design: .rounded))
+                                    .foregroundColor(.white)
+                            } completed: {
+                                // Nothing to do
                             }
-                            
+                            .padding(15)
+                            .background(Color.primary)
+                            .clipShape(Capsule())
                             
                         }
                         .padding()
@@ -175,8 +146,16 @@ struct CampsiteDetailView: View {
                 
             }
             .edgesIgnoringSafeArea(.top)
-        }
-        .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        campsite.isFavorite.toggle()
+                    } label: {
+                        Image(systemName: campsite.isFavorite ? "heart.fill" : "heart")
+                            .foregroundColor(campsite.isFavorite ? .red : .black)
+                    }
+                }
+            }
     }
     
 }

@@ -63,14 +63,17 @@ extension MyTripsEmptyView {
                 .frame(maxWidth: 400, maxHeight: 250)
                 .padding(.top,-20)
                 .padding(.horizontal,20)
-            Text("Oops!! You don't have any plans yet!!")
-                .padding(.bottom,20)
-            Label("Create new trip", systemImage: "plus")
-                .foregroundColor(.white)
-                .frame(width: 300, height: 50)
-                .background(Color.black)
-                .cornerRadius(15)
-            
+
+            PlanNewTripButtonView(campsite: nil) {
+                Label("Create new trip", systemImage: "plus")
+                    .foregroundColor(.white)
+                    .frame(width: 300, height: 50)
+                    .background(Color.black)
+                    .cornerRadius(15)
+            } completed: {
+                // Nothing to do
+            }
+
             Spacer()
         }
     }

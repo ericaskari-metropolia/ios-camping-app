@@ -11,21 +11,41 @@ import MapKit
 import SwiftUI
 
 struct AddPlanView: View {
-    //  To Access Plans and save them
-    @StateObject var viewModel: PlanViewModel = .init()
-    //  To Access Campsites to show on map
-    @StateObject var locationViewModel: LocationViewModel = .init()
+    @Environment(\.dismiss) var dismiss
 
+    //  To Access Plans and save them
+    @EnvironmentObject var planViewModel: PlanViewModel
+
+    @EnvironmentObject var locationViewModel: LocationViewModel
+
+    // Disable Destination Form Field (Allowed to be passed from parent)
+    @State var isDestinationLocationPassedFromParent = false
+
+    // Disable/Enable Dismiss when pressed on close from Overview (Allowed to be passed from parent)
+    @State var dismissOnAppearEnabled = true
+
+    //  State of Modal
     @State private var isStartLocationModalOpen = false
+    //  State of Modal
     @State private var isDestinationLocationModalOpen = false
+
+    //  State of DatePicker
     @State private var isStartDatePickerVisible = false
+    //  State of DatePicker
     @State private var isEndDatePickerVisible = false
-    @State var startLocation: CLLocationCoordinate2D?
-    @State var destinationLocation: CampingSite?
+
+    //  State of Form Field
+    @State private var dismissOnAppear: Bool = false
+    //  State of Form Field
     @State private var startDate: Date = .today
+    //  State of Form Field
     @State private var endDate: Date = .tomorrow
+    //  State of Form Field
     @State private var dateFormatter = formatter()
-    @State private var annotations: [CampingSiteData] = []
+    //  State of Form Field
+    @State private var startLocation: CLLocationCoordinate2D?
+    //  State of Form Field (Allowed to be passed from parent)
+    @State var destinationLocation: CampingSite?
 
     // Output
     @State var savedPlan: Plan?
@@ -81,6 +101,7 @@ struct AddPlanView: View {
                         .frame(height: 50)
                         .contentShape(Rectangle())
                         .cornerRadius(10)
+                        .disabled(isDestinationLocationPassedFromParent)
                         .sheet(isPresented: $isDestinationLocationModalOpen) {
                             AddPlanChooseDestinationLocationModalView(
                                 isPresented: self.$isDestinationLocationModalOpen
@@ -185,22 +206,22 @@ struct AddPlanView: View {
                             destination: AddPlanOverview(
                                 savedPlan: savedPlan,
                                 completed: {
+                                    if dismissOnAppearEnabled {
+                                        self.dismissOnAppear = true
+                                    }
                                     completed()
                                 }
-                            )
-                            .environmentObject(PlanViewModel()),
+                            ),
                             label: {
                                 Text("Create trip")
                             }
-                        ).simultaneousGesture(TapGesture().onEnded {
-                            let value = value()
-                            print("isFormValid: \(isFormValid)")
-                            print("isValueNil: \(value == nil)")
-                            print("isSavedPlanNil: \(savedPlan == nil)")
+                        )
+                        .simultaneousGesture(TapGesture().onEnded {
+                            let formOutput = getFormOutput()
 
                             if isFormValid {
                                 if savedPlan == nil {
-                                    savedPlan = viewModel.savePlan(input: value!)
+                                    savedPlan = planViewModel.savePlan(input: formOutput!)
                                 }
                             }
                         })
@@ -218,7 +239,14 @@ struct AddPlanView: View {
 
         }.ignoresSafeArea()
             .onAppear {
-                reset()
+                reset(
+                    resetDestinationLocation: !isDestinationLocationPassedFromParent
+                )
+
+                if dismissOnAppearEnabled && dismissOnAppear {
+                    dismissOnAppear = false
+                    dismiss()
+                }
             }
     }
 
@@ -234,7 +262,7 @@ struct AddPlanView: View {
         return isFormValid ? Color.black : Color.gray
     }
 
-    func value() -> NewPlan? {
+    func getFormOutput() -> NewPlan? {
         //  It should be used only when form is validated and fields are filled
         guard let startLocation = startLocation else {
             return nil
@@ -250,13 +278,28 @@ struct AddPlanView: View {
         )
     }
 
-    func reset() {
-        startLocation = nil
-        destinationLocation = nil
-        startDate = Date.today
-        endDate = Date.tomorrow
+    // Reset Form Function
+    func reset(
+        resetStartLocation: Bool = true,
+        resetDestinationLocation: Bool = true,
+        resetStartDateLocation: Bool = true,
+        resetEndDateLocation: Bool = true
+    ) {
+        if resetStartLocation {
+            startLocation = nil
+        }
+        if resetDestinationLocation {
+            destinationLocation = nil
+        }
+        if resetStartDateLocation {
+            startDate = Date.today
+        }
+        if resetEndDateLocation {
+            endDate = Date.tomorrow
+        }
     }
 
+    // Date Formatter for fields
     static func formatter() -> DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm E, d MMM y"
@@ -267,7 +310,7 @@ struct AddPlanView: View {
 struct AddPlanView_Previews: PreviewProvider {
     static var previews: some View {
         AddPlanView {
-            print("AddPlanView_Previews: Completed")
+            print("[AddPlanView_Previews]: Completed")
         }
         .environmentObject(LocationViewModel())
         .environmentObject(PlanViewModel())

@@ -153,18 +153,23 @@ extension MyTripsFilledView {
     }
     
     
-    //View to display add new trip button
-    private var createNewTripButton : some View {
-        Label("Create new trip", systemImage: "plus")
-            .foregroundColor(.white)
-            .frame(width: 350, height: 50)
-            .background(Color.black)
-            .cornerRadius(15)
+    // View to display add new trip button
+    private var createNewTripButton: some View {
+        PlanNewTripButtonView(campsite: nil) {
+            Label("Create new trip", systemImage: "plus")
+                .foregroundColor(.white)
+                .frame(width: 350, height: 50)
+                .background(Color.black)
+                .cornerRadius(15)
+        } completed: {
+            // Nothing to do
+        }
     }
 }
 
 struct MyTripsFilledView_Previews: PreviewProvider {
     static var previews: some View {
         MyTripsFilledView()
+            .environmentObject(LocationViewModel())
     }
 }

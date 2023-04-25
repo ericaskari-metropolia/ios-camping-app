@@ -99,11 +99,16 @@ struct PastTripInfoView: View {
                 }
                 .padding()
                 Spacer()
-                Label("Plan Again", systemImage: "plus")
-                    .foregroundColor(.white)
-                    .frame(width: 350, height: 50)
-                    .background(Color.black)
-                    .cornerRadius(15)
+                PlanNewTripButtonView(campsite: planDetail.plan.campingSite) {
+                    Label("Plan Again", systemImage: "plus")
+                        .foregroundColor(.white)
+                        .frame(width: 350, height: 50)
+                        .background(Color.black)
+                        .cornerRadius(15)
+                } completed: {
+                    
+                }
+
             }
             .padding()
             .padding(.top,-65)

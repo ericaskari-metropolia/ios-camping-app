@@ -24,7 +24,9 @@ struct NavigationTabView: View {
                 }
                 .tag(1)
                 .environmentObject(locationViewModel)
-            AddPlanView(completed: {
+            AddPlanView(
+                dismissOnAppearEnabled: false,
+                completed: {
                 print("Changing tab selection")
                 self.tabSelection = 1
             })
@@ -55,6 +57,6 @@ struct NavigationTabView: View {
 struct NavigationTabView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationTabView()
-                    .environmentObject(LocationViewModel())
+            .environmentObject(LocationViewModel())
     }
 }
