@@ -127,14 +127,16 @@ struct CampsiteDetailView: View {
                                 ViewOnMapButtonView()
                             }
                             
-                            NavigationLink{
-                                Text("Add campsite to add plan as default destination")
-                            } label: {
-                                PlanNewTripButtonView(campsite: campsite) {
-                                    //  Nothing todo
-                                }
+                            PlanNewTripButtonView(campsite: campsite) {
+                                Text("Plan new trip")
+                                    .font(.system(.title3, design: .rounded))
+                                    .foregroundColor(.white)
+                            } completed: {
+                                // Nothing to do
                             }
-                            
+                            .padding(15)
+                            .background(Color.primary)
+                            .clipShape(Capsule())
                             
                         }
                         .padding()

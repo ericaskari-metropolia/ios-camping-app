@@ -17,6 +17,7 @@ struct CampingApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(LocationViewModel())
                 .environmentObject(PlanViewModel())
+                .environmentObject(MyTripViewModel(context: persistenceController.container.viewContext))
         }
     }
 }
