@@ -19,166 +19,15 @@ struct EditPlanView: View {
     var body: some View {
         
         VStack{
-            ZStack(alignment: .top) {
-                if  let imgURL = URL(string: planDetail.imageURL) {
-                    //create an AsyncImage with the URL
-                    AsyncImage(url: imgURL) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(height: 300)
-                            .frame(maxWidth: .infinity)
-                    } placeholder: {
-                        // if the image is still loading, show a ProgressView
-                        ProgressView()
-                    }
-                }
-                VStack{
-                    Text("Edit Plan")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.top,55)
-                    
-                }
-            }
+         editPlanHeader
             
             .ignoresSafeArea()
-            VStack{
-                HStack{
-                    Label("Trip Status: Editing", systemImage: "pencil.circle.fill")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(width: 350, height: 40)
-                        .background(Color.cyan)
-                        .cornerRadius(15)
-                    
-                }    
-                HStack{
-                    VStack(alignment:.leading){
-                        Text(planDetail.destination.name ?? "")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                    }
-                    Image(systemName: "tent")
-                }
-                .padding()
-            }
-            .padding(.bottom, 40)
-            .padding(.top,-80)
+          planStatusCard
             
             Spacer()
             
             ScrollView(){
-                VStack(alignment: .leading){
-                    Text("Start Date")
-                    Button(
-                        action: {
-                            self.isStartDatePickerVisible.toggle()
-                        }, label: {
-                            HStack {
-                                Image(systemName: "clock")
-                                Text(
-                                    dateFormatter.string(from: planDetail.start)
-                                )
-                                Spacer()
-                            }.padding(.vertical)
-                        }
-                    )
-                    .buttonStyle(.bordered)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .contentShape(Rectangle())
-                    .cornerRadius(10)
-                    .padding(.bottom)
-                    
-                    if isStartDatePickerVisible {
-                        DatePicker(
-                            "",
-                            selection: $planDetail.start,
-                            in: Date.today...,
-                            displayedComponents: [.date, .hourAndMinute]
-                        )
-                        .labelsHidden()
-                        .datePickerStyle(.graphical)
-                        
-                        Button(
-                            action: {
-                                self.isStartDatePickerVisible.toggle()
-                            }, label: {
-                                Text("Close")
-                            }
-                        )
-                        .frame(maxWidth: .infinity)
-                        .cornerRadius(10)
-                        .padding(.bottom)
-                        .padding(.top, -20)
-                    }
-                    
-                    
-                    VStack(alignment: .leading) {
-                        Text("End Date")
-                        Button(
-                            action: {
-                                self.isEndDatePickerVisible.toggle()
-                                
-                            }, label: {
-                                HStack {
-                                    Image(systemName: "clock")
-                                    Text(
-                                        dateFormatter.string(from: planDetail.end)
-                                    )
-                                    Spacer()
-                                }.padding(.vertical)
-                            }
-                        )
-                        .buttonStyle(.bordered)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 50)
-                        .contentShape(Rectangle())
-                        .cornerRadius(10)
-                        .padding(.bottom)
-                        
-                        if isEndDatePickerVisible {
-                            DatePicker(
-                                "",
-                                selection: $planDetail.end,
-                                in: Date.today...,
-                                displayedComponents: [.date, .hourAndMinute]
-                            )
-                            .labelsHidden()
-                            .datePickerStyle(.graphical)
-                            
-                            Button(
-                                action: {
-                                    self.isEndDatePickerVisible.toggle()
-                                }, label: {
-                                    Text("Close")
-                                }
-                            )
-                            .frame(maxWidth: .infinity)
-                            .cornerRadius(10)
-                            .padding(.top, -20)
-                            .padding(.bottom)
-                        }
-                        Spacer()
-                        Button("Save Changes") {
-                            
-                            // Save changes and dismiss the view
-                            viewModel.editPlan(planDetail: planDetail, startDate: planDetail.start, endDate: planDetail.end)
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                        .bold()
-                        .frame(width: 280, height: 50)
-                        .background(submitButtonBackground)
-                        .foregroundColor(.white)
-                        .cornerRadius(50)
-                        .padding(.leading,15)
-                        .disabled(!isFormValid)
-                    }.padding([.bottom], 50)
-                    
-                    
-                }
+               editPlanDatePickerCard
                 .padding([.leading, .bottom, .trailing], 40)
             }
             
@@ -206,7 +55,168 @@ func formatter() -> DateFormatter {
     formatter.dateFormat = "HH:mm E, d MMM y"
     return formatter
 }
-
+extension EditPlanView {
+    private var editPlanHeader: some View {
+        ZStack(alignment: .top) {
+            if  let imgURL = URL(string: planDetail.imageURL) {
+                //create an AsyncImage with the URL
+                AsyncImage(url: imgURL) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 300)
+                        .frame(maxWidth: .infinity)
+                } placeholder: {
+                    // if the image is still loading, show a ProgressView
+                    ProgressView()
+                }
+            }
+            VStack{
+                Text("Edit Plan")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.top,55)
+                
+            }
+        }
+    }
+    private var planStatusCard: some View {
+        VStack{
+            HStack{
+                Label("Trip Status: Editing", systemImage: "pencil.circle.fill")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(width: 350, height: 40)
+                    .background(Color.cyan)
+                    .cornerRadius(15)
+                
+            }
+            HStack{
+                VStack(alignment:.leading){
+                    Text(planDetail.destination.name ?? "")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                }
+                Image(systemName: "tent")
+            }
+            .padding()
+        }
+        .padding(.bottom, 40)
+        .padding(.top,-80)
+    }
+    private var editPlanDatePickerCard: some View {
+        VStack(alignment: .leading){
+            Text("Start Date")
+            Button(
+                action: {
+                    self.isStartDatePickerVisible.toggle()
+                }, label: {
+                    HStack {
+                        Image(systemName: "clock")
+                        Text(
+                            dateFormatter.string(from: planDetail.start)
+                        )
+                        Spacer()
+                    }.padding(.vertical)
+                }
+            )
+            .buttonStyle(.bordered)
+            .frame(maxWidth: .infinity)
+            .frame(height: 50)
+            .contentShape(Rectangle())
+            .cornerRadius(10)
+            .padding(.bottom)
+            
+            if isStartDatePickerVisible {
+                DatePicker(
+                    "",
+                    selection: $planDetail.start,
+                    in: Date.today...,
+                    displayedComponents: [.date, .hourAndMinute]
+                )
+                .labelsHidden()
+                .datePickerStyle(.graphical)
+                
+                Button(
+                    action: {
+                        self.isStartDatePickerVisible.toggle()
+                    }, label: {
+                        Text("Close")
+                    }
+                )
+                .frame(maxWidth: .infinity)
+                .cornerRadius(10)
+                .padding(.bottom)
+                .padding(.top, -20)
+            }
+            
+            
+            VStack(alignment: .leading) {
+                Text("End Date")
+                Button(
+                    action: {
+                        self.isEndDatePickerVisible.toggle()
+                        
+                    }, label: {
+                        HStack {
+                            Image(systemName: "clock")
+                            Text(
+                                dateFormatter.string(from: planDetail.end)
+                            )
+                            Spacer()
+                        }.padding(.vertical)
+                    }
+                )
+                .buttonStyle(.bordered)
+                .frame(maxWidth: .infinity)
+                .frame(height: 50)
+                .contentShape(Rectangle())
+                .cornerRadius(10)
+                .padding(.bottom)
+                
+                if isEndDatePickerVisible {
+                    DatePicker(
+                        "",
+                        selection: $planDetail.end,
+                        in: Date.today...,
+                        displayedComponents: [.date, .hourAndMinute]
+                    )
+                    .labelsHidden()
+                    .datePickerStyle(.graphical)
+                    
+                    Button(
+                        action: {
+                            self.isEndDatePickerVisible.toggle()
+                        }, label: {
+                            Text("Close")
+                        }
+                    )
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(10)
+                    .padding(.top, -20)
+                    .padding(.bottom)
+                }
+                Spacer()
+                Button("Save Changes") {
+                    
+                    // Save changes and dismiss the view
+                    viewModel.editPlan(planDetail: planDetail, startDate: planDetail.start, endDate: planDetail.end)
+                    presentationMode.wrappedValue.dismiss()
+                }
+                .bold()
+                .frame(width: 280, height: 50)
+                .background(submitButtonBackground)
+                .foregroundColor(.white)
+                .cornerRadius(50)
+                .padding(.leading,15)
+                .disabled(!isFormValid)
+            }.padding([.bottom], 50)
+            
+            
+        }
+    }
+}
 
 //struct EditPlanView_Previews: PreviewProvider {
 //    static var previews: some View {

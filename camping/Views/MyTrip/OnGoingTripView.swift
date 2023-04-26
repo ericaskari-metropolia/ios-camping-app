@@ -29,7 +29,7 @@ struct OnGoingTripScrollView: View {
     
     //An array of plandetail object
     let planDetails: [PlanDetail]
-
+    
     var body: some View {
         ScrollView(.horizontal,showsIndicators: false) {
             HStack(spacing: 10) {
@@ -71,7 +71,7 @@ struct OnGoingTripDetailScreen: View {
         NavigationLink(destination: DeletePlanView(planDetail: planDetail), isActive: $isDeleting) {
             EmptyView()
         }
-
+        
         VStack(alignment: .leading, spacing: 10) {
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
                 
@@ -145,10 +145,14 @@ struct OnGoingTripDetailScreen: View {
                 
                 viewModel.deletePlan(planDetail)
                 viewModel.updatePlanDetails()
-               
+                
             }, secondaryButton: .cancel())
         }
     }
+}
+
+extension OnGoingTripDetailScreen {
+    
 }
 
 struct OnGoingTripView_Previews: PreviewProvider {
