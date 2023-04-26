@@ -9,7 +9,8 @@ import SwiftUI
 
 struct DeletePlanView: View {
     @State var planDetail: PlanDetail
-    @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
+    @EnvironmentObject var viewModel: MyTripViewModel
+
     @Environment(\.presentationMode) private var presentationMode
     var body: some View {
             VStack{

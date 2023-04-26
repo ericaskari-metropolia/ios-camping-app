@@ -13,7 +13,7 @@ struct AddPlanGears: View {
     var plan: Plan
     
     // States
-    @StateObject var gearViewModel: GearViewModel = .init()
+    @EnvironmentObject var gearViewModel: GearViewModel
     @State var gearName: String = ""
 
     // Data

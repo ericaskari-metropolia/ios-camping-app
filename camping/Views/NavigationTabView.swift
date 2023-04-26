@@ -23,7 +23,6 @@ struct NavigationTabView: View {
                     Text("Discovery")
                 }
                 .tag(1)
-                .environmentObject(locationViewModel)
             AddPlanView(
                 dismissOnAppearEnabled: false,
                 completed: {

@@ -11,8 +11,8 @@ import SwiftUI
 
 struct OnGoingTripView: View {
     
-    @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
-    
+    @EnvironmentObject var viewModel: MyTripViewModel
+
     var body: some View {
         VStack {
             OnGoingTripScrollView(planDetails: viewModel.ongoingPlanDetails())
@@ -60,8 +60,8 @@ struct OnGoingTripDetailScreen: View {
     @State private var isEditing = false
     @State private var isDeleting = false
     
-    @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
-    
+    @EnvironmentObject var viewModel: MyTripViewModel
+
     
     var body: some View {
         

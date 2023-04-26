@@ -12,17 +12,11 @@ import MapKit
 
 
 class MyTripViewModel: ObservableObject {
+    let context = PersistenceController.shared.container.viewContext
+
     // Published properties that can be observed for changes
     @Published var planDetails: [PlanDetail] = []
     @Published var campingSites: [CampingSite] = []
-
-    // The context used for Core Data operations
-    private let context: NSManagedObjectContext
-
-    // The initializer for the view model
-    init(context: NSManagedObjectContext) {
-        self.context = context
-    }
 
 // A function that fetches all the plans from Core Data and converts them to PlanDetails
     func fetchAllPlans() -> [PlanDetail] {

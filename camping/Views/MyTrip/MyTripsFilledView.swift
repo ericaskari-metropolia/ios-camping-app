@@ -13,12 +13,7 @@ struct MyTripsFilledView: View {
     
     // Use @EnvironmentObject property wrapper to inject an instance of LocationViewModel into this view
     @EnvironmentObject var locationViewModel: LocationViewModel
-    
-    // Use @Environment property wrapper to inject the managed object context into this view
-    @Environment(\.managedObjectContext) var context
-
-    // Use @StateObject property wrapper to create an instance of MyTripViewModel for this view
-    @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
+    @EnvironmentObject var viewModel: MyTripViewModel
     
     @FetchRequest(sortDescriptors: []) var plans: FetchedResults<Plan>
     

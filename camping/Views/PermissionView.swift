@@ -25,14 +25,12 @@ struct PermissionView: View {
                 .onAppear{
                     locationViewModel.fetchCampingSites()
                 }
-                .environmentObject(locationViewModel)
             // When the use refused, display error view
         case .denied, .restricted:
             ErrorView()
             // When the use allowed, go to NavigationTabView
         case .authorizedWhenInUse, .authorizedAlways:
             NavigationTabView()
-                .environmentObject(locationViewModel)
         default:
             Text("Default")
         }
