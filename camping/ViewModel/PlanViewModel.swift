@@ -25,10 +25,10 @@ final class PlanViewModel: NSObject, ObservableObject {
 
         do {
             try context.save()
-            print("Plan Saved!")
+            print("[PlanViewModel] Plan Saved!")
             return plan
         } catch {
-            print("Cannot save Plan.")
+            print("[PlanViewModel] Cannot save Plan.")
             return nil
         }
     }
