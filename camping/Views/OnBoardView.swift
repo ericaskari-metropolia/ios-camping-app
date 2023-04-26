@@ -27,112 +27,105 @@ struct OnBoardView: View {
     //Initial state of the page
     @State private var currentStep = 0
     @State private var isFinishOnboarding = false
-    
-    init() {
-        
-        //Sets the global appearance of UIScroll view not to bounce at the end
-        UIScrollView.appearance().bounces = false
-    }
+    @State private var hasCompletedOnboarding = UserDefaults.standard.bool(forKey: "hasCompletedOnboarding")
+//    init() {
+//
+//        //Sets the global appearance of UIScroll view not to bounce at the end
+//        UIScrollView.appearance().bounces = false
+//
+//        // Check if the onboarding has been completed before
+//        if UserDefaults.standard.bool(forKey: "isOnboard") {
+//            // If yes, skip the onboarding screen and move to the next view
+//            self.isFinishOnboarding = true
+//        }
+//    }
     
     //UI logic for the onboard screen
     var body: some View {
         NavigationView {
-            ZStack{
-                Image(onBoardItems[currentStep].image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .edgesIgnoringSafeArea(.all)
-                VStack{
-                    HStack{
-                        Spacer()
-                        if currentStep > 0 {
-                            Image(systemName: "chevron.left")
-                                .onTapGesture {
-                                    currentStep -= 1
-                                }
-                        }
-                        Spacer()
-                        Image(systemName: "tent")
-                        Text("Camplify")
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Spacer()
-                        if currentStep < 2 {
-                            Image(systemName: "chevron.right")
-                                .onTapGesture {
-                                    currentStep += 1
-                                }
-                        }
-                        Spacer()
-                    } .padding()
-                    
-                    
-                    
-                    TabView(selection: $currentStep) {
-                        
-                        ForEach(0..<3) { item in
-                            
-                            VStack{
-                                Spacer()
-                                Text(onBoardItems[item].title)
-                                    .font(.title)
-                                    .bold()
-                                    .padding(.horizontal,40)
-                                
-                                Text(onBoardItems[item].description)
-                                    .multilineTextAlignment(.center)
-                                
-                                
-                            }
-                            .foregroundColor(.white)
-                            .tag(item)
-                        }
-                    }
-                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                    
-                    HStack{
-                        ForEach(0..<3) { item in
-                            if item == currentStep {
-                                Rectangle()
-                                    .frame(width: 20,height: 10)
-                                    .cornerRadius(10)
-                                    .foregroundColor(.black)
-                            } else {
-                                Circle()
-                                    .frame(width: 10, height:10)
-                                    .foregroundColor(.gray)
-                            }
-                        }
-                    }
-                    
-                    Button(action:{
-                        if self.currentStep < onBoardItems.count - 1 {
-                            self.currentStep += 1
-                        } else {
-                            //Get started logic
-                            self.isFinishOnboarding = true
-                        }
-                    }){
-                        Text( currentStep < onBoardItems.count - 1 ? "Next" : "Get Started")
-                            .font(.headline)
-                            .padding(16)
-                            .background(Color.black)
-                            .cornerRadius(16)
-                            .padding(.horizontal, 16)
-                            .foregroundColor(.white)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    
-                    NavigationLink(destination: PermissionView(), isActive: $isFinishOnboarding) {
-                        EmptyView()
-                    }
+            if hasCompletedOnboarding {
+                // TODO: Add navigation to the main screen
+                NavigationLink(destination: PermissionView(), isActive: $hasCompletedOnboarding) {
+                    EmptyView()
                 }
+            } else {
                 
+                ZStack{
+                    Image(onBoardItems[currentStep].image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .edgesIgnoringSafeArea(.all)
+                    VStack{
+                        
+                        TabView(selection: $currentStep) {
+                            
+                            ForEach(0..<3) { item in
+                                
+                                VStack{
+                                    Spacer()
+                                    Text(onBoardItems[item].title)
+                                        .font(.title)
+                                        .bold()
+                                        .padding(.horizontal,40)
+                                    
+                                    Text(onBoardItems[item].description)
+                                        .multilineTextAlignment(.center)
+                                    
+                                    
+                                }
+                                .foregroundColor(.white)
+                                .tag(item)
+                            }
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        
+                        HStack{
+                            ForEach(0..<3) { item in
+                                if item == currentStep {
+                                    Rectangle()
+                                        .frame(width: 20,height: 10)
+                                        .cornerRadius(10)
+                                        .foregroundColor(.black)
+                                } else {
+                                    Circle()
+                                        .frame(width: 10, height:10)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                        }
+                        
+                        Button(action:{
+                            if self.currentStep < onBoardItems.count - 1 {
+                                self.currentStep += 1
+                            } else {
+                                //Get started logic
+                                
+                                UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
+                                hasCompletedOnboarding = true
+                            }
+                        }){
+                            Text( currentStep < onBoardItems.count - 1 ? "Next" : "Get Started")
+                                .font(.headline)
+                                .padding(16)
+                                .background(Color.black)
+                                .cornerRadius(16)
+                                .padding(.horizontal, 16)
+                                .foregroundColor(.white)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                       
+                    }
+                    
+                }.background(Color(UIColor(red: 245/255, green: 246/255, blue: 245/255, alpha: 1.0)))
+
             }
-        }.background(Color(UIColor(red: 245/255, green: 246/255, blue: 245/255, alpha: 1.0)))
+            
+        }
+        }
     }
-}
+    
 
 
 
