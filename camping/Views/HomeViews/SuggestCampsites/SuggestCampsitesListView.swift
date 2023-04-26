@@ -31,6 +31,9 @@ struct SuggestCampsitesView: View {
         .onChange(of: userLocation, perform: { newValue in
             homeViewModel.suggestCampsiteBasedOnDistance(campingSites: results, userLatitude: newValue.coordinate.latitude, userLongitude: newValue.coordinate.longitude)
         })
+        .onAppear{
+            homeViewModel.suggestCampsiteBasedOnDistance(campingSites: results, userLatitude: userLocation.coordinate.latitude, userLongitude: userLocation.coordinate.longitude)
+        }
     }
 }
 

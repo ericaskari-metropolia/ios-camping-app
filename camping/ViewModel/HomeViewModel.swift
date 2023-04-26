@@ -54,7 +54,7 @@ class HomeViewModel: ObservableObject {
         } else {
             lastUserLocation = .init(latitude: userLatitude, longitude: userLongitude)
             suggestCampsites = campingSites.filter { campingSite in
-                calculateDistanceBetweenTwoCoordinates(campSiteLatitude: campingSite.latitude, campSiteLongitude: campingSite.longitude, userLatitude: userLatitude, userLongitude: userLongitude) <= 50
+                calculateDistanceBetweenTwoCoordinates(campSiteLatitude: campingSite.latitude, campSiteLongitude: campingSite.longitude, userLatitude: userLatitude, userLongitude: userLongitude) <= 150
             }
         }
         
