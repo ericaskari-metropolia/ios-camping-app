@@ -28,7 +28,6 @@ struct AddPlanView: View {
     @State private var isStartLocationModalOpen = false
     //  State of Modal
     @State private var isDestinationLocationModalOpen = false
-
     //  State of DatePicker
     @State private var isStartDatePickerVisible = false
     //  State of DatePicker
@@ -280,21 +279,31 @@ struct AddPlanView: View {
 
     // Reset Form Function
     func reset(
+        resetSavedPlan: Bool = true,
         resetStartLocation: Bool = true,
         resetDestinationLocation: Bool = true,
         resetStartDateLocation: Bool = true,
         resetEndDateLocation: Bool = true
     ) {
+        
+        if resetSavedPlan {
+            print("[AddPlanView] reset savedPlan")
+            savedPlan = nil
+        }
         if resetStartLocation {
+            print("[AddPlanView] reset startLocation")
             startLocation = nil
         }
         if resetDestinationLocation {
+            print("[AddPlanView] reset destinationLocation")
             destinationLocation = nil
         }
         if resetStartDateLocation {
+            print("[AddPlanView] reset startDate")
             startDate = Date.today
         }
         if resetEndDateLocation {
+            print("[AddPlanView] reset endDate")
             endDate = Date.tomorrow
         }
     }

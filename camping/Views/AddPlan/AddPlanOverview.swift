@@ -75,8 +75,7 @@ struct AddPlanOverview: View {
                 HStack {
                     if self.savedPlan != nil {
                         NavigationLink(
-                            destination: AddPlanGears(plan: self.savedPlan!)
-                                .environmentObject(GearViewModel()),
+                            destination: AddPlanGears(plan: self.savedPlan!),
                             label: {
                                 Text("Add gear")
                                     .frame(maxWidth: .infinity)

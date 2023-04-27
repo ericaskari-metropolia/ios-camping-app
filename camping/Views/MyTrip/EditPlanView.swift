@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct EditPlanView: View {
-    @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
+    @EnvironmentObject var viewModel: MyTripViewModel
+
     @State var planDetail: PlanDetail
     @State private var isStartDatePickerVisible = false
     @State private var isEndDatePickerVisible = false

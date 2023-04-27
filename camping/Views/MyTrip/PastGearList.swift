@@ -10,7 +10,8 @@ import CoreData
 struct PastGearListView: View {
     
     var plan: Plan
-    @StateObject var gearViewModel: GearViewModel = .init()
+    @EnvironmentObject var gearViewModel: GearViewModel
+
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
         animation: .default

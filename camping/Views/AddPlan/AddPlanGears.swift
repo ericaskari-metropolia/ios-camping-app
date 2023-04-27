@@ -11,9 +11,9 @@ import SwiftUI
 struct AddPlanGears: View {
     // Inputs
     var plan: Plan
-    
+
     // States
-    @StateObject var gearViewModel: GearViewModel = .init()
+    @EnvironmentObject var gearViewModel: GearViewModel
     @State var gearName: String = ""
 
     // Data
@@ -26,18 +26,9 @@ struct AddPlanGears: View {
     var body: some View {
         VStack {
             List {
-                Section(header: Text("Gears for Trip")){
+                Section(header: Text("Gears for Trip")) {
                     TextField("Name", text: $gearName)
-                    ForEach(allItems.filter {
-                        gear in
-                        if gear.plan?.id == nil {
-                            return false
-                        }
-                        if plan.id == nil {
-                            return false
-                        }
-                        return gear.plan!.id!.uuidString == plan.id!.uuidString
-                    }) { item in
+                    ForEach(filteredItems()) { item in
                         Text("\(item.name ?? "-")")
                     }
                     .onDelete(perform: {
@@ -64,8 +55,21 @@ struct AddPlanGears: View {
     private func deleteItems(indexSet: IndexSet) {
         withAnimation {
             indexSet.forEach { index in
-                gearViewModel.deleteItem(gear: allItems[index])
+                gearViewModel.deleteItem(gear: filteredItems()[index])
             }
+        }
+    }
+
+    func filteredItems() -> [Gear] {
+        return allItems.filter {
+            gear in
+            if gear.plan?.id == nil {
+                return false
+            }
+            if plan.id == nil {
+                return false
+            }
+            return gear.plan!.id!.uuidString == plan.id!.uuidString
         }
     }
 

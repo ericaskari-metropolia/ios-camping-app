@@ -11,7 +11,8 @@ import CoreData
 struct MyGearListView: View {
     
     var plan: Plan
-    @StateObject var gearViewModel: GearViewModel = .init()
+    @EnvironmentObject var gearViewModel: GearViewModel
+
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
         animation: .default
@@ -45,8 +46,7 @@ struct MyGearListView: View {
             }
 
             NavigationLink(
-                destination: AddPlanGears(plan:plan)
-                    .environmentObject(GearViewModel()),
+                destination: AddPlanGears(plan:plan),
                 label: {
                     Text("Edit gear")
                         .frame(maxWidth: .infinity)
@@ -66,8 +66,7 @@ struct MyGearListView: View {
             }
             .padding()
             NavigationLink(
-                destination: AddPlanGears(plan:plan)
-                    .environmentObject(GearViewModel()),
+                destination: AddPlanGears(plan:plan),
                 label: {
                     Text("Add gear")
                         .frame(maxWidth: .infinity)

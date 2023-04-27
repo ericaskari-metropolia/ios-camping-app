@@ -23,10 +23,10 @@ class GearViewModel: ObservableObject {
 
         do {
             try context.save()
-            print("Gear Saved!")
+            print("[GearViewModel] Gear Saved!")
             return newItem
         } catch {
-            print("Cannot save Gear.")
+            print("[GearViewModel] Cannot save Gear.")
             let nsError = error as NSError
             print(nsError)
             print(nsError.userInfo)
@@ -40,9 +40,9 @@ class GearViewModel: ObservableObject {
 
         do {
             try context.save()
-            print("Gear Deleted!")
+            print("[GearViewModel] Gear Deleted!")
         } catch {
-            print("Cannot delete Gear.")
+            print("[GearViewModel] Cannot delete Gear.")
             let nsError = error as NSError
             print(nsError)
             print(nsError.userInfo)
@@ -54,9 +54,9 @@ class GearViewModel: ObservableObject {
         gear.checked = !gear.checked
         do {
             try context.save()
-            print("Gear checked!")
+            print("[GearViewModel] Gear checked!")
         } catch {
-            print("Cannot check Gear.")
+            print("[GearViewModel] Cannot check Gear.")
             let nsError = error as NSError
             print(nsError)
             print(nsError.userInfo)

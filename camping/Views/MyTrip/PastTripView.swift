@@ -10,9 +10,8 @@ import SwiftUI
 
 struct PastTripView: View {
     
-    // Create a view model with a context
-    @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
-    
+    @EnvironmentObject var viewModel: MyTripViewModel
+
     
     var body: some View {
         VStack{
@@ -55,8 +54,8 @@ struct PastTripScrollView: View {
 struct MyPastTripCard: View {
     
     // Create a view model with a context
-    @StateObject var viewModel = MyTripViewModel(context: PersistenceController.shared.container.viewContext)
-   
+    @EnvironmentObject var viewModel: MyTripViewModel
+
     // A PlanDetail object to be used to create the past trip card
     let planDetail: PlanDetail
     var body: some View {
