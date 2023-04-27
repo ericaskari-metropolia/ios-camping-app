@@ -12,58 +12,35 @@ import SwiftUI
 struct MyTripsEmptyView: View {
     var body: some View {
         VStack {
-            header
-                .ignoresSafeArea()
-            Spacer()
+            ZStack{
+                HeaderView()
+                Text("My trips")
+                    .bold()
+                    .font(.system(size: 30))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .offset(x: -115, y: 60)
+            }
             noTripsView
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
 
 extension MyTripsEmptyView {
-    private var header :some View {
-        ZStack(alignment:Alignment(horizontal: .leading, vertical: .bottom)){
-           
-            Image("header")
-                .resizable()
-                .scaledToFill()
-                .frame(maxWidth: 400, maxHeight: 350)
-                .clipped()
-           
-            VStack{
-                //The location Espoo is hardcoded, need to be changed
-                Label("You are in Espoo", systemImage: "globe.europe.africa")
-                  .font(.headline)
-                     .foregroundColor(.white)
-                     .padding(.bottom,5)
-                    
-                     
-                  Text("My trips")
-                      .font(.title)
-                      .foregroundColor(.white)
-                      .fontWeight(.bold)
-                   
-            }
-            .padding()
-            .padding(.bottom,30)
-            }
-    }
     
     private var noTripsView :some View {
-        VStack{
-            Text("Ongoing trips")
-                .padding(.top,-55)
-                .padding(.leading, -180)
-                .fontWeight(.black)
+        VStack(alignment: .center){
+            Text("You don't have any plan yet")
+                .bold()
             
             //Just a random image, I can change it later
             Image("no-plan")
                 .resizable()
                 .frame(maxWidth: 400, maxHeight: 250)
-                .padding(.top,-20)
-                .padding(.horizontal,20)
-
+                .padding()
+            
             PlanNewTripButtonView(campsite: nil) {
                 Label("Create new trip", systemImage: "plus")
                     .foregroundColor(.white)
@@ -76,6 +53,7 @@ extension MyTripsEmptyView {
 
             Spacer()
         }
+        .padding()
     }
 }
 
@@ -83,5 +61,6 @@ extension MyTripsEmptyView {
 struct MyTripsEmptyView_Previews: PreviewProvider {
     static var previews: some View {
         MyTripsEmptyView()
+            .environmentObject(LocationViewModel())
     }
 }
