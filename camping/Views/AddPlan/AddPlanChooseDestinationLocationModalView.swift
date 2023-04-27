@@ -35,7 +35,7 @@ struct AddPlanChooseDestinationLocationModalView: View {
 
             ZStack(alignment: .top) {
                 VStack {
-                    Text("Choose campsite by pressing on the icon")
+                    Text("AddPlanChooseDestinationLocationModalView.description".i18n())
                         .multilineTextAlignment(.center)
                 }.frame(maxWidth: .infinity).padding()
                     .background(.white)
@@ -51,23 +51,9 @@ struct AddPlanChooseDestinationLocationModalView: View {
                     VStack {
                         Button(
                             action: {
-                                viewModel.requestPermission()
-                            }, label: {
-                                Text("My location")
-                                    .frame(maxWidth: .infinity)
-                                Image(systemName: "location.circle.fill")
-                                    .font(.system(size: 20))
-                            }
-                        )
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        Button(
-                            action: {
                                 self.isPresented.toggle()
                             }, label: {
-                                Text("Return")
+                                Text("action.return".i18n())
                                     .frame(maxWidth: .infinity)
                                 Image(systemName: "return")
                                     .font(.system(size: 20))

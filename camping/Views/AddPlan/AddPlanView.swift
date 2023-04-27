@@ -56,14 +56,14 @@ struct AddPlanView: View {
             HeaderView()
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("Start location")
+                    Text("label.startlocation".i18n())
                     Button(
                         action: {
                             self.isStartLocationModalOpen.toggle()
                         }, label: {
                             HStack {
                                 Image(systemName: "location")
-                                Text(startLocation == nil ? "Start location" : "Chosen on the map")
+                                Text(startLocation == nil ? "label.startlocation".i18n() : "addplanview.choosenonmap".i18n())
                                 Spacer()
                             }.padding(.vertical)
                         }
@@ -83,14 +83,14 @@ struct AddPlanView: View {
                     }.padding(.bottom)
 
                     VStack(alignment: .leading) {
-                        Text("Destination location")
+                        Text("label.destinationlocation".i18n())
                         Button(
                             action: {
                                 self.isDestinationLocationModalOpen.toggle()
                             }, label: {
                                 HStack {
                                     Image(systemName: "location")
-                                    Text(destinationLocation?.name ?? "Destination location")
+                                    Text(destinationLocation?.name ?? "label.destinationlocation".i18n())
                                     Spacer()
                                 }.padding(.vertical)
                             }
@@ -110,7 +110,7 @@ struct AddPlanView: View {
                             }
                         }.padding(.bottom)
 
-                        Text("Start Date")
+                        Text("label.startdate".i18n())
                         Button(
                             action: {
                                 self.isStartDatePickerVisible.toggle()
@@ -145,7 +145,7 @@ struct AddPlanView: View {
                                 action: {
                                     self.isStartDatePickerVisible.toggle()
                                 }, label: {
-                                    Text("Close")
+                                    Text("action.close".i18n())
                                 }
                             )
                             .frame(maxWidth: .infinity)
@@ -155,7 +155,7 @@ struct AddPlanView: View {
                     }
 
                     VStack(alignment: .leading) {
-                        Text("End Date")
+                        Text("label.enddate".i18n())
                         Button(
                             action: {
                                 self.isEndDatePickerVisible.toggle()
@@ -191,7 +191,7 @@ struct AddPlanView: View {
                                 action: {
                                     self.isEndDatePickerVisible.toggle()
                                 }, label: {
-                                    Text("Close")
+                                    Text("action.close".i18n())
                                 }
                             )
                             .frame(maxWidth: .infinity)
@@ -212,7 +212,7 @@ struct AddPlanView: View {
                                 }
                             ),
                             label: {
-                                Text("Create trip")
+                                Text("action.createtrip".i18n())
                             }
                         )
                         .simultaneousGesture(TapGesture().onEnded {
@@ -285,7 +285,6 @@ struct AddPlanView: View {
         resetStartDateLocation: Bool = true,
         resetEndDateLocation: Bool = true
     ) {
-        
         if resetSavedPlan {
             print("[AddPlanView] reset savedPlan")
             savedPlan = nil

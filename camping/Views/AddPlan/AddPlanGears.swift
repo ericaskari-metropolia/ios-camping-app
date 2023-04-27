@@ -26,8 +26,8 @@ struct AddPlanGears: View {
     var body: some View {
         VStack {
             List {
-                Section(header: Text("Gears for Trip")) {
-                    TextField("Name", text: $gearName)
+                Section(header: Text("label.gearsfortrip".i18n())) {
+                    TextField("label.name".i18n(), text: $gearName)
                     ForEach(filteredItems()) { item in
                         Text("\(item.name ?? "-")")
                     }
@@ -45,7 +45,7 @@ struct AddPlanGears: View {
                     Button(action: {
                         addItem()
                     }) {
-                        Label("Add Item", systemImage: "plus")
+                        Label("action.addgear".i18n(), systemImage: "plus")
                     }
                 }
             }
@@ -86,7 +86,7 @@ struct AddPlanGears: View {
 
 // struct GearListView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        GearListView().environmentObject(
+//        AddPlanGears().environmentObject(
 //            GearViewModel()
 //        )
 //    }

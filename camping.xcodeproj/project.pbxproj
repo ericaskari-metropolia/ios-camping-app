@@ -81,6 +81,7 @@
 		A11B2A0C29F3485B00565B9A /* AnnotatedMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B2A0B29F3485B00565B9A /* AnnotatedMap.swift */; };
 		A1220B2329E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1220B2229E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift */; };
 		A1220B2629E9621900AAA08C /* AddPlanOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1220B2529E9621900AAA08C /* AddPlanOverview.swift */; };
+		A149978C29FB223400E1633C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A149978E29FB223400E1633C /* Localizable.strings */; };
 		A156907529D2EE9D00EA3C56 /* CampingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907429D2EE9D00EA3C56 /* CampingApp.swift */; };
 		A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907629D2EE9D00EA3C56 /* ContentView.swift */; };
 		A156907929D2EE9E00EA3C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A156907829D2EE9E00EA3C56 /* Assets.xcassets */; };
@@ -171,6 +172,8 @@
 		A11B2A0B29F3485B00565B9A /* AnnotatedMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotatedMap.swift; sourceTree = "<group>"; };
 		A1220B2229E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanChooseDestinationLocationModalView.swift; sourceTree = "<group>"; };
 		A1220B2529E9621900AAA08C /* AddPlanOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanOverview.swift; sourceTree = "<group>"; };
+		A149978D29FB223400E1633C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A149978F29FB223800E1633C /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A156907129D2EE9D00EA3C56 /* camping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = camping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A156907429D2EE9D00EA3C56 /* CampingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingApp.swift; sourceTree = "<group>"; };
 		A156907629D2EE9D00EA3C56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -381,6 +384,7 @@
 				A156907629D2EE9D00EA3C56 /* ContentView.swift */,
 				A156907829D2EE9E00EA3C56 /* Assets.xcassets */,
 				A156907A29D2EE9E00EA3C56 /* Preview Content */,
+				A149978E29FB223400E1633C /* Localizable.strings */,
 			);
 			path = camping;
 			sourceTree = "<group>";
@@ -590,6 +594,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fi,
 			);
 			mainGroup = A156906829D2EE9D00EA3C56;
 			productRefGroup = A156907229D2EE9D00EA3C56 /* Products */;
@@ -609,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				270EE5D429E42C7A00EEDF00 /* category.json in Resources */,
+				A149978C29FB223400E1633C /* Localizable.strings in Resources */,
 				A156907C29D2EE9E00EA3C56 /* Preview Assets.xcassets in Resources */,
 				A156907929D2EE9E00EA3C56 /* Assets.xcassets in Resources */,
 			);
@@ -771,6 +777,18 @@
 			targetProxy = A156909129D2EE9F00EA3C56 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A149978E29FB223400E1633C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A149978D29FB223400E1633C /* en */,
+				A149978F29FB223800E1633C /* fi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A156909829D2EE9F00EA3C56 /* Debug */ = {

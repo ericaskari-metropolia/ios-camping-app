@@ -1,0 +1,27 @@
+/*
+  Localizable.strings
+  camping
+
+  Created by Eric Askari on 28.4.2023.
+  
+*/
+"action.return" = "Palaa";
+"action.select" = "Valitse";
+"action.close" = "Sulje";
+"action.createtrip" = "Luo matka";
+"action.addgear" = "Lisää varusteita";
+
+"label.startlocation" = "Lähtöpaikka";
+"label.destinationlocation" = "Kohde";
+"label.startdate" = "Lähtöpäivä";
+"label.enddate" = "Paluupäivä";
+"label.gearsfortrip" = "Varusteet matkalle";
+"label.name" = "Nimi";
+
+"addplanview.choosenonmap" = "Valitse kartalta";
+
+"AddPlanChooseStartLocationModalView.description" = "Valitse sijainti asettamalla sininen ympyrä sijaintiin";
+
+"AddPlanChooseDestinationLocationModalView.description" = "Valitse leiripaikka painamalla kuvaketta";
+
+"AddPlanOverview.created" = "Olet luonut uuden matkasi!";

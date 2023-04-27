@@ -1,0 +1,27 @@
+/*
+  Localizable.strings
+  camping
+
+  Created by Eric Askari on 28.4.2023.
+  
+*/
+"action.return" = "Return";
+"action.select" = "Select";
+"action.close" = "Close";
+"action.createtrip" = "Create trip";
+"action.addgear" = "Add gear";
+
+"label.startlocation" = "Start Location";
+"label.destinationlocation" = "Destination location";
+"label.startdate" = "Start Date";
+"label.enddate" = "End Date";
+"label.gearsfortrip" = "Gears for Trip";
+"label.name" = "Name";
+
+"addplanview.choosenonmap" = "Chosen on the map";
+
+"AddPlanChooseStartLocationModalView.description" = "Select location by placing blue circle on the location";
+
+"AddPlanChooseDestinationLocationModalView.description" = "Choose campsite by pressing on the icon";
+
+"AddPlanOverview.created" = "You have created your new journey!";

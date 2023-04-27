@@ -65,7 +65,7 @@ struct AddPlanOverview: View {
                 .frame(maxWidth: .infinity)
                 .frame(height: 600)
                 .background(Color.red)
-                Text("You have created your new journey!")
+                Text("AddPlanOverview.created".i18n())
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
                     .font(.system(size: 26))
@@ -77,7 +77,7 @@ struct AddPlanOverview: View {
                         NavigationLink(
                             destination: AddPlanGears(plan: self.savedPlan!),
                             label: {
-                                Text("Add gear")
+                                Text("action.addgear".i18n())
                                     .frame(maxWidth: .infinity)
                             }
                         )
@@ -91,7 +91,7 @@ struct AddPlanOverview: View {
                         self.completed()
                         self.dismiss()
                     } label: {
-                        Text("Close")
+                        Text("action.close".i18n())
                             .frame(maxWidth: .infinity)
                     }
                     .padding()

@@ -33,7 +33,7 @@ struct AddPlanChooseStartLocationModalView: View {
 
             ZStack(alignment: .top) {
                 VStack {
-                    Text("Select location by placing blue circle on the location")
+                    Text("AddPlanChooseStartLocationModalView.description".i18n())
                         .multilineTextAlignment(.center)
                 }.frame(maxWidth: .infinity).padding()
                     .background(.white)
@@ -59,7 +59,7 @@ struct AddPlanChooseStartLocationModalView: View {
                                 didChooseLocation(viewModel.region.center)
                                 isPresented.toggle()
                             }, label: {
-                                Text("Select")
+                                Text("action.select".i18n())
                                     .frame(maxWidth: .infinity)
                                 Image(systemName: "checkmark.circle.fill")
                                     .font(.system(size: 20))
@@ -72,23 +72,9 @@ struct AddPlanChooseStartLocationModalView: View {
 
                         Button(
                             action: {
-                                viewModel.requestPermission()
-                            }, label: {
-                                Text("My location")
-                                    .frame(maxWidth: .infinity)
-                                Image(systemName: "location.circle.fill")
-                                    .font(.system(size: 20))
-                            }
-                        )
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        Button(
-                            action: {
                                 self.isPresented.toggle()
                             }, label: {
-                                Text("Return")
+                                Text("action.return".i18n())
                                     .frame(maxWidth: .infinity)
                                 Image(systemName: "return")
                                     .font(.system(size: 20))
