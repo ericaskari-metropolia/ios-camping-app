@@ -2,7 +2,7 @@
 //  MyTripViewModel.swift
 //  camping
 //
-//  Created by Binod Panta on 18.4.2023.
+//  Created by The Minions on 18.4.2023.
 //
 /* This is the view model that handles the data for the My Trips feature */
 

@@ -2,7 +2,7 @@
 //  AddPlanViewModel.swift
 //  camping
 //
-//  Created by Eric Askari on 10.4.2023.
+//  Created by The Minions on 10.4.2023.
 //
 import CoreData
 import Foundation

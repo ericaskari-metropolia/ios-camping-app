@@ -2,7 +2,7 @@
 //  OnBoardView.swift
 //  camping
 //
-//  Created by Binod Panta on 6.4.2023.
+//  Created by The Minions on 6.4.2023.
 //
 import SwiftUI
 
@@ -28,17 +28,6 @@ struct OnBoardView: View {
     @State private var currentStep = 0
     @State private var isFinishOnboarding = false
     @State private var hasCompletedOnboarding = UserDefaults.standard.bool(forKey: "hasCompletedOnboarding")
-//    init() {
-//
-//        //Sets the global appearance of UIScroll view not to bounce at the end
-//        UIScrollView.appearance().bounces = false
-//
-//        // Check if the onboarding has been completed before
-//        if UserDefaults.standard.bool(forKey: "isOnboard") {
-//            // If yes, skip the onboarding screen and move to the next view
-//            self.isFinishOnboarding = true
-//        }
-//    }
     
     //UI logic for the onboard screen
     var body: some View {
@@ -115,17 +104,17 @@ struct OnBoardView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         
-                       
+                        
                     }
                     
                 }.background(Color(UIColor(red: 245/255, green: 246/255, blue: 245/255, alpha: 1.0)))
-
+                
             }
             
         }
-        }
     }
-    
+}
+
 
 
 

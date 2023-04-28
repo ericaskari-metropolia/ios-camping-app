@@ -2,7 +2,7 @@
 //  PastGearListView.swift
 //  camping
 //
-//  Created by Binod Panta on 23.4.2023.
+//  Created by The Minions on 23.4.2023.
 //
 import SwiftUI
 import CoreData
@@ -11,7 +11,7 @@ struct PastGearListView: View {
     
     var plan: Plan
     @EnvironmentObject var gearViewModel: GearViewModel
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
         animation: .default
@@ -36,7 +36,7 @@ struct PastGearListView: View {
                     }
                 }
             }
-
+            
         } else {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
@@ -62,8 +62,3 @@ struct PastGearListView: View {
         }
     }
 }
-//struct MyGearListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MyGearListView()
-//    }
-//}

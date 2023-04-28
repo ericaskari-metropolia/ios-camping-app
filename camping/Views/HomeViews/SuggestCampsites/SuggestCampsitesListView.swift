@@ -2,7 +2,7 @@
 //  SuggestCampsites.swift
 //  camping
 //
-//  Created by Thu Hoang on 19.4.2023.
+//  Created by The Minions on 19.4.2023.
 //
 
 import SwiftUI
@@ -36,9 +36,3 @@ struct SuggestCampsitesView: View {
         }
     }
 }
-
-//struct SuggestCampsitesView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SuggestCampsitesView()
-//    }
-//}

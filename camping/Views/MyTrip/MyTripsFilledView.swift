@@ -17,22 +17,22 @@ struct MyTripsFilledView: View {
     
     @FetchRequest(sortDescriptors: []) var plans: FetchedResults<Plan>
     
-   
+    
     
     func countOfOngoingAndPastPlans() -> (ongoingCount: Int, pastCount: Int) {
-           let currentDate = Date()
+        let currentDate = Date()
         let ongoingPlans = plans.filter { $0.endDate ?? currentDate >= currentDate }
-           let pastPlans = plans.filter { $0.endDate ?? currentDate < currentDate }
-           return (ongoingCount: ongoingPlans.count, pastCount: pastPlans.count)
-       }
-        
+        let pastPlans = plans.filter { $0.endDate ?? currentDate < currentDate }
+        return (ongoingCount: ongoingPlans.count, pastCount: pastPlans.count)
+    }
+    
     var body: some View {
         VStack {
             HeaderView(title: "My trips")
                 .padding(.bottom,-40)
                 .ignoresSafeArea()
-           
-           
+            
+            
             ScrollView{
                 // Check if there are any ongoing trips
                 if countOfOngoingAndPastPlans().ongoingCount > 0 {
@@ -48,14 +48,14 @@ struct MyTripsFilledView: View {
                 } else {
                     noOngoingTripsView
                 }
-                    Divider()
-                    createNewTripButton
+                Divider()
+                createNewTripButton
                 
                 
                 Divider()
-                    pastTripViewHeader
+                pastTripViewHeader
                 
-               
+                
                 // Check if there are any past trips
                 if countOfOngoingAndPastPlans().pastCount > 0 {
                     PastTripView()
@@ -63,11 +63,11 @@ struct MyTripsFilledView: View {
                         .padding()
                 }else {
                     noPastTripsView
-                        
-                }
                     
                 }
+                
             }
+        }
         
     }
     
@@ -114,7 +114,7 @@ extension MyTripsFilledView {
                     .background(Color("PrimaryColor"))
                     .cornerRadius(15)
                 Spacer()
-              
+                
             }
             .padding(.horizontal)
             .padding(.top)

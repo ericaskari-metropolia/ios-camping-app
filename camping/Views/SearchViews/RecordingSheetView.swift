@@ -78,9 +78,3 @@ struct RecordingSheetView: View {
             .frame(height: 64, alignment: .bottom)
     }
 }
-
-//struct RecordingSheetView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecordingSheetView()
-//    }
-//}

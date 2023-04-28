@@ -2,7 +2,7 @@
 //  PlanNewTripButtonView.swift
 //  camping
 //
-//  Created by Chi Nguyen on 15.4.2023.
+//  Created by The Minions on 15.4.2023.
 //
 
 import SwiftUI

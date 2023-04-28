@@ -2,7 +2,7 @@
 //  CampsiteMapView.swift
 //  camping
 //
-//  Created by Chi Nguyen on 18.4.2023.
+//  Created by The Minions on 18.4.2023.
 //
 
 import SwiftUI
@@ -32,17 +32,17 @@ struct CampsiteMapView: View {
             Map(coordinateRegion: $region, annotationItems: annotations){
                 annotation in
                 MapAnnotation(
-                   coordinate: annotation.coordinate,
-                   content: {
-                       Image(systemName: "pin.circle.fill").foregroundColor(.red)
-                       Text(annotation.name)
-                           .font(.subheadline)
-                       Text(annotation.address)
-                           .font(.subheadline)
-                   }
+                    coordinate: annotation.coordinate,
+                    content: {
+                        Image(systemName: "pin.circle.fill").foregroundColor(.red)
+                        Text(annotation.name)
+                            .font(.subheadline)
+                        Text(annotation.address)
+                            .font(.subheadline)
+                    }
                 )            }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                .ignoresSafeArea(.all)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .ignoresSafeArea(.all)
         }
         .onAppear{
             coordinate = CLLocationCoordinate2D(latitude: campsite.latitude, longitude: campsite.longitude)
@@ -51,21 +51,15 @@ struct CampsiteMapView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
-                Button{
-                    dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                    .font(.title)
-                    .padding()
-                }
-                .symbolVariant(.circle.fill)
-                .foregroundStyle(Color("PrimaryColor"), .white)
+                                Button{
+            dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .font(.title)
+                .padding()
+        }
+            .symbolVariant(.circle.fill)
+            .foregroundStyle(Color("PrimaryColor"), .white)
         )
     }
 }
-
-//struct CampsiteMapView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CampsiteMapView()
-//    }
-//}

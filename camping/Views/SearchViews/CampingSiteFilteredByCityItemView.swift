@@ -53,10 +53,3 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
-
-//struct CampingSiteFilteredByCityItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CampingSiteFilteredByCityItemView()
-//    }
-//}
-

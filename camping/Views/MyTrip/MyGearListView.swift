@@ -12,7 +12,7 @@ struct MyGearListView: View {
     
     var plan: Plan
     @EnvironmentObject var gearViewModel: GearViewModel
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
         animation: .default
@@ -40,11 +40,11 @@ struct MyGearListView: View {
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .background(index % 2 == 0 ? Color.white.cornerRadius(10) : Color.gray.opacity(0.1).cornerRadius(10))
-                       
+                        
                     }
                 }
             }
-
+            
             NavigationLink(
                 destination: AddPlanGears(plan:plan),
                 label: {
@@ -93,8 +93,3 @@ struct MyGearListView: View {
         }
     }
 }
-//struct MyGearListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MyGearListView()
-//    }
-//}

@@ -2,7 +2,7 @@
 //  MyTripsEmptyView.swift
 //  camping
 //
-//  Created by Binod Panta on 10.4.2023.
+//  Created by The Minions on 10.4.2023.
 //
 /* This view is displayed when the user doesnot have any trip plan yet.*/
 
@@ -42,7 +42,7 @@ extension MyTripsEmptyView {
             } completed: {
                 // Nothing to do
             }
-
+            
             Spacer()
         }
         .padding()

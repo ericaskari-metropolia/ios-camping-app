@@ -2,7 +2,7 @@
 //  AddPlanOverview.swift
 //  camping
 //
-//  Created by Eric Askari on 14.4.2023.
+//  Created by The Minions on 14.4.2023.
 //
 
 import MapKit

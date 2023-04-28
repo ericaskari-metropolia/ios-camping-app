@@ -9,10 +9,10 @@ import SwiftUI
 struct TripInfoView: View {
     
     @Environment(\.dismiss) var dismiss
-
+    
     // state variable to hold the plan detail
     @State var planDetail: PlanDetail
-  
+    
     // instance of weather forecast manager
     var weatherManager = WeatherForecast()
     
@@ -34,7 +34,7 @@ struct TripInfoView: View {
                         // if the image is still loading, show a ProgressView
                         ProgressView()
                     }
-                   
+                    
                 }
                 VStack{
                     HStack {
@@ -63,7 +63,7 @@ struct TripInfoView: View {
                     .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
                     
                 }
-            
+                
             }
             .ignoresSafeArea()
             HStack{
@@ -76,7 +76,7 @@ struct TripInfoView: View {
                 
             }
             .padding(.top,-80)
-           
+            
             ScrollView(.vertical,showsIndicators: false) {
                 VStack{
                     HStack{
@@ -93,13 +93,13 @@ struct TripInfoView: View {
                         .padding(.vertical,5)
                         .frame(height:1)
                         .background(Color.black.opacity(0.1))
-                        
+                    
                     
                     HStack{
                         Label("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)", systemImage:"calendar")
                             .font(.caption)
                             .foregroundColor(Color("PrimaryColor"))
-                            
+                        
                         
                         Spacer()
                         Image(systemName: "note.text")
@@ -107,10 +107,10 @@ struct TripInfoView: View {
                     .padding(.vertical, -15)
                     .padding()
                 }
-               
+                
                 .background(RoundedRectangle(cornerRadius: 15)
-                                .foregroundColor(.white)
-                                .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 0, y: 2))
+                    .foregroundColor(.white)
+                    .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 0, y: 2))
                 .padding(.top,10)
                 .padding(.horizontal,3)
                 
@@ -122,7 +122,7 @@ struct TripInfoView: View {
                         .multilineTextAlignment(.leading)
                         .foregroundColor(Color("PrimaryColor"))
                         .bold()
-
+                    
                     if let weather = weather {
                         WeatherCardView(weatherForecast:weather, startTimestamp: Int(planDetail.start.timeIntervalSince1970))
                         
@@ -139,16 +139,16 @@ struct TripInfoView: View {
                     }
                 }
                 Divider()
-               
+                
                 VStack(alignment: .leading){
                     Label("Gear Checklist", systemImage: "list.bullet")
                         .fontWeight(.bold)
                         .padding(.vertical,0)
                         .foregroundColor(Color("PrimaryColor"))
-                  
-                   // Text("Oops!! you dont have any gears added.")
+                    
+                    // Text("Oops!! you dont have any gears added.")
                     MyGearListView(plan:planDetail.plan)
-
+                    
                 }
                 .padding()
                 Spacer()
@@ -159,11 +159,4 @@ struct TripInfoView: View {
             .navigationBarBackButtonHidden(true)
         }
     }
-    
 }
-
-//struct TripInfoView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TripInfoView()
-//    }
-//}

@@ -2,7 +2,7 @@
 //  EditPlanView.swift
 //  camping
 //
-//  Created by Binod Panta on 23.4.2023.
+//  Created by The Minions on 23.4.2023.
 //
 
 import SwiftUI
@@ -72,23 +72,23 @@ struct EditPlanView: View {
                         .background(Color("PrimaryColor"))
                         .cornerRadius(15)
                     
-                }    
+                }
                 HStack{
                     VStack(alignment:.leading){
                         Text(planDetail.destination.name ?? "")
                             .font(.title3)
                             .fontWeight(.bold)
                         
-                            
+                        
                     }
                     Image(systemName: "tent")
                         .foregroundColor(Color("PrimaryColor"))
-
+                    
                 }
                 .foregroundColor(Color("PrimaryColor"))
                 .padding()
             }
-           
+            
             .padding(.bottom, 40)
             .padding(.top,-80)
             
@@ -107,7 +107,7 @@ struct EditPlanView: View {
                                     dateFormatter.string(from: planDetail.start)
                                 )
                                 .foregroundColor(Color("PrimaryColor"))
-
+                                
                                 Spacer()
                             }.padding(.vertical)
                         }
@@ -135,7 +135,7 @@ struct EditPlanView: View {
                             }, label: {
                                 Text("Close")
                                     .foregroundColor(Color("PrimaryColor"))
-
+                                
                             }
                         )
                         .frame(maxWidth: .infinity)
@@ -238,10 +238,3 @@ func formatter() -> DateFormatter {
     formatter.dateFormat = "HH:mm E, d MMM y"
     return formatter
 }
-
-
-//struct EditPlanView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditPlanView()
-//    }
-//}
