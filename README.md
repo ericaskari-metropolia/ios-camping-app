@@ -19,8 +19,15 @@ Welcome to Camplify, where you can easily plan and prepare for your camping trip
 
 ## Data
 - Application retrieves data from network and persists data on the device using the Core Data framework.
+
+## Installation
+Requirements to run the project:
+1. Install Xcode environment
+2. Clone the project from [Github](https://github.com/ericaskari-metropolia/ios-camping-app.git) and opened with Xcode.
+3. Choose simulator (at least ios 16) or run the app on physical iOS devices by cable and build project.
   
 ## A sneak peek of Camplify
+Video demo: [video](https://youtu.be/mMk1HYnvwjY)
 <p align="center">
   <img src="https://user-images.githubusercontent.com/89455223/235214076-0807c0b0-a53a-4c20-bde0-2b0edf564806.png" width="250">
   <img src="https://user-images.githubusercontent.com/89455223/235214189-19bf3203-58ed-409b-9e70-886b25fe2504.png" width="250">
@@ -44,14 +51,6 @@ Welcome to Camplify, where you can easily plan and prepare for your camping trip
   <img src="https://user-images.githubusercontent.com/89455223/235214963-85a34330-9153-4d4c-be3c-cf5c82a66034.png" width="250">
   <img src="https://user-images.githubusercontent.com/89455223/235215083-a528d74d-6ce7-42b6-aaf9-3a9af3f7f3cd.png" width="250">
 </p>
-
-## Video demo: [video](https://youtu.be/mMk1HYnvwjY)
-
-## Installation
-Requirements to run the project:
-1. Install Xcode environment
-2. Clone the project from [Github](https://github.com/ericaskari-metropolia/ios-camping-app.git) and opened with Xcode.
-3. Choose simulator (at least ios 16) or run the app on physical iOS devices by cable and build project.
 
 ## Contributors
 [Chi Nguyen](https://github.com/chinguyen202)
