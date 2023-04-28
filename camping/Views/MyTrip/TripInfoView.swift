@@ -30,11 +30,11 @@ struct TripInfoView: View {
                             .scaledToFill()
                             .frame(height: 300)
                             .frame(maxWidth: .infinity)
+                          
                     } placeholder: {
                         // if the image is still loading, show a ProgressView
                         ProgressView()
-                    }
-                    
+                    }                    
                 }
                 VStack{
                     HStack {
@@ -52,22 +52,24 @@ struct TripInfoView: View {
                         .symbolVariant(.circle.fill)
                         .foregroundStyle(Color("PrimaryColor"), .white)
                         
-                        Spacer()
-                        Text("Trip Overview")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                        Spacer()
+                        HStack{
+                            Text("label.tripOverview".i18n())
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 200, height: 40)
+                        .background(Color("PrimaryColor").opacity(0.2).cornerRadius(10))
                         Spacer()
                     }
-                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 40, leading: -45, bottom: 0, trailing: 0))
                     
                 }
                 
             }
             .ignoresSafeArea()
             HStack{
-                Label("Trip Status: Ongoing", systemImage: "figure.run.circle")
+                Label("label.onGoingTripStatus".i18n(), systemImage: "figure.run.circle")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
@@ -80,11 +82,13 @@ struct TripInfoView: View {
             ScrollView(.vertical,showsIndicators: false) {
                 VStack{
                     HStack{
-                        Text(planDetail.destination.name ?? "")
+                        Text(planDetail.destination.name ?? "label.destinationlocation".i18n())
                             .font(.title3)
                             .fontWeight(.bold)
                         Spacer()
                         Image(systemName: "tent")
+                        .foregroundColor(Color("PrimaryColor"))
+                        
                     }
                     .padding(.bottom, -15)
                     .padding()
@@ -103,9 +107,24 @@ struct TripInfoView: View {
                         
                         Spacer()
                         Image(systemName: "note.text")
+                            .foregroundColor(Color("PrimaryColor"))
                     }
-                    .padding(.vertical, -15)
+                    .padding(.top, -15)
                     .padding()
+                    
+                    HStack{
+                        NavigationLink(destination: CampsiteMapView(campsite: planDetail.destination)){
+                        Label("btn.viewOnMap".i18n(), systemImage: "location")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(width: 180, height: 40)
+                            .background(Color("PrimaryColor"))
+                            .cornerRadius(15)
+                    }
+                    }
+                    .padding(.top, -10)
+                    .padding(.bottom,10)
+                    
                 }
                 
                 .background(RoundedRectangle(cornerRadius: 15)
@@ -115,7 +134,7 @@ struct TripInfoView: View {
                 .padding(.horizontal,3)
                 
                 VStack(alignment: .leading){
-                    Text("Weather Forecast")
+                    Text("label.weatherForecast".i18n())
                         .padding(.top,10)
                         .padding(.bottom, -5)
                         .padding(.leading,15)
@@ -141,7 +160,7 @@ struct TripInfoView: View {
                 Divider()
                 
                 VStack(alignment: .leading){
-                    Label("Gear Checklist", systemImage: "list.bullet")
+                    Label("label.gearChecklist".i18n(), systemImage: "list.bullet")
                         .fontWeight(.bold)
                         .padding(.vertical,0)
                         .foregroundColor(Color("PrimaryColor"))

@@ -30,7 +30,7 @@ struct SearchView: View {
                 
                 // Get search input as the user types to show the result city list in an autocomplete way
                 TextField(
-                    "Enter a city",
+                    "search.bar".i18n(),
                     text:
                             .init(get: {
                                 searchViewModel.searchText

@@ -51,21 +51,25 @@ struct EditPlanView: View {
                         .foregroundStyle(Color("PrimaryColor"), .white)
                         
                         Spacer()
-                        Text("Edit Plan")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
+                       VStack {
+                            Text("label.editPlan".i18n())
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }
+                       .frame(width: 160, height: 35)
+                       .background(Color("PrimaryColor").opacity(0.4).cornerRadius(10))
                         Spacer()
                         Spacer()
                     }
-                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 40, leading: -40, bottom: 0, trailing: 0))
                 }
             }
             
             .ignoresSafeArea()
             VStack{
                 HStack{
-                    Label("Trip Status: Editing", systemImage: "pencil.circle.fill")
+                    Label("label.editStatus".i18n(), systemImage: "pencil.circle.fill")
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 350, height: 40)
@@ -75,7 +79,7 @@ struct EditPlanView: View {
                 }
                 HStack{
                     VStack(alignment:.leading){
-                        Text(planDetail.destination.name ?? "")
+                        Text(planDetail.destination.name ?? "label.destinationlocation".i18n())
                             .font(.title3)
                             .fontWeight(.bold)
                         
@@ -96,7 +100,7 @@ struct EditPlanView: View {
             
             ScrollView(){
                 VStack(alignment: .leading){
-                    Text("Start Date")
+                    Text("label.startdate".i18n())
                     Button(
                         action: {
                             self.isStartDatePickerVisible.toggle()
@@ -133,7 +137,7 @@ struct EditPlanView: View {
                             action: {
                                 self.isStartDatePickerVisible.toggle()
                             }, label: {
-                                Text("Close")
+                                Text("action.close".i18n())
                                     .foregroundColor(Color("PrimaryColor"))
                                 
                             }
@@ -147,7 +151,7 @@ struct EditPlanView: View {
                     
                     
                     VStack(alignment: .leading) {
-                        Text("End Date")
+                        Text("label.enddate".i18n())
                         Button(
                             action: {
                                 self.isEndDatePickerVisible.toggle()
@@ -183,7 +187,7 @@ struct EditPlanView: View {
                                 action: {
                                     self.isEndDatePickerVisible.toggle()
                                 }, label: {
-                                    Text("Close")
+                                    Text("action.close".i18n())
                                 }
                             )
                             .frame(maxWidth: .infinity)
@@ -192,7 +196,7 @@ struct EditPlanView: View {
                             .padding(.bottom)
                         }
                         Spacer()
-                        Button("Save Changes") {
+                        Button("btn.saveChanges".i18n()) {
                             
                             // Save changes and dismiss the view
                             viewModel.editPlan(planDetail: planDetail, startDate: planDetail.start, endDate: planDetail.end)

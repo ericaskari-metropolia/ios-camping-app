@@ -100,13 +100,13 @@ struct OnGoingTripDetailScreen: View {
                                     .padding()
                             }
                             .actionSheet(isPresented: $showingActionSheet) {
-                                ActionSheet(title: Text("Choose an action"), buttons: [
-                                    .default(Text("Edit")) {
+                                ActionSheet(title: Text("label.chooseAction".i18n()), buttons: [
+                                    .default(Text("btn.edit".i18n())) {
                                         // Navigate to the edit plan screen
                                         isEditing = true
                                         
                                     },
-                                    .destructive(Text("Delete")) {
+                                    .destructive(Text("btn.delete".i18n())) {
                                         // Show the delete confirmation alert
                                         isDeleting = true
                                     },

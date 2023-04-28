@@ -19,8 +19,6 @@ struct MyGearListView: View {
     )
     private var allItems: FetchedResults<Gear>
     
-    // let filteredItems = filterItems(forPlan: plan, fromAllItems: allItems)
-    
     var body: some View {
         let filteredItems = filterItems()
         if filteredItems.count > 0 {
@@ -48,8 +46,8 @@ struct MyGearListView: View {
             NavigationLink(
                 destination: AddPlanGears(plan:plan),
                 label: {
-                    Text("Edit gear")
-                        .foregroundColor(Color("PrimaryColor"))
+                    Text("label.editGear".i18n())
+                        .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                 }
             )
@@ -62,14 +60,15 @@ struct MyGearListView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.white)
                     .shadow(color: Color.gray.opacity(0.5), radius: 5, x: 0, y: 2)
-                Text("You do not have any gears added!")
+                Text("label.noGearAlert".i18n())
                     .padding()
             }
             .padding()
             NavigationLink(
                 destination: AddPlanGears(plan:plan),
                 label: {
-                    Text("Add gear")
+                    Text("btn.addGear".i18n())
+                        .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                 }
             )

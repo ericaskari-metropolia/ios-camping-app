@@ -23,7 +23,7 @@ extension MyTripsEmptyView {
     
     private var noTripsView :some View {
         VStack(alignment: .center){
-            Text("You don't have any plan yet")
+            Text("label.onGoingTrip")
                 .bold()
                 .foregroundColor(Color("PrimaryColor"))
             
@@ -34,7 +34,7 @@ extension MyTripsEmptyView {
                 .padding()
             
             PlanNewTripButtonView(campsite: nil) {
-                Label("Create new trip", systemImage: "plus")
+                Label("btn.createNewTrip", systemImage: "plus")
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
                     .background(Color("PrimaryColor"))
