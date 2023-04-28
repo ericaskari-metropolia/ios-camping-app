@@ -35,7 +35,7 @@ struct HeaderHomePageView: View {
             }
             .offset(x: 40, y: 30)
             
-            Text("Discovery")
+            Text("homepage.title".i18n())
                 .bold()
                 .font(.system(size: 30))
                 .fontWeight(.bold)
@@ -49,7 +49,7 @@ struct HeaderHomePageView: View {
                     Label("", systemImage: "magnifyingglass")
                         .labelStyle(.iconOnly)
                         .font(.system(size: 20))
-                    Text("Where do you want to go?").foregroundColor(.gray)
+                    Text("homepage.search".i18n()).foregroundColor(.gray)
                     Label("", systemImage: "mic")
                         .labelStyle(.iconOnly)
                         .font(.system(size: 20))

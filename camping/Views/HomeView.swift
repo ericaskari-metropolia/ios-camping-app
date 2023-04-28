@@ -19,12 +19,12 @@ struct HomeView: View {
             HeaderHomePageView()
             ScrollView{
                 VStack(alignment: .leading){
-                    Text("Category")
+                    Text("homepage.category".i18n())
                         .bold()
                         .font(.system(size: 20))
                     CategoryListView()
                         .padding(.horizontal, 5)
-                    Text("Suggested for you")
+                    Text("homepage.suggest".i18n())
                         .bold()
                         .font(.system(size: 20))
                     SuggestCampsitesView(userLocation: locationViewModel.lastSeenLocation ?? .init(latitude: 0, longitude: 0))

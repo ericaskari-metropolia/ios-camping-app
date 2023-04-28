@@ -28,7 +28,7 @@ struct RecordingSheetView: View {
                     speechRecognizer.startTranscribing()
                     isRecording = true
                 } label: {
-                    Label("Start recording", systemImage: "mic.fill.badge.plus")
+                    Label("search.startRecording".i18n(), systemImage: "mic.fill.badge.plus")
                         .foregroundColor(.white)
                 }
                 .padding()
@@ -60,7 +60,7 @@ struct RecordingSheetView: View {
                     dismiss()
                     print(speechRecognizer.transcript)
                 } label: {
-                    Label("Stop recording", systemImage: "mic.fill.badge.xmark")
+                    Label("search.stopRecording".i18n(), systemImage: "mic.fill.badge.xmark")
                         .foregroundColor(.white)
                 }
                 .padding()

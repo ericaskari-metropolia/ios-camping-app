@@ -25,3 +25,24 @@
 "AddPlanChooseDestinationLocationModalView.description" = "Choose campsite by pressing on the icon";
 
 "AddPlanOverview.created" = "You have created your new journey!";
+
+"homepage.title" = "Discovery";
+"homepage.search" = "Where do you want to go?";
+"homepage.category" = "Category";
+"homepage.forest" = "Forest";
+"homepage.hills" = "Hills";
+"homepage.lakes" = "Lakes";
+"homepage.island" = "Island";
+"homepage.suggest" = "Suggested for you";
+
+"location.request" = "Request location permission";
+"location.error" = "Please give Camplify the permission \n to access to your location in the setting";
+
+"nav.discovery" = "Discovery";
+"nav.addplan" = "Add plan";
+"nav.save" = "Saved locations";
+"nav.trips" = "Trips";
+
+"search.bar" = "Enter a city";
+"search.startRecording" = "Start recording";
+"search.stopRecording" = "Stop recording";
