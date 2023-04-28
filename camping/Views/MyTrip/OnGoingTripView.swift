@@ -100,13 +100,13 @@ struct OnGoingTripDetailScreen: View {
                                     .padding()
                             }
                             .actionSheet(isPresented: $showingActionSheet) {
-                                ActionSheet(title: Text("Choose an action"), buttons: [
-                                    .default(Text("Edit")) {
+                                ActionSheet(title: Text("label.chooseAction".i18n()), buttons: [
+                                    .default(Text("btn.edit".i18n())) {
                                         // Navigate to the edit plan screen
                                         isEditing = true
                                         
                                     },
-                                    .destructive(Text("Delete")) {
+                                    .destructive(Text("btn.delete".i18n())) {
                                         // Show the delete confirmation alert
                                         isDeleting = true
                                     },
@@ -139,15 +139,6 @@ struct OnGoingTripDetailScreen: View {
             .cornerRadius(20)
             .shadow(radius: 15))
         .padding()
-        .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Delete trip?"), message: Text("Are you sure you want to delete this trip?"),
-                  primaryButton: .destructive(Text("Delete")) {
-                
-                viewModel.deletePlan(planDetail)
-                viewModel.updatePlanDetails()
-               
-            }, secondaryButton: .cancel())
-        }
     }
 }
 

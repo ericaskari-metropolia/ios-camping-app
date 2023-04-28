@@ -39,7 +39,7 @@ extension MyTripsEmptyView {
                      .padding(.bottom,5)
                     
                      
-                  Text("My trips")
+                Text("label.myTrips".i18n())
                       .font(.title)
                       .foregroundColor(.white)
                       .fontWeight(.bold)
@@ -52,7 +52,7 @@ extension MyTripsEmptyView {
     
     private var noTripsView :some View {
         VStack{
-            Text("Ongoing trips")
+            Text("label.onGoingTrip".i18n())
                 .padding(.top,-55)
                 .padding(.leading, -180)
                 .fontWeight(.black)
@@ -65,7 +65,7 @@ extension MyTripsEmptyView {
                 .padding(.horizontal,20)
 
             PlanNewTripButtonView(campsite: nil) {
-                Label("Create new trip", systemImage: "plus")
+                Label("btn.createNewTrip", systemImage: "plus")
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
                     .background(Color.black)

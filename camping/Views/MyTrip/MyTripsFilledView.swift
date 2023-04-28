@@ -37,7 +37,7 @@ struct MyTripsFilledView: View {
                 // Check if there are any ongoing trips
                 if countOfOngoingAndPastPlans().ongoingCount > 0 {
                     VStack{
-                        Label("Ongoing trip", systemImage: "figure.run.circle")
+                        Label("label.onGoingTrip".i18n(), systemImage: "figure.run.circle")
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(width: 350, height: 40)
@@ -92,7 +92,7 @@ extension MyTripsFilledView {
                      .padding(.bottom,5)
                     
                      
-                  Text("My trips")
+                Text("label.myTrips".i18n())
                       .font(.title)
                       .foregroundColor(.white)
                       .fontWeight(.bold)
@@ -112,7 +112,7 @@ extension MyTripsFilledView {
                 .frame(maxWidth: 400, maxHeight: 250)
                 .padding(.top,-20)
                 .padding(.horizontal,20)
-            Text("Oops!! You don't have any ongoing trips!!")
+            Text("label.noOnGoingTripsAlert".i18n())
                 .padding(.bottom,20)
         }
     }
@@ -125,7 +125,7 @@ extension MyTripsFilledView {
                 .frame(maxWidth: 400, maxHeight: 250)
                 .padding(.top,20)
                 .padding(.horizontal,20)
-            Text("Oops!! You don't have any past trips!!")
+            Text("label.noPastTripsAlert".i18n())
                 .padding(.bottom,20)
         }
     }
@@ -133,7 +133,7 @@ extension MyTripsFilledView {
     private var pastTripViewHeader : some View {
         VStack(alignment: .leading){
             HStack{
-                Label("Past trip", systemImage: "flag.square.fill")
+                Label("label.pastTrips".i18n(), systemImage: "flag.square.fill")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
@@ -151,7 +151,7 @@ extension MyTripsFilledView {
     // View to display add new trip button
     private var createNewTripButton: some View {
         PlanNewTripButtonView(campsite: nil) {
-            Label("Create new trip", systemImage: "plus")
+            Label("btn.createNewTrip".i18n(), systemImage: "plus")
                 .foregroundColor(.white)
                 .frame(width: 350, height: 50)
                 .background(Color.black)

@@ -46,3 +46,39 @@
 "search.bar" = "Enter a city";
 "search.startRecording" = "Start recording";
 "search.stopRecording" = "Stop recording";
+
+
+"label.myTrips" = "My trips";
+"label.onGoingTrip" = "Ongoing trip";
+"label.noOnGoindTripsAlert" = "Oops!! You don't have any ongoing trips!!";
+"label.noPastTripsAlert" = "Oops!! You don't have any past trips!!";
+"label.pastTrips" = "Past Trip";
+"label.noImageUrl" = "Image url not found";
+"label.editPlan" = "Edit Plan";
+"label.editStatus" = "Trip Status: Editing";
+"btn.saveChanges" = "Save Changes";
+"btn.cancel" = "Cancel";
+"btn.delete" = "Delete";
+
+"label.deleteStatus" = "Trip Status: To Be Deleted";
+"label.planInfo" = "You had carefully made this plan.";
+"label.deleteAlert" = "Are you sure you want to delete this plan?";
+
+"label.tripOverview" = "Trip Overview";
+"label.onGoingTripStatus" = "Trip Status: Ongoing";
+"label.weatherForecast" = "Weather Forecast";
+"label.gearChecklist" = "Gear Checklist";
+"btn.addGear" = "Add gear";
+"btn.viewOnMap" = "View on Map";
+
+"label.editGear" = "Edit Gear";
+"label.noGearAlert" = "You do not have any gears added!";
+"label.completedTripStatus" = "Trip Status: Completed";
+"label.tripGearList" = "Trip Gear List";
+"btn.planAgain" = "Plan Again";
+
+"label.chooseAction" = "Choose an action";
+"btn.edit" = "Edit";
+"btn.delete" = "Delete";
+"btn.createNewTrip" = "Create New Trip";
+

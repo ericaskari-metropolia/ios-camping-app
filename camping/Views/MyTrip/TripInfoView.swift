@@ -35,7 +35,7 @@ struct TripInfoView: View {
                    
                 }
                 VStack{
-                    Text("Trip information")
+                    Text("label.tripOverview".i18n())
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -46,7 +46,7 @@ struct TripInfoView: View {
             }
             .ignoresSafeArea()
             HStack{
-                Label("Trip Status: Ongoing", systemImage: "figure.run.circle")
+                Label("label.onGoingTripStatus".i18n(), systemImage: "figure.run.circle")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
@@ -59,7 +59,7 @@ struct TripInfoView: View {
             ScrollView(.vertical,showsIndicators: false) {
                 VStack{
                     HStack{
-                        Text(planDetail.destination.name ?? "")
+                        Text(planDetail.destination.name ?? "label.destinationlocation".i18n())
                             .font(.title3)
                             .fontWeight(.bold)
                         Spacer()
@@ -94,7 +94,7 @@ struct TripInfoView: View {
                 .padding(.horizontal,3)
                 
                 VStack(alignment: .leading){
-                    Text("Weather Forecast")
+                    Text("label.weatherForecast".i18n())
                         .padding(.top,10)
                         .padding(.bottom, -5)
                         .padding(.leading,15)
@@ -117,7 +117,7 @@ struct TripInfoView: View {
                 Divider()
                
                 VStack(alignment: .leading){
-                    Label("Gear Checklist", systemImage: "list.bullet")
+                    Label("label.gearChecklist".i18n(), systemImage: "list.bullet")
                         .fontWeight(.bold)
                         .padding(.vertical,0)
                   

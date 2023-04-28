@@ -48,7 +48,7 @@ struct MyGearListView: View {
             NavigationLink(
                 destination: AddPlanGears(plan:plan),
                 label: {
-                    Text("Edit gear")
+                    Text("label.editGear".i18n())
                         .frame(maxWidth: .infinity)
                 }
             )
@@ -61,14 +61,14 @@ struct MyGearListView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.white)
                     .shadow(color: Color.gray.opacity(0.5), radius: 5, x: 0, y: 2)
-                Text("You do not have any gears added!")
+                Text("label.noGearAlert".i18n())
                     .padding()
             }
             .padding()
             NavigationLink(
                 destination: AddPlanGears(plan:plan),
                 label: {
-                    Text("Add gear")
+                    Text("btn.addGear".i18n())
                         .frame(maxWidth: .infinity)
                 }
             )

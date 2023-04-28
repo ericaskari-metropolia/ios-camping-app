@@ -34,7 +34,7 @@ struct PastTripInfoView: View {
                     
                 }
                 VStack{
-                    Text("Trip information")
+                    Text("label.tripOverview".i18n())
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -45,7 +45,7 @@ struct PastTripInfoView: View {
             }
             .ignoresSafeArea()
             HStack{
-                Label("Trip Status: Completed", systemImage: "trophy.circle.fill")
+                Label("label.completedTripStatus".i18n(), systemImage: "trophy.circle.fill")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
@@ -58,7 +58,7 @@ struct PastTripInfoView: View {
             ScrollView(.vertical,showsIndicators: false) {
                 VStack{
                     HStack{
-                        Text(planDetail.destination.name ?? "")
+                        Text(planDetail.destination.name ?? "label.destinationlocation")
                             .font(.title3)
                             .fontWeight(.bold)
                         Spacer()
@@ -92,7 +92,7 @@ struct PastTripInfoView: View {
                 Divider()
                
                 VStack(alignment: .leading){
-                    Label("Gear List", systemImage: "list.bullet")
+                    Label("label.tripGearList".i18n(), systemImage: "list.bullet")
                         .padding(.vertical)
                     PastGearListView(plan:planDetail.plan)
                    // Text("Oops!! Gear details not available.")
@@ -100,7 +100,7 @@ struct PastTripInfoView: View {
                 .padding()
                 Spacer()
                 PlanNewTripButtonView(campsite: planDetail.plan.campingSite) {
-                    Label("Plan Again", systemImage: "plus")
+                    Label("btn.planAgain".i18n(), systemImage: "plus")
                         .foregroundColor(.white)
                         .frame(width: 350, height: 50)
                         .background(Color.black)

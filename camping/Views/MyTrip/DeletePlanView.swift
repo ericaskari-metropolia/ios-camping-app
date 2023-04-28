@@ -34,7 +34,7 @@ struct DeletePlanView: View {
                 }
                 .ignoresSafeArea()
                 HStack{
-                    Label("Trip Status: To Be Deleted", systemImage: "trash.circle")
+                    Label("label.deleteStatus".i18n(), systemImage: "trash.circle")
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 350, height: 40)
@@ -43,7 +43,7 @@ struct DeletePlanView: View {
                     
                 }
                 .padding(.top,-80)
-                Text("You had carefully made this plan.")
+                Text("label.planInfo".i18n())
                     .padding()
                     .padding(.top, -25)
                 VStack{
@@ -86,12 +86,12 @@ struct DeletePlanView: View {
             .padding(.horizontal,5)
            
             Divider()
-                Text("Are you sure you want to delete this plan?")
+                Text("label.deleteAlert".i18n())
                     .font(.title3)
                     .padding(.horizontal,2)
                     .padding(.vertical,10)
                         HStack {
-                            Button("Cancel") {
+                            Button("btn.cancel".i18n()) {
                                 dismiss()
                             }
                             .padding()
@@ -100,7 +100,7 @@ struct DeletePlanView: View {
                             .background(Color.green)
                             .cornerRadius(15)
 
-                            Button("Delete") {
+                            Button("btn.delete".i18n())  {
                                 deletePlan()
                                 dismiss()
                             }
@@ -127,7 +127,7 @@ struct DeletePlanView: View {
 
 extension DeletePlanView {
     var deleteButton: some View {
-        Label("Delete", systemImage: "trash")
+        Label("btn.delete".i18n(), systemImage: "trash")
             .foregroundColor(.white)
             .frame(width: 350, height: 50)
             .background(Color.black)
