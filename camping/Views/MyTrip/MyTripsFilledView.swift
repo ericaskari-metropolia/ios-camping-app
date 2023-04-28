@@ -2,7 +2,7 @@
 //  MyTripsFilledView.swift
 //  camping
 //
-//  Created by Binod Panta on 11.4.2023.
+//  Created by The Minions on 11.4.2023.
 //
 /* This is a view that displays the trip of a user*/
 
@@ -17,22 +17,22 @@ struct MyTripsFilledView: View {
     
     @FetchRequest(sortDescriptors: []) var plans: FetchedResults<Plan>
     
-   
+    
     
     func countOfOngoingAndPastPlans() -> (ongoingCount: Int, pastCount: Int) {
-           let currentDate = Date()
+        let currentDate = Date()
         let ongoingPlans = plans.filter { $0.endDate ?? currentDate >= currentDate }
-           let pastPlans = plans.filter { $0.endDate ?? currentDate < currentDate }
-           return (ongoingCount: ongoingPlans.count, pastCount: pastPlans.count)
-       }
-        
+        let pastPlans = plans.filter { $0.endDate ?? currentDate < currentDate }
+        return (ongoingCount: ongoingPlans.count, pastCount: pastPlans.count)
+    }
+    
     var body: some View {
         VStack {
-            headerView
+            HeaderView(title: "My trips")
                 .padding(.bottom,-40)
                 .ignoresSafeArea()
-           
-           
+            
+            
             ScrollView{
                 // Check if there are any ongoing trips
                 if countOfOngoingAndPastPlans().ongoingCount > 0 {
@@ -41,21 +41,21 @@ struct MyTripsFilledView: View {
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(width: 350, height: 40)
-                            .background(Color.cyan)
+                            .background(Color("PrimaryColor"))
                             .cornerRadius(15)
                         OnGoingTripView()
                     }
                 } else {
                     noOngoingTripsView
                 }
-                    Divider()
-                    createNewTripButton
+                Divider()
+                createNewTripButton
                 
                 
                 Divider()
-                    pastTripViewHeader
+                pastTripViewHeader
                 
-               
+                
                 // Check if there are any past trips
                 if countOfOngoingAndPastPlans().pastCount > 0 {
                     PastTripView()
@@ -63,11 +63,11 @@ struct MyTripsFilledView: View {
                         .padding()
                 }else {
                     noPastTripsView
-                        
-                }
                     
                 }
+                
             }
+        }
         
     }
     
@@ -75,34 +75,6 @@ struct MyTripsFilledView: View {
 
 // Extension to MyTripsFilledView containing private helper views
 extension MyTripsFilledView {
-    private var headerView : some View {
-        ZStack(alignment:Alignment(horizontal: .leading, vertical: .bottom)){
-           
-            Image("header")
-                .resizable()
-                .scaledToFill()
-                .frame(maxWidth: 400, maxHeight: 300)
-                .clipped()
-           
-            VStack(alignment: .leading){
-               
-                Label("You are in \(locationViewModel.currentPlacemark?.locality ?? "")", systemImage: "mappin.and.ellipse")
-                  .font(.headline)
-                     .foregroundColor(.white)
-                     .padding(.bottom,5)
-                    
-                     
-                  Text("My trips")
-                      .font(.title)
-                      .foregroundColor(.white)
-                      .fontWeight(.bold)
-                   
-            }
-            .padding()
-            .padding(.bottom,10)
-            }
-    }
-    
     
     // View to display when there are no ongoing trips
     private var noOngoingTripsView :some View {
@@ -114,6 +86,7 @@ extension MyTripsFilledView {
                 .padding(.horizontal,20)
             Text("Oops!! You don't have any ongoing trips!!")
                 .padding(.bottom,20)
+                .foregroundColor(Color("PrimaryColor"))
         }
     }
     
@@ -127,6 +100,7 @@ extension MyTripsFilledView {
                 .padding(.horizontal,20)
             Text("Oops!! You don't have any past trips!!")
                 .padding(.bottom,20)
+                .foregroundColor(Color("PrimaryColor"))
         }
     }
     
@@ -137,10 +111,10 @@ extension MyTripsFilledView {
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
-                    .background(Color.cyan)
+                    .background(Color("PrimaryColor"))
                     .cornerRadius(15)
                 Spacer()
-              
+                
             }
             .padding(.horizontal)
             .padding(.top)
@@ -154,7 +128,7 @@ extension MyTripsFilledView {
             Label("Create new trip", systemImage: "plus")
                 .foregroundColor(.white)
                 .frame(width: 350, height: 50)
-                .background(Color.black)
+                .background(Color("PrimaryColor"))
                 .cornerRadius(15)
         } completed: {
             // Nothing to do

@@ -2,7 +2,7 @@
 //  OnGoingTripView.swift
 //  camping
 //
-//  Created by Binod Panta on 18.4.2023.
+//  Created by The Minions on 18.4.2023.
 //
 /* A view that displays the ongoingtrip*/
 
@@ -12,7 +12,7 @@ import SwiftUI
 struct OnGoingTripView: View {
     
     @EnvironmentObject var viewModel: MyTripViewModel
-
+    
     var body: some View {
         VStack {
             OnGoingTripScrollView(planDetails: viewModel.ongoingPlanDetails())
@@ -29,7 +29,7 @@ struct OnGoingTripScrollView: View {
     
     //An array of plandetail object
     let planDetails: [PlanDetail]
-
+    
     var body: some View {
         ScrollView(.horizontal,showsIndicators: false) {
             HStack(spacing: 10) {
@@ -61,7 +61,7 @@ struct OnGoingTripDetailScreen: View {
     @State private var isDeleting = false
     
     @EnvironmentObject var viewModel: MyTripViewModel
-
+    
     
     var body: some View {
         
@@ -71,7 +71,7 @@ struct OnGoingTripDetailScreen: View {
         NavigationLink(destination: DeletePlanView(planDetail: planDetail), isActive: $isDeleting) {
             EmptyView()
         }
-
+        
         VStack(alignment: .leading, spacing: 10) {
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
                 
@@ -125,10 +125,11 @@ struct OnGoingTripDetailScreen: View {
                 Text(planDetail.destination.name ?? "")
                     .font(.caption)
                     .fontWeight(.bold)
+                    .foregroundColor(Color("PrimaryColor"))
                 
                 Text("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)")
                     .font(.caption)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color("PrimaryColor"))
                     .padding(.top,2)
             }
         }
@@ -145,7 +146,7 @@ struct OnGoingTripDetailScreen: View {
                 
                 viewModel.deletePlan(planDetail)
                 viewModel.updatePlanDetails()
-               
+                
             }, secondaryButton: .cancel())
         }
     }

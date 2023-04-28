@@ -2,7 +2,7 @@
 //  ForecastModel.swift
 //  camping
 //
-//  Created by Binod Panta on 19.4.2023.
+//  Created by The Minions on 19.4.2023.
 //
 /* A struct to represent the forecast data, including the city, count, and a list of weather data */
 

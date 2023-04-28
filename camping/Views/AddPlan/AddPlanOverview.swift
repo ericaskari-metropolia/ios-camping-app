@@ -2,7 +2,7 @@
 //  AddPlanOverview.swift
 //  camping
 //
-//  Created by Eric Askari on 14.4.2023.
+//  Created by The Minions on 14.4.2023.
 //
 
 import MapKit
@@ -23,7 +23,26 @@ struct AddPlanOverview: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                ZStack {
+                ZStack(alignment: .top) {
+                    HStack {
+                        
+                        // Button to go back previous page
+                        Button{
+                            dismiss()
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .font(.title)
+                                .padding()
+                            
+                        }
+                        .symbolVariant(.circle.fill)
+                        .foregroundStyle(Color("PrimaryColor"), .white)
+                        
+                        Spacer()
+                        
+                    }
+                    .padding(EdgeInsets(top: 50, leading: 20, bottom: 0, trailing: 20))
+                    
                     GeometryReader { geometry in
                         Group {
                             if let image = snapshotImage {
@@ -68,6 +87,7 @@ struct AddPlanOverview: View {
                 Text("You have created your new journey!")
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
+                    .foregroundColor(Color("PrimaryColor"))
                     .font(.system(size: 26))
                     .bold()
                     .padding()
@@ -82,7 +102,7 @@ struct AddPlanOverview: View {
                             }
                         )
                         .padding()
-                        .background(Color.black)
+                        .background(Color("PrimaryColor"))
                         .foregroundColor(Color.white)
                         .cornerRadius(30)
                     }
@@ -95,12 +115,25 @@ struct AddPlanOverview: View {
                             .frame(maxWidth: .infinity)
                     }
                     .padding()
-                    .background(Color.black)
+                    .background(Color("PrimaryColor"))
                     .foregroundColor(Color.white)
                     .cornerRadius(30)
                 }.padding()
             }
-        }.ignoresSafeArea()
+        }
+        .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+                Button{
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                    .font(.title)
+                    .padding()
+                }
+                .symbolVariant(.circle.fill)
+                .foregroundStyle(Color("PrimaryColor"), .white)
+        )
     }
 
     func generateImageUrl(start: CLLocationCoordinate2D, end: CLLocationCoordinate2D) {}

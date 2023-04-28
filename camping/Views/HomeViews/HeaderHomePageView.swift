@@ -2,7 +2,7 @@
 //  HeaderHomePageView.swift
 //  camping
 //
-//  Created by Thu Hoang on 14.4.2023.
+//  Created by The Minions on 14.4.2023.
 //
 
 import Foundation

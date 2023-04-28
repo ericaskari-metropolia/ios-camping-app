@@ -2,7 +2,7 @@
 //  AddPlanChooseLocationModalView.swift
 //  camping
 //
-//  Created by Eric Askari on 13.4.2023.
+//  Created by The Minions on 13.4.2023.
 //
 
 import CoreLocation

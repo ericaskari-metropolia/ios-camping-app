@@ -2,7 +2,7 @@
 //  Extensions.swift
 //  camping
 //
-//  Created by Eric Askari on 11.4.2023.
+//  Created by The Minions on 11.4.2023.
 //
 
 import Foundation

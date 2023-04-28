@@ -2,7 +2,7 @@
 //  PersistenceController.swift
 //  camping
 //
-//  Created by Thu Hoang on 10.4.2023.
+//  Created by The Minions on 10.4.2023.
 //
 
 import Foundation

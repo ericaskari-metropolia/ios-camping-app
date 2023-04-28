@@ -2,7 +2,7 @@
 //  MyGearListView.swift
 //  camping
 //
-//  Created by Binod Panta on 23.4.2023.
+//  Created by The Minions on 23.4.2023.
 //
 
 import SwiftUI
@@ -12,7 +12,7 @@ struct MyGearListView: View {
     
     var plan: Plan
     @EnvironmentObject var gearViewModel: GearViewModel
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
         animation: .default
@@ -34,26 +34,27 @@ struct MyGearListView: View {
                             Text("\(filteredItems[index].name ?? "-")")
                             Spacer()
                             Image(systemName: filteredItems[index].checked ? "checkmark.square.fill" : "square")
-                                .foregroundColor(filteredItems[index].checked ? Color(UIColor.systemBlue) : Color.secondary)
+                                .foregroundColor(filteredItems[index].checked ? Color("PrimaryColor") : Color.secondary)
                                 .onTapGesture {gearViewModel.checkItem(gear: filteredItems[index])}
                         }
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .background(index % 2 == 0 ? Color.white.cornerRadius(10) : Color.gray.opacity(0.1).cornerRadius(10))
-                       
+                        
                     }
                 }
             }
-
+            
             NavigationLink(
                 destination: AddPlanGears(plan:plan),
                 label: {
                     Text("Edit gear")
+                        .foregroundColor(Color("PrimaryColor"))
                         .frame(maxWidth: .infinity)
                 }
             )
             .padding()
-            .background(Color.black)
+            .background(Color("PrimaryColor"))
             .foregroundColor(Color.white)
             .cornerRadius(30)
         } else {
@@ -73,7 +74,7 @@ struct MyGearListView: View {
                 }
             )
             .padding()
-            .background(Color.black)
+            .background(Color("PrimaryColor"))
             .foregroundColor(Color.white)
             .cornerRadius(30)
         }
@@ -92,8 +93,3 @@ struct MyGearListView: View {
         }
     }
 }
-//struct MyGearListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MyGearListView()
-//    }
-//}

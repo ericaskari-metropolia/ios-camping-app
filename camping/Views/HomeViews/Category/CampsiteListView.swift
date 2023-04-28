@@ -79,9 +79,9 @@ struct CampsiteListView: View {
         .onAppear(perform: {filterList()})
         .edgesIgnoringSafeArea(.top)
         
-        }
-        
     }
+    
+}
 
 
 struct CampsiteListView_Previews: PreviewProvider {
