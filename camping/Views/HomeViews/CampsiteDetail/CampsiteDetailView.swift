@@ -172,7 +172,7 @@ struct CampsiteDetailView: View {
                                 // Nothing to do
                             }
                             .padding(15)
-                            .background(Color.primary)
+                            .background(Color("PrimaryColor"))
                             .clipShape(Capsule())
                         }
                         .padding()
