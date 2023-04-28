@@ -10,6 +10,7 @@ import SwiftUI
 struct DeletePlanView: View {
     @State var planDetail: PlanDetail
     @EnvironmentObject var viewModel: MyTripViewModel
+    @Environment(\.dismiss) var dismiss
     
     @Environment(\.presentationMode) private var presentationMode
     var body: some View {
@@ -29,11 +30,41 @@ struct DeletePlanView: View {
                     }
                     
                 }
-                
+                VStack{
+                    HStack {
+                        Spacer()
+                        
+                        // Button to go back previous page
+                        Button{
+                            dismiss()
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .font(.title)
+                                .padding()
+                            
+                        }
+                        .symbolVariant(.circle.fill)
+                        .foregroundStyle(Color("PrimaryColor"), .white)
+                        
+                        Spacer()
+                        VStack{
+                            Text("label.deletePlan".i18n())
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 160, height: 35)
+                        .background(Color("PrimaryColor").opacity(0.4).cornerRadius(10))
+                        Spacer()
+                        Spacer()
+                    }
+                    .padding(EdgeInsets(top: 40, leading: -40, bottom: 0, trailing: 0))
+                }
             }
             .ignoresSafeArea()
+          
             HStack{
-                Label("label.deleteStatus".i18n(), systemImage: "trash.circle")
+                Label("label.deleteStatus".i18n(), systemImage: "pencil.circle.fill")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
@@ -41,11 +72,8 @@ struct DeletePlanView: View {
                     .cornerRadius(15)
                 
             }
+            .padding(.bottom, 40)
             .padding(.top,-80)
-            Text("label.planInfo".i18n())
-                .padding()
-                .padding(.top, -25)
-                .foregroundColor(Color("PrimaryColor"))
             VStack{
                 
                 HStack{
@@ -109,6 +137,7 @@ struct DeletePlanView: View {
                 .background(Color.red)
                 .cornerRadius(15)
             }
+            .navigationBarBackButtonHidden(true)
             Spacer()
             
         }
@@ -117,9 +146,6 @@ struct DeletePlanView: View {
         viewModel.deletePlan(planDetail)
     }
     
-    func dismiss() {
-        presentationMode.wrappedValue.dismiss()
-    }
 }
 
 extension DeletePlanView {

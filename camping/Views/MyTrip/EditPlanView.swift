@@ -51,14 +51,18 @@ struct EditPlanView: View {
                         .foregroundStyle(Color("PrimaryColor"), .white)
                         
                         Spacer()
-                        Text("label.editPlan".i18n())
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
+                       VStack {
+                            Text("label.editPlan".i18n())
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }
+                       .frame(width: 160, height: 35)
+                       .background(Color("PrimaryColor").opacity(0.4).cornerRadius(10))
                         Spacer()
                         Spacer()
                     }
-                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 40, leading: -40, bottom: 0, trailing: 0))
                 }
             }
             

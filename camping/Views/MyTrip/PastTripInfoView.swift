@@ -8,6 +8,8 @@ import SwiftUI
 
 struct PastTripInfoView: View {
     
+    @Environment(\.dismiss) var dismiss
+    
     @State var planDetail: PlanDetail
     
     // instance of weather forecast manager
@@ -27,6 +29,7 @@ struct PastTripInfoView: View {
                             .scaledToFill()
                             .frame(height: 300)
                             .frame(maxWidth: .infinity)
+                            
                     } placeholder: {
                         // if the image is still loading, show a ProgressView
                         ProgressView()
@@ -34,11 +37,34 @@ struct PastTripInfoView: View {
                     
                 }
                 VStack{
-                    Text("label.tripOverview".i18n())
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.top,55)
+                    HStack {
+                        Spacer()
+                        
+                        // Button to go back previous page
+                        Button{
+                            dismiss()
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .font(.title)
+                                .padding()
+                            
+                        }
+                        .symbolVariant(.circle.fill)
+                        .foregroundStyle(Color("PrimaryColor"), .white)
+                        
+                        Spacer()
+                        HStack{
+                            Text("label.tripOverview".i18n())
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 200, height: 40)
+                        .background(Color("PrimaryColor").opacity(0.2).cornerRadius(10))
+                        Spacer()
+                        Spacer()
+                    }
+                    .padding(EdgeInsets(top: 40, leading: -30, bottom: 0, trailing: 0))
                     
                 }
                 
@@ -63,6 +89,8 @@ struct PastTripInfoView: View {
                             .fontWeight(.bold)
                         Spacer()
                         Image(systemName: "tent")
+                            .foregroundColor(Color("PrimaryColor"))
+
                     }
                     .padding(.bottom, -20)
                     .padding()
@@ -75,10 +103,11 @@ struct PastTripInfoView: View {
                     HStack{
                         Label("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)", systemImage:"calendar")
                             .font(.caption)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(Color("PrimaryColor"))
                         
                         Spacer()
                         Image(systemName: "note.text")
+                            .foregroundColor(Color("PrimaryColor"))
                     }
                     .padding(.vertical, -15)
                     .padding()
@@ -93,7 +122,9 @@ struct PastTripInfoView: View {
                 
                 VStack(alignment: .leading){
                     Label("label.tripGearList".i18n(), systemImage: "list.bullet")
-                        .padding(.vertical)
+                        .fontWeight(.bold)
+                        .padding(.vertical,0)
+                        .foregroundColor(Color("PrimaryColor"))
                     PastGearListView(plan:planDetail.plan)
                     // Text("Oops!! Gear details not available.")
                 }
@@ -103,7 +134,7 @@ struct PastTripInfoView: View {
                     Label("btn.planAgain".i18n(), systemImage: "plus")
                         .foregroundColor(.white)
                         .frame(width: 350, height: 50)
-                        .background(Color.black)
+                        .background(Color("PrimaryColor"))
                         .cornerRadius(15)
                 } completed: {
                     
@@ -113,6 +144,7 @@ struct PastTripInfoView: View {
             .padding()
             .padding(.top,-65)
             .ignoresSafeArea()
+            .navigationBarBackButtonHidden(true)
         }
     }
     

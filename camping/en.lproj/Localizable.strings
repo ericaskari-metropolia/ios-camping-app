@@ -79,6 +79,7 @@
 "btn.planAgain" = "Plan Again";
 
 "label.chooseAction" = "Choose an action";
+"label.deletePlan" = "Delete Plan";
 "btn.edit" = "Edit";
 "btn.delete" = "Delete";
 "btn.createNewTrip" = "Create New Trip";
