@@ -52,7 +52,6 @@ struct PastTripInfoView: View {
                         .symbolVariant(.circle.fill)
                         .foregroundStyle(Color("PrimaryColor"), .white)
                         
-//                        Spacer()
                         HStack{
                             Text("label.tripOverview".i18n())
                                 .font(.title)
