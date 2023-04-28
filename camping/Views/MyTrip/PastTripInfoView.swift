@@ -4,12 +4,18 @@
 //
 //  Created by The Minions on 20.4.2023.
 //
+
+/* A view that gives information about the planned past trip,
+ with campsite, and gears info*/
+
 import SwiftUI
 
 struct PastTripInfoView: View {
     
+    //Environment value to dismiss the view
     @Environment(\.dismiss) var dismiss
     
+    // state variable to hold the plan detail
     @State var planDetail: PlanDetail
     
     // instance of weather forecast manager
@@ -124,7 +130,7 @@ struct PastTripInfoView: View {
                         .padding(.vertical,0)
                         .foregroundColor(Color("PrimaryColor"))
                     PastGearListView(plan:planDetail.plan)
-                    // Text("Oops!! Gear details not available.")
+                   
                 }
                 .padding()
                 Spacer()

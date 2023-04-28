@@ -5,18 +5,27 @@
 //  Created by The Minions on 23.4.2023.
 //
 
+/* A view that edits the plan */
 import SwiftUI
 
 struct EditPlanView: View {
+    
+    // Use @EnvironmentObject property wrapper to inject an instance of MyTripViewModel into this view
     @EnvironmentObject var viewModel: MyTripViewModel
+    
+    //Environment value to dismiss the view
     @Environment(\.dismiss) var dismiss
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var planDetail: PlanDetail
+    
     @State private var isStartDatePickerVisible = false
     @State private var isEndDatePickerVisible = false
     @State private var dateFormatter = formatter()
     @State private var startDate: Date = .today
     @State private var endDate: Date = .tomorrow
-    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         
         VStack{
@@ -50,7 +59,7 @@ struct EditPlanView: View {
                         .symbolVariant(.circle.fill)
                         .foregroundStyle(Color("PrimaryColor"), .white)
                         
-                        Spacer()
+                     
                        VStack {
                             Text("label.editPlan".i18n())
                                 .font(.title)
@@ -60,7 +69,7 @@ struct EditPlanView: View {
                        .frame(width: 160, height: 35)
                        .background(Color("PrimaryColor").opacity(0.4).cornerRadius(10))
                         Spacer()
-                        Spacer()
+                        
                     }
                     .padding(EdgeInsets(top: 40, leading: -40, bottom: 0, trailing: 0))
                 }
@@ -225,6 +234,7 @@ struct EditPlanView: View {
         }
     }
     
+    //computed property to check the date validity
     var isFormValid: Bool {
         let correctDates = planDetail.start.timeIntervalSince1970 <= planDetail.end.timeIntervalSince1970
         return correctDates
@@ -236,7 +246,7 @@ struct EditPlanView: View {
     
 }
 
-
+// A helper function to format the date
 func formatter() -> DateFormatter {
     let formatter = DateFormatter()
     formatter.dateFormat = "HH:mm E, d MMM y"

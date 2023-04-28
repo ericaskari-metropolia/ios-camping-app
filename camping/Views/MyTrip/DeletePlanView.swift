@@ -5,9 +5,13 @@
 //  Created by The Minions on 24.4.2023.
 //
 
+/* A view that show an option to delte a plan*/
+
 import SwiftUI
 
 struct DeletePlanView: View {
+    
+    // state variable to hold the plan detail
     @State var planDetail: PlanDetail
     @EnvironmentObject var viewModel: MyTripViewModel
     @Environment(\.dismiss) var dismiss
@@ -46,7 +50,7 @@ struct DeletePlanView: View {
                         .symbolVariant(.circle.fill)
                         .foregroundStyle(Color("PrimaryColor"), .white)
                         
-                        Spacer()
+                       
                         VStack{
                             Text("label.deletePlan".i18n())
                                 .font(.title)
@@ -56,7 +60,7 @@ struct DeletePlanView: View {
                         .frame(width: 160, height: 35)
                         .background(Color("PrimaryColor").opacity(0.4).cornerRadius(10))
                         Spacer()
-                        Spacer()
+                        
                     }
                     .padding(EdgeInsets(top: 40, leading: -40, bottom: 0, trailing: 0))
                 }
@@ -142,6 +146,8 @@ struct DeletePlanView: View {
             
         }
     }
+    
+    // A helper function to delete the plan
     func deletePlan() {
         viewModel.deletePlan(planDetail)
     }

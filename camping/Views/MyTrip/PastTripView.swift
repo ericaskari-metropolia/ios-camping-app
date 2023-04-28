@@ -10,13 +10,14 @@ import SwiftUI
 
 struct PastTripView: View {
     
+    // Use @EnvironmentObject property wrapper to inject an instance of MyTripViewModel into this view
     @EnvironmentObject var viewModel: MyTripViewModel
     
     
     var body: some View {
         VStack{
             
-            // Show a grid of past trip cards using the planDetails provided by the view model
+            // Show a scroll view of past trip cards using the planDetails provided by the view model
             PastTripScrollView(planDetails: viewModel.pastPlanDetails())
         }
         //when the view appears, fetch all the plans and update the plan details

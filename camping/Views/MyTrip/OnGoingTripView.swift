@@ -11,6 +11,7 @@ import SwiftUI
 
 struct OnGoingTripView: View {
     
+    // Use @EnvironmentObject property wrapper to inject an instance of MyTripViewModel into this view
     @EnvironmentObject var viewModel: MyTripViewModel
     
     var body: some View {
@@ -65,9 +66,12 @@ struct OnGoingTripDetailScreen: View {
     
     var body: some View {
         
+        //Navigate to edit plan view
         NavigationLink(destination: EditPlanView(planDetail: planDetail), isActive: $isEditing) {
             EmptyView()
         }
+        
+        //Navigate to delete plan view
         NavigationLink(destination: DeletePlanView(planDetail: planDetail), isActive: $isDeleting) {
             EmptyView()
         }
