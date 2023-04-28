@@ -125,10 +125,11 @@ struct OnGoingTripDetailScreen: View {
                 Text(planDetail.destination.name ?? "")
                     .font(.caption)
                     .fontWeight(.bold)
+                    .foregroundColor(Color("PrimaryColor"))
                 
                 Text("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)")
                     .font(.caption)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color("PrimaryColor"))
                     .padding(.top,2)
             }
         }

@@ -2,7 +2,7 @@
 //  AddPlantFirstStepView.swift
 //  camping
 //
-//  Created by Eric Askari on 3.4.2023.
+//  Created by The Minion on 3.4.2023.
 //
 
 import CoreLocation

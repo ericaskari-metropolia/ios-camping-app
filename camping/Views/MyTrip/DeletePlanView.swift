@@ -38,7 +38,7 @@ struct DeletePlanView: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 350, height: 40)
-                        .background(Color.cyan)
+                        .background(Color("PrimaryColor"))
                         .cornerRadius(15)
                     
                 }
@@ -46,14 +46,14 @@ struct DeletePlanView: View {
                 Text("You had carefully made this plan.")
                     .padding()
                     .padding(.top, -25)
+                    .foregroundColor(Color("PrimaryColor"))
                 VStack{
                 
                 HStack{
-                    
-                       
                     Text(planDetail.destination.name ?? "")
                         .font(.title3)
                         .fontWeight(.bold)
+                        .foregroundColor(Color("PrimaryColor"))
                     Spacer()
                     Image(systemName: "tent")
                 }
@@ -69,7 +69,7 @@ struct DeletePlanView: View {
                 HStack{
                     Label("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)", systemImage:"calendar")
                         .font(.caption)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(Color("PrimaryColor"))
                         
                     
                     Spacer()
@@ -88,6 +88,7 @@ struct DeletePlanView: View {
             Divider()
                 Text("Are you sure you want to delete this plan?")
                     .font(.title3)
+                    .foregroundColor(Color("PrimaryColor"))
                     .padding(.horizontal,2)
                     .padding(.vertical,10)
                         HStack {
@@ -97,7 +98,7 @@ struct DeletePlanView: View {
                             .padding()
                             .foregroundColor(.white)
                             .frame(width: 100, height: 50)
-                            .background(Color.green)
+                            .background(Color("PrimaryColor"))
                             .cornerRadius(15)
 
                             Button("Delete") {

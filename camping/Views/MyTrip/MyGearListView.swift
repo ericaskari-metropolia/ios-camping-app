@@ -2,7 +2,7 @@
 //  MyGearListView.swift
 //  camping
 //
-//  Created by Binod Panta on 23.4.2023.
+//  Created by The Minions on 23.4.2023.
 //
 
 import SwiftUI
@@ -34,7 +34,7 @@ struct MyGearListView: View {
                             Text("\(filteredItems[index].name ?? "-")")
                             Spacer()
                             Image(systemName: filteredItems[index].checked ? "checkmark.square.fill" : "square")
-                                .foregroundColor(filteredItems[index].checked ? Color(UIColor.systemBlue) : Color.secondary)
+                                .foregroundColor(filteredItems[index].checked ? Color("PrimaryColor") : Color.secondary)
                                 .onTapGesture {gearViewModel.checkItem(gear: filteredItems[index])}
                         }
                         .padding()
@@ -49,11 +49,12 @@ struct MyGearListView: View {
                 destination: AddPlanGears(plan:plan),
                 label: {
                     Text("Edit gear")
+                        .foregroundColor(Color("PrimaryColor"))
                         .frame(maxWidth: .infinity)
                 }
             )
             .padding()
-            .background(Color.black)
+            .background(Color("PrimaryColor"))
             .foregroundColor(Color.white)
             .cornerRadius(30)
         } else {
@@ -73,7 +74,7 @@ struct MyGearListView: View {
                 }
             )
             .padding()
-            .background(Color.black)
+            .background(Color("PrimaryColor"))
             .foregroundColor(Color.white)
             .cornerRadius(30)
         }

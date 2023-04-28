@@ -2,12 +2,14 @@
 //  TripInfoView.swift
 //  camping
 //
-//  Created by Binod Panta on 19.4.2023.
+//  Created by The Minions on 19.4.2023.
 //
 import SwiftUI
 
 struct TripInfoView: View {
     
+    @Environment(\.dismiss) var dismiss
+
     // state variable to hold the plan detail
     @State var planDetail: PlanDetail
   
@@ -35,11 +37,30 @@ struct TripInfoView: View {
                    
                 }
                 VStack{
-                    Text("Trip information")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.top,55)
+                    HStack {
+                        Spacer()
+                        
+                        // Button to go back previous page
+                        Button{
+                            dismiss()
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .font(.title)
+                                .padding()
+                            
+                        }
+                        .symbolVariant(.circle.fill)
+                        .foregroundStyle(Color("PrimaryColor"), .white)
+                        
+                        Spacer()
+                        Text("Trip Overview")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        Spacer()
+                        Spacer()
+                    }
+                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
                     
                 }
             
@@ -50,7 +71,7 @@ struct TripInfoView: View {
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
-                    .background(Color.cyan)
+                    .background(Color("PrimaryColor"))
                     .cornerRadius(15)
                 
             }
@@ -77,7 +98,7 @@ struct TripInfoView: View {
                     HStack{
                         Label("\(planDetail.start.displayFormat) - \(planDetail.end.displayFormat)", systemImage:"calendar")
                             .font(.caption)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(Color("PrimaryColor"))
                             
                         
                         Spacer()
@@ -99,6 +120,9 @@ struct TripInfoView: View {
                         .padding(.bottom, -5)
                         .padding(.leading,15)
                         .multilineTextAlignment(.leading)
+                        .foregroundColor(Color("PrimaryColor"))
+                        .bold()
+
                     if let weather = weather {
                         WeatherCardView(weatherForecast:weather, startTimestamp: Int(planDetail.start.timeIntervalSince1970))
                         
@@ -120,6 +144,7 @@ struct TripInfoView: View {
                     Label("Gear Checklist", systemImage: "list.bullet")
                         .fontWeight(.bold)
                         .padding(.vertical,0)
+                        .foregroundColor(Color("PrimaryColor"))
                   
                    // Text("Oops!! you dont have any gears added.")
                     MyGearListView(plan:planDetail.plan)
@@ -131,6 +156,7 @@ struct TripInfoView: View {
             .padding()
             .padding(.top,-55)
             .ignoresSafeArea()
+            .navigationBarBackButtonHidden(true)
         }
     }
     
