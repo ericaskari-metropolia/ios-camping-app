@@ -27,7 +27,7 @@ Requirements to run the project:
 3. Choose simulator (at least ios 16) or run the app on physical iOS devices by cable and build project.
   
 ## A sneak peek of Camplify
-Video demo: [video](https://youtu.be/mMk1HYnvwjY)
+Video demo: [Camplify demo video](https://youtu.be/mMk1HYnvwjY)
 <p align="center">
   <img src="https://user-images.githubusercontent.com/89455223/235214076-0807c0b0-a53a-4c20-bde0-2b0edf564806.png" width="250">
   <img src="https://user-images.githubusercontent.com/89455223/235214189-19bf3203-58ed-409b-9e70-886b25fe2504.png" width="250">
