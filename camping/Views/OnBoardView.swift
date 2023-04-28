@@ -6,7 +6,6 @@
 //
 import SwiftUI
 
-//The logic for home navigation not yet added
 //Model for the OnBoard items
 struct OnBoardItem {
     let image: String
@@ -28,28 +27,15 @@ struct OnBoardView: View {
     @State private var currentStep = 0
     @State private var isFinishOnboarding = false
     @State private var hasCompletedOnboarding = UserDefaults.standard.bool(forKey: "hasCompletedOnboarding")
-//    init() {
-//
-//        //Sets the global appearance of UIScroll view not to bounce at the end
-//        UIScrollView.appearance().bounces = false
-//
-//        // Check if the onboarding has been completed before
-//        if UserDefaults.standard.bool(forKey: "isOnboard") {
-//            // If yes, skip the onboarding screen and move to the next view
-//            self.isFinishOnboarding = true
-//        }
-//    }
     
     //UI logic for the onboard screen
     var body: some View {
         NavigationView {
             if hasCompletedOnboarding {
-                // TODO: Add navigation to the main screen
                 NavigationLink(destination: PermissionView(), isActive: $hasCompletedOnboarding) {
                     EmptyView()
                 }
             } else {
-                
                 ZStack{
                     Image(onBoardItems[currentStep].image)
                         .resizable()
@@ -57,11 +43,8 @@ struct OnBoardView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .edgesIgnoringSafeArea(.all)
                     VStack{
-                        
                         TabView(selection: $currentStep) {
-                            
                             ForEach(0..<3) { item in
-                                
                                 VStack{
                                     Spacer()
                                     Text(onBoardItems[item].title)
@@ -71,8 +54,6 @@ struct OnBoardView: View {
                                     
                                     Text(onBoardItems[item].description)
                                         .multilineTextAlignment(.center)
-                                    
-                                    
                                 }
                                 .foregroundColor(.white)
                                 .tag(item)
@@ -99,8 +80,8 @@ struct OnBoardView: View {
                             if self.currentStep < onBoardItems.count - 1 {
                                 self.currentStep += 1
                             } else {
-                                //Get started logic
                                 
+                                //Get started logic
                                 UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
                                 hasCompletedOnboarding = true
                             }
@@ -114,21 +95,12 @@ struct OnBoardView: View {
                                 .foregroundColor(.white)
                         }
                         .buttonStyle(PlainButtonStyle())
-                        
-                       
                     }
-                    
                 }.background(Color(UIColor(red: 245/255, green: 246/255, blue: 245/255, alpha: 1.0)))
-
             }
-            
-        }
         }
     }
-    
-
-
-
+}
 struct OnBoardView_Previews: PreviewProvider {
     static var previews: some View {
         OnBoardView()

@@ -17,7 +17,7 @@ struct MyTripsFilledView: View {
     
     @FetchRequest(sortDescriptors: []) var plans: FetchedResults<Plan>
     
-   
+   //To count the number of past and onGoing trip
     
     func countOfOngoingAndPastPlans() -> (ongoingCount: Int, pastCount: Int) {
            let currentDate = Date()
@@ -28,9 +28,15 @@ struct MyTripsFilledView: View {
         
     var body: some View {
         VStack {
-            headerView
-                .padding(.bottom,-40)
-                .ignoresSafeArea()
+            ZStack{
+                HeaderView()
+                Text("My Trip")
+                    .bold()
+                    .font(.system(size: 30))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .offset(x: -75, y: 60)
+            }
            
            
             ScrollView{
@@ -67,7 +73,9 @@ struct MyTripsFilledView: View {
                 }
                     
                 }
+            .padding(.bottom,5)
             }
+        .edgesIgnoringSafeArea(.top)
         
     }
     
@@ -131,7 +139,7 @@ extension MyTripsFilledView {
     }
     
     private var pastTripViewHeader : some View {
-        VStack(alignment: .leading){
+        VStack{
             HStack{
                 Label("Past trip", systemImage: "flag.square.fill")
                     .font(.headline)
@@ -142,7 +150,7 @@ extension MyTripsFilledView {
                 Spacer()
               
             }
-            .padding(.horizontal)
+            .padding(.leading,20)
             .padding(.top)
         }
     }

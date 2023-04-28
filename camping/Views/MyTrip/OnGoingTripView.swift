@@ -94,9 +94,10 @@ struct OnGoingTripDetailScreen: View {
                             Button(action: {
                                 showingActionSheet = true
                             }) {
-                                Image(systemName: "ellipsis")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 30))
+                                Image(systemName: "ellipsis.circle.fill")
+                                    .foregroundColor(.gray.opacity(0.4))
+                                    .background(Color.white.opacity(0.8).cornerRadius(20))
+                                    .font(.system(size: 28))
                                     .padding()
                             }
                             .actionSheet(isPresented: $showingActionSheet) {

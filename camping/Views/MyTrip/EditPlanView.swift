@@ -20,30 +20,7 @@ struct EditPlanView: View {
     var body: some View {
         
         VStack{
-            ZStack(alignment: .top) {
-                if  let imgURL = URL(string: planDetail.imageURL) {
-                    //create an AsyncImage with the URL
-                    AsyncImage(url: imgURL) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(height: 300)
-                            .frame(maxWidth: .infinity)
-                    } placeholder: {
-                        // if the image is still loading, show a ProgressView
-                        ProgressView()
-                    }
-                }
-                VStack{
-                    Text("Edit Plan")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.top,55)
-                    
-                }
-            }
-            
+         editPlanHeader            
             .ignoresSafeArea()
             VStack{
                 HStack{
@@ -208,6 +185,33 @@ func formatter() -> DateFormatter {
     return formatter
 }
 
+extension EditPlanView {
+    private var editPlanHeader : some View {
+        ZStack(alignment: .top) {
+            if  let imgURL = URL(string: planDetail.imageURL) {
+                //create an AsyncImage with the URL
+                AsyncImage(url: imgURL) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 300)
+                        .frame(maxWidth: .infinity)
+                } placeholder: {
+                    // if the image is still loading, show a ProgressView
+                    ProgressView()
+                }
+            }
+            VStack{
+                Text("Edit Plan")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.top,55)
+                
+            }
+        }
+    }
+}
 
 //struct EditPlanView_Previews: PreviewProvider {
 //    static var previews: some View {

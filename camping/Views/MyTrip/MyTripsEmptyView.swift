@@ -12,11 +12,19 @@ import SwiftUI
 struct MyTripsEmptyView: View {
     var body: some View {
         VStack {
-            header
-                .ignoresSafeArea()
+            ZStack{
+                HeaderView()
+                Text("My Trip")
+                    .bold()
+                    .font(.system(size: 30))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .offset(x: -75, y: 60)
+            }
             Spacer()
             noTripsView
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

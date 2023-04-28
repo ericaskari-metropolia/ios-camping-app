@@ -28,6 +28,15 @@ struct TripInfoView: View {
                             .scaledToFill()
                             .frame(height: 300)
                             .frame(maxWidth: .infinity)
+                            .overlay(
+                                      LinearGradient(
+                                          gradient: Gradient(colors: [Color.black.opacity(0.9), Color.clear]),
+                                          startPoint: .top,
+                                          endPoint: .bottom
+                                      )
+                                      .frame(height: 90)
+                                      , alignment: .top
+                                  )
                     } placeholder: {
                         // if the image is still loading, show a ProgressView
                         ProgressView()
@@ -39,9 +48,13 @@ struct TripInfoView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .padding(.top,55)
+                        
                     
                 }
+                .padding(.top,50)
+//                .frame(width: 220, height: 45)
+//                    .background(Color.gray.opacity(0.5).cornerRadius(10))
+//                    .padding(.top,45)
             
             }
             .ignoresSafeArea()
@@ -85,6 +98,23 @@ struct TripInfoView: View {
                     }
                     .padding(.vertical, -15)
                     .padding()
+                    
+                    HStack{
+                        NavigationLink{
+                            CampsiteMapView(campsite: planDetail.destination)
+                        } label: {
+                            Label("View on Map", systemImage: "location")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(width: 180, height: 30)
+                                .background(Color.cyan)
+                                .cornerRadius(15)
+                        }  .padding(.bottom)
+                       
+                       
+                    }
+                  
+                    
                 }
                
                 .background(RoundedRectangle(cornerRadius: 15)

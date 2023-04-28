@@ -27,6 +27,15 @@ struct PastTripInfoView: View {
                             .scaledToFill()
                             .frame(height: 300)
                             .frame(maxWidth: .infinity)
+                            .overlay(
+                                      LinearGradient(
+                                          gradient: Gradient(colors: [Color.black.opacity(0.9), Color.clear]),
+                                          startPoint: .top,
+                                          endPoint: .bottom
+                                      )
+                                      .frame(height: 90)
+                                      , alignment: .top
+                                  )
                     } placeholder: {
                         // if the image is still loading, show a ProgressView
                         ProgressView()
