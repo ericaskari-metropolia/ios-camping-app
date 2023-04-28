@@ -2,7 +2,7 @@
 //  CampsiteCategory.swift
 //  camping
 //
-//  Created by Chi Nguyen on 6.4.2023.
+//  Created by The Minions on 6.4.2023.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  CampingSiteFilteredByCityItemView.swift
 //  camping
 //
-//  Created by Thu Hoang on 17.4.2023.
+//  Created by The Minions on 17.4.2023.
 //
 
 import Foundation
@@ -25,7 +25,9 @@ struct CampingSiteFilteredByCityItemView: View {
             VStack(alignment: .leading) {
                 Text(campingSiteFiltered.name ?? "")
                     .bold()
-                Text(campingSiteFiltered.category ?? "")
+                    .foregroundColor(Color("PrimaryColor"))
+                Text(campingSiteFiltered.address ?? "")
+                    .foregroundColor(Color("PrimaryColor"))
             }
             .padding( 16)
         }
@@ -51,10 +53,3 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
-
-//struct CampingSiteFilteredByCityItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CampingSiteFilteredByCityItemView()
-//    }
-//}
-

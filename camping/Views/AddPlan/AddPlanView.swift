@@ -2,7 +2,7 @@
 //  AddPlantFirstStepView.swift
 //  camping
 //
-//  Created by Eric Askari on 3.4.2023.
+//  Created by The Minion on 3.4.2023.
 //
 
 import CoreLocation
@@ -12,18 +12,18 @@ import SwiftUI
 
 struct AddPlanView: View {
     @Environment(\.dismiss) var dismiss
-
+    
     //  To Access Plans and save them
     @EnvironmentObject var planViewModel: PlanViewModel
-
+    
     @EnvironmentObject var locationViewModel: LocationViewModel
-
+    
     // Disable Destination Form Field (Allowed to be passed from parent)
     @State var isDestinationLocationPassedFromParent = false
-
+    
     // Disable/Enable Dismiss when pressed on close from Overview (Allowed to be passed from parent)
     @State var dismissOnAppearEnabled = true
-
+    
     //  State of Modal
     @State private var isStartLocationModalOpen = false
     //  State of Modal
@@ -32,7 +32,7 @@ struct AddPlanView: View {
     @State private var isStartDatePickerVisible = false
     //  State of DatePicker
     @State private var isEndDatePickerVisible = false
-
+    
     //  State of Form Field
     @State private var dismissOnAppear: Bool = false
     //  State of Form Field
@@ -45,15 +45,18 @@ struct AddPlanView: View {
     @State private var startLocation: CLLocationCoordinate2D?
     //  State of Form Field (Allowed to be passed from parent)
     @State var destinationLocation: CampingSite?
-
+    
     // Output
     @State var savedPlan: Plan?
-
+    
     var completed: () -> ()
-
+    
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(title: "Add plan")
+                .ignoresSafeArea()
+                .padding(.bottom,-40)
+            
             ScrollView {
                 VStack(alignment: .leading) {
                     Text("label.startlocation".i18n())
@@ -81,7 +84,7 @@ struct AddPlanView: View {
                             startLocation = location
                         }
                     }.padding(.bottom)
-
+                    
                     VStack(alignment: .leading) {
                         Text("label.destinationlocation".i18n())
                         Button(
@@ -130,7 +133,7 @@ struct AddPlanView: View {
                         .contentShape(Rectangle())
                         .cornerRadius(10)
                         .padding(.bottom)
-
+                        
                         if isStartDatePickerVisible {
                             DatePicker(
                                 "",
@@ -140,7 +143,7 @@ struct AddPlanView: View {
                             )
                             .labelsHidden()
                             .datePickerStyle(.graphical)
-
+                            
                             Button(
                                 action: {
                                     self.isStartDatePickerVisible.toggle()
@@ -153,13 +156,13 @@ struct AddPlanView: View {
                             .padding(.bottom)
                         }
                     }
-
+                    
                     VStack(alignment: .leading) {
                         Text("label.enddate".i18n())
                         Button(
                             action: {
                                 self.isEndDatePickerVisible.toggle()
-
+                                
                             }, label: {
                                 HStack {
                                     Image(systemName: "location")
@@ -176,7 +179,7 @@ struct AddPlanView: View {
                         .contentShape(Rectangle())
                         .cornerRadius(10)
                         .padding(.bottom)
-
+                        
                         if isEndDatePickerVisible {
                             DatePicker(
                                 "",
@@ -186,7 +189,7 @@ struct AddPlanView: View {
                             )
                             .labelsHidden()
                             .datePickerStyle(.graphical)
-
+                            
                             Button(
                                 action: {
                                     self.isEndDatePickerVisible.toggle()
@@ -199,7 +202,7 @@ struct AddPlanView: View {
                             .padding(.bottom)
                         }
                     }
-
+                    
                     VStack(alignment: .leading) {
                         NavigationLink(
                             destination: AddPlanOverview(
@@ -217,14 +220,14 @@ struct AddPlanView: View {
                         )
                         .simultaneousGesture(TapGesture().onEnded {
                             let formOutput = getFormOutput()
-
+                            
                             if isFormValid {
                                 if savedPlan == nil {
                                     savedPlan = planViewModel.savePlan(input: formOutput!)
                                 }
                             }
                         })
-
+                        
                         .bold()
                         .frame(width: 280, height: 50)
                         .background(submitButtonBackground)
@@ -235,32 +238,32 @@ struct AddPlanView: View {
                     // Extra arguments in call =  Maximum number of views in this VStack
                 }.padding([.leading, .bottom, .trailing], 60)
             }
-
-        }.ignoresSafeArea()
-            .onAppear {
-                reset(
-                    resetDestinationLocation: !isDestinationLocationPassedFromParent
-                )
-
-                if dismissOnAppearEnabled && dismissOnAppear {
-                    dismissOnAppear = false
-                    dismiss()
-                }
+            
+        }
+        .onAppear {
+            reset(
+                resetDestinationLocation: !isDestinationLocationPassedFromParent
+            )
+            
+            if dismissOnAppearEnabled && dismissOnAppear {
+                dismissOnAppear = false
+                dismiss()
             }
+        }
     }
-
+    
     var isFormValid: Bool {
         let correctDates = startDate.timeIntervalSince1970 <= endDate.timeIntervalSince1970
         let hasStartLocation = startLocation != nil
         let hasDestinationLocation = destinationLocation != nil
-
+        
         return correctDates && hasStartLocation && hasDestinationLocation
     }
-
+    
     var submitButtonBackground: Color {
-        return isFormValid ? Color.black : Color.gray
+        return isFormValid ? Color("PrimaryColor") : Color.gray
     }
-
+    
     func getFormOutput() -> NewPlan? {
         //  It should be used only when form is validated and fields are filled
         guard let startLocation = startLocation else {
@@ -276,7 +279,7 @@ struct AddPlanView: View {
             endDate: endDate
         )
     }
-
+    
     // Reset Form Function
     func reset(
         resetSavedPlan: Bool = true,
@@ -306,7 +309,7 @@ struct AddPlanView: View {
             endDate = Date.tomorrow
         }
     }
-
+    
     // Date Formatter for fields
     static func formatter() -> DateFormatter {
         let formatter = DateFormatter()

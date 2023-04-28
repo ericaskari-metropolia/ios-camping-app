@@ -2,14 +2,14 @@
 //  EditPlanView.swift
 //  camping
 //
-//  Created by Binod Panta on 23.4.2023.
+//  Created by The Minions on 23.4.2023.
 //
 
 import SwiftUI
 
 struct EditPlanView: View {
     @EnvironmentObject var viewModel: MyTripViewModel
-
+    @Environment(\.dismiss) var dismiss
     @State var planDetail: PlanDetail
     @State private var isStartDatePickerVisible = false
     @State private var isEndDatePickerVisible = false
@@ -35,12 +35,30 @@ struct EditPlanView: View {
                     }
                 }
                 VStack{
-                    Text("label.editPlan".i18n())
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.top,55)
-                    
+                    HStack {
+                        Spacer()
+                        
+                        // Button to go back previous page
+                        Button{
+                            dismiss()
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .font(.title)
+                                .padding()
+                            
+                        }
+                        .symbolVariant(.circle.fill)
+                        .foregroundStyle(Color("PrimaryColor"), .white)
+                        
+                        Spacer()
+                        Text("label.editPlan".i18n())
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        Spacer()
+                        Spacer()
+                    }
+                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
                 }
             }
             
@@ -51,20 +69,26 @@ struct EditPlanView: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 350, height: 40)
-                        .background(Color.cyan)
+                        .background(Color("PrimaryColor"))
                         .cornerRadius(15)
                     
-                }    
+                }
                 HStack{
                     VStack(alignment:.leading){
                         Text(planDetail.destination.name ?? "label.destinationlocation".i18n())
                             .font(.title3)
                             .fontWeight(.bold)
+                        
+                        
                     }
                     Image(systemName: "tent")
+                        .foregroundColor(Color("PrimaryColor"))
+                    
                 }
+                .foregroundColor(Color("PrimaryColor"))
                 .padding()
             }
+            
             .padding(.bottom, 40)
             .padding(.top,-80)
             
@@ -82,6 +106,8 @@ struct EditPlanView: View {
                                 Text(
                                     dateFormatter.string(from: planDetail.start)
                                 )
+                                .foregroundColor(Color("PrimaryColor"))
+                                
                                 Spacer()
                             }.padding(.vertical)
                         }
@@ -108,6 +134,8 @@ struct EditPlanView: View {
                                 self.isStartDatePickerVisible.toggle()
                             }, label: {
                                 Text("action.close".i18n())
+                                    .foregroundColor(Color("PrimaryColor"))
+                                
                             }
                         )
                         .frame(maxWidth: .infinity)
@@ -115,6 +143,7 @@ struct EditPlanView: View {
                         .padding(.bottom)
                         .padding(.top, -20)
                     }
+                    
                     
                     
                     VStack(alignment: .leading) {
@@ -176,16 +205,18 @@ struct EditPlanView: View {
                         .cornerRadius(50)
                         .padding(.leading,15)
                         .disabled(!isFormValid)
-                    }.padding([.bottom], 50)
+                    }
+                    .foregroundColor(Color("PrimaryColor"))
+                    .padding([.bottom], 50)
                     
                     
                 }
                 .padding([.leading, .bottom, .trailing], 40)
             }
-            
-            
+            .foregroundColor(Color("PrimaryColor"))
             .padding(.top,-55)
             .ignoresSafeArea()
+            .navigationBarBackButtonHidden(true)
             
         }
     }
@@ -196,7 +227,7 @@ struct EditPlanView: View {
     }
     
     var submitButtonBackground: Color {
-        return isFormValid ? Color.black : Color.gray
+        return isFormValid ? Color("PrimaryColor"): Color.gray
     }
     
 }
@@ -207,10 +238,3 @@ func formatter() -> DateFormatter {
     formatter.dateFormat = "HH:mm E, d MMM y"
     return formatter
 }
-
-
-//struct EditPlanView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditPlanView()
-//    }
-//}

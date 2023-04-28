@@ -2,7 +2,7 @@
 //  SearchView.swift
 //  camping
 //
-//  Created by Thu Hoang on 14.4.2023.
+//  Created by The Minions on 14.4.2023.
 //
 
 import Foundation
@@ -12,6 +12,8 @@ import AVFoundation
 // Search View
 
 struct SearchView: View {
+    @Environment(\.dismiss) var dismiss
+
     @StateObject var searchViewModel = SearchViewModel(searchText: "")
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
     @State private var showingRecordingSheet = false
@@ -48,30 +50,44 @@ struct SearchView: View {
             .cornerRadius(20)
             .padding(.horizontal, 18)
             
-            // City result list
-            List {
-                ForEach(searchViewModel.filteredCities, id: \.self) { city in
-                    CityListItemView(cityName: city)
-                        .background(
-                            NavigationLink {
-                                CampingSitesFilteredByCityListView(cityString: city)
-                            } label: {
-                                EmptyView()
-                            }
-                                .opacity(0)
-                                .background(.clear)
-                        )
-                        .listRowBackground(Color.clear)
-                        .listRowInsets(EdgeInsets())
+            // If there is no city available
+            if (searchViewModel.filteredCities.isEmpty) {
+                VStack{
+                    Text("Oops, no available city! Please enter another city!")
+                        .foregroundColor(.white)
+                    Image("search-empty")
+                        .resizable()
+                        .frame(maxWidth: 400, maxHeight: 250)
+                        .padding()
                 }
-                .listStyle(.plain)
-                .background(.white)
+                .frame(maxHeight: .infinity)
+            } else {
+                // City result list
+                List {
+                    ForEach(searchViewModel.filteredCities, id: \.self) { city in
+                        CityListItemView(cityName: city)
+                            .background(
+                                NavigationLink {
+                                    CampingSitesFilteredByCityListView(cityString: city)
+                                } label: {
+                                    EmptyView()
+                                }
+                                    .opacity(0)
+                                    .background(.clear)
+                            )
+                            .listRowBackground(Color.clear)
+                            .listRowInsets(EdgeInsets())
+                    }
+                    .listStyle(.plain)
+                    .background(.white)
+                }
+                .scrollContentBackground(.hidden)
             }
-            .scrollContentBackground(.hidden)
+            
         }
         .padding(.top, 18)
         .padding(.horizontal, 18)
-        .background(Color(UIColor(red: 245/255, green: 246/255, blue: 245/255, alpha: 1.0)))
+        .background(LinearGradient(gradient: Gradient(colors: [Color("PrimaryColor"), .white]), startPoint: .top, endPoint: .bottom))
         .sheet(
             isPresented: $showingRecordingSheet,
             onDismiss: {
@@ -84,15 +100,17 @@ struct SearchView: View {
         .onAppear {
             searchViewModel.filterFetchedCity(cities: results)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+                Button{
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                    .font(.title)
+                    .padding()
+                }
+                .symbolVariant(.circle.fill)
+                .foregroundStyle(Color("PrimaryColor"), .white)
+        )
     }
 }
-
-extension Color {
-    
-}
-
-//struct SearchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchView(value: )
-//    }
-//}

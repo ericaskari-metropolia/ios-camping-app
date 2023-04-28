@@ -2,7 +2,7 @@
 //  WeatherConditionView.swift
 //  camping
 //
-//  Created by Chi Nguyen on 17.4.2023.
+//  Created by The Minions on 17.4.2023.
 //
 
 import SwiftUI
@@ -17,18 +17,12 @@ struct WeatherConditionView: View {
                 .padding()
             
             Spacer()
-        
+            
             VStack {
                 Text(weather.weather[0].main)
                 Text(weather.main.feelsLike.roundedDouble() + "°")
-                            .font(.title)
+                    .font(.title)
             }
         }
     }
 }
-
-//struct WeatherConditionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WeatherConditionView(weather: previewWeather )
-//    }
-//}

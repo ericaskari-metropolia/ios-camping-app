@@ -2,7 +2,7 @@
 //  WeatherManager.swift
 //  camping
 //
-//  Created by Chi Nguyen on 16.4.2023.
+//  Created by The Minions on 16.4.2023.
 //
 
 

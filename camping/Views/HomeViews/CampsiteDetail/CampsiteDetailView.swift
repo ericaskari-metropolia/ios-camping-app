@@ -2,12 +2,14 @@
 //  CampsiteDetailView.swift
 //  camping
 //
-//  Created by Chi Nguyen on 14.4.2023.
+//  Created by The Minions on 14.4.2023.
 //
+
 
 import SwiftUI
 import MapKit
 
+// MARK: Display all information related to chosen campsite
 struct CampsiteDetailView: View {
     //PROPERTIES
     @Environment(\.dismiss) var dismiss
@@ -15,21 +17,57 @@ struct CampsiteDetailView: View {
     let provider = PersistenceController.shared
     
     @ObservedObject var campsite: CampingSite
-        
+    
     var weatherManager = WeatherManager()
     @State var weather: ResponseBody?
     
     var body: some View {
+        NavigationView {
             VStack(){
                 // Campsite Image
-                AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(maxWidth: UIScreen.main.bounds.width)
-                        .frame(height: 300)
-                } placeholder: {
-                    ProgressView()
+                ZStack(alignment: .top){
+                    
+                    AsyncImage(url: URL(string: (campsite.imageURL) ?? "header")) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxWidth: UIScreen.main.bounds.width)
+                            .frame(height: 300)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    
+                    VStack(spacing: 0.0){
+                        HStack {
+                            
+                            // Button to go back previous page
+                            Button{
+                                dismiss()
+                            } label: {
+                                Image(systemName: "chevron.left")
+                                    .font(.title)
+                                    .padding()
+                                
+                            }
+                            .symbolVariant(.circle.fill)
+                            .foregroundStyle(Color("PrimaryColor"), .white)
+                            
+                            Spacer()
+                            
+                            // Button to add or remove campsite from favorite
+                            Button{
+                                campsite.isFavorite.toggle()
+                            } label: {
+                                Image(systemName: "heart.square")
+                                    .font(.title)
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(campsite.isFavorite ? .red : .white)
+                                    .background(Color("PrimaryColor"))
+                                    .padding()
+                            }
+                        }
+                        .padding(EdgeInsets(top: 50, leading: 20, bottom: 0, trailing: 20))
+                    }
                 }
                 .background(Color.clear)
                 
@@ -41,7 +79,7 @@ struct CampsiteDetailView: View {
                             .font(.title)
                             .multilineTextAlignment(.center)
                             .foregroundColor(.primary)
-                    
+                        
                         HStack{
                             if let weather = weather {
                                 WeatherConditionView(weather: weather)
@@ -72,7 +110,6 @@ struct CampsiteDetailView: View {
                                         .font(.subheadline)
                                 }
                             }
-
                             
                             Spacer()
                             VStack(alignment: .center, spacing: 5){
@@ -118,7 +155,7 @@ struct CampsiteDetailView: View {
                                 .padding(.horizontal)
                         })
                         
-                        
+                        // Link to map view and add plan
                         HStack{
                             
                             NavigationLink{
@@ -137,7 +174,6 @@ struct CampsiteDetailView: View {
                             .padding(15)
                             .background(Color.primary)
                             .clipShape(Capsule())
-                            
                         }
                         .padding()
                     }
@@ -146,17 +182,13 @@ struct CampsiteDetailView: View {
                 
             }
             .edgesIgnoringSafeArea(.top)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        campsite.isFavorite.toggle()
-                    } label: {
-                        Image(systemName: campsite.isFavorite ? "heart.fill" : "heart")
-                            .foregroundColor(campsite.isFavorite ? .red : .black)
-                    }
-                }
-            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
     
 }
+
+
+
+
 

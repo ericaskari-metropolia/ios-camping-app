@@ -2,7 +2,7 @@
 //  PastTripInfoView.swift
 //  camping
 //
-//  Created by Binod Panta on 20.4.2023.
+//  Created by The Minions on 20.4.2023.
 //
 import SwiftUI
 
@@ -41,7 +41,7 @@ struct PastTripInfoView: View {
                         .padding(.top,55)
                     
                 }
-    
+                
             }
             .ignoresSafeArea()
             HStack{
@@ -54,7 +54,7 @@ struct PastTripInfoView: View {
                 
             }
             .padding(.top,-80)
-           
+            
             ScrollView(.vertical,showsIndicators: false) {
                 VStack{
                     HStack{
@@ -84,18 +84,18 @@ struct PastTripInfoView: View {
                     .padding()
                 }
                 .background(RoundedRectangle(cornerRadius: 15)
-                                .foregroundColor(.white)
-                                .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 0, y: 2))
+                    .foregroundColor(.white)
+                    .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 0, y: 2))
                 .padding(.top,10)
                 .padding(.horizontal,3)
                 
                 Divider()
-               
+                
                 VStack(alignment: .leading){
                     Label("label.tripGearList".i18n(), systemImage: "list.bullet")
                         .padding(.vertical)
                     PastGearListView(plan:planDetail.plan)
-                   // Text("Oops!! Gear details not available.")
+                    // Text("Oops!! Gear details not available.")
                 }
                 .padding()
                 Spacer()
@@ -108,7 +108,7 @@ struct PastTripInfoView: View {
                 } completed: {
                     
                 }
-
+                
             }
             .padding()
             .padding(.top,-65)
@@ -117,9 +117,3 @@ struct PastTripInfoView: View {
     }
     
 }
-
-//struct PastTripInfoView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PastTripInfoView()
-//    }
-//}

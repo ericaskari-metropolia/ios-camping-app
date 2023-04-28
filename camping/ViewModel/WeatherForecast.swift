@@ -2,7 +2,7 @@
 //  WeatherForecast.swift
 //  camping
 //
-//  Created by Binod Panta on 19.4.2023.
+//  Created by The Minions on 19.4.2023.
 //
 import Foundation
 import CoreLocation

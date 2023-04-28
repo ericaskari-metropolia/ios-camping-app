@@ -2,7 +2,7 @@
 //  PastTripView.swift
 //  camping
 //
-//  Created by Binod Panta on 18.4.2023.
+//  Created by The Minions on 18.4.2023.
 //
 /* A view for displaying the past trips*/
 
@@ -11,7 +11,7 @@ import SwiftUI
 struct PastTripView: View {
     
     @EnvironmentObject var viewModel: MyTripViewModel
-
+    
     
     var body: some View {
         VStack{
@@ -39,8 +39,8 @@ struct PastTripScrollView: View {
                 ForEach(planDetails) { planDetail in
                     NavigationLink(destination: {PastTripInfoView(planDetail:planDetail)}) {
                         MyPastTripCard(planDetail: planDetail)
-                        }
-                       
+                    }
+                    
                     
                 }
             }
@@ -55,7 +55,7 @@ struct MyPastTripCard: View {
     
     // Create a view model with a context
     @EnvironmentObject var viewModel: MyTripViewModel
-
+    
     // A PlanDetail object to be used to create the past trip card
     let planDetail: PlanDetail
     var body: some View {
@@ -86,7 +86,7 @@ struct MyPastTripCard: View {
                     .foregroundColor(.blue)
                     .font(.caption)
                     .padding(.top,2)
-                    
+                
             }
         }
         .padding()
