@@ -2,7 +2,7 @@
 //  CityListItem.swift
 //  camping
 //
-//  Created by Thu Hoang on 14.4.2023.
+//  Created by The Minions on 14.4.2023.
 //
 
 import Foundation
@@ -16,9 +16,12 @@ struct CityListItemView: View {
         HStack(){
             Image(systemName: "mappin.and.ellipse")
             Text("\(cityName)")
+                
+                .bold()
             Spacer()
             Image(systemName: "chevron.right")
         }
+        .foregroundColor(Color("PrimaryColor"))
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

@@ -2,7 +2,7 @@
 //  CampingSitesFilteredByCityListView.swift
 //  camping
 //
-//  Created by Thu Hoang on 14.4.2023.
+//  Created by The Minions on 14.4.2023.
 //
 
 import Foundation
@@ -11,6 +11,8 @@ import SwiftUI
 // View for the filter camping sites list that is in the same city
 
 struct CampingSitesFilteredByCityListView: View {
+    @Environment(\.dismiss) var dismiss
+
     let cityString: String
     @StateObject var searchViewModel = SearchViewModel(searchText: "")
     @FetchRequest(entity: CampingSite.entity(), sortDescriptors:[]) var results: FetchedResults<CampingSite>
@@ -41,6 +43,18 @@ struct CampingSitesFilteredByCityListView: View {
         .onAppear{
             searchViewModel.filterCampingSiteCity(city: cityString, campingSites: results)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+                Button{
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                    .font(.title)
+                    .padding()
+                }
+                .symbolVariant(.circle.fill)
+                .foregroundStyle(Color("PrimaryColor"), .white)
+        )
     }
     
 }

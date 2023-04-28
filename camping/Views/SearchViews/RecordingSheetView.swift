@@ -2,7 +2,7 @@
 //  RecordingSheetView.swift
 //  camping
 //
-//  Created by Thu Hoang on 19.4.2023.
+//  Created by The Minions on 19.4.2023.
 //
 
 import SwiftUI
@@ -32,7 +32,7 @@ struct RecordingSheetView: View {
                         .foregroundColor(.white)
                 }
                 .padding()
-                .background(.black)
+                .background(Color("PrimaryColor"))
                 .clipShape(Capsule())
             }
         } else {
@@ -64,7 +64,7 @@ struct RecordingSheetView: View {
                         .foregroundColor(.white)
                 }
                 .padding()
-                .background(.black)
+                .background(Color("PrimaryColor"))
                 .clipShape(Capsule())
             }
         }
