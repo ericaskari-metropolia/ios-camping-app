@@ -2,7 +2,7 @@
 //  CategoryListView.swift
 //  camping
 //
-//  Created by Chi Nguyen on 14.4.2023.
+//  Created by The Minions on 14.4.2023.
 //
 
 import SwiftUI

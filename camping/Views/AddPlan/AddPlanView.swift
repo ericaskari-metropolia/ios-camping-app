@@ -2,7 +2,7 @@
 //  AddPlantFirstStepView.swift
 //  camping
 //
-//  Created by Eric Askari on 3.4.2023.
+//  Created by The Minion on 3.4.2023.
 //
 
 import CoreLocation
@@ -53,7 +53,10 @@ struct AddPlanView: View {
 
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(title: "Add plan")
+                .ignoresSafeArea()
+                .padding(.bottom,-40)
+
             ScrollView {
                 VStack(alignment: .leading) {
                     Text("label.startlocation".i18n())
@@ -236,17 +239,17 @@ struct AddPlanView: View {
                 }.padding([.leading, .bottom, .trailing], 60)
             }
 
-        }.ignoresSafeArea()
-            .onAppear {
-                reset(
-                    resetDestinationLocation: !isDestinationLocationPassedFromParent
-                )
+        }
+        .onAppear {
+            reset(
+                resetDestinationLocation: !isDestinationLocationPassedFromParent
+            )
 
-                if dismissOnAppearEnabled && dismissOnAppear {
-                    dismissOnAppear = false
-                    dismiss()
-                }
+            if dismissOnAppearEnabled && dismissOnAppear {
+                dismissOnAppear = false
+                dismiss()
             }
+        }
     }
 
     var isFormValid: Bool {
@@ -258,7 +261,7 @@ struct AddPlanView: View {
     }
 
     var submitButtonBackground: Color {
-        return isFormValid ? Color.black : Color.gray
+        return isFormValid ? Color("PrimaryColor") : Color.gray
     }
 
     func getFormOutput() -> NewPlan? {

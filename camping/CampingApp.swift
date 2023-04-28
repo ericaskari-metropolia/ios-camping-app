@@ -2,7 +2,7 @@
 //  campingApp.swift
 //  camping
 //
-//  Created by Eric Askari on 28.3.2023.
+//  Created by The Minions on 28.3.2023.
 //
 
 import SwiftUI
@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct CampingApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

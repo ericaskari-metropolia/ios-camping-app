@@ -2,17 +2,17 @@
 //  HeaderView.swift
 //  camping
 //
-//  Created by Chi Nguyen on 14.4.2023.
+//  Created by The Minions on 14.4.2023.
 //
 
 import SwiftUI
 
+//MARK: top header to use in all view needed
 struct HeaderView: View {
     
     @EnvironmentObject var locationViewModel: LocationViewModel
-    @State private var isSearchFieldButtonPressed = false
-    
-    
+    var title: String
+        
     var body: some View {
         
         ZStack(alignment: .leading){
@@ -31,19 +31,20 @@ struct HeaderView: View {
                     .foregroundColor(.white).bold()
             }
             .offset(x: 40, y: 40)
+            Text("\(title)")
+                .bold()
+                .font(.system(size: 30))
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .offset(x: 40, y: 70)
         }
-        .padding(.bottom, 20)
         .background(Color.clear)
-        
-        NavigationLink(destination: SearchView(), isActive: $isSearchFieldButtonPressed) {
-            EmptyView()
-        }
         
     }
 }
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView().environmentObject(LocationViewModel())
+        HeaderView(title: "Discovery").environmentObject(LocationViewModel())
     }
 }

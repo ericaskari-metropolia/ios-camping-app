@@ -2,11 +2,12 @@
 //  Favorite.swift
 //  camping
 //
-//  Created by Chi Nguyen on 3.4.2023.
+//  Created by The Minions on 3.4.2023.
 //
 
 import SwiftUI
 
+// MARK: Display a list of all favorite campsites
 struct FavoriteView: View {
     
     @Environment(\.managedObjectContext) private var moc
@@ -17,15 +18,10 @@ struct FavoriteView: View {
     
     var body: some View {
         VStack{
-            ZStack{
-                HeaderView()
-                Text("Saved locations")
-                    .bold()
-                    .font(.system(size: 30))
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .offset(x: -75, y: 60)
-            }
+            HeaderView(title: "Saved locations")
+                .ignoresSafeArea()
+                .padding(.bottom, -40)
+
             
             ScrollView{
                 if campsites.count > 0{
@@ -41,9 +37,7 @@ struct FavoriteView: View {
                     Text ("You don't have any saved campsite yet!")
                 }
             }            
-            
         }
-        .edgesIgnoringSafeArea(.top)
     }
 }
 

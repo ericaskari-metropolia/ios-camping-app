@@ -2,7 +2,7 @@
 //  Home.swift
 //  camping
 //
-//  Created by Chi Nguyen on 3.4.2023.
+//  Created by The Minions on 3.4.2023.
 //
 
 import SwiftUI

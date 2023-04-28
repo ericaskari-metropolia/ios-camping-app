@@ -2,7 +2,7 @@
 //  CampsiteListItemView.swift
 //  camping
 //
-//  Created by Chi Nguyen on 14.4.2023.
+//  Created by The Minions on 14.4.2023.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 
 struct CampsiteListItemView: View {
     
-     //PROPERTIES
+    //PROPERTIES
     @State var campsite: CampingSite
     
     var body: some View {
@@ -31,26 +31,16 @@ struct CampsiteListItemView: View {
             
             VStack(alignment: .leading, spacing: 10){
                 Text(campsite.name ?? "")
-                        .bold()
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(Color.primary)
+                    .bold()
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(Color.primary)
                 Text(campsite.region ?? "")
                     .multilineTextAlignment(.leading)
             }
-                
+            
             Spacer()
-
-        }
             
         }
+        
     }
-
-
-//struct CampsiteListItemView_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        CampsiteListItemView(campsite: .constant(CampingSite()))
-//    }
-//}
-
-
+}
