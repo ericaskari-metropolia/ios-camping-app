@@ -20,7 +20,7 @@ struct NavigationTabView: View {
             HomeView()
                 .tabItem {
                     Image(systemName: "globe")
-                    Text("Discovery")
+                    Text("nav.discover".i18n())
                 }
                 .tag(1)
             AddPlanView(
@@ -31,21 +31,21 @@ struct NavigationTabView: View {
             })
             .tabItem {
                 Image(systemName: "plus")
-                Text("Add plan")
+                Text("nav.addplan".i18n())
             }
             .tag(2)
 
             FavoriteView()
                 .tabItem {
                     Image(systemName: "heart")
-                    Text("Saved locations")
+                    Text("nav.save".i18n())
                 }
                 .tag(3)
 
             TripsView()
                 .tabItem {
                     Image(systemName: "road.lanes")
-                    Text("Trips")
+                    Text("nav.trips".i18n())
                 }
                 .tag(4)
         }

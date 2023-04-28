@@ -42,7 +42,7 @@ struct RequestLocationView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
     var body: some View {
         VStack{
-            Text("Request location permission")
+            Text("location.request".i18n())
         }
         .onAppear(perform: locationViewModel.requestPermission)
         .navigationBarBackButtonHidden(true)
@@ -53,7 +53,7 @@ struct RequestLocationView: View {
 struct ErrorView: View {
     var body: some View {
         VStack{
-            Text("Please give Camplify the permission \n to access to your location in the setting")
+            Text("location.error".i18n())
         }
         .navigationBarBackButtonHidden(true)
     }
