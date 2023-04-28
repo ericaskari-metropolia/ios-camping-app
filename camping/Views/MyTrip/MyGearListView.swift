@@ -8,11 +8,18 @@
 import SwiftUI
 import CoreData
 
+/* A view that displays the list of gears for a particular plan */
+
 struct MyGearListView: View {
     
+    //The plan for which gears are displayed
     var plan: Plan
+    
+    
+    // Use @EnvironmentObject property wrapper to inject an instance of GearViewModel into this view
     @EnvironmentObject var gearViewModel: GearViewModel
     
+    //Gears fecthed and sorted in alphabetical order
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
         animation: .default
@@ -20,6 +27,8 @@ struct MyGearListView: View {
     private var allItems: FetchedResults<Gear>
     
     var body: some View {
+        
+        //filtered list of gears based on current plan
         let filteredItems = filterItems()
         if filteredItems.count > 0 {
             ZStack {
@@ -43,6 +52,7 @@ struct MyGearListView: View {
                 }
             }
             
+            //Navigation to edit or add gears
             NavigationLink(
                 destination: AddPlanGears(plan:plan),
                 label: {
@@ -80,6 +90,8 @@ struct MyGearListView: View {
         
         
     }
+    
+    // A helper function that filters the items based on plan
     func filterItems() -> [Gear] {
         return allItems.filter { gear in
             if gear.plan?.id == nil {

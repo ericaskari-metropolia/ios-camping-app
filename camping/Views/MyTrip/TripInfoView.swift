@@ -4,6 +4,10 @@
 //
 //  Created by The Minions on 19.4.2023.
 //
+
+/* A view that gives information about the planned ongoing trip,
+ with weather, campsite, and gears info*/
+
 import SwiftUI
 
 struct TripInfoView: View {

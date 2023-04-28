@@ -13,12 +13,15 @@ struct MyTripsFilledView: View {
     
     // Use @EnvironmentObject property wrapper to inject an instance of LocationViewModel into this view
     @EnvironmentObject var locationViewModel: LocationViewModel
+    
+    // Use @EnvironmentObject property wrapper to inject an instance of MyTripViewModel into this view
     @EnvironmentObject var viewModel: MyTripViewModel
     
+    //fetch the plans
     @FetchRequest(sortDescriptors: []) var plans: FetchedResults<Plan>
     
     
-    
+    // A helper function to separate the ongoing and past plan
     func countOfOngoingAndPastPlans() -> (ongoingCount: Int, pastCount: Int) {
         let currentDate = Date()
         let ongoingPlans = plans.filter { $0.endDate ?? currentDate >= currentDate }
