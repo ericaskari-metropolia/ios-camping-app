@@ -34,7 +34,7 @@ extension MyTripsEmptyView {
                 .padding()
             
             PlanNewTripButtonView(campsite: nil) {
-                Label("btn.createNewTrip", systemImage: "plus")
+                Label("action.createNewTrip", systemImage: "plus")
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
                     .background(Color("PrimaryColor"))

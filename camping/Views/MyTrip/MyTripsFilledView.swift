@@ -126,7 +126,7 @@ extension MyTripsFilledView {
     // View to display add new trip button
     private var createNewTripButton: some View {
         PlanNewTripButtonView(campsite: nil) {
-            Label("btn.createNewTrip".i18n(), systemImage: "plus")
+            Label("action.createNewTrip".i18n(), systemImage: "plus")
                 .foregroundColor(.white)
                 .frame(width: 350, height: 50)
                 .background(Color("PrimaryColor"))

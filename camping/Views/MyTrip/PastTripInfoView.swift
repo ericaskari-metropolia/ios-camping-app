@@ -135,7 +135,7 @@ struct PastTripInfoView: View {
                 .padding()
                 Spacer()
                 PlanNewTripButtonView(campsite: planDetail.plan.campingSite) {
-                    Label("btn.planAgain".i18n(), systemImage: "plus")
+                    Label("action.planAgain".i18n(), systemImage: "plus")
                         .foregroundColor(.white)
                         .frame(width: 350, height: 50)
                         .background(Color("PrimaryColor"))

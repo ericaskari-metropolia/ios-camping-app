@@ -5,11 +5,20 @@
   Created by Eric Askari on 28.4.2023.
   
 */
+"action.edit" = "Muokkaa";
+"action.delete" = "Poista";
 "action.return" = "Palaa";
 "action.select" = "Valitse";
 "action.close" = "Sulje";
 "action.createtrip" = "Luo matka";
 "action.addgear" = "Lisää varusteita";
+"action.cancel" = "Peruuta";
+"action.saveChanges" = "Tallenna muutokset";
+"action.delete" = "Poista";
+"action.addGear" = "Lisää varusteita";
+"action.viewOnMap" = "Näytä kartalla";
+"action.planAgain" = "Suunnittele uudelleen";
+"action.createNewTrip" = "Luo uusi matka";
 
 "label.startlocation" = "Lähtöpaikka";
 "label.destinationlocation" = "Kohde";
@@ -17,11 +26,55 @@
 "label.enddate" = "Paluupäivä";
 "label.gearsfortrip" = "Varusteet matkalle";
 "label.name" = "Nimi";
+"label.myTrips" = "Matkani";
+"label.onGoingTrip" = "Käynnissä olevaa matkaa";
+"label.noOnGoingTripsAlert" = "Ei käynnissä olevaa matkaa.";
+"label.noPastTripsAlert" = "Ei aiempia matkoja";
+"label.pastTrips" = "Aikaisemmat matkat";
+"label.editPlan" = "Muokkaa";
+"label.editStatus" = "Matkan tila: Muokataan";
+"label.deleteStatus" = "Matkan tila: Poistettavaksi merkitty";
+"label.deleteAlert" = "Haluatko varmasti poistaa tämän suunnitelman?";
+"label.tripOverview" = "Matkan yhteenveto";
+"label.onGoingTripStatus" = "Matkan tila: Käynnissä";
+"label.weatherForecast" = "Sääennusteet";
+"label.gearChecklist" = "Varustelista";
+"label.editGear" = "Muokkaa";
+"label.noGearAlert" = "Varusteita ei ole lisätty";
+"label.completedTripStatus" = "Matkan tila: Suoritettu";
+"label.tripGearList" = "Matkan varustelista";
+"label.chooseAction" = "Valitse toiminto";
+"label.deletePlan" = "Poista suunnitelma";
+
 
 "addplanview.choosenonmap" = "Valitse kartalta";
 
 "AddPlanChooseStartLocationModalView.description" = "Valitse sijainti asettamalla sininen ympyrä sijaintiin";
 
-"AddPlanChooseDestinationLocationModalView.description" = "Valitse leiripaikka painamalla kuvaketta";
+"AddPlanChooseDestinationLocationModalView.description" = "Valitse kohde painamalla kuvaketta";
 
 "AddPlanOverview.created" = "Olet luonut uuden matkasi!";
+
+"homepage.title" = "Matkailu";
+"homepage.search" = "Mihin mennään?";
+"homepage.category" = "Kategoria";
+"homepage.forest" = "Metsät";
+"homepage.hills" = "Mäet";
+"homepage.lakes" = "Järvet";
+"homepage.island" = "Saaret";
+"homepage.suggest" = "Ehdotukset sinulle";
+
+"location.request" = "Salli paikannus";
+"location.error" = "Et ole antanut lupaa paikannukseen. Voit sallia paikannuksen puhelimen asetuksista.";
+
+"nav.discovery" = "Matkailu";
+"nav.addplan" = "Lisää";
+"nav.save" = "Suosikit";
+"nav.trips" = "Matkat";
+
+"search.bar" = "Kaupunki";
+"search.startRecording" = "Aloita tallennus";
+"search.stopRecording" = "Pysäytä tallennus";
+
+"fav.title" = "Suosikit";
+

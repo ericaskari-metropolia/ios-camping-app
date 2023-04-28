@@ -205,7 +205,7 @@ struct EditPlanView: View {
                             .padding(.bottom)
                         }
                         Spacer()
-                        Button("btn.saveChanges".i18n()) {
+                        Button("action.saveChanges".i18n()) {
                             
                             // Save changes and dismiss the view
                             viewModel.editPlan(planDetail: planDetail, startDate: planDetail.start, endDate: planDetail.end)

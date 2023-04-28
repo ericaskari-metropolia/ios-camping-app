@@ -118,7 +118,7 @@ struct TripInfoView: View {
                     
                     HStack{
                         NavigationLink(destination: CampsiteMapView(campsite: planDetail.destination)){
-                        Label("btn.viewOnMap".i18n(), systemImage: "location")
+                        Label("action.viewOnMap".i18n(), systemImage: "location")
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(width: 180, height: 40)

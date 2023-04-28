@@ -77,7 +77,7 @@ struct MyGearListView: View {
             NavigationLink(
                 destination: AddPlanGears(plan:plan),
                 label: {
-                    Text("btn.addGear".i18n())
+                    Text("action.addGear".i18n())
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                 }

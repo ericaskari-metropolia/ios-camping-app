@@ -123,7 +123,7 @@ struct DeletePlanView: View {
                 .padding(.horizontal,2)
                 .padding(.vertical,10)
             HStack {
-                Button("btn.cancel".i18n()) {
+                Button("action.cancel".i18n()) {
                     dismiss()
                 }
                 .padding()
@@ -132,7 +132,7 @@ struct DeletePlanView: View {
                 .background(Color("PrimaryColor"))
                 .cornerRadius(15)
                 
-                Button("btn.delete".i18n()) {
+                Button("action.delete".i18n()) {
                     deletePlan()
                     dismiss()
                 }
@@ -156,7 +156,7 @@ struct DeletePlanView: View {
 
 extension DeletePlanView {
     var deleteButton: some View {
-        Label("btn.delete".i18n(), systemImage: "trash")
+        Label("action.delete".i18n(), systemImage: "trash")
             .foregroundColor(.white)
             .frame(width: 350, height: 50)
             .background(Color.black)
