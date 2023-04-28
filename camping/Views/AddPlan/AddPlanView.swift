@@ -53,7 +53,10 @@ struct AddPlanView: View {
 
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(title: "Add plan")
+                .ignoresSafeArea()
+                .padding(.bottom,-40)
+            
             ScrollView {
                 VStack(alignment: .leading) {
                     Text("Start location")
@@ -236,7 +239,7 @@ struct AddPlanView: View {
                 }.padding([.leading, .bottom, .trailing], 60)
             }
 
-        }.ignoresSafeArea()
+        }
             .onAppear {
                 reset(
                     resetDestinationLocation: !isDestinationLocationPassedFromParent
@@ -258,7 +261,7 @@ struct AddPlanView: View {
     }
 
     var submitButtonBackground: Color {
-        return isFormValid ? Color.black : Color.gray
+        return isFormValid ? Color("PrimaryColor") : Color.gray
     }
 
     func getFormOutput() -> NewPlan? {

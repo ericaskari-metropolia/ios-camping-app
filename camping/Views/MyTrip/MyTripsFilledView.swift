@@ -28,7 +28,7 @@ struct MyTripsFilledView: View {
         
     var body: some View {
         VStack {
-            headerView
+            HeaderView(title: "My trips")
                 .padding(.bottom,-40)
                 .ignoresSafeArea()
            

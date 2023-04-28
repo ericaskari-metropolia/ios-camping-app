@@ -12,21 +12,12 @@ import SwiftUI
 struct MyTripsEmptyView: View {
     var body: some View {
         VStack {
-            ZStack{
-                HeaderView()
-                Text("My trips")
-                    .bold()
-                    .font(.system(size: 30))
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .offset(x: -115, y: 60)
-            }
+            HeaderView(title: "My trips")
             noTripsView
         }
         .edgesIgnoringSafeArea(.top)
     }
 }
-
 
 extension MyTripsEmptyView {
     
@@ -34,6 +25,7 @@ extension MyTripsEmptyView {
         VStack(alignment: .center){
             Text("You don't have any plan yet")
                 .bold()
+                .foregroundColor(Color("PrimaryColor"))
             
             //Just a random image, I can change it later
             Image("no-plan")
@@ -45,7 +37,7 @@ extension MyTripsEmptyView {
                 Label("Create new trip", systemImage: "plus")
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
-                    .background(Color.black)
+                    .background(Color("PrimaryColor"))
                     .cornerRadius(15)
             } completed: {
                 // Nothing to do
