@@ -33,6 +33,12 @@ Welcome to Camplify, where you can easily plan and prepare for your camping trip
   <img src="https://user-images.githubusercontent.com/89455223/235214468-0cfc1cc1-570c-4e24-9331-2bcac2af2feb.png" width="250">
 </p> 
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/89455223/235219955-d90e334f-652a-445f-9f42-c8ebad4b5dc8.png" width="250">
+  <img src="https://user-images.githubusercontent.com/89455223/235220026-be3f7c52-ff1e-489b-afcb-603f19bc717d.png" width="250">
+  <img src="https://user-images.githubusercontent.com/89455223/235220286-847ea0a9-0405-4664-acf9-0b6914e0da34.png" width="250">
+</p> 
+
 <p align="center"> 
   <img src="https://user-images.githubusercontent.com/89455223/235214908-ef46f193-d8bd-47ae-bc5e-49ae1a6efa92.png" width="250">
   <img src="https://user-images.githubusercontent.com/89455223/235214963-85a34330-9153-4d4c-be3c-cf5c82a66034.png" width="250">
