@@ -10,6 +10,7 @@ import MapKit
 
 // Mark: Campsite view on map
 struct CampsiteMapView: View {
+    @Environment(\.dismiss) var dismiss
     
     struct Annotation: Identifiable {
         let id = UUID().uuidString
@@ -48,9 +49,19 @@ struct CampsiteMapView: View {
             region = MKCoordinateRegion(center:  coordinate, latitudinalMeters: regionSize, longitudinalMeters: regionSize)
             annotations = [Annotation(name: (campsite.name ?? ""),address: (campsite.address ?? ""), coordinate: coordinate)]
         }
-        
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+                Button{
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                    .font(.title)
+                    .padding()
+                }
+                .symbolVariant(.circle.fill)
+                .foregroundStyle(Color("PrimaryColor"), .white)
+        )
     }
-   
 }
 
 //struct CampsiteMapView_Previews: PreviewProvider {
