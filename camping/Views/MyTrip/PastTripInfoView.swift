@@ -49,7 +49,7 @@ struct PastTripInfoView: View {
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
-                    .background(Color.cyan)
+                    .background(Color("PrimaryColor"))
                     .cornerRadius(15)
                 
             }

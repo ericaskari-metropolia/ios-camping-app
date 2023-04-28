@@ -47,6 +47,7 @@
 "search.startRecording" = "Start recording";
 "search.stopRecording" = "Stop recording";
 
+"fav.title" = "Saved locations";
 
 "label.myTrips" = "My trips";
 "label.onGoingTrip" = "Ongoing trip";

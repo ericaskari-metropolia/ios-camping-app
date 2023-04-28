@@ -20,7 +20,7 @@ struct NavigationTabView: View {
             HomeView()
                 .tabItem {
                     Image(systemName: "globe")
-                    Text("nav.discover".i18n())
+                    Text("nav.discovery".i18n())
                 }
                 .tag(1)
             AddPlanView(

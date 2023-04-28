@@ -19,8 +19,6 @@ struct MyGearListView: View {
     )
     private var allItems: FetchedResults<Gear>
     
-    // let filteredItems = filterItems(forPlan: plan, fromAllItems: allItems)
-    
     var body: some View {
         let filteredItems = filterItems()
         if filteredItems.count > 0 {
@@ -49,7 +47,7 @@ struct MyGearListView: View {
                 destination: AddPlanGears(plan:plan),
                 label: {
                     Text("label.editGear".i18n())
-                        .foregroundColor(Color("PrimaryColor"))
+                        .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                 }
             )
@@ -70,6 +68,7 @@ struct MyGearListView: View {
                 destination: AddPlanGears(plan:plan),
                 label: {
                     Text("btn.addGear".i18n())
+                        .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                 }
             )

@@ -28,10 +28,9 @@ struct MyTripsFilledView: View {
     
     var body: some View {
         VStack {
-            HeaderView(title: "My trips")
+            HeaderView(title: "label.myTrips".i18n())
                 .padding(.bottom,-40)
                 .ignoresSafeArea()
-            
             
             ScrollView{
                 // Check if there are any ongoing trips

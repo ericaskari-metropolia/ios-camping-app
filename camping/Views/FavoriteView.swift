@@ -18,7 +18,7 @@ struct FavoriteView: View {
     
     var body: some View {
         VStack{
-            HeaderView(title: "Saved locations")
+            HeaderView(title: "fav.title".i18n())
                 .ignoresSafeArea()
                 .padding(.bottom, -40)
 
