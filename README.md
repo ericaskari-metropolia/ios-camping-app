@@ -55,7 +55,7 @@ Video demo: [Camplify demo video](https://youtu.be/mMk1HYnvwjY)
 ## Contributors
 [Chi Nguyen](https://github.com/chinguyen202)
 
-[Mohammad Askari (Eric)](https://github.com/ericaskari)
+[Mohammad Askari (Eric)](https://github.com/ericaskari-metropolia)
 
 [Thu Hoang](https://github.com/ThuHoang2312)
 
