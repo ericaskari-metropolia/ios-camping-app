@@ -23,8 +23,12 @@ Welcome to Camplify, where you can easily plan and prepare for your camping trip
 ## Installation
 Requirements to run the project:
 1. Install Xcode environment
-2. Clone the project from [Github](https://github.com/ericaskari-metropolia/ios-camping-app.git) and opened with Xcode.
-3. Choose simulator (at least ios 16) or run the app on physical iOS devices by cable and build project.
+2. Clone the repo
+   ```sh
+   git clone https://github.com/ericaskari-metropolia/ios-camping-app.git
+   ```
+3. Open the project with XCode
+4. Choose simulator (at least ios 16) or run the app on physical iOS devices by cable and build project.
   
 ## A sneak peek of Camplify
 Video demo: [Camplify demo video](https://youtu.be/mMk1HYnvwjY)
