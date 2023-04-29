@@ -100,26 +100,26 @@ struct CampsiteDetailView: View {
                             Spacer()
                             
                             VStack(alignment: .center, spacing: 5){
-                                Text("Campfire area")
+                                Text("detail.campfire".i18n())
                                     .font(.headline)
                                 if campsite.hasCampfireSite == true {
-                                    Text("Available")
+                                    Text("detail.available".i18n())
                                         .font(.subheadline)
                                 }else {
-                                    Text("Not available")
+                                    Text("detail.notAvailable".i18n())
                                         .font(.subheadline)
                                 }
                             }
                             
                             Spacer()
                             VStack(alignment: .center, spacing: 5){
-                                Text("Rental Hut")
+                                Text("detail.rental".i18n())
                                     .font(.headline)
                                 if campsite.hasRentalHut == true {
-                                    Text("Available")
+                                    Text("detail.available".i18n())
                                         .font(.subheadline)
                                 }else {
-                                    Text("Not Available")
+                                    Text("detail.notAvailable".i18n())
                                         .font(.subheadline)
                                 }
                             }
@@ -127,7 +127,7 @@ struct CampsiteDetailView: View {
                             Spacer()
                         }
                         
-                        Text("Description")
+                        Text("detail.description".i18n())
                             .font(.headline)
                             .padding(.horizontal)
                         Text(campsite.descriptionEN ?? "nil")
@@ -135,7 +135,7 @@ struct CampsiteDetailView: View {
                             .multilineTextAlignment(.leading)
                             .foregroundColor(.primary)
                             .padding(.horizontal)
-                        Text("Accessibilty")
+                        Text("detail.accessibility".i18n())
                             .font(.headline)
                             .padding(.horizontal)
                         Text(campsite.suitabilityEN ?? "")
@@ -144,7 +144,7 @@ struct CampsiteDetailView: View {
                             .foregroundColor(Color.primary)
                             .padding(.horizontal)
                         
-                        Text("Website")
+                        Text("detail.website".i18n())
                             .font(.headline)
                             .padding(.horizontal)
                         Link(destination: URL(string: "\(campsite.websiteURL ?? "")")!, label: {
@@ -165,7 +165,7 @@ struct CampsiteDetailView: View {
                             }
                             
                             PlanNewTripButtonView(campsite: campsite) {
-                                Text("Plan new trip")
+                                Text("detail.plan".i18n())
                                     .font(.system(.title3, design: .rounded))
                                     .foregroundColor(.white)
                             } completed: {

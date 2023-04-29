@@ -77,4 +77,18 @@
 "search.stopRecording" = "Pysäytä tallennus";
 
 "fav.title" = "Suosikit";
+"fav.desc" = "Sinulla ei ole vielä tallennettuja leirintäalueita";
+
+"detail.date" = "Tänään";
+"detail.description" = "Kuvaus";
+"detail.accessibility" = "Saavutettavuus";
+"detail.website" = "Verkkosivusto";
+"detail.view" = "Näytä kartalla";
+"detail.plan" = "Uusi matkaa";
+"detail.campfire" ="Nuotiopaikka";
+"detail.rental" = "Vuokramökki";
+"detail.available" = "Saatavilla";
+"detail.notAvailable" = "Ei Saatavilla";
+
+"header.location" = "Sijaintisi on";
 

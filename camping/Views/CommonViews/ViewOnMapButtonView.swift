@@ -11,7 +11,7 @@ struct ViewOnMapButtonView: View {
     var body: some View {
         HStack{
             Spacer()
-            Text("View on map")
+            Text("detail.view".i18n())
                 .font(.system(.title3, design: .rounded))
                 .foregroundColor(.white)
             Spacer()

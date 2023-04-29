@@ -34,7 +34,7 @@ struct FavoriteView: View {
                         }
                     }
                 } else {
-                    Text ("You don't have any saved campsite yet!")
+                    Text ("fav.desc".i18n())
                 }
             }            
         }

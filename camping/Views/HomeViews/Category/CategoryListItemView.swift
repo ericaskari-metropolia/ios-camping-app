@@ -22,6 +22,7 @@ struct CategoryListItemView: View {
                 .clipShape(
                     RoundedRectangle(cornerRadius: 12)
                 )
+            
             Text(category.title)
                 .foregroundColor(.white)
                 .font(.title2)

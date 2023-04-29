@@ -77,4 +77,20 @@
 "search.stopRecording" = "Stop recording";
 
 "fav.title" = "Saved locations";
+"fav.desc" = "You don't have any saved campsite yet!";
+
+"detail.date" = "Today";
+"detail.description" = "Description";
+"detail.accessibility" = "Accessibility";
+"detail.website" = "Website";
+"detail.view" = "View on map";
+"detail.plan" = "Plan new trip";
+"detail.campfire" ="Campfire area";
+"detail.rental" = "Rental hut";
+"detail.available" = "Available";
+"detail.notAvailable" = "Not available";
+
+"header.location" = "You are in";
+
+
 
