@@ -53,7 +53,7 @@ struct AddPlanView: View {
 
     var body: some View {
         VStack {
-            HeaderView(title: "Add plan")
+            HeaderView(title: "nav.addplan".i18n())
                 .ignoresSafeArea()
                 .padding(.bottom,-40)
 
