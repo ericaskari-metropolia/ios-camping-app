@@ -130,19 +130,42 @@ struct CampsiteDetailView: View {
                         Text("detail.description".i18n())
                             .font(.headline)
                             .padding(.horizontal)
-                        Text(campsite.descriptionEN ?? "nil")
-                            .font(.subheadline)
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(.primary)
-                            .padding(.horizontal)
+                        
+                        // Check languaguage system, display changes based on result
+                        if Locale.current.language.languageCode?.identifier == "EN" {
+                            Text(campsite.descriptionEN ?? "nil")
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(.primary)
+                                .padding(.horizontal)
+                        } else {
+                            Text(campsite.descriptionFI ?? "nil")
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(.primary)
+                                .padding(.horizontal)
+                        }
+                        
+                        
                         Text("detail.accessibility".i18n())
                             .font(.headline)
                             .padding(.horizontal)
-                        Text(campsite.suitabilityEN ?? "")
-                            .font(.subheadline)
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(Color.primary)
-                            .padding(.horizontal)
+                        
+                        // Check languaguage system, display changes based on result
+                        if Locale.current.language.languageCode?.identifier == "EN" {
+                            Text(campsite.suitabilityEN ?? "")
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color.primary)
+                                .padding(.horizontal)
+                        } else {
+                            Text(campsite.suitabilityFI ?? "")
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color.primary)
+                                .padding(.horizontal)
+                        }
+                        
                         
                         Text("detail.website".i18n())
                             .font(.headline)
