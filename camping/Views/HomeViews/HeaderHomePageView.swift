@@ -63,6 +63,7 @@ struct HeaderHomePageView: View {
             .foregroundColor(.black)
             .background(.white)
             .cornerRadius(20)
+            .frame(width: UIScreen.main.bounds.width-100)
             .offset(x: UIScreen.main.bounds.width/5, y: 150)
         }
         .padding(.bottom, 20)

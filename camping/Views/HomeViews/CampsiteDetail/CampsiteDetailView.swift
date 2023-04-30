@@ -132,7 +132,7 @@ struct CampsiteDetailView: View {
                             .padding(.horizontal)
                         
                         // Check languaguage system, display changes based on result
-                        if Locale.current.language.languageCode?.identifier == "EN" {
+                        if (Locale.current.language.languageCode?.identifier == "en" || Locale.current.language.languageCode?.identifier == "EN") {
                             Text(campsite.descriptionEN ?? "nil")
                                 .font(.subheadline)
                                 .multilineTextAlignment(.leading)
@@ -152,7 +152,8 @@ struct CampsiteDetailView: View {
                             .padding(.horizontal)
                         
                         // Check languaguage system, display changes based on result
-                        if Locale.current.language.languageCode?.identifier == "EN" {
+                        if (Locale.current.language.languageCode?.identifier == "en" ||
+                            Locale.current.language.languageCode?.identifier == "EN") {
                             Text(campsite.suitabilityEN ?? "")
                                 .font(.subheadline)
                                 .multilineTextAlignment(.leading)
