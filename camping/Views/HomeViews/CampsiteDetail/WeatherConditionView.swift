@@ -13,7 +13,7 @@ struct WeatherConditionView: View {
         
         HStack(alignment: .top){
             
-            Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
+            Text("\("detail.date".i18n()) \(Date().formatted(.dateTime.month().day().hour().minute()))")
                 .padding()
             
             Spacer()

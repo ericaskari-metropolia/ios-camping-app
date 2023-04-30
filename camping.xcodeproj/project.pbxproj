@@ -73,14 +73,13 @@
 		66E42CDA29F1D97400BEFDA5 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E42CD929F1D97400BEFDA5 /* WeatherForecast.swift */; };
 		66E42CDC29F1DB1800BEFDA5 /* TripInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E42CDB29F1DB1800BEFDA5 /* TripInfoView.swift */; };
 		66E42CDE29F1DC1800BEFDA5 /* PastTripInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E42CDD29F1DC1800BEFDA5 /* PastTripInfoView.swift */; };
-		66E4E1CB29E543A200A87706 /* OngoingTripCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4E1CA29E543A200A87706 /* OngoingTripCard.swift */; };
-		66E4E1CD29E54B0800A87706 /* PastTripCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4E1CC29E54B0800A87706 /* PastTripCard.swift */; };
 		A106FEE729E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106FEE629E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift */; };
 		A10A445E29F031C200B1C41E /* AddPlanGears.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A445D29F031C200B1C41E /* AddPlanGears.swift */; };
 		A10A446029F0323800B1C41E /* GearViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A445F29F0323800B1C41E /* GearViewModel.swift */; };
 		A11B2A0C29F3485B00565B9A /* AnnotatedMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B2A0B29F3485B00565B9A /* AnnotatedMap.swift */; };
 		A1220B2329E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1220B2229E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift */; };
 		A1220B2629E9621900AAA08C /* AddPlanOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1220B2529E9621900AAA08C /* AddPlanOverview.swift */; };
+		A149978C29FB223400E1633C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A149978E29FB223400E1633C /* Localizable.strings */; };
 		A156907529D2EE9D00EA3C56 /* CampingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907429D2EE9D00EA3C56 /* CampingApp.swift */; };
 		A156907729D2EE9D00EA3C56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156907629D2EE9D00EA3C56 /* ContentView.swift */; };
 		A156907929D2EE9E00EA3C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A156907829D2EE9E00EA3C56 /* Assets.xcassets */; };
@@ -163,14 +162,14 @@
 		66E42CD929F1D97400BEFDA5 /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
 		66E42CDB29F1DB1800BEFDA5 /* TripInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfoView.swift; sourceTree = "<group>"; };
 		66E42CDD29F1DC1800BEFDA5 /* PastTripInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripInfoView.swift; sourceTree = "<group>"; };
-		66E4E1CA29E543A200A87706 /* OngoingTripCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingTripCard.swift; sourceTree = "<group>"; };
-		66E4E1CC29E54B0800A87706 /* PastTripCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripCard.swift; sourceTree = "<group>"; };
 		A106FEE629E82A78005671D6 /* AddPlanChooseStartLocationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanChooseStartLocationModalView.swift; sourceTree = "<group>"; };
 		A10A445D29F031C200B1C41E /* AddPlanGears.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanGears.swift; sourceTree = "<group>"; };
 		A10A445F29F0323800B1C41E /* GearViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearViewModel.swift; sourceTree = "<group>"; };
 		A11B2A0B29F3485B00565B9A /* AnnotatedMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotatedMap.swift; sourceTree = "<group>"; };
 		A1220B2229E93AEF00AAA08C /* AddPlanChooseDestinationLocationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanChooseDestinationLocationModalView.swift; sourceTree = "<group>"; };
 		A1220B2529E9621900AAA08C /* AddPlanOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanOverview.swift; sourceTree = "<group>"; };
+		A149978D29FB223400E1633C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A149978F29FB223800E1633C /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A156907129D2EE9D00EA3C56 /* camping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = camping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A156907429D2EE9D00EA3C56 /* CampingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingApp.swift; sourceTree = "<group>"; };
 		A156907629D2EE9D00EA3C56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -324,8 +323,6 @@
 		66E4E1C929E5438900A87706 /* MyTripCards */ = {
 			isa = PBXGroup;
 			children = (
-				66E4E1CA29E543A200A87706 /* OngoingTripCard.swift */,
-				66E4E1CC29E54B0800A87706 /* PastTripCard.swift */,
 				66E42CD729F1D91C00BEFDA5 /* WeatherCardView.swift */,
 			);
 			path = MyTripCards;
@@ -381,6 +378,7 @@
 				A156907629D2EE9D00EA3C56 /* ContentView.swift */,
 				A156907829D2EE9E00EA3C56 /* Assets.xcassets */,
 				A156907A29D2EE9E00EA3C56 /* Preview Content */,
+				A149978E29FB223400E1633C /* Localizable.strings */,
 			);
 			path = camping;
 			sourceTree = "<group>";
@@ -590,6 +588,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fi,
 			);
 			mainGroup = A156906829D2EE9D00EA3C56;
 			productRefGroup = A156907229D2EE9D00EA3C56 /* Products */;
@@ -609,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				270EE5D429E42C7A00EEDF00 /* category.json in Resources */,
+				A149978C29FB223400E1633C /* Localizable.strings in Resources */,
 				A156907C29D2EE9E00EA3C56 /* Preview Assets.xcassets in Resources */,
 				A156907929D2EE9E00EA3C56 /* Assets.xcassets in Resources */,
 			);
@@ -643,7 +643,6 @@
 				27F477ED29EE9FE100B3786A /* CampsiteMapView.swift in Sources */,
 				2707B80929E8A80A00728026 /* CategoryListItemView.swift in Sources */,
 				B390207E29EFC32900A1D754 /* SuggestCampsitesListItemView.swift in Sources */,
-				66E4E1CD29E54B0800A87706 /* PastTripCard.swift in Sources */,
 				66E42CDC29F1DB1800BEFDA5 /* TripInfoView.swift in Sources */,
 				66B21E9F29EF3EEF0053C741 /* PastTripView.swift in Sources */,
 				2787217A29EC70090000BE8E /* WeatherManager.swift in Sources */,
@@ -678,7 +677,6 @@
 				B3C028C629E9CB5C00DDBF06 /* HeaderHomePageView.swift in Sources */,
 				B35F41E229ED8B3C008E3549 /* CampingSiteFilteredByCityItemView.swift in Sources */,
 				66E42CD829F1D91C00BEFDA5 /* WeatherCardView.swift in Sources */,
-				66E4E1CB29E543A200A87706 /* OngoingTripCard.swift in Sources */,
 				A11B2A0C29F3485B00565B9A /* AnnotatedMap.swift in Sources */,
 				2787CFDA29DAFDE7000B4865 /* FavoriteView.swift in Sources */,
 				A1CD9EC829E5D4D000091865 /* Extensions.swift in Sources */,
@@ -771,6 +769,18 @@
 			targetProxy = A156909129D2EE9F00EA3C56 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A149978E29FB223400E1633C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A149978D29FB223400E1633C /* en */,
+				A149978F29FB223800E1633C /* fi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A156909829D2EE9F00EA3C56 /* Debug */ = {

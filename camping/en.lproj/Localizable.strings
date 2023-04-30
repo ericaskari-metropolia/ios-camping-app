@@ -1,0 +1,96 @@
+/*
+  Localizable.strings
+  camping
+
+  Created by Eric Askari on 28.4.2023.
+  
+*/
+"action.edit" = "Edit";
+"action.delete" = "Delete";
+"action.return" = "Return";
+"action.select" = "Select";
+"action.close" = "Close";
+"action.createtrip" = "Create trip";
+"action.addgear" = "Add gear";
+"action.cancel" = "Cancel";
+"action.saveChanges" = "Save Changes";
+"action.delete" = "Delete";
+"action.addGear" = "Add gear";
+"action.viewOnMap" = "View on Map";
+"action.planAgain" = "Plan Again";
+"action.createNewTrip" = "Create New Trip";
+
+"label.startlocation" = "Start Location";
+"label.destinationlocation" = "Destination location";
+"label.startdate" = "Start Date";
+"label.enddate" = "End Date";
+"label.gearsfortrip" = "Gears for Trip";
+"label.name" = "Name";
+"label.myTrips" = "My trips";
+"label.onGoingTrip" = "Ongoing trip";
+"label.noOnGoindTripsAlert" = "Oops!! You don't have any ongoing trips!!";
+"label.noPastTripsAlert" = "Oops!! You don't have any past trips!!";
+"label.pastTrips" = "Past Trip";
+"label.editPlan" = "Edit";
+"label.editStatus" = "Trip Status: Editing";
+"label.deleteStatus" = "Trip Status: To Be Deleted";
+"label.deleteAlert" = "Are you sure you want to delete this plan?";
+"label.tripOverview" = "Trip Overview";
+"label.onGoingTripStatus" = "Trip Status: Ongoing";
+"label.weatherForecast" = "Weather Forecast";
+"label.gearChecklist" = "Gear Checklist";
+"label.editGear" = "Edit Gear";
+"label.noGearAlert" = "You do not have any gears added!";
+"label.completedTripStatus" = "Trip Status: Completed";
+"label.tripGearList" = "Trip Gear List";
+"label.chooseAction" = "Choose an action";
+"label.deletePlan" = "Delete Plan";
+
+
+"addplanview.choosenonmap" = "Chosen on the map";
+
+"AddPlanChooseStartLocationModalView.description" = "Select location by placing blue circle on the location";
+
+"AddPlanChooseDestinationLocationModalView.description" = "Choose campsite by pressing on the icon";
+
+"AddPlanOverview.created" = "You have created your new journey!";
+
+"homepage.title" = "Discovery";
+"homepage.search" = "Where do you want to go?";
+"homepage.category" = "Category";
+"homepage.forest" = "Forests";
+"homepage.hills" = "Hills";
+"homepage.lakes" = "Lakes";
+"homepage.island" = "Island";
+"homepage.suggest" = "Suggested for you";
+
+"location.request" = "Request location permission";
+"location.error" = "Please give Camplify the permission \n to access to your location in the setting";
+
+"nav.discovery" = "Discovery";
+"nav.addplan" = "Add plan";
+"nav.save" = "Saved locations";
+"nav.trips" = "Trips";
+
+"search.bar" = "Enter a city";
+"search.startRecording" = "Start recording";
+"search.stopRecording" = "Stop recording";
+
+"fav.title" = "Saved locations";
+"fav.desc" = "You don't have any saved campsite yet!";
+
+"detail.date" = "Today";
+"detail.description" = "Description";
+"detail.accessibility" = "Accessibility";
+"detail.website" = "Website";
+"detail.view" = "View on map";
+"detail.plan" = "Plan new trip";
+"detail.campfire" ="Campfire area";
+"detail.rental" = "Rental hut";
+"detail.available" = "Available";
+"detail.notAvailable" = "Not available";
+
+"header.location" = "You are in";
+
+
+

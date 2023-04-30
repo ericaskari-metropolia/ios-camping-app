@@ -5,6 +5,8 @@
 //  Created by The Minions on 19.4.2023.
 //
 
+/* Starting view of My trips, show the filled view if there are my trips else show empty view */
+
 import SwiftUI
 
 struct TripsView: View {

@@ -100,26 +100,26 @@ struct CampsiteDetailView: View {
                             Spacer()
                             
                             VStack(alignment: .center, spacing: 5){
-                                Text("Campfire area")
+                                Text("detail.campfire".i18n())
                                     .font(.headline)
                                 if campsite.hasCampfireSite == true {
-                                    Text("Available")
+                                    Text("detail.available".i18n())
                                         .font(.subheadline)
                                 }else {
-                                    Text("Not available")
+                                    Text("detail.notAvailable".i18n())
                                         .font(.subheadline)
                                 }
                             }
                             
                             Spacer()
                             VStack(alignment: .center, spacing: 5){
-                                Text("Rental Hut")
+                                Text("detail.rental".i18n())
                                     .font(.headline)
                                 if campsite.hasRentalHut == true {
-                                    Text("Available")
+                                    Text("detail.available".i18n())
                                         .font(.subheadline)
                                 }else {
-                                    Text("Not Available")
+                                    Text("detail.notAvailable".i18n())
                                         .font(.subheadline)
                                 }
                             }
@@ -127,24 +127,48 @@ struct CampsiteDetailView: View {
                             Spacer()
                         }
                         
-                        Text("Description")
+                        Text("detail.description".i18n())
                             .font(.headline)
-                            .padding(.horizontal)
-                        Text(campsite.descriptionEN ?? "nil")
-                            .font(.subheadline)
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(.primary)
-                            .padding(.horizontal)
-                        Text("Accessibilty")
-                            .font(.headline)
-                            .padding(.horizontal)
-                        Text(campsite.suitabilityEN ?? "")
-                            .font(.subheadline)
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(Color.primary)
                             .padding(.horizontal)
                         
-                        Text("Website")
+                        // Check languaguage system, display changes based on result
+                        if (Locale.current.language.languageCode?.identifier == "en" || Locale.current.language.languageCode?.identifier == "EN") {
+                            Text(campsite.descriptionEN ?? "nil")
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(.primary)
+                                .padding(.horizontal)
+                        } else {
+                            Text(campsite.descriptionFI ?? "nil")
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(.primary)
+                                .padding(.horizontal)
+                        }
+                        
+                        
+                        Text("detail.accessibility".i18n())
+                            .font(.headline)
+                            .padding(.horizontal)
+                        
+                        // Check languaguage system, display changes based on result
+                        if (Locale.current.language.languageCode?.identifier == "en" ||
+                            Locale.current.language.languageCode?.identifier == "EN") {
+                            Text(campsite.suitabilityEN ?? "")
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color.primary)
+                                .padding(.horizontal)
+                        } else {
+                            Text(campsite.suitabilityFI ?? "")
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color.primary)
+                                .padding(.horizontal)
+                        }
+                        
+                        
+                        Text("detail.website".i18n())
                             .font(.headline)
                             .padding(.horizontal)
                         Link(destination: URL(string: "\(campsite.websiteURL ?? "")")!, label: {
@@ -165,14 +189,14 @@ struct CampsiteDetailView: View {
                             }
                             
                             PlanNewTripButtonView(campsite: campsite) {
-                                Text("Plan new trip")
+                                Text("detail.plan".i18n())
                                     .font(.system(.title3, design: .rounded))
                                     .foregroundColor(.white)
                             } completed: {
                                 // Nothing to do
                             }
                             .padding(15)
-                            .background(Color.primary)
+                            .background(Color("PrimaryColor"))
                             .clipShape(Capsule())
                         }
                         .padding()

@@ -46,3 +46,9 @@ extension CampingSite {
     }
     
 }
+
+extension String {
+    func i18n(bundle: Bundle = .main, tableName: String = "Localizable") -> String {
+        return NSLocalizedString(self, tableName: tableName, value: "❗️\(self)", comment: "")
+    }
+}

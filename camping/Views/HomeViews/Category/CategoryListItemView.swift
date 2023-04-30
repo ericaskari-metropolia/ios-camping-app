@@ -22,10 +22,30 @@ struct CategoryListItemView: View {
                 .clipShape(
                     RoundedRectangle(cornerRadius: 12)
                 )
-            Text(category.title)
-                .foregroundColor(.white)
-                .font(.title2)
-                .offset(y:50)
+            if (category.title == "Forest") {
+                Text("homepage.forest".i18n())
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .offset(y:50)
+            } else if (category.title == "Hills")
+            {
+                Text("homepage.hills".i18n())
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .offset(y:50)
+            } else if (category.title == "Lakes")
+            {
+                Text("homepage.lakes".i18n())
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .offset(y:50)
+            } else if (category.title == "Island") {
+                Text("homepage.island".i18n())
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .offset(y:50)
+            }
+            
         }
     }
 }

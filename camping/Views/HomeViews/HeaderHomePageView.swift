@@ -30,12 +30,12 @@ struct HeaderHomePageView: View {
                     .labelStyle(.iconOnly)
                     .font(.system(size: 20))
                     .foregroundColor(.white)
-                Text("You are in \(locationViewModel.currentPlacemark?.locality ?? "")")
+                Text("\("header.location".i18n()) \(locationViewModel.currentPlacemark?.locality ?? "")")
                     .foregroundColor(.white).bold()
             }
             .offset(x: 40, y: 30)
             
-            Text("Discovery")
+            Text("homepage.title".i18n())
                 .bold()
                 .font(.system(size: 30))
                 .fontWeight(.bold)
@@ -49,7 +49,7 @@ struct HeaderHomePageView: View {
                     Label("", systemImage: "magnifyingglass")
                         .labelStyle(.iconOnly)
                         .font(.system(size: 20))
-                    Text("Where do you want to go?").foregroundColor(.gray)
+                    Text("homepage.search".i18n()).foregroundColor(.gray)
                     Label("", systemImage: "mic")
                         .labelStyle(.iconOnly)
                         .font(.system(size: 20))
@@ -63,6 +63,7 @@ struct HeaderHomePageView: View {
             .foregroundColor(.black)
             .background(.white)
             .cornerRadius(20)
+            .frame(width: UIScreen.main.bounds.width-100)
             .offset(x: UIScreen.main.bounds.width/5, y: 150)
         }
         .padding(.bottom, 20)

@@ -5,11 +5,16 @@
 //  Created by The Minions on 24.4.2023.
 //
 
+/* A view that show an option to delte a plan*/
+
 import SwiftUI
 
 struct DeletePlanView: View {
+    
+    // state variable to hold the plan detail
     @State var planDetail: PlanDetail
     @EnvironmentObject var viewModel: MyTripViewModel
+    @Environment(\.dismiss) var dismiss
     
     @Environment(\.presentationMode) private var presentationMode
     var body: some View {
@@ -29,12 +34,41 @@ struct DeletePlanView: View {
                     }
                     
                 }
-                
-                
+                VStack{
+                    HStack {
+                        Spacer()
+                        
+                        // Button to go back previous page
+                        Button{
+                            dismiss()
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .font(.title)
+                                .padding()
+                            
+                        }
+                        .symbolVariant(.circle.fill)
+                        .foregroundStyle(Color("PrimaryColor"), .white)
+                        
+                       
+                        VStack{
+                            Text("label.deletePlan".i18n())
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 160, height: 35)
+                        .background(Color("PrimaryColor").opacity(0.4).cornerRadius(10))
+                        Spacer()
+                        
+                    }
+                    .padding(EdgeInsets(top: 40, leading: -40, bottom: 0, trailing: 0))
+                }
             }
             .ignoresSafeArea()
+          
             HStack{
-                Label("Trip Status: To Be Deleted", systemImage: "trash.circle")
+                Label("label.deleteStatus".i18n(), systemImage: "pencil.circle.fill")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
@@ -42,11 +76,8 @@ struct DeletePlanView: View {
                     .cornerRadius(15)
                 
             }
+            .padding(.bottom, 40)
             .padding(.top,-80)
-            Text("You had carefully made this plan.")
-                .padding()
-                .padding(.top, -25)
-                .foregroundColor(Color("PrimaryColor"))
             VStack{
                 
                 HStack{
@@ -86,13 +117,13 @@ struct DeletePlanView: View {
             .padding(.horizontal,5)
             
             Divider()
-            Text("Are you sure you want to delete this plan?")
+            Text("label.deleteAlert".i18n())
                 .font(.title3)
                 .foregroundColor(Color("PrimaryColor"))
                 .padding(.horizontal,2)
                 .padding(.vertical,10)
             HStack {
-                Button("Cancel") {
+                Button("action.cancel".i18n()) {
                     dismiss()
                 }
                 .padding()
@@ -101,7 +132,7 @@ struct DeletePlanView: View {
                 .background(Color("PrimaryColor"))
                 .cornerRadius(15)
                 
-                Button("Delete") {
+                Button("action.delete".i18n()) {
                     deletePlan()
                     dismiss()
                 }
@@ -110,25 +141,22 @@ struct DeletePlanView: View {
                 .background(Color.red)
                 .cornerRadius(15)
             }
+            .navigationBarBackButtonHidden(true)
             Spacer()
             
         }
-        
-        
-        
     }
+    
+    // A helper function to delete the plan
     func deletePlan() {
         viewModel.deletePlan(planDetail)
     }
     
-    func dismiss() {
-        presentationMode.wrappedValue.dismiss()
-    }
 }
 
 extension DeletePlanView {
     var deleteButton: some View {
-        Label("Delete", systemImage: "trash")
+        Label("action.delete".i18n(), systemImage: "trash")
             .foregroundColor(.white)
             .frame(width: 350, height: 50)
             .background(Color.black)

@@ -11,6 +11,7 @@ import SwiftUI
 
 struct OnGoingTripView: View {
     
+    // Use @EnvironmentObject property wrapper to inject an instance of MyTripViewModel into this view
     @EnvironmentObject var viewModel: MyTripViewModel
     
     var body: some View {
@@ -65,9 +66,12 @@ struct OnGoingTripDetailScreen: View {
     
     var body: some View {
         
+        //Navigate to edit plan view
         NavigationLink(destination: EditPlanView(planDetail: planDetail), isActive: $isEditing) {
             EmptyView()
         }
+        
+        //Navigate to delete plan view
         NavigationLink(destination: DeletePlanView(planDetail: planDetail), isActive: $isDeleting) {
             EmptyView()
         }
@@ -100,13 +104,13 @@ struct OnGoingTripDetailScreen: View {
                                     .padding()
                             }
                             .actionSheet(isPresented: $showingActionSheet) {
-                                ActionSheet(title: Text("Choose an action"), buttons: [
-                                    .default(Text("Edit")) {
+                                ActionSheet(title: Text("label.chooseAction".i18n()), buttons: [
+                                    .default(Text("action.edit".i18n())) {
                                         // Navigate to the edit plan screen
                                         isEditing = true
                                         
                                     },
-                                    .destructive(Text("Delete")) {
+                                    .destructive(Text("action.delete".i18n())) {
                                         // Show the delete confirmation alert
                                         isDeleting = true
                                     },

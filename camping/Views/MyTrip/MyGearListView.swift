@@ -8,20 +8,27 @@
 import SwiftUI
 import CoreData
 
+/* A view that displays the list of gears for a particular plan */
+
 struct MyGearListView: View {
     
+    //The plan for which gears are displayed
     var plan: Plan
+    
+    
+    // Use @EnvironmentObject property wrapper to inject an instance of GearViewModel into this view
     @EnvironmentObject var gearViewModel: GearViewModel
     
+    //Gears fecthed and sorted in alphabetical order
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Gear.name, ascending: true)],
         animation: .default
     )
     private var allItems: FetchedResults<Gear>
     
-    // let filteredItems = filterItems(forPlan: plan, fromAllItems: allItems)
-    
     var body: some View {
+        
+        //filtered list of gears based on current plan
         let filteredItems = filterItems()
         if filteredItems.count > 0 {
             ZStack {
@@ -45,11 +52,12 @@ struct MyGearListView: View {
                 }
             }
             
+            //Navigation to edit or add gears
             NavigationLink(
                 destination: AddPlanGears(plan:plan),
                 label: {
-                    Text("Edit gear")
-                        .foregroundColor(Color("PrimaryColor"))
+                    Text("label.editGear".i18n())
+                        .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                 }
             )
@@ -62,14 +70,15 @@ struct MyGearListView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.white)
                     .shadow(color: Color.gray.opacity(0.5), radius: 5, x: 0, y: 2)
-                Text("You do not have any gears added!")
+                Text("label.noGearAlert".i18n())
                     .padding()
             }
             .padding()
             NavigationLink(
                 destination: AddPlanGears(plan:plan),
                 label: {
-                    Text("Add gear")
+                    Text("action.addGear".i18n())
+                        .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                 }
             )
@@ -81,6 +90,8 @@ struct MyGearListView: View {
         
         
     }
+    
+    // A helper function that filters the items based on plan
     func filterItems() -> [Gear] {
         return allItems.filter { gear in
             if gear.plan?.id == nil {
