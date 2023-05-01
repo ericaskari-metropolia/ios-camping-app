@@ -23,7 +23,7 @@ extension MyTripsEmptyView {
     
     private var noTripsView :some View {
         VStack(alignment: .center){
-            Text("label.onGoingTrip")
+            Text("label.noTrips".i18n())
                 .bold()
                 .foregroundColor(Color("PrimaryColor"))
             

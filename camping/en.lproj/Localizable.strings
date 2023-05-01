@@ -28,7 +28,8 @@
 "label.name" = "Name";
 "label.myTrips" = "My trips";
 "label.onGoingTrip" = "Ongoing trip";
-"label.noOnGoindTripsAlert" = "Oops!! You don't have any ongoing trips!!";
+"label.noOnGoingTripsAlert" = "Oops!! You don't have any ongoing trips!!";
+"label.noTrips" = "Oops!! You don't have any trips planned!!";
 "label.noPastTripsAlert" = "Oops!! You don't have any past trips!!";
 "label.pastTrips" = "Past Trip";
 "label.editPlan" = "Edit";
