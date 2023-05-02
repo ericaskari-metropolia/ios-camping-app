@@ -34,7 +34,7 @@ struct PastTripScrollView: View {
     
     var body: some View {
         ScrollView(.horizontal,showsIndicators: false) {
-            HStack(spacing: 10) {
+            HStack(spacing: 0) {
                 
                 //Looping through the array and create a tripdetail screen
                 ForEach(planDetails) { planDetail in
@@ -45,7 +45,7 @@ struct PastTripScrollView: View {
                     
                 }
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 12)
         }
     }
 }
@@ -84,7 +84,7 @@ struct MyPastTripCard: View {
                     .fontWeight(.black)
                 
                 Text(timeAgo(from: planDetail.end))
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color("PrimaryColor"))
                     .font(.caption)
                     .padding(.top,2)
                 

@@ -33,7 +33,7 @@ struct OnGoingTripScrollView: View {
     
     var body: some View {
         ScrollView(.horizontal,showsIndicators: false) {
-            HStack(spacing: 10) {
+            HStack(spacing: 0) {
                 
                 //Looping through the array and create a tripdetail screen
                 ForEach(planDetails) { planDetail in
@@ -45,7 +45,7 @@ struct OnGoingTripScrollView: View {
                 }
             }
             
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 12)
         }
         
     }
@@ -144,15 +144,6 @@ struct OnGoingTripDetailScreen: View {
             .cornerRadius(20)
             .shadow(radius: 15))
         .padding()
-        .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Delete trip?"), message: Text("Are you sure you want to delete this trip?"),
-                  primaryButton: .destructive(Text("Delete")) {
-                
-                viewModel.deletePlan(planDetail)
-                viewModel.updatePlanDetails()
-                
-            }, secondaryButton: .cancel())
-        }
     }
 }
 

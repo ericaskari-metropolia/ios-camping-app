@@ -113,9 +113,7 @@ extension MyTripsFilledView {
                     .foregroundColor(.white)
                     .frame(width: 350, height: 40)
                     .background(Color("PrimaryColor"))
-                    .cornerRadius(15)
-                Spacer()
-                
+                    .cornerRadius(15)                
             }
             .padding(.horizontal)
             .padding(.top)
