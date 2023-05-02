@@ -305,6 +305,7 @@
 		66B21E9729EF3DBB0053C741 /* MyTrip */ = {
 			isa = PBXGroup;
 			children = (
+				66E42CD729F1D91C00BEFDA5 /* WeatherCardView.swift */,
 				66B21E9829EF3DDF0053C741 /* MyTripsEmptyView.swift */,
 				66B21E9A29EF3E7D0053C741 /* MyTripsFilledView.swift */,
 				66B21E9C29EF3EB10053C741 /* OnGoingTripView.swift */,
@@ -318,14 +319,6 @@
 				66812B3229F71B5100DF29D0 /* PastGearList.swift */,
 			);
 			path = MyTrip;
-			sourceTree = "<group>";
-		};
-		66E4E1C929E5438900A87706 /* MyTripCards */ = {
-			isa = PBXGroup;
-			children = (
-				66E42CD729F1D91C00BEFDA5 /* WeatherCardView.swift */,
-			);
-			path = MyTripCards;
 			sourceTree = "<group>";
 		};
 		A1220B2429E961F500AAA08C /* AddPlan */ = {
@@ -365,7 +358,6 @@
 		A156907329D2EE9D00EA3C56 /* camping */ = {
 			isa = PBXGroup;
 			children = (
-				66E4E1C929E5438900A87706 /* MyTripCards */,
 				B3D6C9D629E4446C00232B53 /* CoreData */,
 				27223A0D29E41CC40015B291 /* Utility */,
 				27223A0729E41A870015B291 /* Data */,
