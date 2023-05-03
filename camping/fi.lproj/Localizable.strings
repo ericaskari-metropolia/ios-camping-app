@@ -47,7 +47,7 @@
 "label.deletePlan" = "Poista suunnitelma";
 
 
-"addplanview.choosenonmap" = "Valitse kartalta";
+"addplanview.choosenonmap" = "Valittu kartalta";
 
 "AddPlanChooseStartLocationModalView.description" = "Valitse sijainti asettamalla sininen ympyrä sijaintiin";
 
